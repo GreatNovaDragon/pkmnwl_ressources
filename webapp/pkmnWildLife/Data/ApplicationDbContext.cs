@@ -30,62 +30,46 @@ public class ApplicationDbContext : IdentityDbContext
     }
 }
 
-public class NameEffectDuo
+public class Ability
+{
+    
+    public string ID { get; set; }
+    public string Name { get; set; }
+    public string Effect { get; set; }
+}
+
+public class DamageDice
 {
     public string ID { get; set; }
     public string Name { get; set; }
     public string Effect { get; set; }
 }
 
-public class Ability : NameEffectDuo
+public class Move
 {
-}
-
-public class DamageDice : NameEffectDuo
-{
-}
-
-public class Move : NameEffectDuo
-{
+    public string ID { get; set; }
     public int type { get; set; }
     public DamageDice DamageDice { get; set; }
     public int MoveClass { get; set; }
 }
 
-public enum Type
+public class Type
 {
-    NORMAL = 1,
-    FIGHTING,
-    FLYING,
-    POISON,
-    GROUND,
-    ROCK,
-    BUG,
-    GHOST,
-    STEEL,
-    FIRE,
-    WATER,
-    GRASS,
-    ELECTRIC,
-    PSYCHIC,
-    ICE,
-    DRAGON,
-    DARK,
-    FAIRY,
-    UNKOWN,
-    SHADOW,
-    TERA_ALL
+    public string ID { get; set; }
+    public string Name { get; set; }
 }
 
-public enum MoveClass
+public class MoveClass
 {
-    STATUS,
-    PHYSICAL,
-    SPECIAL
+    public string ID { get; set; }
+    public string Name { get; set; }
 }
 
-public class Item : NameEffectDuo
+public class Item
 {
+    public string ID { get; set; }
+    public string Name { get; set; }
+    public string Effect { get; set; }
 }
 
 public class Pokemon
@@ -93,11 +77,17 @@ public class Pokemon
     public string ID { get; set; }
 
     public string Name { get; set; }
-    public Statblock stats { get; set; }
     public List<Learnsets> learnset { get; set; }
     public List<Ability> Abilities { get; set; }
     public int Type1 { get; set; }
     public int Type2 { get; set; }
+
+    public int HEALTH { get; set; }
+    public int ATK { get; set; }
+    public int DEF { get; set; }
+    public int SP_ATK { get; set; }
+    public int SP_DEF { get; set; }
+    public int SPEED { get; set; }
 }
 
 public class Learnsets
@@ -107,24 +97,12 @@ public class Learnsets
     public string when { get; set; }
 }
 
-public class Statblock
-{
-    public string ID { get; set; }
-    public int HEALTH { get; set; }
-    public int ATK { get; set; }
-    public int DEF { get; set; }
-    public int SP_ATK { get; set; }
-    public int SP_DEF { get; set; }
-    public int SPEED { get; set; }
-}
-
 public class Character
 {
     public string ID { get; set; }
     public string Name { get; set; }
     public IdentityUser Owner { get; set; }
     public Pokemon species { get; set; }
-    public Statblock UserStatAdditions { get; set; }
     public List<Move> Moves { get; set; }
     public List<Ability> Abilities { get; set; }
     public int Level { get; set; }
@@ -133,6 +111,14 @@ public class Character
     public int HP { get; set; }
     public int MaxHP { get; set; }
     public int TempMaxHP { get; set; }
+
+    public int HEALTH_bonus { get; set; }
+    public int ATK_bonus { get; set; }
+    public int DEF_bonus { get; set; }
+    public int SP_ATK_bonus { get; set; }
+    public int SP_DEF_bonus { get; set; }
+    public int SPEED_bonus { get; set; }
+
     public int Grit { get; set; }
     public int MaxGrit { get; set; }
     public List<SkillProfiency> Skills { get; set; }
@@ -146,12 +132,18 @@ public class SkillProfiency
     public int level { get; set; }
 }
 
-public class Skill : NameEffectDuo
+public class Skill
 {
+    public string ID { get; set; }
+    public string Name { get; set; }
+    public string Effect { get; set; }
 }
 
-public class AttackMod : NameEffectDuo
+public class AttackMod
 {
+    public string ID { get; set; }
+    public string Name { get; set; }
+    public string Effect { get; set; }
 }
 
 public class Encounter

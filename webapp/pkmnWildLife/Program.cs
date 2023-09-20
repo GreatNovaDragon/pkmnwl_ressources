@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using pkmnWildLife;
 using pkmnWildLife.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
+    DBInitializer.InitializeDB(context);
 }
 
 app.UseHttpsRedirection();

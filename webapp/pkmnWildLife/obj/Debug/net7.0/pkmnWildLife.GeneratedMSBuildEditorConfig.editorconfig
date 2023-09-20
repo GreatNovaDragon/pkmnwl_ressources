@@ -20,152 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/abilities/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJpbGl0aWVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/abilities/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJpbGl0aWVzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/abilities/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJpbGl0aWVzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/abilities/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJpbGl0aWVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/abilities/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWJpbGl0aWVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/attackModifiers/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXR0YWNrTW9kaWZpZXJzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/attackModifiers/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXR0YWNrTW9kaWZpZXJzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/attackModifiers/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXR0YWNrTW9kaWZpZXJzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/attackModifiers/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXR0YWNrTW9kaWZpZXJzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/attackModifiers/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXR0YWNrTW9kaWZpZXJzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/characters/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hhcmFjdGVyc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/characters/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hhcmFjdGVyc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/characters/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hhcmFjdGVyc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/characters/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hhcmFjdGVyc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/characters/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hhcmFjdGVyc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/damagedice/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGFtYWdlZGljZVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/damagedice/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGFtYWdlZGljZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/damagedice/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGFtYWdlZGljZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/damagedice/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGFtYWdlZGljZVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/damagedice/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGFtYWdlZGljZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/encounters/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZW5jb3VudGVyc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/encounters/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZW5jb3VudGVyc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/encounters/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZW5jb3VudGVyc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/encounters/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZW5jb3VudGVyc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/encounters/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZW5jb3VudGVyc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/items/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaXRlbXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/items/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaXRlbXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/items/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaXRlbXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/items/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaXRlbXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/items/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaXRlbXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Create.cshtml]
@@ -198,26 +58,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/skills/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2tpbGxzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/skills/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2tpbGxzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/skills/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2tpbGxzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/skills/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2tpbGxzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/skills/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2tpbGxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/_ViewImports.cshtml]

@@ -1,5 +1,5 @@
 @page
-@model DetailsModel
+@model pkmnWildLife.Pages.pokemon.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -9,7 +9,7 @@
 
 <div>
     <h4>Pokemon</h4>
-    <hr/>
+    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Pokemon.Name)
@@ -28,6 +28,42 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Pokemon.Type2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.HEALTH)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.HEALTH)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.ATK)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.ATK)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.DEF)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.DEF)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.SP_ATK)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.SP_ATK)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.SP_DEF)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.SP_DEF)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pokemon.SPEED)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pokemon.SPEED)
         </dd>
     </dl>
 </div>

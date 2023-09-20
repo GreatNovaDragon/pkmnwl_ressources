@@ -22,9 +22,40 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Pages\characters\"/>
-        <Folder Include="Pages\encounters\"/>
-        <Folder Include="Pages\pokemon\"/>
+        <_ContentIncludedByDefault Remove="Pages\abilities\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\abilities\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\abilities\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\abilities\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\abilities\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\attackModifiers\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\attackModifiers\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\attackModifiers\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\attackModifiers\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\attackModifiers\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\damagedice\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\damagedice\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\damagedice\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\damagedice\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\damagedice\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\items\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\items\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\items\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\items\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\items\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\moves\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\moves\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\moves\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\moves\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\moves\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\skills\Create.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\skills\Delete.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\skills\Details.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\skills\Edit.cshtml"/>
+        <_ContentIncludedByDefault Remove="Pages\skills\Index.cshtml"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pages\pokemon\" />
     </ItemGroup>
 
 </Project>
