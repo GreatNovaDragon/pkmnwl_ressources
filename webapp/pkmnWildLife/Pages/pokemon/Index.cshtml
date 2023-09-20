@@ -1,0 +1,48 @@
+@page
+@model pkmnWildLife.Pages.pokemon.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon[0].Type1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon[0].Type2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Pokemon) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type2)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

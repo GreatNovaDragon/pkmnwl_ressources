@@ -28,6 +28,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
