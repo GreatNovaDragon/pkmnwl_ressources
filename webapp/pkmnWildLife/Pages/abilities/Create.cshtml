@@ -8,28 +8,28 @@
 <h1>Create</h1>
 
 <h4>Ability</h4>
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Ability.ID" class="control-label"></label>
-                <input asp-for="Ability.ID" class="form-control" />
+                <input asp-for="Ability.ID" class="form-control"/>
                 <span asp-validation-for="Ability.ID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ability.Name" class="control-label"></label>
-                <input asp-for="Ability.Name" class="form-control" />
+                <input asp-for="Ability.Name" class="form-control"/>
                 <span asp-validation-for="Ability.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ability.Effect" class="control-label"></label>
-                <input asp-for="Ability.Effect" class="form-control" />
+                <input asp-for="Ability.Effect" class="form-control"/>
                 <span asp-validation-for="Ability.Effect" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
         </form>
     </div>
@@ -40,5 +40,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

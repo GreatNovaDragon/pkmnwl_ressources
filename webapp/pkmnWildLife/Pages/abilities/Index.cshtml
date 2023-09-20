@@ -1,5 +1,5 @@
 ﻿@page
-@model pkmnWildLife.Pages.abilities.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,18 +12,19 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ability[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ability[0].Effect)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ability[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ability[0].Effect)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Ability) {
+    @foreach (var item in Model.Ability)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -37,6 +38,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

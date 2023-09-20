@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +8,7 @@ public class ApplicationDbContext : IdentityDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
-    { 
+    {
     }
 
     public DbSet<Ability> Abilities { get; set; }
@@ -31,8 +30,8 @@ public class ApplicationDbContext : IdentityDbContext
     }
 }
 
-
-public class NameEffectDuo {
+public class NameEffectDuo
+{
     public string ID { get; set; }
     public string Name { get; set; }
     public string Effect { get; set; }

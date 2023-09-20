@@ -1,5 +1,5 @@
 ﻿@page
-@model pkmnWildLife.Pages.moves.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,24 +12,25 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].MoveClass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Effect)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].MoveClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].Effect)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Move) {
+    @foreach (var item in Model.Move)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.type)
@@ -49,6 +50,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
