@@ -22,7 +22,15 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Pages\abilities\" />
+      <Folder Include="Pages\attackModifiers\" />
+      <Folder Include="Pages\characters\" />
+      <Folder Include="Pages\damagedice\" />
+      <Folder Include="Pages\encounters\" />
+      <Folder Include="Pages\items\" />
+      <Folder Include="Pages\moves\" />
       <Folder Include="Pages\pokemon\" />
+      <Folder Include="Pages\skills\" />
     </ItemGroup>
 
 </Project>

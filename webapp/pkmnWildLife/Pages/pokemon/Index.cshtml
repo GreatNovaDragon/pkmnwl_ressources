@@ -1,5 +1,5 @@
 @page
-@model pkmnWildLife.Pages.pokemon.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,21 +12,22 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Pokemon[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pokemon[0].Type1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pokemon[0].Type2)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pokemon[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pokemon[0].Type1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pokemon[0].Type2)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Pokemon) {
+    @foreach (var item in Model.Pokemon)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -43,6 +44,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
