@@ -1,0 +1,54 @@
+﻿@page
+@model pkmnWildLife.Pages.moves.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Move</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Move.type" class="control-label"></label>
+                <input asp-for="Move.type" class="form-control" />
+                <span asp-validation-for="Move.type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Move.MoveClass" class="control-label"></label>
+                <input asp-for="Move.MoveClass" class="form-control" />
+                <span asp-validation-for="Move.MoveClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Move.ID" class="control-label"></label>
+                <input asp-for="Move.ID" class="form-control" />
+                <span asp-validation-for="Move.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Move.Name" class="control-label"></label>
+                <input asp-for="Move.Name" class="form-control" />
+                <span asp-validation-for="Move.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Move.Effect" class="control-label"></label>
+                <input asp-for="Move.Effect" class="form-control" />
+                <span asp-validation-for="Move.Effect" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

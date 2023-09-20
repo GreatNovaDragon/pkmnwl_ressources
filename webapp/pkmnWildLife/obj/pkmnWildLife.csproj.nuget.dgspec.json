@@ -14,7 +14,8 @@
         "outputPath": "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\buerk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\buerk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
