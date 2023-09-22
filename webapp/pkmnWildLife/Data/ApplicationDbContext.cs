@@ -15,6 +15,8 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<DamageDice> DamageDice { get; set; }
     public DbSet<Move> Moves { get; set; }
     public DbSet<Item> Items { get; set; }
+    public DbSet<Type> Types { get; set; }
+    public DbSet<MoveClass> MoveClass { get; set; }
     public DbSet<Pokemon> Pokedex { get; set; }
     public DbSet<Character> Characters { get; set; }
     public DbSet<Skill> Skills { get; set; }
@@ -32,8 +34,9 @@ public class ApplicationDbContext : IdentityDbContext
 
 public class Ability
 {
-    
     public string ID { get; set; }
+
+    public string? Name_DE { get; set; }
     public string Name { get; set; }
     public string Effect { get; set; }
 }
@@ -48,6 +51,9 @@ public class DamageDice
 public class Move
 {
     public string ID { get; set; }
+    public string? Name_DE { get; set; }
+    public string Name_EN { get; set; }
+
     public int type { get; set; }
     public DamageDice DamageDice { get; set; }
     public int MoveClass { get; set; }
@@ -57,12 +63,14 @@ public class Type
 {
     public string ID { get; set; }
     public string Name { get; set; }
+    public string? Name_DE { get; set; }
 }
 
 public class MoveClass
 {
     public string ID { get; set; }
     public string Name { get; set; }
+    public string? Name_DE { get; set; }
 }
 
 public class Item
@@ -70,6 +78,7 @@ public class Item
     public string ID { get; set; }
     public string Name { get; set; }
     public string Effect { get; set; }
+    public string? Name_DE { get; set; }
 }
 
 public class Pokemon
@@ -77,6 +86,8 @@ public class Pokemon
     public string ID { get; set; }
 
     public string Name { get; set; }
+    public string? Name_DE { get; set; }
+
     public List<Learnsets> learnset { get; set; }
     public List<Ability> Abilities { get; set; }
     public int Type1 { get; set; }
@@ -136,6 +147,8 @@ public class Skill
 {
     public string ID { get; set; }
     public string Name { get; set; }
+    public string? Name_DE { get; set; }
+
     public string Effect { get; set; }
 }
 
@@ -143,6 +156,8 @@ public class AttackMod
 {
     public string ID { get; set; }
     public string Name { get; set; }
+    public string? Name_DE { get; set; }
+
     public string Effect { get; set; }
 }
 

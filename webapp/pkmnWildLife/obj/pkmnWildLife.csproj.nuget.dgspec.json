@@ -67,6 +67,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "PokeApiNet": {
+              "target": "Package",
+              "version": "[3.0.10, )"
             }
           },
           "imports": [
