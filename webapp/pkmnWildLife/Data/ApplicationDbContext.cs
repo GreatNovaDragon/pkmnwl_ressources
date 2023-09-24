@@ -12,7 +12,6 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<Ability> Abilities { get; set; }
-    public DbSet<DamageDice> DamageDice { get; set; }
     public DbSet<Move> Moves { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<Type> Types { get; set; }
@@ -41,22 +40,17 @@ public class Ability
     public string Effect { get; set; }
 }
 
-public class DamageDice
-{
-    public string ID { get; set; }
-    public string Name { get; set; }
-    public string Effect { get; set; }
-}
-
 public class Move
 {
     public string ID { get; set; }
     public string? Name_DE { get; set; }
-    public string Name_EN { get; set; }
+    public string Name { get; set; }
 
-    public int type { get; set; }
-    public DamageDice DamageDice { get; set; }
-    public int MoveClass { get; set; }
+    public Type type { get; set; }
+    public string? DamageDice { get; set; }
+    public MoveClass MoveClass { get; set; }
+    public string Target { get; set; }
+    public string Effect { get; set; }
 }
 
 public class Type

@@ -9,65 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = pkmnWildLife
 build_property.RootNamespace = pkmnWildLife
-build_property.ProjectDir = C:\Users\buerk\Documents\GitHub\pkmnwl_ressources\webapp\pkmnWildLife\
+build_property.ProjectDir = C:\Users\NovaDragon\RiderProjects\pkmnwl_ressources\webapp\pkmnWildLife\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\buerk\Documents\GitHub\pkmnwl_ressources\webapp\pkmnWildLife
+build_property.MSBuildProjectDirectory = C:\Users\NovaDragon\RiderProjects\pkmnwl_ressources\webapp\pkmnWildLife
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Error.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Index.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Create.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Delete.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Details.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Edit.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Index.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Privacy.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_LoginPartial.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/_ViewImports.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/_ViewStart.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/buerk/Documents/GitHub/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_Layout.cshtml]
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i3nmb2szn8

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj": {}
+    "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj": {
+    "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj",
+        "projectUniqueName": "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj",
         "projectName": "pkmnWildLife",
-        "projectPath": "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj",
-        "packagesPath": "C:\\Users\\buerk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buerk\\Documents\\GitHub\\pkmnwl_ressources\\webapp\\pkmnWildLife\\obj\\",
+        "projectPath": "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj",
+        "packagesPath": "C:\\Users\\NovaDragon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\buerk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\NovaDragon\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

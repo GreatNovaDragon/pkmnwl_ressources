@@ -2,6 +2,7 @@
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
 using Item = PokeApiNet.Item;
+using Move = PokeApiNet.Move;
 using Type = PokeApiNet.Type;
 
 namespace pkmnWildLife;
@@ -10,28 +11,22 @@ public class DBInitializer
 {
     public static async Task InitializeDB(ApplicationDbContext context)
     {
-        
-        if (context.DamageDice.Any()) return;
-        var dice = new List<string>
-        {
-            "1d4", "1d6", "1d6", "1d8", "1d10", "1d12", "1d20",
-            "2d4", "2d6", "2d6", "2d8", "2d10", "2d12", "2d20",
-            "3d4", "3d6", "3d6", "3d8", "3d10", "3d12", "3d20",
-            "4d4", "4d6", "4d6", "4d8", "4d10", "4d12", "4d20"
-        };
-
-        foreach (var d in dice)
-            context.DamageDice.Add(new DamageDice
-            {
-                ID = Guid.NewGuid().ToString(),
-                Effect = "THIS IS AN NORMAL DICE; THERE ARE NO EFFECTS DIPSHIT",
-                Name = d
-            });
-
-        context.SaveChangesAsync();
-
         var apiclient = new PokeApiClient();
 
+        await TransferTypes(context, apiclient);
+
+        await TransferMoveClasses(context, apiclient);
+
+        await TransferItems(context, apiclient);
+
+        await TransferAbilities(context, apiclient);
+
+        await TransferMoves(context, apiclient);
+    }
+
+
+    private static async Task TransferTypes(ApplicationDbContext context, PokeApiClient apiclient)
+    {
         var types = await apiclient.GetNamedResourcePageAsync<Type>(9999, 0);
 
         foreach (var TypeR in types.Results)
@@ -46,7 +41,28 @@ public class DBInitializer
         }
 
         context.SaveChangesAsync();
+    }
 
+    private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
+    {
+        var moveClass = await apiclient.GetNamedResourcePageAsync<MoveDamageClass>(10, 0);
+
+        foreach (var TypeR in moveClass.Results)
+        {
+            var Type = await apiclient.GetResourceAsync(TypeR);
+            context.MoveClass.Add(new MoveClass
+            {
+                ID = Type.Id.ToString(),
+                Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
+                Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
+            });
+        }
+
+        context.SaveChangesAsync();
+    }
+
+    private static async Task TransferItems(ApplicationDbContext context, PokeApiClient apiclient)
+    {
         var items = await apiclient.GetNamedResourcePageAsync<Item>(9999, 0);
         Console.Write(items.Results.Count);
         foreach (var i in items.Results)
@@ -72,10 +88,13 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-
-            context.SaveChangesAsync();
         }
 
+        context.SaveChangesAsync();
+    }
+
+    private static async Task TransferAbilities(ApplicationDbContext context, PokeApiClient apiclient)
+    {
         var abilities = await apiclient.GetNamedResourcePageAsync<Ability>(9999, 0);
 
         foreach (var i in abilities.Results)
@@ -103,16 +122,63 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-
-
-            context.SaveChangesAsync();
         }
+
+        context.SaveChangesAsync();
+    }
+
+    private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
+    {
+        var moves = await apiclient.GetNamedResourcePageAsync<Move>(999, 0);
+
+        foreach (var i in moves.Results)
+        {
+            var m = await apiclient.GetResourceAsync(i);
+
+            var ID = m.Id.ToString();
+            var Name = m.Names.FirstOrDefault(n => n.Language.Name == "en") != null
+                ? m.Names.FirstOrDefault(n => n.Language.Name == "en").Name
+                : m.Name;
+
+            var Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
+            var Effect = (m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
+                : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                    : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
+                        : "No Entry").Replace("$effect_chance%", $"{m.EffectChance}");
+
+            var Target = m.Target.Name;
+
+            var DamageDice = StrengthToDice(m.Power, 0.75);
+            var MType = context.Types.FirstOrDefault(e =>
+                e.ID == apiclient.GetResourceAsync(m.Type).Result.Id.ToString());
+            var DamageClass =
+                context.MoveClass.FirstOrDefault(e =>
+                    e.ID == apiclient.GetResourceAsync(m.DamageClass).Result.Id.ToString());
+            context.Moves.Add(new Data.Move
+            {
+                ID = ID,
+                Name = Name,
+                Name_DE = Name_DE,
+                Effect = Effect,
+                type = MType,
+                Target = Target,
+                DamageDice = DamageDice,
+                MoveClass = DamageClass
+            });
+        }
+
+        context.SaveChangesAsync();
     }
 
 
-    public static string StrengthToDice(int strength, double nerf)
+    public static string? StrengthToDice(int? strength, double nerf)
     {
-        var calc = Convert.ToInt32(Math.Floor(strength * nerf / 10));
+        if (!strength.HasValue) return null;
+
+        var calc = Convert.ToInt32(Math.Floor(strength.Value * nerf / 10));
 
         switch (calc)
         {
