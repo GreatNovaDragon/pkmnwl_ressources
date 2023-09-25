@@ -12,7 +12,7 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<Ability> Abilities { get; set; }
-    public DbSet<Move> Moves { get; set; }
+    public DbSet<Move?> Moves { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<Type> Types { get; set; }
     public DbSet<MoveClass> MoveClass { get; set; }
@@ -84,8 +84,8 @@ public class Pokemon
 
     public List<Learnsets> learnset { get; set; }
     public List<Ability> Abilities { get; set; }
-    public int Type1 { get; set; }
-    public int Type2 { get; set; }
+    public Type Type1 { get; set; }
+    public Type? Type2 { get; set; }
 
     public int HEALTH { get; set; }
     public int ATK { get; set; }
@@ -98,8 +98,10 @@ public class Pokemon
 public class Learnsets
 {
     public string ID { get; set; }
-    public Move move { get; set; }
-    public string when { get; set; }
+    public Move? move { get; set; }
+    public string how { get; set; }
+    
+    public int level { get; set;}
 }
 
 public class Character
@@ -111,7 +113,7 @@ public class Character
     public List<Move> Moves { get; set; }
     public List<Ability> Abilities { get; set; }
     public int Level { get; set; }
-    public int TeraType { get; set; }
+    public int? TeraType { get; set; }
     public int Grade { get; set; }
     public int HP { get; set; }
     public int MaxHP { get; set; }
