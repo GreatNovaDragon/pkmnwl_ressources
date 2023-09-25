@@ -28,6 +28,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/moves/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbW92ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NovaDragon/RiderProjects/pkmnwl_ressources/webapp/pkmnWildLife/Pages/pokemon/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccG9rZW1vblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

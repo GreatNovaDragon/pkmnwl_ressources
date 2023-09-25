@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using pkmnWildLife.Data;
 
 namespace pkmnWildLife.Data;
 
@@ -12,7 +14,7 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<Ability> Abilities { get; set; }
-    public DbSet<Move?> Moves { get; set; }
+    public DbSet<Move> Moves { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<Type> Types { get; set; }
     public DbSet<MoveClass> MoveClass { get; set; }
@@ -26,10 +28,13 @@ public class ApplicationDbContext : IdentityDbContext
     {
         builder.Entity<Character>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Pokemon>().HasMany(e => e.Abilities).WithMany();
+        builder.Entity<Pokemon>().HasMany(e => e.learnset);
         builder.Entity<Encounter>().HasMany(e => e.Enemies);
         builder.Entity<Character>().HasMany(e => e.Inventory).WithMany();
         base.OnModelCreating(builder);
     }
+
+    public DbSet<pkmnWildLife.Data.Move> Move { get; set; } = default!;
 }
 
 public class Ability
@@ -78,7 +83,12 @@ public class Item
 
 public class Pokemon
 {
+    [Column(Order = 2)]
     public string ID { get; set; }
+   
+    [Column(Order = 0)]
+    public int Order { get; set; }
+    
 
     public string Name { get; set; }
     public string? Name_DE { get; set; }

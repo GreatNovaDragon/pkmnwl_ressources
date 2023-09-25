@@ -55,8 +55,10 @@
         <_ContentIncludedByDefault Remove="Pages\skills\Index.cshtml"/>
     </ItemGroup>
 
+
     <ItemGroup>
-        <Folder Include="Pages\pokemon\"/>
+      <Folder Include="Pages\moves\" />
+      <Folder Include="Pages\pokemon\" />
     </ItemGroup>
 
 </Project>

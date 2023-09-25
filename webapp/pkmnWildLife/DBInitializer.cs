@@ -23,6 +23,8 @@ public class DBInitializer
         await TransferAbilities(context, apiclient);
 
         await TransferMoves(context, apiclient);
+
+        await TransferMon(context, apiclient);
     }
 
 
@@ -41,13 +43,15 @@ public class DBInitializer
             var Type = await apiclient.GetResourceAsync(TypeR);
             context.Types.Add(new Data.Type
             {
-                ID = Type.Id.ToString(),
+                ID = Type.Name,
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
                 Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
             });
-        }
+            
 
+        }
         context.SaveChangesAsync();
+
     }
 
     private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
@@ -65,13 +69,18 @@ public class DBInitializer
             var Type = await apiclient.GetResourceAsync(TypeR);
             context.MoveClass.Add(new MoveClass
             {
-                ID = Type.Id.ToString(),
+                ID = Type.Name,
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
                 Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
             });
-        }
+            
+            
 
+        }
+        
         context.SaveChangesAsync();
+
+
     }
 
     private static async Task TransferItems(ApplicationDbContext context, PokeApiClient apiclient)
@@ -84,13 +93,12 @@ public class DBInitializer
 
 
         var items = await apiclient.GetNamedResourcePageAsync<Item>(9999, 0);
-        Console.Write(items.Results.Count);
         foreach (var i in items.Results)
         {
             var Item = await apiclient.GetResourceAsync(i);
 
 
-            var ID = Item.Id.ToString();
+            var ID = $"{Item.Name}_{Item.Id}";
             var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
                 : Item.Name;
@@ -100,7 +108,6 @@ public class DBInitializer
                 : Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
                     : "No Data";
-            Console.WriteLine($"{ID} {Name} {Name_DE} {Effect}");
             context.Items.Add(new Data.Item
             {
                 ID = ID,
@@ -108,8 +115,9 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-        }
+            
 
+        }
         context.SaveChangesAsync();
     }
 
@@ -128,7 +136,7 @@ public class DBInitializer
             var Item = await apiclient.GetResourceAsync(i);
 
 
-            var ID = Item.Id.ToString();
+            var ID = Item.Name;
             var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
                 : Item.Name;
@@ -148,9 +156,11 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-        }
+            
 
+        }
         context.SaveChangesAsync();
+
     }
 
     private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
@@ -167,7 +177,7 @@ public class DBInitializer
         {
             var m = await apiclient.GetResourceAsync(i);
 
-            var ID = m.Id.ToString();
+            var ID = m.Name;
             var Name = m.Names.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? m.Names.FirstOrDefault(n => n.Language.Name == "en").Name
                 : m.Name;
@@ -185,10 +195,10 @@ public class DBInitializer
 
             var DamageDice = StrengthToDice(m.Power, 0.75);
             var MType = context.Types.FirstOrDefault(e =>
-                e.ID == apiclient.GetResourceAsync(m.Type).Result.Id.ToString());
+                e.ID == m.Type.Name);
             var DamageClass =
                 context.MoveClass.FirstOrDefault(e =>
-                    e.ID == apiclient.GetResourceAsync(m.DamageClass).Result.Id.ToString());
+                    e.ID == m.DamageClass.Name);
             context.Moves.Add(new Data.Move
             {
                 ID = ID,
@@ -200,9 +210,11 @@ public class DBInitializer
                 DamageDice = DamageDice,
                 MoveClass = DamageClass
             });
-        }
+            
 
+        }
         context.SaveChangesAsync();
+
     }
 
     private static async Task TransferMon(ApplicationDbContext context, PokeApiClient apiclient)
@@ -220,22 +232,30 @@ public class DBInitializer
         {
             var poke = await apiclient.GetResourceAsync(p);
 
-            string ID = poke.Id.ToString();
-            string Name = apiclient.GetResourceAsync(poke.Species).Result.Names
+            var ID = poke.Name;
+            var Order = apiclient.GetResourceAsync(poke.Species).Result.Order;
+            var Name = apiclient.GetResourceAsync(poke.Species).Result.Names
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
-            string? Name_DE = apiclient.GetResourceAsync(poke.Species).Result.Names
-                .FirstOrDefault(n => n.Language.Name == "de").Name;
 
+           
+            var Name_DE = apiclient.GetResourceAsync(poke.Species).Result.Names
+                .FirstOrDefault(n => n.Language.Name == "de")?.Name;
+            if (!Name.ToLower().Equals(ID))
+            {
+                var temp = Name;
+                Name = $"{ID.Replace($"{temp.ToLower()}-", "")}-{Name}";
+                if(Name_DE != null) Name_DE = $"{ID.Replace($"{temp.ToLower()}-", "").ToUpper()}-{Name_DE}";
+            }
 
-            List<Learnsets> learnset = new List<Learnsets>();
+            var learnset = new List<Learnsets>();
 
             foreach (var m in poke.Moves)
             {
-                Learnsets l = new Learnsets
+                var l = new Learnsets
                 {
                     ID = Guid.NewGuid().ToString(),
                     move = context.Moves.FirstOrDefault(w =>
-                        w.ID == apiclient.GetResourceAsync(m.Move).Result.Id.ToString()),
+                        w.ID == m.Move.Name),
                     how = m.VersionGroupDetails.Last().MoveLearnMethod.Name,
                     level = m.VersionGroupDetails.Last().LevelLearnedAt
                 };
@@ -243,36 +263,37 @@ public class DBInitializer
                 learnset.Add(l);
             }
 
-            List<Data.Ability> Abilities = new List<Data.Ability>();
+            var Abilities = new List<Data.Ability>();
 
             foreach (var a in poke.Abilities)
             {
-                Data.Ability ab = context.Abilities.FirstOrDefault(w =>
-                    w.ID == apiclient.GetResourceAsync(a.Ability).Result.Id.ToString()))
+                var ab = context.Abilities.FirstOrDefault(w =>
+                    w.ID == a.Ability.Name);
 
                 Abilities.Add(ab);
             }
 
 
-            Data.Type Type1 = context.Types.FirstOrDefault(w =>
-                w.ID == apiclient.GetResourceAsync(poke.Types[0].Type).Result.Id.ToString());
-            Data.Type Type2 = poke.Types.Count == 2
+            var Type1 = context.Types.FirstOrDefault(w =>
+                w.ID == poke.Types[0].Type.Name);
+            var Type2 = poke.Types.Count == 2
                 ? context.Types.FirstOrDefault(w =>
-                    w.ID == apiclient.GetResourceAsync(poke.Types[0].Type).Result.Id.ToString())
+                    w.ID == poke.Types[1].Type.Name)
                 : null;
 
-            int HEALTH = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "hp").BaseStat, 2);
-            int ATK = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "attack").BaseStat);
-            int DEF = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "defense").BaseStat);
-            int SP_ATK = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "special-attack").BaseStat);
+            var HEALTH = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "hp").BaseStat, 2);
+            var ATK = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "attack").BaseStat);
+            var DEF = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "defense").BaseStat);
+            var SP_ATK = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "special-attack").BaseStat);
             ;
-            int SP_DEF = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "special-defense").BaseStat);
-            int SPEED = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "speed").BaseStat);
+            var SP_DEF = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "special-defense").BaseStat);
+            var SPEED = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "speed").BaseStat);
             ;
 
             context.Pokedex.Add(new Data.Pokemon
             {
                 ID = ID,
+                Order = Order,
                 Name = Name,
                 Name_DE = Name_DE,
                 learnset = learnset,
@@ -286,30 +307,32 @@ public class DBInitializer
                 SP_ATK = SP_ATK,
                 SPEED = SPEED
             });
-        }
+            
 
+        }
         context.SaveChangesAsync();
+
     }
 
 
     public static int StatToInt(int stat, double? nerf = null)
     {
-        int calc = stat / 10;
+        var calc = stat;
         if (nerf.HasValue)
-            calc = Convert.ToInt32(Math.Floor(nerf.Value * calc));
+            calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
 
-        if (calc > 240) return 6;
-        if (calc > 210) return 5;
-        if (calc > 180) return 4;
-        if (calc > 150) return 3;
-        if (calc > 120) return 2;
-        if (calc > 90) return 1;
-        if (calc > 75) return 0;
-        if (calc > 60) return -1;
-        if (calc > 45) return -2;
-        if (calc > 30) return -3;
-        if (calc > 15) return -4;
-        if (calc >= 0) return -5;
+        if (calc > 240) return 13;
+        if (calc > 210) return 12;
+        if (calc > 180) return 11;
+        if (calc > 150) return 10;
+        if (calc > 120) return 9;
+        if (calc > 90) return 8;
+        if (calc > 75) return 7;
+        if (calc > 60) return 6;
+        if (calc > 45) return 5;
+        if (calc > 30) return 4;
+        if (calc > 15) return 3;
+        return 2;
     }
 
 
@@ -317,9 +340,9 @@ public class DBInitializer
     {
         if (!strength.HasValue) return null;
 
-        int calc = strength.Value / 10;
+        var calc = strength.Value / 10;
         if (nerf.HasValue)
-            calc = Convert.ToInt32(Math.Floor(nerf.Value * calc));
+            calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
 
         switch (calc)
         {
