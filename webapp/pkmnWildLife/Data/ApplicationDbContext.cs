@@ -27,6 +27,7 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Character>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Pokemon>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Encounter>().HasMany(e => e.Enemies);
+        builder.Entity<Character>().HasMany(e => e.Inventory).WithMany();
         base.OnModelCreating(builder);
     }
 }
@@ -100,8 +101,8 @@ public class Learnsets
     public string ID { get; set; }
     public Move? move { get; set; }
     public string how { get; set; }
-    
-    public int level { get; set;}
+
+    public int level { get; set; }
 }
 
 public class Character
