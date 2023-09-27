@@ -1,7 +1,6 @@
 @page
-@using System.Runtime.Serialization
 @using Microsoft.IdentityModel.Tokens
-@model pkmnWildLife.Pages.pokemon.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -47,53 +46,58 @@
     </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Pokemon.OrderBy(c => c.Order)) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order)
-        </td>
-        <td>
-            <a asp-page="./Details" asp-route-id="@item.ID"> @Html.DisplayFor(modelItem => item.Name) 
-                @if (!item.Name_DE.IsNullOrEmpty())
+    @foreach (var item in Model.Pokemon.OrderBy(c => c.Order))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">
+                    @Html.DisplayFor(modelItem => item.Name)
+                    @if (!item.Name_DE.IsNullOrEmpty())
+                    {
+                        @Html.Raw($" / {item.Name_DE}")
+                    }
+                    @if (!item.Form.IsNullOrEmpty())
+                    {
+                        @Html.Raw($" ({item.Form})")
+                    }
+                </a>
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Type1.Name_DE)
+                @if (item.Type2 != null)
                 {
-                 @Html.Raw($" / {item.Name_DE}")   
+                    @Html.Raw("/")
                 }
-                @if (!item.Form.IsNullOrEmpty())
-                {
-                   
-                    @Html.Raw($" ({item.Form})") 
-                }
-            </a>
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.Type1.Name_DE) @if(item.Type2 != null){@Html.Raw("/")}
-            @Html.DisplayFor(modelItem => item.Type2.Name_DE) 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HEALTH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ATK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SP_ATK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SP_DEF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SPEED)
-        </td>
-        <td>
-            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-        </td>
-    </tr>
-}
+                @Html.DisplayFor(modelItem => item.Type2.Name_DE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HEALTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ATK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SP_ATK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SP_DEF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPEED)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+    }
     </tbody>
 </table>
 
@@ -106,4 +110,3 @@
     });
     </script>
 }
-

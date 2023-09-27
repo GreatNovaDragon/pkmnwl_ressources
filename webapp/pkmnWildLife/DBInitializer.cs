@@ -48,11 +48,9 @@ public class DBInitializer
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
                 Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
             });
-            
-
         }
-        context.SaveChangesAsync();
 
+        context.SaveChangesAsync();
     }
 
     private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
@@ -74,14 +72,9 @@ public class DBInitializer
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
                 Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
             });
-            
-            
-
         }
-        
+
         context.SaveChangesAsync();
-
-
     }
 
     private static async Task TransferItems(ApplicationDbContext context, PokeApiClient apiclient)
@@ -116,9 +109,8 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-            
-
         }
+
         context.SaveChangesAsync();
     }
 
@@ -157,11 +149,9 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 Effect = Effect
             });
-            
-
         }
-        context.SaveChangesAsync();
 
+        context.SaveChangesAsync();
     }
 
     private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
@@ -172,8 +162,9 @@ public class DBInitializer
             return;
         }
 
+        var types = context.Types.ToList();
         var moves = await apiclient.GetNamedResourcePageAsync<Move>(999, 0);
-
+        var dclass = context.MoveClass.ToList();
         foreach (var i in moves.Results)
         {
             var m = await apiclient.GetResourceAsync(i);
@@ -195,10 +186,10 @@ public class DBInitializer
             var Target = m.Target.Name;
 
             var DamageDice = StrengthToDice(m.Power, 0.75);
-            var MType = context.Types.FirstOrDefault(e =>
+            var MType = types.FirstOrDefault(e =>
                 e.ID == m.Type.Name);
             var DamageClass =
-                context.MoveClass.FirstOrDefault(e =>
+                dclass.FirstOrDefault(e =>
                     e.ID == m.DamageClass.Name);
             context.Moves.Add(new Data.Move
             {
@@ -211,11 +202,9 @@ public class DBInitializer
                 DamageDice = DamageDice,
                 MoveClass = DamageClass
             });
-            
-
         }
-        context.SaveChangesAsync();
 
+        context.SaveChangesAsync();
     }
 
     private static async Task TransferMon(ApplicationDbContext context, PokeApiClient apiclient)
@@ -226,62 +215,45 @@ public class DBInitializer
             return;
         }
 
-
+        var abilities = context.Abilities.ToList();
+        var types = context.Types.ToList();
         var pkmn = await apiclient.GetNamedResourcePageAsync<Pokemon>(1500, 0);
 
-        
-        
-        
         foreach (var p in pkmn.Results)
         {
             var poke = await apiclient.GetResourceAsync(p);
+            var species = apiclient.GetResourceAsync(poke.Species).Result;
+
 
             var ID = poke.Name;
-            var Order = apiclient.GetResourceAsync(poke.Species).Result.Order;
-            var Name = apiclient.GetResourceAsync(poke.Species).Result.Names
+            var Order = species.Order;
+            var Name = species.Names
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
 
-           
+            var image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+
             var Name_DE = apiclient.GetResourceAsync(poke.Species).Result.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
 
             var form = "";
             if (!Name.ToLower().Equals(ID.Replace("-", " ")))
-            {
-                form = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(ID.Replace($"{Name.ToLower()}-", "").Replace("-", " "));
+                form = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(ID.Replace($"{Name.ToLower()}-", "")
+                    .Replace("-", " "));
 
-               
-            }
+            if (form == "Gmax" || form == "Totem" || form == "Battle Bond" ||
+                form.Contains("Power Construct")) continue;
 
-            if (form == "Gmax" || form == "Totem" || form == "Battle Bond" || form.Contains("Power Construct"))
-            {
-                continue;
-            }
+            if ((Name == "Pikachu") & (!form.IsNullOrEmpty() || form == "Starter")) continue;
 
-            if (Name == "Pikachu" & (!form.IsNullOrEmpty() || form == "Starter"))
-            {
-                continue;
-            }
+            if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") &
+                !form.IsNullOrEmpty()) continue;
 
-            if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") & !form.IsNullOrEmpty())
-            {
-                continue;
-            }
-            
-            
-            if (Name == "Minior" & (form.Contains("Blue")))
-            {
-                form = form.Replace("Blue","");
-            }
-            else if(Name == "Minior" & (!form.Contains("Blue")))
-            {
-                continue;
-            }
 
-            if (Name_DE == Name)
-            {
-                Name_DE = null;
-            }
+            if ((Name == "Minior") & form.Contains("Blue"))
+                form = form.Replace("Blue", "");
+            else if ((Name == "Minior") & !form.Contains("Blue")) continue;
+
+            if (Name_DE == Name) Name_DE = null;
 
             var learnset = new List<Learnsets>();
 
@@ -290,8 +262,7 @@ public class DBInitializer
                 var l = new Learnsets
                 {
                     ID = Guid.NewGuid().ToString(),
-                    move = context.Moves.FirstOrDefault(w =>
-                        w.ID == m.Move.Name),
+                    MoveId = m.Move.Name,
                     how = m.VersionGroupDetails.Last().MoveLearnMethod.Name,
                     level = m.VersionGroupDetails.Last().LevelLearnedAt
                 };
@@ -303,17 +274,17 @@ public class DBInitializer
 
             foreach (var a in poke.Abilities)
             {
-                var ab = context.Abilities.FirstOrDefault(w =>
+                var ab = abilities.FirstOrDefault(w =>
                     w.ID == a.Ability.Name);
 
                 Abilities.Add(ab);
             }
 
 
-            var Type1 = context.Types.FirstOrDefault(w =>
+            var Type1 = types.FirstOrDefault(w =>
                 w.ID == poke.Types[0].Type.Name);
             var Type2 = poke.Types.Count == 2
-                ? context.Types.FirstOrDefault(w =>
+                ? types.FirstOrDefault(w =>
                     w.ID == poke.Types[1].Type.Name)
                 : null;
 
@@ -332,6 +303,7 @@ public class DBInitializer
                 Order = Order,
                 Name = Name,
                 Name_DE = Name_DE,
+                ImageLink = image,
                 Form = form,
                 learnset = learnset,
                 Abilities = Abilities,
@@ -344,11 +316,9 @@ public class DBInitializer
                 SP_ATK = SP_ATK,
                 SPEED = SPEED
             });
-            
-
         }
-        context.SaveChangesAsync();
 
+        context.SaveChangesAsync();
     }
 
 

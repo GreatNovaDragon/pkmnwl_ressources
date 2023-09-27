@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using pkmnWildLife.Data;
 
 namespace pkmnWildLife.Data;
 
@@ -24,6 +23,8 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<AttackMod> AttackModifiers { get; set; }
     public DbSet<Encounter> Encounters { get; set; }
 
+    public DbSet<Move> Move { get; set; } = default!;
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Character>().HasMany(e => e.Abilities).WithMany();
@@ -33,8 +34,6 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Character>().HasMany(e => e.Inventory).WithMany();
         base.OnModelCreating(builder);
     }
-
-    public DbSet<pkmnWildLife.Data.Move> Move { get; set; } = default!;
 }
 
 public class Ability
@@ -83,19 +82,19 @@ public class Item
 
 public class Pokemon
 {
-    [Column(Order = 2)]
-    public string ID { get; set; }
-   
-    [Column(Order = 0)]
-    public int Order { get; set; }
-    
+    [Column(Order = 2)] public string ID { get; set; }
+
+    [Column(Order = 0)] public int Order { get; set; }
+
+    public string? ImageLink { get; set; }
 
     public string Name { get; set; }
     public string? Name_DE { get; set; }
-    
+
     public string? Form { get; set; }
 
     public List<Learnsets> learnset { get; set; }
+
     public List<Ability> Abilities { get; set; }
     public Type Type1 { get; set; }
     public Type? Type2 { get; set; }
@@ -111,6 +110,8 @@ public class Pokemon
 public class Learnsets
 {
     public string ID { get; set; }
+
+    public string? MoveId { get; set; }
     public Move? move { get; set; }
     public string how { get; set; }
 

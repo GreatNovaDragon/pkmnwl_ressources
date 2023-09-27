@@ -1,17 +1,37 @@
 @page
-@using Microsoft.AspNetCore.Mvc.ModelBinding
+@using Microsoft.IdentityModel.Tokens
 @using Westwind.AspNetCore.Markdown
-@model pkmnWildLife.Pages.pokemon.DetailsModel
+@model DetailsModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>
+    @Html.DisplayFor(modelItem => modelItem.Pokemon.Name) / @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
+    @if (!Model.Pokemon.Form.IsNullOrEmpty())
+    {
+        @Html.Raw($"({Model.Pokemon.Form})")
+    }
+</h1>
 
-<div style="display: flex">
+<div style="display: flex; justify-content: space-around">
     <div>
+        <h3>Types</h3>
+        @Html.DisplayFor(modelItem => modelItem.Pokemon.Type1.Name) /
+        @Html.DisplayFor(modelItem => modelItem.Pokemon.Type2!.Name)
 
+
+        <h2>Abilities</h2>
+        
+            @foreach (var a in Model.Pokemon.Abilities)
+            {
+                <h3>@Html.Raw($"{a.Name}/{a.Name_DE}")</h3>
+                @Html.Raw(Markdown.Parse(a.Effect))
+            }
+    </div>
+    <div>
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)"/>
     </div>
     <div>
         <canvas id="myChart" style=" filter: invert(1) hue-rotate(180deg);"></canvas>
@@ -36,13 +56,14 @@
                scales: {
                  r: {
                    min: 0,
-                   max: 13,
+                   max: 15,
                  }
                }
              }
            });
          </script>
     </div>
+
 
 </div>
 
@@ -56,94 +77,26 @@
 </div>
 
 
-<div id="LevelUp" class="learnmethod" style="; display: flex; flex-wrap: wrap ; flex:  1 1 0px" >
+<div id="LevelUp" class="learnmethod" style="; display: flex; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
     @foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
     {
-        <div width="33%">
-            <table class="move-table">
-                <thead>
-                <tr>
-                    <th colspan="3">
-                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="2">Learned via @Html.Raw(move.how)</td>
-                    <td>Learned at Level @Html.Raw(move.level)</td>
-                </tr>
-                <tr>
-                    <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
-                    <td>@Html.Raw($"Targets {move.move.Target}")</td>
-                    <td>@Html.Raw(move.move.DamageDice)</td>
-                </tr>
-                <tr>
-                    <td colspan="3">@Html.Raw(Markdown.Parse(move.move.Effect))</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        @Html.Raw(Helpers.MoveSetRenderer(move))
+        ;
     }
 </div>
-<div id="TM" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px">
+<div id="TM" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px ; justify-content: space-around">
     @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
     {
-        <div max-width="33%">
-            <table class="move-table">
-                <thead>
-                <tr>
-                    <th colspan="3">
-                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="3">Learned via @Html.Raw(move.how)</td>
-                </tr>
-                <tr>
-                    <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
-                    <td>@Html.Raw($"Targets {move.move.Target}")</td>
-                    <td>@Html.Raw(move.move.DamageDice)</td>
-                </tr>
-                <tr>
-                    <td colspan="3">@Html.Raw(Markdown.Parse(move.move.Effect))</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        @Html.Raw(Helpers.MoveSetRenderer(move))
+        ;
     }
 </div>
-<div id="TutorEgg" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px">
+<div id="TutorEgg" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
-    @foreach (var move in Model.Learnsets.Where(e => !new List<string>() { "machine", "level-up" }.Contains(e.how)).OrderBy(m => m.how))
+    @foreach (var move in Model.Learnsets.Where(e => !new List<string> { "machine", "level-up" }.Contains(e.how)).OrderBy(m => m.how))
     {
-        
-    <div width="33%">
-        <table class="move-table">
-            <thead>
-            <tr>
-                <th colspan="3">
-                    <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="3">Learned via @Html.Raw(move.how)</td>
-            </tr>
-            <tr>
-                <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
-                <td>@Html.Raw($"Targets {move.move.Target}")</td>
-                <td>@Html.Raw(move.move.DamageDice)</td>
-            </tr>
-            <tr>
-                <td colspan="3">@Html.Raw( Markdown.Parse(move.move.Effect))</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        @Html.Raw(Helpers.MoveSetRenderer(move))
+        ;
     }
 </div>
 

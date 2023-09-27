@@ -1,5 +1,5 @@
 @page
-@model pkmnWildLife.Pages.moves.IndexModel
+@model IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,51 +10,62 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table id="movedex" class="display">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Name_DE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].DamageDice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Target)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Move[0].Effect)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            Name
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].DamageDice)
+        </th>
+        <th>Type</th>
+        <th>Move Class</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].Target)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Move[0].Effect)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Move) {
+    @foreach (var item in Model.Move)
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name_DE)
+                <a asp-page="./Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Name)/ @Html.DisplayFor(modelItem => item.Name_DE)</a>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.DamageDice)
             </td>
+            <td> @Html.Raw($"{item.type.Name}/{item.type.Name_DE}")</td>
+            <td>@Html.Raw($"{item.MoveClass.Name}/{item.MoveClass.Name_DE}")</td>
             <td>
                 @Html.DisplayFor(modelItem => item.Target)
             </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Effect)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $('#movedex').DataTable({
+         "order": []
+        });
+    });
+    </script>
+}

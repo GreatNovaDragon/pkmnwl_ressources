@@ -17,7 +17,7 @@ var configuration = builder.Configuration;
 builder.Services.AddAuthentication().AddLichess(options =>
 {
     options.ClientId = configuration["Auth:Lichess:ClientID"];
-    options.ClientSecret=configuration["Auth:Lichess:ClientSecret"];
+    options.ClientSecret = configuration["Auth:Lichess:ClientSecret"];
 }).AddDiscord(
     options =>
     {

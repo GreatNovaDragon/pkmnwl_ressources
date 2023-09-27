@@ -8,39 +8,39 @@
 <h1>Edit</h1>
 
 <h4>Move</h4>
-<hr />
+<hr/>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Move.ID" />
+            <input type="hidden" asp-for="Move.ID"/>
             <div class="form-group">
                 <label asp-for="Move.Name_DE" class="control-label"></label>
-                <input asp-for="Move.Name_DE" class="form-control" />
+                <input asp-for="Move.Name_DE" class="form-control"/>
                 <span asp-validation-for="Move.Name_DE" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Move.Name" class="control-label"></label>
-                <input asp-for="Move.Name" class="form-control" />
+                <input asp-for="Move.Name" class="form-control"/>
                 <span asp-validation-for="Move.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Move.DamageDice" class="control-label"></label>
-                <input asp-for="Move.DamageDice" class="form-control" />
+                <input asp-for="Move.DamageDice" class="form-control"/>
                 <span asp-validation-for="Move.DamageDice" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Move.Target" class="control-label"></label>
-                <input asp-for="Move.Target" class="form-control" />
+                <input asp-for="Move.Target" class="form-control"/>
                 <span asp-validation-for="Move.Target" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Move.Effect" class="control-label"></label>
-                <input asp-for="Move.Effect" class="form-control" />
+                <input asp-for="Move.Effect" class="form-control"/>
                 <span asp-validation-for="Move.Effect" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary"/>
             </div>
         </form>
     </div>
@@ -49,4 +49,3 @@
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
-
