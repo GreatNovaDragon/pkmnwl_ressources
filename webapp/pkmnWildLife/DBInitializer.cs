@@ -1,4 +1,5 @@
-﻿using pkmnWildLife.Data;
+﻿using Microsoft.IdentityModel.Tokens;
+using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
 using Item = PokeApiNet.Item;
@@ -228,6 +229,9 @@ public class DBInitializer
 
         var pkmn = await apiclient.GetNamedResourcePageAsync<Pokemon>(1500, 0);
 
+        
+        
+        
         foreach (var p in pkmn.Results)
         {
             var poke = await apiclient.GetResourceAsync(p);
@@ -240,11 +244,43 @@ public class DBInitializer
            
             var Name_DE = apiclient.GetResourceAsync(poke.Species).Result.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
-            if (!Name.ToLower().Equals(ID))
+
+            var form = "";
+            if (!Name.ToLower().Equals(ID.Replace("-", " ")))
             {
-                var temp = Name;
-                Name = $"{ID.Replace($"{temp.ToLower()}-", "")}-{Name}";
-                if(Name_DE != null) Name_DE = $"{ID.Replace($"{temp.ToLower()}-", "").ToUpper()}-{Name_DE}";
+                form = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(ID.Replace($"{Name.ToLower()}-", "").Replace("-", " "));
+
+               
+            }
+
+            if (form == "Gmax" || form == "Totem" || form == "Battle Bond" || form.Contains("Power Construct"))
+            {
+                continue;
+            }
+
+            if (Name == "Pikachu" & (!form.IsNullOrEmpty() || form == "Starter"))
+            {
+                continue;
+            }
+
+            if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") & !form.IsNullOrEmpty())
+            {
+                continue;
+            }
+            
+            
+            if (Name == "Minior" & (form.Contains("Blue")))
+            {
+                form = form.Replace("Blue","");
+            }
+            else if(Name == "Minior" & (!form.Contains("Blue")))
+            {
+                continue;
+            }
+
+            if (Name_DE == Name)
+            {
+                Name_DE = null;
             }
 
             var learnset = new List<Learnsets>();
@@ -296,6 +332,7 @@ public class DBInitializer
                 Order = Order,
                 Name = Name,
                 Name_DE = Name_DE,
+                Form = form,
                 learnset = learnset,
                 Abilities = Abilities,
                 Type1 = Type1,

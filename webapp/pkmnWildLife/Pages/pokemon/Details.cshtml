@@ -1,4 +1,5 @@
 @page
+@using Microsoft.AspNetCore.Mvc.ModelBinding
 @model pkmnWildLife.Pages.pokemon.DetailsModel
 
 @{
@@ -57,27 +58,35 @@
 </div>
 
 
+
 <h2>Learnable Moves</h2>
-<table class="table">
-    <thead>
-    <tr><th>MoveName</th>
-        <th> When</th>
-        <th> Available at what level</th></tr>
-    </thead>
-<tbody>
+
 @foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
 {
-    
-    <tr>
-        <td><a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw(move.move.Name) </a></td>
-        <td>@Html.Raw(move.how)</td>
-        <td>@Html.Raw(move.level)</td>
-    </tr>
-   
-   
+    <table class="move-table">
+        <thead>
+        <tr><th colspan="3"><a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a></th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="2">Learned via @Html.Raw(move.how)</td>
+            <td>Learned at Level @Html.Raw(move.level)</td>
+        </tr>
+        <tr>
+            <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
+            <td>@Html.Raw($"Targets {move.move.Target}")</td>
+            <td>@Html.Raw(move.move.DamageDice)</td>
+        </tr>
+        <tr>
+            <td colspan="3">@Html.Raw(move.move.Effect)</td>
+        </tr>
+        </tbody>
+        </table>
 }
-</tbody>
-</table>
+
     <a asp-page="./Edit" asp-route-id="@Model.Pokemon?.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+
+
 

@@ -92,6 +92,8 @@ public class Pokemon
 
     public string Name { get; set; }
     public string? Name_DE { get; set; }
+    
+    public string? Form { get; set; }
 
     public List<Learnsets> learnset { get; set; }
     public List<Ability> Abilities { get; set; }

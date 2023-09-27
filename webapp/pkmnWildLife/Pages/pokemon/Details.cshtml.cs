@@ -31,7 +31,7 @@ namespace pkmnWildLife.Pages.pokemon
                 return NotFound();
             }
 
-            var pokemon = await _context.Pokedex.Include(p => p.learnset).ThenInclude(m => m.move).Include(p => p.Abilities).FirstOrDefaultAsync(m => m.ID == id);
+            var pokemon = await _context.Pokedex.Include(p => p.learnset).ThenInclude(m => m.move).ThenInclude(m => m.type).Include(p => p.Abilities).FirstOrDefaultAsync(m => m.ID == id);
             if (pokemon == null)
             {
                 return NotFound();

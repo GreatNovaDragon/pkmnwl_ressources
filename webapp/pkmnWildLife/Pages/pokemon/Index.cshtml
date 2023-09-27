@@ -1,4 +1,6 @@
 @page
+@using System.Runtime.Serialization
+@using Microsoft.IdentityModel.Tokens
 @model pkmnWildLife.Pages.pokemon.IndexModel
 
 @{
@@ -10,16 +12,16 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table id="pokedex" class="display">
     <thead>
     <tr>
-       
+        <th>
+            DexNumber
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Pokemon[0].Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].Name_DE)
-        </th>
+
         <th>
             Typen
         </th>
@@ -47,16 +49,26 @@
     <tbody>
 @foreach (var item in Model.Pokemon.OrderBy(c => c.Order)) {
     <tr>
-       
         <td>
-            <a asp-page="./Details" asp-route-id="@item.ID"> @Html.DisplayFor(modelItem => item.Name)</a> 
+            @Html.DisplayFor(modelItem => item.Order)
         </td>
         <td>
-           <a asp-page="./Details" asp-route-id="@item.ID">  @Html.DisplayFor(modelItem => item.Name_DE)</a> 
+            <a asp-page="./Details" asp-route-id="@item.ID"> @Html.DisplayFor(modelItem => item.Name) 
+                @if (!item.Name_DE.IsNullOrEmpty())
+                {
+                 @Html.Raw($" / {item.Name_DE}")   
+                }
+                @if (!item.Form.IsNullOrEmpty())
+                {
+                   
+                    @Html.Raw($" ({item.Form})") 
+                }
+            </a>
         </td>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.Type1.Name) @if(item.Type2 != null){@Html.Raw("/")}
-            @Html.DisplayFor(modelItem => item.Type2.Name)
+            @Html.DisplayFor(modelItem => item.Type1.Name_DE) @if(item.Type2 != null){@Html.Raw("/")}
+            @Html.DisplayFor(modelItem => item.Type2.Name_DE) 
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HEALTH)
@@ -78,7 +90,6 @@
         </td>
         <td>
             <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-           Details
             <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
         </td>
     </tr>
@@ -86,4 +97,13 @@
     </tbody>
 </table>
 
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $('#pokedex').DataTable({
+         "order": []
+        });
+    });
+    </script>
+}
 
