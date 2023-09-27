@@ -21,8 +21,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Character> Characters { get; set; }
     public DbSet<Skill> Skills { get; set; }
     public DbSet<AttackMod> AttackModifiers { get; set; }
-    public DbSet<Encounter> Encounters { get; set; }
-
     public DbSet<Move> Move { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -30,7 +28,6 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Character>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Pokemon>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Pokemon>().HasMany(e => e.learnset);
-        builder.Entity<Encounter>().HasMany(e => e.Enemies);
         builder.Entity<Character>().HasMany(e => e.Inventory).WithMany();
         base.OnModelCreating(builder);
     }
@@ -123,6 +120,7 @@ public class Character
     public string ID { get; set; }
     public string Name { get; set; }
     public IdentityUser Owner { get; set; }
+    public IdentityUser DM { get; set; }
     public Pokemon species { get; set; }
     public List<Move> Moves { get; set; }
     public List<Ability> Abilities { get; set; }
@@ -169,10 +167,4 @@ public class AttackMod
     public string? Name_DE { get; set; }
 
     public string Effect { get; set; }
-}
-
-public class Encounter
-{
-    public string ID { get; set; }
-    public List<Character> Enemies { get; set; }
 }
