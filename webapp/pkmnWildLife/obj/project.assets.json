@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AspNet.Security.OAuth.Lichess/7.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/AspNet.Security.OAuth.Lichess.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/AspNet.Security.OAuth.Lichess.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -45,6 +61,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Discord.OAuth2.AspNetCore/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Discord.OAuth2.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Discord.OAuth2.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Humanizer/2.14.1": {
         "type": "package",
@@ -637,6 +669,19 @@
         "resource": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "Markdig/0.32.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Markdig.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Markdig.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4232,10 +4277,43 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Westwind.AspNetCore.Markdown/3.12.0": {
+        "type": "package",
+        "dependencies": {
+          "Markdig": "0.32.0"
+        },
+        "compile": {
+          "lib/net7.0/Westwind.AspNetCore.Markdown.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Westwind.AspNetCore.Markdown.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
   "libraries": {
+    "AspNet.Security.OAuth.Lichess/7.0.4": {
+      "sha512": "29qkDgCeE8Q2deG53PztDfEWLgz4K4gSXeBDWJp0KJqwso8qMTDyz+q4cdc4lWY+fml6WvlzNrsu5kGmp9E8bw==",
+      "type": "package",
+      "path": "aspnet.security.oauth.lichess/7.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "aspnet.security.oauth.lichess.7.0.4.nupkg.sha512",
+        "aspnet.security.oauth.lichess.nuspec",
+        "lib/net7.0/AspNet.Security.OAuth.Lichess.dll",
+        "lib/net7.0/AspNet.Security.OAuth.Lichess.xml"
+      ]
+    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -4272,6 +4350,19 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Discord.OAuth2.AspNetCore/3.0.0": {
+      "sha512": "50jh7g05HZ6sRsU0+GFOnrrNaxqKP3lRao6vVB6MYo/Nu7UrjDAcei1qDvS8sl0+prQoef0gueEg2T5nyfFurA==",
+      "type": "package",
+      "path": "discord.oauth2.aspnetcore/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "discord.oauth2.aspnetcore.3.0.0.nupkg.sha512",
+        "discord.oauth2.aspnetcore.nuspec",
+        "lib/netcoreapp3.0/Discord.OAuth2.dll",
+        "lib/netcoreapp3.0/Discord.OAuth2.xml"
       ]
     },
     "Humanizer/2.14.1": {
@@ -5018,6 +5109,27 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "Markdig/0.32.0": {
+      "sha512": "+e6YobdcPgV5AsSgGqOi9B7biDgw2Fi4ZHRamwecvDeCEh5WFTlIClmKQP+CMkYUP9jwz7NANuwN2HC79kll4Q==",
+      "type": "package",
+      "path": "markdig/0.32.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Markdig.dll",
+        "lib/net462/Markdig.xml",
+        "lib/net6.0/Markdig.dll",
+        "lib/net6.0/Markdig.xml",
+        "lib/netstandard2.0/Markdig.dll",
+        "lib/netstandard2.0/Markdig.xml",
+        "lib/netstandard2.1/Markdig.dll",
+        "lib/netstandard2.1/Markdig.xml",
+        "markdig.0.32.0.nupkg.sha512",
+        "markdig.nuspec",
+        "markdig.png",
+        "readme.md"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.11": {
@@ -12001,10 +12113,32 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Westwind.AspNetCore.Markdown/3.12.0": {
+      "sha512": "H/Tzx1TsgsvJWyUsz9+/fKAxe1HWScCENYyH7HwdvxEePUbL4rQ4YR0cwZ0ek44ql0RlBwXMQo8FMBHt2gMKzQ==",
+      "type": "package",
+      "path": "westwind.aspnetcore.markdown/3.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.MD",
+        "README.md",
+        "icon.png",
+        "lib/net6.0/Westwind.AspNetCore.Markdown.dll",
+        "lib/net6.0/Westwind.AspNetCore.Markdown.xml",
+        "lib/net7.0/Westwind.AspNetCore.Markdown.dll",
+        "lib/net7.0/Westwind.AspNetCore.Markdown.xml",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.Markdown.dll",
+        "lib/netcoreapp3.1/Westwind.AspNetCore.Markdown.xml",
+        "westwind.aspnetcore.markdown.3.12.0.nupkg.sha512",
+        "westwind.aspnetcore.markdown.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AspNet.Security.OAuth.Lichess >= 7.0.4",
+      "Discord.OAuth2.AspNetCore >= 3.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.11",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.11",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.11",
@@ -12012,7 +12146,8 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.10",
-      "PokeApiNet >= 3.0.10"
+      "PokeApiNet >= 3.0.10",
+      "Westwind.AspNetCore.Markdown >= 3.12.0"
     ]
   },
   "packageFolders": {
@@ -12052,6 +12187,14 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AspNet.Security.OAuth.Lichess": {
+            "target": "Package",
+            "version": "[7.0.4, )"
+          },
+          "Discord.OAuth2.AspNetCore": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.11, )"
@@ -12083,6 +12226,10 @@
           "PokeApiNet": {
             "target": "Package",
             "version": "[3.0.10, )"
+          },
+          "Westwind.AspNetCore.Markdown": {
+            "target": "Package",
+            "version": "[3.12.0, )"
           }
         },
         "imports": [

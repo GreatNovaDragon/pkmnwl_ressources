@@ -1,5 +1,6 @@
 @page
 @using Microsoft.AspNetCore.Mvc.ModelBinding
+@using Westwind.AspNetCore.Markdown
 @model pkmnWildLife.Pages.pokemon.DetailsModel
 
 @{
@@ -8,85 +9,154 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Pokemon</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            Name
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.Name) / @Html.DisplayFor(model => model.Pokemon.Name_DE)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.HEALTH)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.HEALTH)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.ATK)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.ATK)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.DEF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.DEF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.SP_ATK)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.SP_ATK)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.SP_DEF)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.SP_DEF)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pokemon.SPEED)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pokemon.SPEED)
-        </dd>
-    </dl>
-</div>
+<div style="display: flex">
+    <div>
 
+    </div>
+    <div>
+        <canvas id="myChart" style=" filter: invert(1) hue-rotate(180deg);"></canvas>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+           const ctx = document.getElementById('myChart');
+         
+           new Chart(ctx, {
+             type: 'radar',
+             data: {
+               labels: ['Vitality', 'ATK', 'DEF', 'SpATK', 'SpDEF', 'Speed'],
+               datasets: [{
+                 label: '',
+                 data: [@Html.Raw(Model.Pokemon.HEALTH), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
+                 borderWidth: 1
+               }]
+             },
+             options: {
+               scales: {
+                 r: {
+                   min: 0,
+                   max: 13,
+                 }
+               }
+             }
+           });
+         </script>
+    </div>
+
+</div>
 
 
 <h2>Learnable Moves</h2>
 
-@foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
-{
-    <table class="move-table">
-        <thead>
-        <tr><th colspan="3"><a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a></th>
+<div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button" onclick="openLearnmethod('LevelUp')">Level-up</button>
+    <button class="w3-bar-item w3-button" onclick="openLearnmethod('TM')">TM</button>
+    <button class="w3-bar-item w3-button" onclick="openLearnmethod('TutorEgg')">Tutor and EggMoves</button>
+</div>
+
+
+<div id="LevelUp" class="learnmethod" style="; display: flex; flex-wrap: wrap ; flex:  1 1 0px" >
+    @foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
+    {
+        <div width="33%">
+            <table class="move-table">
+                <thead>
+                <tr>
+                    <th colspan="3">
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="2">Learned via @Html.Raw(move.how)</td>
+                    <td>Learned at Level @Html.Raw(move.level)</td>
+                </tr>
+                <tr>
+                    <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
+                    <td>@Html.Raw($"Targets {move.move.Target}")</td>
+                    <td>@Html.Raw(move.move.DamageDice)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">@Html.Raw(Markdown.Parse(move.move.Effect))</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div id="TM" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px">
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
+    {
+        <div max-width="33%">
+            <table class="move-table">
+                <thead>
+                <tr>
+                    <th colspan="3">
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="3">Learned via @Html.Raw(move.how)</td>
+                </tr>
+                <tr>
+                    <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
+                    <td>@Html.Raw($"Targets {move.move.Target}")</td>
+                    <td>@Html.Raw(move.move.DamageDice)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">@Html.Raw(Markdown.Parse(move.move.Effect))</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+<div id="TutorEgg" class="learnmethod" style="display:none; flex-wrap: wrap ; flex:  1 1 0px">
+
+    @foreach (var move in Model.Learnsets.Where(e => !new List<string>() { "machine", "level-up" }.Contains(e.how)).OrderBy(m => m.how))
+    {
+        
+    <div width="33%">
+        <table class="move-table">
+            <thead>
+            <tr>
+                <th colspan="3">
+                    <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw($"{move.move.Name}/{move.move.Name_DE}") </a>
+                </th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td colspan="2">Learned via @Html.Raw(move.how)</td>
-            <td>Learned at Level @Html.Raw(move.level)</td>
-        </tr>
-        <tr>
-            <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
-            <td>@Html.Raw($"Targets {move.move.Target}")</td>
-            <td>@Html.Raw(move.move.DamageDice)</td>
-        </tr>
-        <tr>
-            <td colspan="3">@Html.Raw(move.move.Effect)</td>
-        </tr>
-        </tbody>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="3">Learned via @Html.Raw(move.how)</td>
+            </tr>
+            <tr>
+                <td>@Html.Raw($"{move.move.type.Name}/{move.move.type?.Name_DE}")</td>
+                <td>@Html.Raw($"Targets {move.move.Target}")</td>
+                <td>@Html.Raw(move.move.DamageDice)</td>
+            </tr>
+            <tr>
+                <td colspan="3">@Html.Raw( Markdown.Parse(move.move.Effect))</td>
+            </tr>
+            </tbody>
         </table>
+    </div>
+    }
+</div>
+
+<script>
+function openLearnmethod(cityName) {
+  var i;
+  var x = document.getElementsByClassName("learnmethod");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(cityName).style.display = "flex";
 }
+</script>
 
-    <a asp-page="./Edit" asp-route-id="@Model.Pokemon?.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-
-
-
+<a asp-page="./Edit" asp-route-id="@Model.Pokemon?.ID">Edit</a> |
+<a asp-page="./Index">Back to List</a>

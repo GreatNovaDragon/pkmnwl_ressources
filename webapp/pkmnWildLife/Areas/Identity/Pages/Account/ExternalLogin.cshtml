@@ -1,0 +1,19 @@
+﻿@page
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+<h2 id="external-login-title">Associate your @Model.ProviderDisplayName account.</h2>
+<hr />
+
+<p id="external-login-description" class="text-info">
+    You've successfully authenticated with <strong>@Model.ProviderDisplayName</strong>.
+    You will redirected to the homepage in 5 seconds.
+</p>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

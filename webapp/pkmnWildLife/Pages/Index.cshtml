@@ -4,7 +4,780 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<h2 id="character-creation">Character Creation</h2>
+<p>
+    To create a character in this roleplaying system, follow these
+    steps:
+</p>
+<ol type="1">
+    <li>
+        <p>
+            Choose a Pokémon from the Conversion Sheet list. Copy their
+            Health, Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
+            Talent, and size category. Optionally, roll a D4 for each stat and add
+            the result to it.
+        </p>
+    </li>
+    <li>
+        <p>
+            Calculate their starting Health Points by adding their Health
+            score to 20.
+        </p>
+    </li>
+    <li>
+        <p>
+            Select the Pokémon’s starting Ability, moves from the Conversion
+            Sheet, and record them.
+        </p>
+    </li>
+    <li>
+        <p>
+            Assign a Grade of 1 and a Grit of 2 to your character. More
+            details about Grade and Grit will be provided in the Playing the Game
+            section.
+        </p>
+    </li>
+</ol>
+<p>
+    <strong>Optional: Character Skills:</strong>
+</p>
+<p>
+    Your character has 9 points to distribute among 12 available skills.
+    Remember, you cannot allocate more than 5 points into a single skill.
+    Detailed explanations of these optional skills will be given in the
+    Playing the Game section.
+</p>
+<h3 id="character-advancement">Character Advancement</h3>
+<div style="display: flex">
+    <div>
+        <p>
+        <p>
+            As you accumulate Experience (XP), you will level up. With each new
+            level:
+        </p>
+        <ol type="1">
+            <li>
+                <p>
+                    You can learn new moves if available and may gain additional
+                    benefits, such as increasing one attribute or acquiring an extra
+                    ability.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Your maximum Hit Points increase by your Health score. This
+                    increase is not retroactive, so it will not apply if your Health score
+                    is boosted through stat increases or evolution.
+                </p>
+            </li>
+        </ol>
+        <p>If optional skills are in play:</p>
+        <ol start="3" type="1">
+            <li>
+                You gain 2 skill points at each level to enhance your skills. Keep
+                in mind that evenly distributing skill points results in only one skill
+                with 2d6 skill dice. Allocate your points wisely and collaborate with
+                your party to fill skill gaps.
+            </li>
+        </ol>
+        <p>Move Upgrades:</p>
+        <ol start="4" type="1">
+            <li>
+                Move Upgrades are enhancements to specific Moves, making them more
+                versatile or specialized. These are optional, and the Dungeon Master
+                (DM) may choose not to include them. Each move can have only one Move
+                Upgrade.
+            </li>
+        </ol>
+        <p>Additional Abilities:</p>
+        <ol start="5" type="1">
+            <li>
+                Additional Abilities do not replace existing abilities. This means a
+                Pokémon can have up to 6 abilities by level 17 if they acquire
+                additional abilities. The DM has the option to exclude these. If
+                Technique Upgrades and Additional Abilities are not part of your game,
+                treat these levels as Attribute Increase levels.
+            </li>
+        </ol>
+    </div>
+    <div style="width: 75%">
+        <table>
+            <thead>
+            <tr>
+                <th>Level</th>
+                <th>Equivalent</th>
+                <th>Benefits</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>5</td>
+                <td>Starting Ability &amp; Moves</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10</td>
+                <td>
+                    <em>None</em>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>15</td>
+                <td>Attribute Increase</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>20</td>
+                <td>Move Upgrade</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>25</td>
+                <td>Grade+, New Ability</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>30</td>
+                <td>
+                    <em>None</em>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>35</td>
+                <td>Attribute Increase</td>
+            </tr>
+            <tr class="even">
+                <td>8</td>
+                <td>40</td>
+                <td>Move Upgrade</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>45</td>
+                <td>Grade+, New Ability</td>
+            </tr>
+            <tr class="even">
+                <td>10</td>
+                <td>50</td>
+                <td>
+                    <em>None</em>
+                </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>55</td>
+                <td>Attribute Increase</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>60</td>
+                <td>Move Upgrade</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>65</td>
+                <td>Grade+, New Ability</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>70</td>
+                <td>
+                    <em>None</em>
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>75</td>
+                <td>Attribute Increase</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>80</td>
+                <td>Move Upgrade</td>
+            </tr>
+            <tr class="odd">
+                <td>17</td>
+                <td>85</td>
+                <td>Grade+, New Ability</td>
+            </tr>
+            <tr class="even">
+                <td>18</td>
+                <td>90</td>
+                <td>
+                    <em>None</em>
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>19</td>
+                <td>95</td>
+                <td>Attribute Increase</td>
+            </tr>
+            <tr class="even">
+                <td>20</td>
+                <td>100</td>
+                <td>Move Upgrade</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+<h1 id="playing-the-game">Playing the Game</h1>
+<p>
+    To play Pokémon Wild Life, you will require a variety of dice. The
+    most common dice used for resolving conflict and checks are two 6-sided
+    dice (henceforth referred to as 2D6)
+</p>
+<h2 id="combat-in-pokémon-wild-life">Combat in Pokémon Wild Life</h2>
+<p>
+    To play Pokémon Wild Life, you will require a variety of dice. The
+    most common dice used for resolving conflict and checks are two 6-sided
+    dice (henceforth referred to as 2D6).
+</p>
+<p>
+    In Pokémon Wild Life, combat is structured into Rounds and Turns. A
+    Round concludes when every participating Pokémon has taken their
+    turn.
+</p>
+<p>
+    Each Pokémon has three actions available during a single turn, but
+    only one of these actions can be repeated at the expense of the
+    others.
+</p>
+<ul>
+    <li>
+        <p>
+            <strong>Combat Actions:</strong> A Pokémon may perform only one
+            Combat Action per turn, unless instructed otherwise. To execute a combat
+            action, specify the Physical or Special move you intend to use, roll
+            2D6, and add the relevant Attack stat. A successful attack is determined
+            by surpassing or equaling the opponent’s relevant Defense score plus
+            2D6.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Utility Actions:</strong> One Utility Action is allowed
+            per turn, unless specified otherwise. To initiate a Utility action,
+            declare the Status Move you wish to use. Most Status Moves take effect
+            without the need for resolution.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Move Actions:</strong> Pokémon can take up to 3 Move
+            Actions per turn. However, any additional Move Actions beyond the first
+            one will prevent the Pokémon from performing a Combat Action or Utility
+            Action. Movement occurs in 5-foot increments (Squares), matching the
+            number specified by the Pokémon’s Speed stat.
+        </p>
+    </li>
+</ul>
+<p>
+    At the end of a round, if a Pokémon is afflicted by a negative status
+    condition, they may attempt to recover from it. This is done by rolling
+    2D6 individually for each Status effect. Keep in mind that only one
+    Status effect can be rolled to recover from at a time. This mechanic
+    adds an element of strategy and decision-making to the flow of
+    combat.
+</p>
+<h3 id="trigger-saves">Trigger &amp; Saves</h3>
+<p>
+    Certain moves come with two key components: Trigger effects and Save
+    effects.
+</p>
+<ul>
+    <li>
+        <p>
+            <strong>Trigger Effects:</strong> When a move lists a Trigger
+            effect, you roll 1d6. If your roll matches or exceeds the specified
+            target number, the effect is activated.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Save Effects:</strong> Save effects relate to detrimental
+            status conditions that can afflict your Pokémon. At the end of a round,
+            you have the opportunity to roll to recover from these negative
+            effects.
+        </p>
+        <ul>
+            <li>
+                <p>
+                    To attempt recovery, you roll 2d6. If you choose to empower your
+                    save roll, you roll 2d8 instead.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Success in rolling a number equal to or higher than the provided
+                    target number results in the removal of the negative effect.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Importantly, you are limited to rolling for the removal of just
+                    one negative status per round. This mechanic adds a strategic element to
+                    managing and recovering from status conditions during battles.
+                </p>
+            </li>
+        </ul>
+    </li>
+</ul>
+<h3 id="combat-tactics-and-environment">
+    Combat Tactics and
+    Environment
+</h3>
+<ul>
+    <li>
+        <p>
+            <strong>Threatened Area and Attacks of Opportunity:</strong> A
+            five-foot radius surrounding a Pokémon is that Pokémon’s Threatened
+            Area. If a Pokémon is within the Threatened Area of another Pokémon and
+            attempts to leave, the Foe may use an attack of opportunity.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Cover:</strong> Cover is provided by solid objects that
+            stand between you and your target. Trees, walls, and boulders are all
+            common examples of cover. A creature must be behind such an obstacle so
+            that at least half of its body is protected to claim the benefit of
+            cover. While a Pokémon has cover, it gains +1 bonus to both defense
+            scores.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Attacking an Unseen Target:</strong> When you attack an
+            unseen target, you are guessing where it is. If your guess is wrong,
+            even a successful attack roll misses. Alternatively, your Pokémon can
+            use a utility action to search for the hidden foe. This usually involves
+            a Perception check against the foe’s Guile check, with a +2 bonus if
+            your Pokémon has special moves like Foresight or Odor Sleuth. If your
+            check is higher, you can attack without penalties.
+        </p>
+    </li>
+</ul>
+<h3 id="combat-mechanics">Combat Mechanics</h3>
+<ul>
+    <li>
+        <p>
+            <strong>Critical Hits:</strong> A critical hit occurs when your
+            attack roll results in an 11 (before bonuses) for the attack or special
+            attack. When this happens, you roll the dice again for that attack and
+            add the new result to the damage total. Only the damage dice are
+            doubled; any bonus damage like Brawn, Talent, or affinity bonuses
+            remains unchanged.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Knock-out and Death:</strong> A Pokémon is considered
+            knocked out when their Health Points reach zero. A Pokémon dies when
+            their health score reaches a negative of their maximum hit point
+            score.
+        </p>
+    </li>
+</ul>
+<h3 id="other-combat-actions">Other Combat Actions</h3>
+<ul>
+    <li>
+        <p>
+            <strong>Assist:</strong> A Pokémon can use a combat action to
+            help another Pokémon in need. For instance, helping wake a sleeping
+            Pokémon by jostling them awake. Many of these tasks do not usually
+            require a roll, however, if the assistance is complex or risky, the DM
+            may decide if a check is needed. Usually, a Pokémon must be near another
+            Pokémon to assist them.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Defend:</strong> A Pokémon may choose to defend instead
+            of attack, gaining +2 to both Defense scores until the start of its next
+            turn. It loses this bonus if it cannot move, its speed is 0, or it is
+            unable to use actions or make withdraw strikes.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Grab:</strong> Using a free hand or appendage, a Pokémon
+            may attempt to grab another Pokémon no more than one size category
+            higher than itself. This involves a contested check, and the outcome may
+            lead to actions like Moving a Grabbed Pokémon or Pinning a Grabbed
+            Pokémon.
+        </p>
+    </li>
+</ul>
+<h3 id="environmental-interactions-and-special-actions">
+    Environmental
+    Interactions and Special Actions
+</h3>
+<ul>
+    <li>
+        <p>
+            <strong>Hide:</strong> To hide, a Pokémon must be in an area that
+            covers or conceals its presence, such as behind tall trees or in a dark
+            alley. The creature makes a contested check, Guile check contested by
+            the foe’s Perception check if optional skills are in use.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Interact with Environment:</strong> Interacting with
+            environment objects, such as cutting rope or pulling a convenient lever,
+            can take as little as a utility action. The DM decides how long it takes
+            to interact with an environment object in actions. If it is too complex
+            an action, the DM may rule that it would take more than a round to
+            complete.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Knock Down:</strong> A foe that is no larger than one
+            size category above your Pokémon can be knocked over. This involves a
+            contested check, and if you succeed, the target is knocked prone with
+            associated penalties and bonuses to attacks against it.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Neutral Attack:</strong> A basic, type less physical
+            attack. It uses the Attack stat for accuracy, deals 1d4 points of
+            damage, plus the user’s Brawn, and cannot have its damage boosted by
+            Technician.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Push:</strong> A Pokémon may attempt to push another away
+            if the target is no more than one size category larger than it. This
+            involves a contested check, and success results in the target being
+            pushed 5 feet away from the user.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Use an Item:</strong> A Pokémon may use an item (e.g.,
+            eating a healing berry) as a utility action.
+        </p>
+    </li>
+</ul>
+<h3 id="grit">Grit</h3>
+<p>
+    Grit is a valuable resource you can use to gain an advantage in
+    various situations. When you use Grit as a Utility Action, you can
+    choose from the following Combat actions:
+</p>
+<ul>
+    <li>
+        <p>
+            <strong>Recover Hit points:</strong> You can heal yourself by an
+            amount equal to your Grade multiplied by your Health Score.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Brace for Impact:</strong> This action lets you defend
+            against enemy attacks, reducing the damage you take by an amount equal
+            to 5 times your Grade, applied after damage calculations.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Empower an Attack Roll or Check:</strong> This ability
+            can be used both in and out of combat. When you empower your Attack
+            Roll, instead of rolling 2D6, you roll 2 eight-sided dice for greater
+            accuracy. When empowering a check using optional Skills, you roll an
+            additional die appropriate for your skill level.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Empower Damage:</strong> When dealing damage, roll an
+            additional d6 for each Grade you possess.
+        </p>
+    </li>
+</ul>
+<p>
+    Grit naturally recovers after you have had 8 hours of rest, making it
+    a resource you can strategically use to turn the tide in your favor
+    during battles and challenges.
+</p>
+<h3 id="grade-stab-advantage-resistance-brawn-and-talent">
+    Grade, STAB,
+    Advantage, Resistance, Brawn, and Talent
+</h3>
+<p>Grade is related to STAB, Type Advantage, and Type Resistance.</p>
+<ul>
+    <li>
+        <p>
+            <strong>STAB:</strong> If your Pokémon shares the same type as
+            the attack they are using, they deal extra damage equal to their Grade
+            multiplied by
+        </p>
+        <ol start="2" type="1">
+            <li></li>
+        </ol>
+    </li>
+    <li>
+        <p>
+            <strong>Advantage:</strong> If the Pokémon you are attacking is
+            weak to the type of attack you are using, you deal extra damage equal to
+            your Pokémon’s grade multiplied by 2, or 4 if it takes 4 times
+            damage.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Resistance:</strong> If the Pokémon you are being
+            attacked by is using a move whose type you resist, reduce the damage
+            done to you by your Grade multiplied by 2, or 4 if you take quarter
+            damage.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Brawn and Talent:</strong> These are added to Physical
+            and Special attack damage rolls respectively as bonus damage. If
+            Optional Skills are in play, Brawn and Talent cannot be increased with
+            stat increases, and are instead increased by upgrading a Vigor or
+            Knowledge skill, respectively.
+        </p>
+    </li>
+</ul>
+<h3 id="status-conditions">Status Conditions</h3>
+<ul>
+    <li>
+        <p>
+            <strong>Burn and Poison:</strong> The target suffers damage equal
+            to the affinity bonus of the user at the beginning of each Round until
+            they recover from it.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Binding:</strong> The target takes damage equal to their
+            own affinity bonus at the start of each Round and is unable to move
+            until they recover, or after 4 turns.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Confusion:</strong> The target can only successfully
+            attack on Trigger 3; otherwise, they may damage a random ally or
+            themselves.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Curse:</strong> The target suffers 8 points of damage at
+            the start of every Round.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Dazed:</strong> Dazed lasts for one round after it is
+            inflicted. The user cannot use Combat actions and has their speed
+            halved.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Paralysis:</strong> Paralysis is a severe condition
+            similar to Dazed, but more debilitating. It lasts for multiple rounds,
+            rendering the user unable to perform Combat actions, and their speed is
+            reduced.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Embargo:</strong> The user cannot activate the effects of
+            their held item.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Encore:</strong> The user may only use their last used
+            move or their Neutral Attack.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Heal Block:</strong> The user cannot use any Healing
+            Moves or utilize Grit for healing. Go For Broke applies this restriction
+            on players, with the exception that it cannot be saved from.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Infatuation:</strong> The target may only use an attack
+            on Trigger 3. The user can still use Utility actions (unless it is an
+            attack with the Swift upgrade) or Movement actions.
+        </p>
+    </li>
+</ul>
+<h2 id="inventory">Inventory</h2>
+<p>
+    A character can carry 20 items, plus their Attack skill. An item slot
+    can store any number of items depending on the weight category.<br/>
+    Items are divided into 5 weight categories. One hundred tiny items of
+    the same type can be stored in a single item slot. Ten small items of
+    the same type can be stored in a single slot. One regular item can be
+    stored in one slot. One large item requires two item slots to store. One
+    heavy item requires four item slots to store.
+</p>
+<h2 id="optional-skills">Optional Skills</h2>
+<p>
+    Optional skills provide a way to customize your character’s
+    abilities, particularly outside of combat scenarios, like social
+    interactions or physical challenges. Each Pokémon can allocate up to 8
+    points in any one of these skills, but they cannot start with more than
+    5 points in a single skill.
+</p>
+<p>Skills are categorized into four different proficiency levels:</p>
+<ul>
+    <li>
+        <p>
+            <strong>Untrained:</strong> Characters with 0 points in the skill
+            cannot use it for skill checks.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Novice:</strong> Characters with less than 5 points in
+            the skill roll two 4-sided dice for checks.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Proficient:</strong> Characters with between 5 and 7
+            points in the skill roll two 6-sided dice for checks.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Expert:</strong> Characters with 8 points in the skill
+            roll two 8-sided dice for checks.
+        </p>
+    </li>
+</ul>
+<h3 id="interaction-skills">Interaction Skills</h3>
+<p>
+    Interaction skills are closely tied to Attack and Speed
+    attributes.
+</p>
+<ul>
+    <li>
+        <p>
+            <strong>Guile:</strong> Guile revolves around stealth and
+            deception, such as sneaking past a guard unnoticed or pickpocketing
+            without detection. Guile checks are contested by Perception or Intuition
+            checks.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Perception:</strong> Use perception actively to detect
+            anything unusual with your senses. When trying to spot a hidden foe, it
+            is contested by the opponent’s Guile; otherwise, the DM sets the
+            difficulty.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Persuasion:</strong> Persuasion involves convincing
+            others to believe or act differently, including Flattery (contested by
+            Willpower), Intimidation (contested by Wits), Lying (contested by
+            Intuition), or Diplomacy (DM sets the difficulty).
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Wits:</strong> Wits represent quick reactions in
+            unpredictable situations, like evading traps or saving allies from
+            danger. If reacting to traps or hazards, the DM sets the difficulty,
+            while reacting to intimidation or embarrassment attempts is contested
+            against the opponent’s Wits check.
+        </p>
+    </li>
+</ul>
+<h3 id="knowledge-skills">Knowledge Skills</h3>
+<p>
+    Knowledge skills are linked to Special Attack and Special Defense
+    attributes.
+</p>
+<ul>
+    <li>
+        <p>
+            <strong>Education:</strong> Education encompasses knowledge of
+            various subjects, such as languages (e.g., Super Mystery Dungeon’s foot
+            runes), identifying materials or obscure items, or even learning moves
+            from TMs not typically available.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Intuition:</strong> Use Intuition to distinguish truth
+            from falsehood, sense motives, or act on instinct. Identifying forgeries
+            or disguises is contested by the opponent’s Guile, while detecting lies
+            or impostors is contested by an opponent’s Persuasion check.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Proficiency:</strong> Proficiency involves executing a
+            trade or talent, like crafting items, farming berries, discerning the
+            use of artifacts, or detecting sabotage. The DM sets the difficulty,
+            especially for tasks like identifying sabotaged tools contested by the
+            saboteur’s Guile check.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Survival:</strong> Survival skills help you navigate
+            wilderness hazards and find sustenance. Use it to forage for food and
+            materials, contend with natural challenges, and gauge if tools are
+            tampered with (contested by Guile).
+        </p>
+    </li>
+</ul>
+<h3 id="vigor-skills">Vigor Skills</h3>
+<p>Vigor skills relate to Health and Defense attributes.</p>
+<ul>
+    <li>
+        <p>
+            <strong>Athletics:</strong> Athletics allows you to perform
+            physical feats, such as pursuing foes, climbing cliffs, leaping gaps, or
+            swimming against currents. It is the go-to skill for physical
+            prowess.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Fortitude:</strong> Fortitude measures your resilience,
+            whether enduring extreme temperatures, surviving without sustenance, or
+            resisting illness.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Strength:</strong> Strength demonstrates physical power,
+            like lifting heavy objects, carrying comrades, breaking barriers, or
+            engaging in strength contests against another Pokémon.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Willpower:</strong> Willpower is all about maintaining
+            focus and discipline in challenging situations, resisting temptation,
+            psychic control, distractions, or flattery attempts (contested by
+            Guile). The DM sets the difficulty for various scenarios where willpower
+            comes into play.
+        </p>
+    </li>
+</ul>

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "iDoFy7Gq589MrhezqTEP7+329BsG/qV9np57aIbfYnw5xhxcWM40iUKIvwtqoUAz0NN0Vlk99iC0u75WA2xrNA==",
+  "dgSpecHash": "WpJBrP2xxmizu8F/uA1E7Npd2v+mQyHu7JYRTEGCf1fRT6pwHVMKBOc7RsWFk9KfLOmb9mIpc0Ebu2otkbWG/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\NovaDragon\\RiderProjects\\pkmnwl_ressources\\webapp\\pkmnWildLife\\pkmnWildLife.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\NovaDragon\\.nuget\\packages\\aspnet.security.oauth.lichess\\7.0.4\\aspnet.security.oauth.lichess.7.0.4.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\NovaDragon\\.nuget\\packages\\discord.oauth2.aspnetcore\\3.0.0\\discord.oauth2.aspnetcore.3.0.0.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -56,6 +58,7 @@
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\NovaDragon\\.nuget\\packages\\markdig\\0.32.0\\markdig.0.32.0.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.11\\microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.11\\microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\7.0.11\\microsoft.aspnetcore.diagnostics.entityframeworkcore.7.0.11.nupkg.sha512",
@@ -242,7 +245,8 @@
     "C:\\Users\\NovaDragon\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\NovaDragon\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\NovaDragon\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\NovaDragon\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\NovaDragon\\.nuget\\packages\\westwind.aspnetcore.markdown\\3.12.0\\westwind.aspnetcore.markdown.3.12.0.nupkg.sha512"
   ],
   "logs": []
 }

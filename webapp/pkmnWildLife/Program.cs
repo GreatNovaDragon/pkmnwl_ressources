@@ -11,6 +11,19 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+var configuration = builder.Configuration;
+
+// set secrets with dotnet user-secrets set "Auth:sjdhfdshf" "secret"
+builder.Services.AddAuthentication().AddLichess(options =>
+{
+    options.ClientId = configuration["Auth:Lichess:ClientID"];
+    options.ClientSecret=configuration["Auth:Lichess:ClientSecret"];
+}).AddDiscord(
+    options =>
+    {
+        options.ClientId = configuration["Auth:Discord:ClientID"];
+        options.ClientSecret = configuration["Auth:Discord:ClientSecret"];
+    });
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
