@@ -1,6 +1,12 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using System.Globalization;
+using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using Westwind.AspNetCore.Markdown;
+using System.IO;
+using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
+
 
 namespace pkmnWildLife;
 
@@ -8,11 +14,17 @@ public class Helpers
 {
     public static string MoveSetRenderer(Learnsets move)
     {
-        var ret = @$" <div class=""move"" style=""flex-basis: 30%"">
-            <dl>
-            
+        var ret = @$" 
+<div class=""w3-container  w3-cell w3-mobile"" >
+<div class=""w3-card"">
+      
+            <header class=""w3-container w3-blue"">
             <h3><a href=""/moves/Details?id={move.move.ID}""> {move.move.Name}/{move.move.Name_DE} </a>
             </h3>
+            </header
+
+<div class =""w3-container"">
+            <dl>
                         <dt>
             Learned via 
             </dt>
@@ -28,27 +40,28 @@ public class Helpers
 ";
 
         if (!move.move.DamageDice.IsNullOrEmpty())
+        {
             ret += @$"
             <dt>Damage Dice</dt>
             <dd>{move.move.DamageDice}</dd>
             ";
-        else
-            ret += @"
-            <dt>&nbsp</dt>
-            <dd>&nbsp</dd>
-            ";
+        }
 
-        ret += @"<h4>Effect</h4>
+
+
+        ret += @"<div class=""w3-container w3-blue""><h4>Effect</h4></div>
+<div class=""w3-container"">
             ";
         ret += Markdown.Parse(move.move.Effect);
-        ret += @"</div>";
+        ret += @"
+</div></div></div>";
 
         return ret;
     }
 
     public static string MoveRenderer(Move move, bool MoveDetailPage = false)
     {
-        var ret = @" <div class=""move"" style=""flex-basis: 30%"">
+        var ret = @" <div class=""w3-container"" style=""flex-basis: 30%"">
             <dl>";
 
         if (!MoveDetailPage)
@@ -82,5 +95,41 @@ public class Helpers
         ret += @"</div>";
 
         return ret;
+    }
+
+    public class mv
+    {
+        [Index(0)] public string move { get; set; }
+        [Index(1)] public string how_often { get; set; }
+        [Index(2)] public string effect { get; set; }
+    }
+
+
+    public static List<mv> csv2moves(string whereItIs)
+    {
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = false,
+        };
+        using var reader = new StreamReader(whereItIs);
+        using var csv = new CsvHelper.CsvReader(reader, config);
+        return csv.GetRecords<mv>().ToList();
+    }
+
+    public class ab
+    {
+        [Index(0)] public string ability { get; set; }
+        [Index(1)] public string effect { get; set; }
+    }
+
+    public static List<ab> csv2ab(string whereItIs)
+    {
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = false,
+        };
+        using var reader = new StreamReader(whereItIs);
+        using var csv = new CsvHelper.CsvReader(reader, config);
+        return csv.GetRecords<ab>().ToList();
     }
 }

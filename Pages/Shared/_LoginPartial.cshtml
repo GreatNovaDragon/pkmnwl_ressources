@@ -3,21 +3,17 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <li style="float:right">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
-    <li style="float:right">
+   
+        <a class="w3-bar-item w3-button w3-mobile w3-right" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+
         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            <button class="w3-bar-item w3-button w3-mobile w3-right" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
-    </li>
+
 }
 else
 {
-    <li style="float:right">
-        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li style="float:right">
-        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+    <a class="w3-bar-item w3-button w3-mobile w3-right" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+    <a class="w3-bar-item w3-button w3-mobile w3-right" asp-area="Identity" asp-page="/Account/Login">Login</a>
 }
