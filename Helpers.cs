@@ -1,12 +1,10 @@
 ﻿using System.Globalization;
+using CsvHelper;
+using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
 using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using Westwind.AspNetCore.Markdown;
-using System.IO;
-using CsvHelper.Configuration;
-using CsvHelper.Configuration.Attributes;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
-
 
 namespace pkmnWildLife;
 
@@ -40,13 +38,10 @@ public class Helpers
 ";
 
         if (!move.move.DamageDice.IsNullOrEmpty())
-        {
             ret += @$"
             <dt>Damage Dice</dt>
             <dd>{move.move.DamageDice}</dd>
             ";
-        }
-
 
 
         ret += @"<div class=""w3-container w3-blue""><h4>Effect</h4></div>
@@ -97,6 +92,29 @@ public class Helpers
         return ret;
     }
 
+
+    public static List<mv> csv2moves(string whereItIs)
+    {
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = false
+        };
+        using var reader = new StreamReader(whereItIs);
+        using var csv = new CsvReader(reader, config);
+        return csv.GetRecords<mv>().ToList();
+    }
+
+    public static List<ab> csv2ab(string whereItIs)
+    {
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            HasHeaderRecord = false
+        };
+        using var reader = new StreamReader(whereItIs);
+        using var csv = new CsvReader(reader, config);
+        return csv.GetRecords<ab>().ToList();
+    }
+
     public class mv
     {
         [Index(0)] public string move { get; set; }
@@ -104,32 +122,9 @@ public class Helpers
         [Index(2)] public string effect { get; set; }
     }
 
-
-    public static List<mv> csv2moves(string whereItIs)
-    {
-        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-        {
-            HasHeaderRecord = false,
-        };
-        using var reader = new StreamReader(whereItIs);
-        using var csv = new CsvHelper.CsvReader(reader, config);
-        return csv.GetRecords<mv>().ToList();
-    }
-
     public class ab
     {
         [Index(0)] public string ability { get; set; }
         [Index(1)] public string effect { get; set; }
-    }
-
-    public static List<ab> csv2ab(string whereItIs)
-    {
-        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-        {
-            HasHeaderRecord = false,
-        };
-        using var reader = new StreamReader(whereItIs);
-        using var csv = new CsvHelper.CsvReader(reader, config);
-        return csv.GetRecords<ab>().ToList();
     }
 }

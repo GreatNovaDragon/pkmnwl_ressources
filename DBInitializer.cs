@@ -142,8 +142,7 @@ public class DBInitializer
                         ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Entry";
 
-            
-            
+
             var moves_old = Helpers.csv2ab("abilities_old.csv");
 
 
@@ -152,8 +151,8 @@ public class DBInitializer
                 var mn = moves_old.Where(m => m.ability == Name).FirstOrDefault();
                 Effect = mn.effect;
             }
-            
-            
+
+
             context.Abilities.Add(new Data.Ability
             {
                 ID = ID,
@@ -212,7 +211,7 @@ public class DBInitializer
                 var mn = moves_old.Where(m => m.move == Name).FirstOrDefault();
                 Effect = mn.effect;
             }
-            
+
             context.Moves.Add(new Data.Move
             {
                 ID = ID,
@@ -286,7 +285,7 @@ public class DBInitializer
                     ID = Guid.NewGuid().ToString(),
                     MoveId = m.Move.Name,
                     how = m.VersionGroupDetails.Last().MoveLearnMethod.Name,
-                    level = m.VersionGroupDetails.Last().LevelLearnedAt /5
+                    level = m.VersionGroupDetails.Last().LevelLearnedAt / 5
                 };
 
                 learnset.Add(l);

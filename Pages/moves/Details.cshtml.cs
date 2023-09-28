@@ -20,8 +20,7 @@ public class DetailsModel : PageModel
     {
         if (id == null || _context.Moves == null) return NotFound();
 
-        var move = await _context.Moves.Include(m => m.MoveClass).Include(m => m.type)
-            .FirstOrDefaultAsync(m => m.ID == id);
+        var move = await _context.Moves.FirstOrDefaultAsync(m => m.ID == id);
         if (move == null)
             return NotFound();
         Move = move;

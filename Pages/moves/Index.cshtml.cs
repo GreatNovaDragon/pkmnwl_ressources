@@ -17,7 +17,6 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        if (_context.Moves != null)
-            Move = await _context.Moves.Include(m => m.type).Include(m => m.MoveClass).ToListAsync();
+        if (_context.Moves != null) Move = await _context.Moves.ToListAsync();
     }
 }

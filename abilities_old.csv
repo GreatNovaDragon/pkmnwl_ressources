@@ -1,0 +1,232 @@
+Stench,"when a foe hits this Pokemon with a Physical move, trigger 5, the foe is dazed until the end of its next turn"
+Drizzle,"when this Pokemon enters the Battle, the weather becomes Rain"
+Speed Boost,"at the end of this Pokemon's first turn in Battle, its Speed stat is increased by +2 until the end of the Battle"
+Battle Armor,moves used against this Pokemon are never considered critical hits
+Sturdy,"the first time in a Battle this Pokemon would be reduced to 1 or fewer HP, its HP becomes 1"
+Damp,"while this Pokemon is in a Battle, the moves Self-Destruct and Explosion cannot be used, and the ability Aftermath does nothing"
+Limber,this Pokemon cannot be paralyzed
+Sand Veil,"while the weather is Sandstorm, other Pokemon have a -1 penalty to hit this Pokemon"
+Static,"when a foe hits this Pokemon with a Physical move, trigger 6, the foe is paralyzed (save 7)"
+Volt Absorb,Electric moves used against this Pokemon make it regain half the damage in HP instead of taking damage
+Water Absorb,Water moves used against this Pokemon make it regain half the damage in HP instead of taking damage
+Oblivious,this Pokemon cannot be infatuated or taunted
+Cloud Nine,"as long as this Pokemon is in a battle, there cannot be any weather"
+Compound Eyes,this Pokemon has a +1 to hit with moves
+Insomnia,this Pokemon cannot fall asleep
+Color Change,"each time this Pokemon is damaged by a move, its Type changes to the Type of the damage dealt to it until the end of the Battle"
+Immunity,this Pokemon cannot be poisoned
+Flash Fire,"this Pokemon is immune to Fire Type damage. if this Pokemon is hit with a Fire Type move that would deal damage, it's next Fire Type move is Empowered to hit and damage"
+Shield Dust,"if this Pokemon is hit with a move that deals damage, the move has no effect other than the damage"
+Own Tempo,this Pokemon cannot be confused
+Suction Cups,"this Pokemon cannot be moved by another Pokemon unless it wishes, this Pokemon cannot be forced to switch out by a foe"
+Intimidate,"at the start of this Pokemon's first turn, it decreases the Attack stat of all foes in the Battle by -1 (save 7)"
+Shadow Tag,"foes cannot flee or switch out of Battle normally, moves that allow foes to flee or switch out may be used"
+Rough Skin,"when a foe hits this Pokemon with a Physical move, foe takes damage equal to this Pokemon's Grade + Brawn"
+Wonder Guard,this Pokemon only takes damage from sources that are super effective against it
+Levitate,this Pokemon is immune to Ground Type moves
+Effect Spore,"when this Pokemon is hit with a Physical move, trigger 5, attacker is poisoned, paralyzed, or falls asleep, determined at random (save 7)"
+Synchronize,"if this Pokemon is burned, poisoned, or paralyzed, Pokemon that deal damage to it gain the same condition"
+Clear Body,moves used by other Pokemon cannot lower this Pokemon's stats
+Natural Cure,"when this Pokemon switches out, it saves against all conditions it has that can be saved against"
+Lightning Rod,"any adjacent Pokemon using an Electric Type move must target this Pokemon with that move, this Pokemon is immune to electric damage. The first time this Pokemon is hit with an Electric Type move, its Sp. Attack increases by +1 until the end of the Battle"
+Serene Grace,increase the trigger chance of moves used by this Pokemon by 1 (Trigger 6 becomes Trigger 5 for example)
+Swift Swim,this Pokemon's Speed stat is increased by +2 if the weather is Rain
+Chlorophyll,"in Harsh Sunlight, this Pokemon gains a +2 to its Speed stat, and its max Speed stat bonus is increased to +4"
+Illuminate,this Pokemon's vision is increased by +1 in tall grass or caves
+Trace,this Pokemon's ability becomes the same ability as a random foe at the start of a Battle
+Huge Power,this Pokemon has a +1 to hit with Physical moves and Physical moves gain bonus damage equal to its Grade
+Poison Point,"when a foe hits this Pokemon with a Physical move, trigger 6, the foe is poisoned (save 7)"
+Inner Focus,this Pokemon cannot be dazed
+Magma Armor,this Pokemon cannot be frozen
+Water Veil,this Pokemon cannot be burned
+Magnet Pull,Steel Type foes cannot flee or switch out
+Soundproof,this Pokemon is immune to sound moves
+Rain Dish,"while the weather is Rain, this Pokemon regains HP at the beginning of its turn equal to (its Talent + its Grade)"
+Sand Stream,"when this Pokemon enters a battle, the weather becomes Sandstorm"
+Pressure,"while this Pokemon is in the Battle, moves used by Foes with a limit of 2 per Battle are exhausted after 1 use, moves used by Foes with a limit of 3 per Battle are exhausted after 2 uses"
+Thick Fat,Ice and Fire Type moves deal 1/2 damage to this Pokemon (rounded up)
+Early Bird,this Pokemon gets a +2 to save rolls to against sleeping condition
+Flame Body,"when this Pokemon is hit with a Physical move, trigger 5, attacker is burned (save 7)"
+Run Away,this Pokemon may flee even if abilities or moves would prevent it from fleeing
+Keen Eye,"this Pokemon's Attack and Sp. Attack cannot be decreased by other Pokemon, and it cannot get a penalty to hit"
+Hyper Cutter,this Pokemon's Attack stat cannot be lowered by other Pokemon
+Pickup,"if another Pokemon used an item for a move such as Fling or Natural gift, this Pokemon can pick up the item if it has no held item. At the end of each of its turns, trigger 5, pick up the item. If multiple items could be picked up, it picks up the most recently consumed item"
+Truant,this Pokemon cannot use a move if it used one last turn
+Hustle,"this Pokemon can take a -1 penalty to hit with Physical moves, if it does, that move gains bonus damage equal to 2x (user's Grade)"
+Cute Charm,"when this Pokemon is hit with a Physical move, trigger 5, attacker is infatuated (save 9)"
+Plus,"while an ally has the Minus ability, this Pokemon's Sp. Attack stat is increased by +1 and its Talent is increased by +2"
+Minus,"while an ally has the Plus ability, this Pokemon's Sp. Attack stat is increased by +1 and its Talent is increased by +2"
+Forecast,"this Pokemon's Type changes to Fire in Harsh Sunlight, Water in Rain, and Ice in Hail"
+Sticky Hold,items this Pokemon holds cannot be removed by other Pokemon
+Shed Skin,this Pokemon gets a +3 to saving throws
+Guts,"while this Pokemon has a condition, it gains a +1 bonus to hit"
+Marvel Scale,"the first time this Pokemon gets a condition, its Defense stat increases by +2 until the end of the Battle"
+Liquid Ooze,"HP draining moves such as Absorb, used against this Pokemon cause the attacker to loose HP instead of regaining HP"
+Overgrow,"while this Pokemon is at 50% or fewer HP, it gains a +1 to hit with Grass Type moves and STAB bonuses for Grass Type moves are doubled"
+Blaze,"while this Pokemon is at 50% or fewer HP, it gains a +1 to hit with Fire Type moves and STAB bonuses for Fire Type moves are doubled"
+Torrent,"while this Pokemon is at 50% or fewer HP, it gains a +1 to hit with Water Type moves and STAB bonuses for Water Type moves are doubled"
+Swarm,"while this Pokemon is at 50% or fewer HP, it gains a +1 to hit with Bug Type moves and STAB bonuses for Bug Type moves are doubled"
+Rock Head,this Pokemon ignores recoil from moves it uses
+Drought,"when this Pokemon enters the Battle, the weather becomes Harsh Sunlight"
+Arena Trap,Pokemon adjacent to this Pokemon cannot flee or switch out
+Vital Spirit,this Pokemon cannot fall asleep
+White Smoke,this Pokemon's stats cannot be decreased by other Pokemon's moves
+Pure Power,this Pokemon's Attack stat is increased by +2
+Shell Armor,moves used against this Pokemon cannot be critical hits
+Air Lock,"as long as this Pokemon is in a battle, there cannot be any weather"
+Tangled Feet,"while this Pokemon is confused, foes have a -2 penalty to hit it"
+Motor Drive,"this Pokemon is immune to Electric damage. The first time this Pokemon is hit with a Electric Type move, its Speed stat is increases by +2 until the end of the Battle"
+Rivalry,moves this Pokemon uses have their damage empowered against Pokemon it doesn't share a Type with. This Pokemon deals half damage to Pokemon it shares a Type with
+Steadfast,"the first time this Pokemon gets a condition, its Speed stat increases by +2 until the end of the Battle"
+Snow Cloak,"while the weather is Hail, other Pokemon have a -1 penalty to hit this Pokemon"
+Gluttony,"if this Pokemon is holding a Berry, it will eat it immediately when its HP is reduced to 50% or fewer"
+Anger Point,"the first time this Pokemon is hit with a critical hit in a Battle, its Attack stat is increased by +2 until the end of the Battle"
+Unburden,this Pokemon has +2 Speed while holding no item
+Heatproof,this Pokemon takes 2x (its Grade) fewer damage from Fire Type attacks
+Simple,"stat changes this Pokemon recieves are doubled, this Pokemon's max change for a stat is -4 to +4 instead of -2 to +2"
+Dry Skin,"this Pokemon regains 2x its Grade HP at the start of its turn if the weather is Rain, this Pokemon looses 2x its Grade HP at the start of its turn if the weather is Harsh Sunlight. If this Pokemon is hit with a damaging Fire Type move, the attacker may add its Grade to the damage. If this Pokemon is hit with a damaging Water Type move, it regains HP equal to the damage instead of taking damage"
+Download,"at the start of this Pokemon's first turn it chooses an opposing Pokemon, if the opposing Pokemon's Defense stat is lower than its Sp. Defense stat, this Pokemon's Attack stat increases by +1 until the end of the Battle, if the opposing Pokemon's Sp. Defense stat is lower than its Defense stat, this Pokemon's Sp. Attack stat is increased by +1 until the end of the Battle. "
+Iron Fist,"this Pokemon has a +1 to hit with Punch moves and deals extra damage with Punch moves equal to its Grade, and it always gets to add its STAB bonus to Punch moves, even if it doesn't share a type with the move"
+Poison Heal,"while poisoned, this Pokemon regains HP instead of losing it"
+Adaptability,STAB bonuse is equal to 3x Grade instead of 2x Grade
+Skill Link,"When using a move that attacks 2-5 times, this Pokemon always attacks 5 times, even if it misses on one or more attacks"
+Hydration,"if the weather is Raining, this Pokemon gets a +3 to all saving throws"
+Solar Power,"while the weather is Harsh Sunlight, this Pokemon's Sp. Attack  and Talent is increased by +2, but it also looses HP equal to its Grade at the start of each of its turns"
+Quick Feet,"the first time this Pokemon gets a condition, its Speed stat increases by +2 until the end of the Battle"
+Normalize,non-Normal Type moves this Pokemon uses that deal damage become Normal Type moves and the damage is Empowered
+Sniper,"when this Pokemon deals a critical hit, it increases the die type of the damage by one step (1d6 to 1d8 for example) (1d12 becomes 2d8)"
+Magic Guard,"this Pokemon only takes damage from moves, weather, terrain, zones, conditions, abilities, and other similar sources deal no damage to this Pokemon"
+No Guard,"this Pokemon has a +2 to hit, and other Pokemon have a +1 to hit this Pokemon"
+Stall,this Pokemon starts each Battle last in initiative order
+Technician,"when this Pokemon uses a move that deals a single die in damage (1d4, 1d6, 1d8, 1d10, or 1d12) it gains a bonus to the damage equal to its Grade"
+Leaf Guard,"while the weather is Harsh Sunlight, this Pokemon cannot get any conditions"
+Klutz,this Pokemon cannot use held items
+Mold Breaker,foes abilities cannot make them immune to attacks from this Pokemon
+Super Luck,moves this Pokemon uses are critical hits on a natural 10 instead of 11
+Aftermath,"if this Pokemon is knocked out with a physical move, the attacker takes damage equal to (this Pokemon's Grade) d6"
+Anticipation,this Pokemon can detect if a foe has a super effective move against it
+Forewarn,"during its first turn, this Pokemon knows what the highest damaging move is among its foes"
+Unaware,this Pokemon ignores bonuses to Defense and Sp. Defense when attacking
+Tinted Lens,damage dealt by this Pokemon is not reduced by its target's resistances
+Filter,"when this Pokemon is hit by a supereffective attack, the attacker may only add x1.5 bonus damage instead of x2 and x3 bonus damage instead of x4"
+Slow Start,this Pokemon's Speed and Attack stat are halved during its first turn
+Scrappy,Normal and Fighting Type moves this Pokemon uses can damage Ghost Type Pokemon normally
+Storm Drain,"any adjacent Pokemon using a Water Type move must target this Pokemon with that move, this Pokemon is immune to water damage. The first time this Pokemon is hit with a Water Type move, its Sp. Attack increases by +1 until the end of the Battle"
+Ice Body,"if the weather is Hail, this Pokemon regains HP at the beginning of its turn equal to ist (Brawn + Talent)"
+Solid Rock,supereffective moves against this Pokemon have their damage reduced by this Pokemon's Grade
+Snow Warning,"when this Pokemon enters a battle, the weather becomes Hail"
+Honey Gather,"At the end of a battle, trigger 6, this Pokemon finds honey worth 50 times its grade."
+Frisk,"during its first turn, this Pokemon knows what items its foes are holding"
+Reckless,"moves this Pokemon uses that deal recoild damage, have their damage Empowered"
+Multitype,this Pokemon's Type becomes the same Type as the Plate or Z-Crystal it is holding
+Flower Gift,"while the weather is Harsh Sunlight, this Pokemon changes to its sunshine form, and grants itself and all its allies a +1 increase to their Attack stats and Sp. Defense stats"
+Bad Dreams,"at the end of this Pokemon's turn, each adjacent foe that is sleeping takes (this Pokemon's Grade) d6 damage"
+Pickpocket,"when this Pokemon hits with a Physical move, if the target is holding an item, and this Pokemon is not holding an item, trigger 5, this Pokemon steals the target's held item"
+Sheer Force,"moves this Pokemon uses that deal damage have no additional effect. If a move this Pokemon uses would have an additional effect such as applying a condition or decreasing the target's stats, instead the damage is Empowered"
+Contrary,"if this Pokemon's stats would be decreased, it is increased instead by the same amount, and vice versa"
+Unnerve,foes in 20 feet of this Pokemon cannot eat Berries
+Defiant,"the first time one of this Pokemon's stats is decreased, its Sp. Attack stat is increased by +2 until the end of the Battle"
+Defeatist,"while this Pokemon is at 50% or fewer HP, it gains a -1 penalty to hit"
+Cursed Body,"when this Pokemon is hit with a damaging move, trigger 5, that move is disabled (save 9)"
+Healer,"at the end of this Pokemon's turn, trigger 5, heal an ally Pokemon of one condition"
+Friend Guard,"while this Pokemon is in a Battle, damage dealt to its allies is reduced by this Pokemon's Grade"
+Weak Armor,"the first time this Pokemon takes damage from a Physical move in a Battle, its Defense stat decreases by -1 and its Speed increases by +2 until the end of the Battle"
+Heavy Metal,this Pokemon is considered one size larger than it is for moves and abilities
+Light Metal,this Pokemon is considered one size smaller than it is for moves and abilities
+Multiscale,"while this Pokemon is at 100% HP, it takes half damage from all moves"
+Toxic Boost,"while this Pokemon is poisoned, it gains a +1 to hit whit Physical moves and doubles its Brawn"
+Flare Boost,"while this Pokemon is burned, its Special moves are Empowered to hit"
+Harvest,"at the end of this Pokemon's turn, if it ate a Berry or consumed a Berry with Fling or Natural Gift this Battle, trigger 5, that Berry is restored"
+Telepathy,moves used by allies cannot damage this Pokemon
+Moody,"at the beginning of this Pokemon's first turn, one of its stats at random is increased by +2 and another stat at random is decreased by -1 until the end of the Battle"
+Overcoat,this Pokemon takes no damage from weather effects or powder or spore moves
+Poison Touch,"when a foe hits this Pokemon with a Physical move, trigger 6, the foe is poisoned (save 7)"
+Regenerator,"when this Pokemon is switched out, it regains HP equal to 2x (its Health + its Grade)"
+Big Pecks,moves used by other Pokemon cannot lower this Pokemon's Defense stat
+Sand Rush,"while the weather is Sandstorm, this Pokemon's Speed stat is increases by +2"
+Wonder Skin,Pokemon attempting to hit this Pokemon with a Status move have a -2 penalty to hit
+Analytic,"if this Pokemon is last in initiative order, all its attacks are Empowered to hit"
+Illusion,"the first time this Pokemon enters a battle, it looks like another Pokemon on its team, the illusion stops the first time it takes damage"
+Imposter,this Pokemon's ability becomes the same ability as the foe it transforms into
+Infiltrator,moves this Pokemon uses cannot be protected against
+Mummy,"when this Pokemon is hit with a Physical move, the attacker loses its abilities and gains the Mummy ability"
+Moxie,"the first time this Pokemon knocks out a foe, its Attack stat increases by +2 until the end of the Battle"
+Justified,"the first time this Pokemon is damaged by a Dark move, its Attack stat increases by +2 until the end of the Battle"
+Rattled,"the first time this Pokemon is damaged by a Bug, Dark or Ghost move, its Speed stat increases by +2 until the end of the Battle"
+Magic Bounce,"if this Pokemon is hit with a Status move that results in decreased stats or a condition, the attacker gets it instead of this Pokemon"
+Sap Sipper,"this Pokemon is immune to Grass damage. The first time this Pokemon is hit with a Grass Type move, its Attack increases by +2 until the end of the Battle"
+Prankster,"this first time this Pokemon uses a Status move, it goes to the top of the initiative order starting next turn"
+Sand Force,"this Pokemon takes no damage from Sandstorms. while the weather is Sandstorm, Ground, Rock, and Steel Type moves this Pokemon uses have their damage Empowered"
+Iron Barbs,"when a foe hits this Pokemon with a Physical move, foe takes damage equal to this Pokemon's Grade + Brawn"
+Zen Mode,"while this Pokemon is at 50% or fewer of its max HP, it enter Zen mode"
+Victory Star,this Pokemon and all adjacent allies have a +1 bonus to hit
+Turboblaze,foes abilities cannot make them immune to attacks from this Pokemon
+Teravolt,foes abilities cannot make them immune to attacks from this Pokemon
+Aroma Veil,this Pokemon cannot loose the use of its moves due to moves like encore
+Flower Veil,"this Pokemon's stats cannot be decreased, its Grass Type allies also cannot have their stats decreased while this Pokemon is in the Battle"
+Cheek Pouch,"after this Pokemon eats a Berry, it regains (Pokemon's Grade) d6 HP after the effect of the Berry"
+Protean,"when this Pokemon attacks with a move, its type becomes the same as the move. When damage from the move is dealt, the Pokemon's type has already changed and STAB bonus may be applied"
+Fur Coat,Physical moves that damage this Pokemon have their damage reduced by 2x this Pokemon's Grade
+Magician,"when this Pokemon hits with a Special move, if the target is holding an item, and this Pokemon is not holding an item, trigger 5, this Pokemon steals the target's held item"
+Bulletproof,this Pokemon is not effected by Ball and Bomb moves
+Competitive,"the first time one of this Pokemon's stats is decreased, its Sp. Attack stat is increased by +2 until the end of the Battle"
+Strong Jaw,"this Pokemon has a +1 to hit with Bite moves and deals extra damage with Bite moves equal to its Grade, and it always gets to add its STAB bonus to Bite moves, even if it doesn't share a type with the move"
+Refrigerate,Normal Type moves this Pokemon uses that deal damage become Ice Type moves and the damage is Empowered
+Sweet Veil,this Pokemon and all adjacent allies cannot fall asleep
+Stance Change,"when this Pokemon uses a Physical move it changes to Blade Forme, when this Pokemon uses the move King's Shield, it changes to Shield Forme"
+Gale Wings,"while at full HP, this Pokemon gets a +3 bonus to initiative rolls"
+Mega Launcher,"this Pokemon has a +1 to hit with aura and pulse moves and deals extra damage with aura and pulse moves equal to its Grade, and it always gets to add its STAB bonus to Bite moves, even if it doesn't share a type with the move"
+Grass Pelt,"while the terrain is Grassy, this Pokemon's Defense stat is increased by +2"
+Symbiosis,"this Pokemon can pass its held item to an adjacent ally as a free action, it can split a Berry into two and share it with the ally as well"
+Tough Claws,this Pokemon has a +1 to hit with Physical moves and deals extra damage with Physical moves equal to its Grade
+Pixilate,Normal Type moves this Pokemon uses that deal damage become Fairy Type moves and the damage is Empowered
+Gooey,"each time this Pokemon is damaged by a Physial move, the attacker has its Speed stat decreased by -1 (save 9)"
+Aerilate,Normal Type moves used by this Pokemon are Flying Type instead
+Parental Bond,"most damaging moves this Pokemon uses will attack twice as many times, the second half of the attacks will deal less damage"
+Dark Aura,"while this Pokemon is in a Battle, all Dark Type moves have their damage Empowered"
+Fairy Aura,"while this Pokemon is in a Battle, all Fairy Type moves have their damage Empowered"
+Aura Break,"while this Pokemon is in a Battle, the effects of Fairy Aura and Dark Aura are reversed"
+Primordial Sea,"when this Pokemon enters the Battle, the weather becomes Heavy Rain"
+Desolate Land,"when this Pokemon enters the Battle, the weather becomes Extremely Harsh Sunlight, similar to Harsh Sunlight, except Water Type moves always fail, and any move the change the weather also fails, this weather ends when this Pokemon leaves the Battle"
+Delta Stream,"when this Pokemon enters the Battle, the weather becomes Mysterious Air Current, while this is the weather, pure Flying Type Pokemon have no weaknesses to other Types"
+Stamina,"the first time this Pokemon takes damage from a Physical move in a Battle, its Defense increases by +1 until the end of the Battle"
+Wimp Out,"the first time this Pokemon's HP drops to 50% or fewer, it will switch out for another Pokemon on its team"
+Emergency Exit,"the first time this Pokemon's HP drops below 50%, it will switch out if another Pokemon is available"
+Water Compaction,"the first time this Pokemon takes damage from a Water move in a Battle, its Defense increases by +2 until the end of the Battle"
+Merciless,moves this Pokemon uses on poisoned targets are critical hits on a natural 9 instead of 11
+Shields Down,"the first time this Pokemon's HP is reduced to 50% or fewer, it changes from Meteor Form to Core Form"
+Stakeout,"if this Pokemon attacks a foe that switched into a Battle and has not acted yet, it deals double damage on a hit"
+Water Bubble,"Fire moves used agains this Pokemon cannot have STAB bonuses added, this Pokemon cannot be burned"
+Steelworker,"while this Pokemon is at 50% or fewer HP, it gains a +1 to hit with Steel Type moves and STAB bonuses for Steel Type moves are doubled"
+Berserk,"the first time this Pokemon's HP drops below 50%, its Sp. Attack stat is increased by +2 until the end of the Battle"
+Slush Rush,"while the weather is Hail, this Pokemon's Speed stat is increases by +2"
+Long Reach,"this Pokemon does not make contact with its moves, abilites such as Static and Rough skin do not affect this Pokemon"
+Liquid Voice,sound moves this Pokemon uses become Water Type moves and the damage is Empowered
+Triage,"any time this Pokemon heals itself or another Pokemon, that healing is increased by this Pokemon's Grade + Talent"
+Galvanize,Normal Type moves used by this Pokemon are Electric Type instead
+Surge Surfer,this Pokemon's Speed stat is increased by +2 if the terrain is Electric Terrain
+Schooling,"the first time this Pokemon's HP is reduced to 50% or fewer, it changes from School Form to Solo Form"
+Disguise,"the first time this Pokemon would be damaged in a Battle, instead it takes no damage"
+Battle Bond,"when this Pokemon causes an opponent to faint, all of their attributes gain +1, and their Talent and Brawn gain +2 until the end of the battle; If a pokemon knows a move that attacks multiple times in a the same round, that move hits at least three times, and 1d4 is added to the damage dice for each hit"
+Power Construct,"the first time this Pokemon's HP is reduced to 50% or fewer, it changes to Complete Forme"
+Corrosion,this Pokemon can inflict the poisoned condition on Steel and Poison Type Pokemon
+Comatose,"this Pokemon is always considered to be asleep, though it may use moves as if it was not asleep"
+Queenly Majesty,foes cannot use moves that reorder them to the top of the iniative order
+Innards Out,"when this Pokemon is knocked out, it deals damage to the attacker equal to its total HP before it was hit"
+Dancer,"when another Pokemon uses a Dance move, this Pokemon will immediately use the same move as a free action"
+Battery,"adjacent allies using Special Moves, have the damage from those moves Empowered"
+Fluffy,"Physical moves that damage this Pokemon have their damage reduced by 2x this Pokemon's Grade, Fire moves that damage this Pokemon have their damage increased by 2x this Pokemon's Grade"
+Dazzling,"while this Pokemon is in a Battle, other Pokemon cannot use moves that put them at the top of the iniative order"
+Soul-Heart,"the first time another Pokemon in the Battle faints, this Pokemon's Sp. Atk stat increases by +2 until the end of the Battle"
+Tangling Hair,"when a foe hits this Pokemon with a Physical move, its Speed stat is decreased by -2 (save 7)"
+Receiver,this Pokemon gains the abilities of its allies when its ally faints
+Power of Alchemy,this Pokemon gains the abilities of its allies when its ally faints
+Beast Boost,"the first time this Pokemon causes an opponent to faint, one of its stats (its choice except for Health) is increased by +2 until the end of the Battle"
+RKS System,this Pokemon's Type becomes the same Type as the Memory Disc it is holding
+Electric Surge,"when this Pokemon enters the Battle, it uses the move Electric Terrain before taking its first turn"
+Psychic Surge,"when this Pokemon enters the Battle, the terrain becomes Psychic Terrain"
+Misty Surge,"when this Pokemon enters the Battle, the terrain becomes Misty Terrain"
+Grassy Surge,"when this Pokemon enters a Battle, the terrain becomes Grassy"
+Full Metal Body,moves used by other Pokemon cannot lower this Pokemon's stats
+Shadow Shield,"while this Pokemon is at 100% HP, it takes half damage from all moves"
+Prism Armor,supereffective moves against this Pokemon have their damage reduced by this Pokemon's Grade

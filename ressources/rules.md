@@ -25,20 +25,20 @@
 
 To create a character in this roleplaying system, follow these steps:
 
-1.  Choose a Pokémon from the Conversion Sheet list. Copy their Health,
-    Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
-    Talent, and size category. Optionally, roll a D4 for each stat and
-    add the result to it.
+1. Choose a Pokémon from the Conversion Sheet list. Copy their Health,
+   Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
+   Talent, and size category. Optionally, roll a D4 for each stat and
+   add the result to it.
 
-2.  Calculate their starting Health Points by adding their Health score
-    to 20.
+2. Calculate their starting Health Points by adding their Health score
+   to 20.
 
-3.  Select the Pokémon’s starting Ability, moves from the Conversion
-    Sheet, and record them.
+3. Select the Pokémon’s starting Ability, moves from the Conversion
+   Sheet, and record them.
 
-4.  Assign a Grade of 1 and a Grit of 2 to your character. More details
-    about Grade and Grit will be provided in the Playing the Game
-    section.
+4. Assign a Grade of 1 and a Grit of 2 to your character. More details
+   about Grade and Grit will be provided in the Playing the Game
+   section.
 
 **Optional: Character Skills:**
 
@@ -52,35 +52,35 @@ Playing the Game section.
 As you accumulate Experience (XP), you will level up. With each new
 level:
 
-1.  You can learn new moves if available and may gain additional
-    benefits, such as increasing one attribute or acquiring an extra
-    ability.
+1. You can learn new moves if available and may gain additional
+   benefits, such as increasing one attribute or acquiring an extra
+   ability.
 
-2.  Your maximum Hit Points increase by your Health score. This increase
-    is not retroactive, so it will not apply if your Health score is
-    boosted through stat increases or evolution.
+2. Your maximum Hit Points increase by your Health score. This increase
+   is not retroactive, so it will not apply if your Health score is
+   boosted through stat increases or evolution.
 
 If optional skills are in play:
 
-3.  You gain 2 skill points at each level to enhance your skills. Keep
-    in mind that evenly distributing skill points results in only one
-    skill with 2d6 skill dice. Allocate your points wisely and
-    collaborate with your party to fill skill gaps.
+3. You gain 2 skill points at each level to enhance your skills. Keep
+   in mind that evenly distributing skill points results in only one
+   skill with 2d6 skill dice. Allocate your points wisely and
+   collaborate with your party to fill skill gaps.
 
 Move Upgrades:
 
-4.  Move Upgrades are enhancements to specific Moves, making them more
-    versatile or specialized. These are optional, and the Dungeon Master
-    (DM) may choose not to include them. Each move can have only one
-    Move Upgrade.
+4. Move Upgrades are enhancements to specific Moves, making them more
+   versatile or specialized. These are optional, and the Dungeon Master
+   (DM) may choose not to include them. Each move can have only one
+   Move Upgrade.
 
 Additional Abilities:
 
-5.  Additional Abilities do not replace existing abilities. This means a
-    Pokémon can have up to 6 abilities by level 17 if they acquire
-    additional abilities. The DM has the option to exclude these. If
-    Technique Upgrades and Additional Abilities are not part of your
-    game, treat these levels as Attribute Increase levels.
+5. Additional Abilities do not replace existing abilities. This means a
+   Pokémon can have up to 6 abilities by level 17 if they acquire
+   additional abilities. The DM has the option to exclude these. If
+   Technique Upgrades and Additional Abilities are not part of your
+   game, treat these levels as Attribute Increase levels.
 
 # Playing the Game
 
@@ -136,15 +136,15 @@ effects.
   that can afflict your Pokémon. At the end of a round, you have the
   opportunity to roll to recover from these negative effects.
 
-  - To attempt recovery, you roll 2d6. If you choose to empower your
-    save roll, you roll 2d8 instead.
+    - To attempt recovery, you roll 2d6. If you choose to empower your
+      save roll, you roll 2d8 instead.
 
-  - Success in rolling a number equal to or higher than the provided
-    target number results in the removal of the negative effect.
+    - Success in rolling a number equal to or higher than the provided
+      target number results in the removal of the negative effect.
 
-  - Importantly, you are limited to rolling for the removal of just one
-    negative status per round. This mechanic adds a strategic element to
-    managing and recovering from status conditions during battles.
+    - Importantly, you are limited to rolling for the removal of just one
+      negative status per round. This mechanic adds a strategic element to
+      managing and recovering from status conditions during battles.
 
 ### Combat Tactics and Environment
 
@@ -262,7 +262,7 @@ Grade is related to STAB, Type Advantage, and Type Resistance.
 - **STAB:** If your Pokémon shares the same type as the attack they are
   using, they deal extra damage equal to their Grade multiplied by
 
-  2.  
+    2.
 
 - **Advantage:** If the Pokémon you are attacking is weak to the type of
   attack you are using, you deal extra damage equal to your Pokémon’s

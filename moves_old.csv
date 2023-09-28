@@ -1,0 +1,719 @@
+Move,Column2,Column3
+"10,000,000 Volt Thunderbolt",1 per day,this move is a critical hit on a natural 10 instead of 11
+Absorb,0,"on successful hit, the user regains HP equal to its Talent + its Grade"
+Accelerock,0,FALSE
+Acid,0,"on successful hit, the target's Sp. Defense stat is reduced by -1 (save 7)"
+Acid Armor,0,"user's Defense stat is increased by +2, minor action to maintain"
+Acid Spray,0,"on successful hit, the target's Sp. Defense stat is reduced by -1(save 7)"
+Acrobatics,3 per battle,"if the user is holding no item, this move deals 2d10 damage instead"
+Acupressure,0,"roll 1d6, its result determinet the stat that is increased by +2 until the end of the Battle. On a 1, Attack stat, 2, Defense stat, 3, Sp. Attack stat, 4, Sp. Defense stat, 5, Speed stat. On a 6, the target gains a bonus of +1 to hit for the rest of the Battle"
+Aerial Ace,0,user gains a +1 to hit with this move
+Aeroblast,1 per battle,this move is a critical hit on a natural 10 instead of 11
+After You,3 per battle,"the target is moved in initiative order to right before the user, starting next turn"
+Agility,0,"user's Speed stat is increased by +2, minor action to maintain"
+Air Cutter,0,this move is a critical hit on a natural 10 instead of 11
+Air Slash,3 per battle,"trigger 6, target is dazed (save 9)"
+Ally Switch,3 per battle,user switches places with the target
+Amnesia,0,"user's Sp. Defense stat is increased by +2, minor action to maintain"
+Anchor Shot,0,"on a successful hit, the target becomes unable to flee, and is moved adjacent to the user"
+Ancient Power,1 per battle,"trigger 6, all user's stats are increased by +1 until the end of the Battle"
+Apple Acid,2 per battle, 
+Aqua Jet,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Aqua Ring,0,"user regains HP equal to its Talent, minor action to maintain and regain HP each turn"
+Aqua Tail,2 per battle,-
+Arm Thrust,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Aromatherapy,1 per battle,all allies are cured of all conditions
+Aromatic Mist,0,"target's Sp. Defense stat is increased by +1, for the rest of the Battle"
+Assist,0,user uses a random move known by the target
+Assurance,2 per battle,"if the target has already taken damage this turn, this move deals 2d10 damage instead"
+Astonish,3 per battle,"trigger 5, target is dazed (save 7)"
+Astral Barrage,1 per battle, 
+Attack Order,3 per battle,this move is a critical hit on a natural 10 instead of 11
+Attract,3 per battle,target becomes infatuated with user (save 9)
+Aura Sphere,0,user gains a +1 to hit with this move
+Aurora Beam,0,"trigger 6, the target's Attack stat is reduced by -1 (save 7)"
+Aurora Veil,0,allies gain a resistance to physical and special move damage equal to the user's Grade. this move may only be used during a hail storm
+Autotomize,3 per battle,"user's Speed stat is increased by +2, minor action to maintain"
+Avalanche,2 per battle,"if the target has already taken damage this turn, this move deals 2d12 damage instead"
+Baby-Doll Eyes,0,target's Attack is decreased by -1 (save 9)
+Baneful Bunker,2 per battle,"any foe that hits user with a melee attack becomes poisoned, minor action to maintain"
+Barrage,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Barrier,0,"user's Defense stat is increased by +2, minor action to maintain"
+Baton Pass,0,the user is switched out for another Pokemon from its team. the new Pokemon gains all the stat changes the user had
+Beak Blast,3 per battle,"trigger 6, target is burned, (save 9)"
+Beat Up,2 per battle,the user and each of the user's allies adjacent to the target attacks the target. Each successful hit deals 1d(2x attacker's Brawn) Dark damage
+Belch,2 per battle,this move may only be used if the user has eaten a Berry this Battle
+Belly Drum,2 per battle,user takes damage equal to half its current HP. user's Attack stat is increased by +2 for the rest of the Battle
+Bestow,3 per battle,user give its held item to a target that is not holding an item
+Bide,2 per battle,"user bides for one turn, the second turn, user attacks an adjacent Pokemon. On a successful hit, the user deals damage equal to the amount of damage taken while biding"
+Bind,0,"Target is bound (Save 11) Each turn the Target is bound, the Save target decreases by 1. For as long as the target is bound, they cannot attack or flee, and receive 1d4 damage."
+Bite,0,"trigger 6, target is dazed (save 7)"
+Blast Burn,1 per battle,"on successful hit, target cannot move during its next turn"
+Blaze Kick,2 per battle,"this move is a critical hit on a natural 10 instead of 11. trigger 5, target is burned, (save 9)"
+Blizzard,1 per battle,"trigger 4, target is frozen (save 9)"
+Block,1 per battle,target cannot flee or move during its next turn
+Blue Flare,1 per battle,"trigger 4, target is burned (save 9)"
+Body Slam,3 per battle,"trigger 6, target is paralyzed, (save 9)"
+Bolt Strike,1 per battle,"trigger 5, target is paralyzed, (save 11)"
+Bone Club,0,"trigger 6, target is dazed, (save 7)"
+Bone Rush,2 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Bonemerang,2 per battle,attack twice
+Boomburst,2 per battle,"If foes have soundproof, does no damage"
+Bounce,1 per battle,"user flies high for one turn, on the second turn user attacks. trigger 4, target is paralyzed, (save 11)"
+Brave Bird,3 per battle,recoil - 1d8
+Brick Break,3 per battle,"on successful hit, the user may roll a save against one ongoing condition"
+Brine,2 per battle,"if the target is at 50% HP or less, this move deals 2d12 damage instead"
+Brutal Swing,0,-
+Bubble,0,"trigger 6, target's Speed stat is reduced by -1 (save 7)"
+Bubble Beam,0,"trigger 6, target's Speed stat is reduced by -1 (save 7)"
+Bug Bite,0,"on successful hit, the user eats any berries the target is holding, the user gains any benefits from the berry"
+Bug Buzz,2 per battle,"trigger 5, the target's Sp. Defense stat is reduced by -1 (save 9) If user has Soundproof, no effect"
+Bulk Up,0,"user's Attack stat, Defense stat, and Brawn stat are increased by +1, minor action to maintain"
+Bulldoze,0,"on successful hit, the target's Speed is reduced by -2 (save 7)"
+Bullet Punch,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Bullet Seed,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Burn Up,1 per battle,"after this move, user looses the Fire Type until the end of the Battle; If user isn't Fire-type, it fails. If user is pure Fire, pokemon becomes typeless"
+Burning Jealousy,1 per battle, 
+Calm Mind,0,"user's Sp. Attack stat, Sp. Defense stat, and Talent stat are increased by +1, minor action to maintain"
+Camouflage,0,"the user's Type is changed according to the terrain of the Battle to Normal, Ground, Rock, Grass, Water, or Ice"
+Captivate,0,target's Sp. Attack is decreased by -2 (save 9)
+Catastropika,1 per day,-
+Celebrate,0,-
+Charge,0,"user's Sp. Defense stat is increased by +1, minor action to maintain. if the user uses an Electric Type move during its next turn, that move will be empowered"
+Charge Beam,2 per battle,"trigger 4, user's Sp. Attack stat is increased by +1 until the end of the Battle"
+Charm,0,target's Attack is decreased by -2 (save 9)
+Chatter,0,"trigger 6, target is confused (save 7), if foe has soundproof, this fails"
+Chip Away,0,this move ignores temporary bonuses the target has to Defense
+Circle Throw,2 per battle,"on successful hit, target is thrown a number of squares equal to the user's Brawn + 1"
+Clamp,3 per battle,"Target is bound (Save 11) Each turn the Target is bound, the Save target decreases by 1. For as long as the target is bound, they cannot attack or flee, and receive 1d4 damage."
+Clanging Scales,1 per battle,"after this move, user's Defense stat is reduced by -1 (save 7)"
+Clangorous Soul,1 per battle,"user looses 1/3rd of their HP, gains +4 in all stats"
+Clear Smog,3 per battle,"on successful hit, both the user and target loose all temporary bonuses and penalties to their stats"
+Close Combat,1 per battle,the user's Defense and Sp. Defense are reduced by -2 until the end of its next turn
+Coaching,2 per battle,allies Attack and Defense Stat is increased by +2
+Coil,0,"user's Attack stat, Defense stat, and to hit bonus are increased by +1, minor action to maintain"
+Comet Punch,3 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Confide,0,target's Sp. Attack is decreased by -1 (save 9)
+Confuse Ray,2 per battle,target becomes confused (save 9)
+Confusion,0,"trigger 6, target is confused (save 7)"
+Constrict,0,"trigger 6, target's Speed is reduced by -2 (save 7)"
+Conversion,0,user changes its Type to the Type of one its known moves
+Conversion 2,0,user changes its Type to the a Type that is resistant to the move that last damaged it
+Copycat,0,user mimics the last move used this Battle
+Core Enforcer,2 per battle,"if the target has already attacke this turn, it looses all its abilities until the end of the Battle on a successful hit"
+Corrosive Gas,2 per battle,Hold items have no effect
+Cosmic Power,0,"user's Defense stat and Sp. Defense stat are increased by +1, minor action to maintain"
+Cotton Guard,2 per battle,"user's Defense stat is increased by +2, minor action to maintain"
+Cotton Spore,0,target's Speed stat is decreased by -2 (save 9)
+Counter,0,"user bides for one turn, the second turn, user attacks an adjacent Pokemon. On a successful hit, the user deals damage equal to the amount of damage taken from physical attacks while biding"
+Court Change,2 per battle,allies gain advantage on triggers from field changes
+Covet,0,"on successful hit, if the user is holding no item, user takes item held by target"
+Crabhammer,2 per battle,this move is a critical hit on a natural 10 instead of 11
+Crafty Shield,2 per battle,the user and its allies are protected from the next Status Move used against them
+Cross Chop,1 per battle,this move is a critical hit on a natural 10 instead of 11
+Cross Poison,0,"this move is a critical hit on a natural 10 instead of 11. trigger 6, target is poisoned, (save 7)"
+Crunch,3 per battle,"trigger 5, target's Defense is reduced by -1 (save 7)"
+Crush Claw,2 per battle,"trigger 5, target's Defense is reduced by -1 (save 9)"
+Crush Grip,1 per battle,"if target is at 100% health, this move deals 3d10 damage, if the target is above 50%, this move deals 2d10 damage, if the target is below 50% health, this move deals 1d10 damage"
+Curse,2 per battle,"if the user is a Ghost Type, it looses half its max HP and curses a foe (save 9), each turn the cursed foe looses 1/4 of its max HP. if the user is not a Ghost Type, user's Speed stat is decreased by -2 and its Attack stat and Defense stat are increased by +1 until the end of the battle"
+Cut,0,-
+Dark Pulse,3 per battle,"trigger 6, target is dazed (save 9)"
+Dark Void,2 per battle,target falls asleep (save 9)
+Darkest Lariat,2 per battle,this move ignores temporary bonuses the target has to Defense
+Dazzling Gleam,2 per battle,-
+Decorate,3 per battle,"targets attack and special attack is increased by +2, and looks nice, minor action to maintain"
+Defend Order,2 per battle,"user's Defense stat and Sp. Defense stat are increased by +1, minor action to maintain"
+Defense Curl,0,"user's Defense stat is increased by +1, minor action to maintain. This move can stack with itself to give a +2 increase to Defense stat and only one minor action to maintain"
+Defog,3 per battle,target's Defense stat and Sp. Defense stat are decreased by -1 (save 7)
+Destiny Bond,1 per battle,"if the user is knocked out before its next turn, the Pokemon that knocked it out also faints"
+Detect,1 per battle,"during the user's next turn, it cannot be hit by any move"
+Diamond Storm,1 per battle,"trigger 5, user's Defense is increased by +2 until end of the battle"
+Dig,2 per battle,user burrows underground and attacks during its next turn
+Disable,0,target becomes sealed (save 9). sealed Pokemon cannot use the move they used the turn before they were sealed
+Disarming Voice,3 per battle,user gains a +1 to hit with this move
+Discharge,3 per battle,"trigger 6, target is paralyzed (save 9)"
+Dive,2 per battle,user dives underwater and attacks during its next turn
+Dizzy Punch,2 per battle,"trigger 4, target is confused, (save 7)"
+Doom Desire,1 per battle,"user attacks this turn, but target is not damaged until two turns later"
+Double Hit,2 per battle,attack twice
+Double Kick,0,attack twice
+Double Slap,2 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Double Team,3 per battle,"user's Defense stat and Sp. Defense stat are increased by +1, minor action to maintain"
+Double-Edge,3 per battle,recoil - 1d8
+Draco Meteor,1 per battle,recoil - user's Sp. Attack stat is reduced by -2 (save 7)
+Dragon Ascent,1 per battle,user's Defense and Sp. Defense are reduced by -1 (save 7)
+Dragon Breath,0,"trigger 6, target is paralyzed (save 7)"
+Dragon Claw,3 per battle,-
+Dragon Dance,0,"user's Attack stat and Speed stat are increased by +1, minor action to maintain"
+Dragon Energy,1 per battle, 
+Dragon Hammer,3 per battle,-
+Dragon Pulse,2 per battle,-
+Dragon Rage,2 per battle,this move deals 12 damage
+Dragon Rush,2 per battle,"trigger 5, target is dazed (save 9)"
+Dragon Tail,2 per battle,"on successful hit, target is pushed a number of squares equal to the user's Brawn"
+Drain Punch,2 per battle,"on successful hit, user regains hit points equal to its Talent + Grade"
+Draining Kiss,2 per battle,"on successful hit, the user regains HP equal to 2x (its Talent + its Grade)"
+Dream Eater,3 per battle,"on successful hit, the user regains HP equal to 2x (its Talent + its Grade)"
+Drill Peck,0,-
+Drill Run,2 per battle,this move is a critical hit on a natural 10 instead of 11
+Dual Chop,3 per battle,attack twice
+Dynamax Cannon,1 per battle, 
+Dynamic Punch,1 per battle,"trigger 5, target is confused, (save 11)"
+Earth Power,2 per battle,"trigger 5, target's Sp. Defense stat is reduced by -1 (save 9)"
+Earthquake,2 per battle,-
+Echoed Voice,3 per battle,"this move gains 1d8 bonus damage for each turn the user hits with this move in succession to a max of 3d8 bonus damage (4d8 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Eerie Impulse,3 per battle,target's Sp. Attack stat is decreased by -2 (save 9)
+Eerie Spell,1 per battle, 
+Egg Bomb,2 per battle,-
+Electric Terrain,2 per battle,"creates a 5x5 zone of electrified ground, Electric Type moves used by Pokemon in this zone have their attacks Empowered. Pokemon in this zone that are grounded, cannot fall asleep"
+Electrify,0,target becomes an Electric Type and looses all other Types (save 9)
+Electro Ball,2 per battle,this move deals (user's speed - 3) d6 damage (max 5d6)
+Electroweb,3 per battle,"trigger 5, target's Speed stat is reduced by -1 (save 9)"
+Embargo,3 per battle,the target and its Trainer cannot use items (save 11)
+Ember,0,"trigger 6, target is burned (save 7)"
+Encore,1 per battle,target must continue to use the same move it used before hit with this move (save 11)
+Endeavor,1 per battle,"if user is at 100% health, this move deals 1d10 damage, if the user is above 50%, this move deals 2d10 damage, if the user is below 50% health, this move deals 3d10 damage, if the user is at 5HP or less, this move deals 4d10 damage"
+Endure,2 per battle,user cannot be reduced to less than 1 HP until the end of its next turn
+Energy Ball,2 per battle,"trigger 5, target's Sp. Defense stat is reduced by -1 (save 9)"
+Entrainment,3 per battle,the target looses its ability and gains the user's ability instead (save 9)
+Eruption,1 per battle,"if user is at 100% health, this move deals 3d10 damage, if the user is above 50%, this move deals 2d10 damage, if the user is below 50% health, this move deals 1d10 damage"
+Eternabeam,1 per battle, 
+Expanding Force,, 
+Explosion,1 per battle,"range 3, user faints after using this move"
+Extrasensory,0,"trigger 6, target is dazed (save 7)"
+Extreme Evoboost,1 per battle,"all user's stats (except Health) are increased by +1, minor action to maintain"
+Extreme Speed,1 per battle,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Facade,0,"if the User is poisoned, burned, or paralyzed, this move deals 4d6 damage instead"
+Fairy Lock,2 per battle,no Pokemon may flee until the end of user's next turn
+Fairy Wind,0,-
+Fake Out,1 per battle,"on successful hit, the target flinches during its next turn. this move only deals damage if used during the first round of a battle and if the target has not taken a turn yet. "
+Fake Tears,0,target's Sp. Defense stat is decreased by -2 (save 7)
+False Swipe,0,"if target would be reduced to fewer than 1 HP from damage from this move, instead the target's HP becomes 1"
+Feather Dance,3 per battle,target's Attack stat is decreased by -2 (save 9)
+Feint,2 per battle,cannot be protected against
+Feint Attack,0,user gains a +1 to hit with this move
+Fell Stinger,0,"if the target is knocked out from the damage from this move, the user's Attack is increased by +2 until the end of the battle"
+Fiery Dance,2 per battle,"trigger 5, user's Sp. Attack stat is increased by +1 until the end of the Battle"
+Fiery Wrath,2 per battle, 
+Final Gambit,1 per battle,"this move deals (user's Grade +2) d6 damage, user faints after using this move"
+Fire Blast,1 per battle,"trigger 4, target is burned (save 9)"
+Fire Fang,3 per battle,"trigger 5, target is burned (save 7)"
+Fire Lash,3 per battle,"trigger 6, target's Defense is reduced by -2 (save 9)"
+Fire Pledge,2 per battle,"if an alley used Grass Pledge as a pledge this turn, this move deals 3d10 instead and creates a special weather condition called Sea of Fire. Each foe starting their turn while Sea of Fire is the weather condition must roll a (save 7) or become burned. You may choose to use this move as a pledge instead of doing 2d8 damage. If you do, an ally using Water Pledge later this turn will gain increased benefits from the move."
+Fire Punch,3 per battle,"trigger 6, target is burned (save 9)"
+Fire Spin,3 per battle,"If the opponent is not a ghost pokemon, trigger 6, the foe is Bound (Save 11), while the foe is bound, their speed is 0, they have -3 to attack, and they take the user's affinity bonus in damage until they become unbound. Each turn the target for this save is reduced by 1"
+First Impression,1 per battle,only works the first turn of a battle
+Fissure,1 per battle,"If this move hits a target, target must roll a save of 11, or lose all HP."
+Flail,3 per battle,"if user is at 100% health, this move deals 1d10 damage, if the user is above 50%, this move deals 2d10 damage, if the user is below 50% health, this move deals 3d10 damage, if the user is at 5HP or less, this move deals 4d10 damage"
+Flame Burst,3 per battle,"on successful hit, foes adjacent to the target take 1d6 damage"
+Flame Charge,0,"on successful hit, user's Speed is increased by +1 until the end of the battle"
+Flame Wheel,0,"trigger 6, target is burned (save 7)"
+Flamethrower,3 per battle,"trigger 5, target is burned (save 9)"
+Flare Blitz,3 per battle,"trigger 5, target is burned (save 7), recoil - 1d12"
+Flash,0,target gets a -1 to hit (save 7)
+Flash Cannon,2 per battle,"trigger 5, target's Sp. Defense stat is reduced by -1 (save 9)"
+Flatter,3 per battle,"target is confused (save 9), but target's Sp. Attack is increased by +1 until the end of the Battle"
+Fleur Cannon,1 per battle,recoil - user's Sp. Attack stat is reduced by -2 (save 7)
+Fling,2 per battle,"user throws its held item, it deals 1d10, 2d10, 3d10, or 4d10 damage depending on the rarity of the item thrown. The item is consumed, if the user has no held item, this move will fail"
+Floral Healing,2 per battle,"target regains HP equalt to (user's Grade) d6 + Talent, if the terrain is grass, increast to d8's"
+Flower Shield,2 per battle,all Grass Type Pokemon's Defense Stat is increased by +1 until the end of the Battle
+Fly,3 per battle,"user flies high for one turn, on the second turn user attacks"
+Flying Press,2 per battle,this move deals both Fighting and Flying damage simultaneously
+Focus Blast,1 per battle,"trigger 4, target's Sp. Defense stat is reduced by -1 (save 9)"
+Focus Energy,0,"user's attacks are considered critical hits on natural 10's instead of 11's, minor action to maintain"
+Focus Punch,0,"the user bides for one turn and attacks on the second turn. If the user is damaged before it attacks, this move fails"
+Follow Me,0,targets must attack user if able during their turn (save 9)
+Force Palm,2 per battle,"trigger 4, target is paralyzed, (save 7)"
+Foresight,0,"if target is a Ghost Type, it is no longer immune to Normal and Fighting damage (save 9), if target is not a Ghost Type, its Defense stat is decreased by -1 (save 7)"
+Forest's Curse,0,target becomes a Grass Type and looses all other Types (save 9)
+Foul Play,3 per battle,"this move deals damage equal to Xd6, where X is the Attack stat of the target"
+Freeze Shock,1 per battle,"trigger 5, target is paralyzed, (save 11)"
+Freeze-Dry,0,"trigger 6, target is frozen (save 7), this move is super effective against Water Types"
+Freezing Glare,2 per battle, 
+Frenzy Plant,1 per battle,user cannot attack the turn after using this move
+Frost Breath,2 per battle,"on successful hit, this move is always a critical hit"
+Frustration,0,"IQ or Happiness determines damage. If IQ/Happiness is between 1-10, deal 2d12 damage. If IQ is between 20 and 40, deal 2d10 damage. 40 and 80, 2d8 damage, 80 to 120, 2d6 damage, for 120 and above, 2d4 damage."
+Fury Attack,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Fury Cutter,0,"this move gains 1d8 bonus damage for each turn the user hits with this move in succession to a max of 3d8 bonus damage (4d8 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Fury Swipes,3 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Fusion Bolt,1 per battle,"if another Pokemon has used the move Fusion Flare this battle, this move deals 4d10 damage instead"
+Fusion Flare,1 per battle,"if another Pokemon has used the move Fusion Bolt this battle, this move deals 4d10 damage instead"
+Future Sight,2 per battle,"user attacks this turn, but target is not damaged until two turns later"
+Gastro Acid,2 per battle,the target looses its ability (save 9)
+Gear Grind,3 per battle,attack twice
+Gear Up,1 per battle,all allies with the Plus or Minus ability have their Attack stat and Sp. Attack stat increased by +1 until the end of the Battle
+Genesis Supernova,1 per day,"the terrain changes to psychic terrain, Psychic moves are automatically empowered to hit and damage while the terrain is psychic terrain"
+Geomancy,2 per battle,"user's Sp. Attack stat, Sp. Defense Stat, and Speed stat are increased by +1, minor action to maintain"
+Giga Drain,2 per battle,"on successful hit, the user regains HP equal to its Talent + its Grade"
+Giga Impact,1 per battle,"on successful hit, target may not move during its next turn"
+Glaciate,2 per battle,"on successful hit, target's Speed stat is reduced by -1 (save 7)"
+Glare,3 per battle,target is paralyzed (save 9)
+Grass Knot,0,"if the target is huge, this attack deals 4d6 damage, large 3d6, medium 2d6, small or tiny 1d6"
+Grass Pledge,2 per battle,"if an alley used Water Pledge as a pledge this turn, this move deals 3d10 damage instead and creates a special weather condition called Swamp. While Swamp is the current weater conditon, foes have their Speed stat reduced by -3 (This is an environmental stat decrease and can decrease a foe's Speed stat even if it is already reduced by an an ongoing condition). You may choose to use this move as a pledge instead of doing 2d8 damage. If you do, an ally using Fire Pledge later this turn will gain increased benefits from the move."
+Grass Whistle,3 per battle,target falls asleep (save 9)
+Grassy Terrain,2 per battle,"creates a 5x5 zone of grassy ground, Grass Type moves used in this zone are Empowered. Pokemon starting their turn in this zone have regain HP equal to their Talent"
+Gravity,1 per battle,"creates a 5x5 zone of increased gravity, Flying Type moves cannot be used in this zone. Flying Pokemon in this zone loose immunity to Ground Type moves"
+Growl,0,target's Attack stat is decreased by -1 (save 7)
+Growth,0,"user increases its size category by one, user's Attack stat and Sp. Attack stat increase by +1, minor action to maintain"
+Grudge,1 per battle,"when the user is knocked out, the move that knocked it out is exhausted and cannot be used again during this Battle"
+Guard Split,2 per battle,"user's Defense stat and Sp. Defense stat are increased by +1, target's Defense stat and Sp. Defense stat are decreased by -1 (save 9). when target saves, user looses its increase to Defense stat and Sp. Defense stat "
+Guard Swap,2 per battle,"user swaps Defense stat with target's Defense stat, and Sp. Defense stat with target's Sp. Defense stat"
+Guardian of Alola,1 per day,"if target is at 100% health, this move deals 5d10 damage, if the target is above 50%, this move deals 4d10 damage, if the target is below 50% health, this move deals 3d10 damage"
+Guillotine,1 per battle,"If this move hits a target, target must roll a save of 11, or lose all HP."
+Gunk Shot,1 per battle,"trigger 4, target is poisoned, (save 9)"
+Gust,0,-
+Gyro Ball,1 per battle,"this move deals damage equal to Xd6, where X is the target's Speed stat minus the user's Speed stat"
+Hail,2 per battle,weather is changed to Hail
+Hammer Arm,2 per battle,the user's Speed is reduced by -2 (save7)
+Happy Hour,1 per battle,doubles the amount of prize money for the Battle
+Harden,0,"user's Defense stat is increased by +2, minor action to maintain"
+Haze,0,all stat bonuses and penalties are removed
+Head Charge,3 per battle,recoil - 1d6
+Head Smash,1 per battle,recoil - 1d10
+Headbutt,3 per battle,"trigger 6, target is dazed, (save 9)"
+Heal Bell,1 per battle,all allies are cured of all conditions
+Heal Block,3 per battle,target cannot regain HP (save 9)
+Heal Order,2 per battle,user regains HP equal to (user's Grade) d6 + Talent
+Heal Pulse,2 per battle,target regains HP equal to (user's Grade) d6 + Talent
+Healing Wish,1 per battle,"user faints, if its trainer replaces it with another Pokemon during the next turn, the replacement Pokemon is cured of all conditions and healed to full HP"
+Heart Stamp,0,"trigger 6, target is dazed, (save 7)"
+Heart Swap,2 per battle,user swaps all stat changes with target
+Heat Crash,2 per battle,"if the target is tiny, this attack deals 4d6 damage, small 3d6, medium 2d6, large or huge 1d6"
+Heat Wave,2 per battle,"trigger 5, target is burned (save 9)"
+Heavy Slam,2 per battle,"if the target is tiny, this attack deals 4d6 damage, small 3d6, medium 2d6, large or huge 1d6"
+Helping Hand,0,Ally does affinity bonus extra damage as long as this move is maintained as a utility action.
+Hex,2 per battle,"if target is burned, frozen, paralyzed, poisoned, or sleeping, this move deals 2d12 damage instead"
+Hidden Power,3 per battle,GM decides the type of your Hidden Power
+High Horsepower,2 per battle,-
+High Jump Kick,2 per battle,recoil - 2d8 (only on miss)
+Hold Back,0,"if target would be reduced to fewer than 1 HP from damage from this move, instead the target's HP becomes 1"
+Hold Hands,1 per battle,"if target also uses Hold Hands or has used Hold hands targeting the user, both the user and target's Attack, Defense, Sp. Attack, Sp. Defense, and Speed stat are increased by +1 until the end of the Battle"
+Hone Claws,3 per battle,"user gains a +1 to hit during its next turn, user's Attack stat is increased by +1, minor action to maintain"
+Horn Attack,0,-
+Horn Drill,1 per battle,"If the user is 2 Grades above the target, Trigger 5; else Trigger 6, Instead of dealing damage, pokemon is instantly knocked out."
+Horn Leech,2 per battle,"on successful hit, user regains HP equal to its Brawn + Grade"
+Howl,0,"user's Attack stat is increased by +1, minor action to maintain"
+Hurricane,2 per battle,"trigger 5, target confused (save 9)"
+Hydro Cannon,1 per battle,user cannot attack the turn after using this move
+Hydro Pump,1 per battle,-
+Hyper Beam,1 per battle,user cannot attack the turn after using this move
+Hyper Fang,3 per battle,"trigger 5, target is dazed (save 7)"
+Hyper Voice,2 per battle,-
+Hyperspace Fury,1 per battle,cannot be protected against
+Hyperspace Hole,1 per battle,cannot be protected against
+Hypnosis,0,target falls asleep (save 7)
+Ice Ball,0,"this move gains 1d6 bonus damage for each turn the user hits with this move in succession to a max of 3d6 bonus damage (4d6 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Ice Beam,2 per battle,"trigger 5, target frozen (save 9)"
+Ice Burn,1 per battle,"user charges for one turn, then attacks the second turn. trigger 4, target burned (save 11)"
+Ice Fang,3 per battle,"trigger 5, target is frozen (save 7)"
+Ice Hammer,2 per battle,user's Speed is reduced by -2 (save 7)
+Ice Punch,3 per battle,"trigger 6, target is frozen (save 9)"
+Ice Shard,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Icicle Crash,2 per battle,"trigger 5, target is dazed (save 9)"
+Icicle Spear,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Icy Wind,3 per battle,"on successful hit, target's Speed stat is reduced by -1 (save 7)"
+Imprison,2 per battle,target is sealed from using any move the user also knows (save 9)
+Incinerate,3 per battle,"on successful hit, target's held item is consumed if it is a consumable item"
+Inferno,1 per battle,"on successful hit, target is burned (save 7)"
+Infestation,0,"this move gains 1d4 bonus damage for each turn the user hits with this move in succession to a max of 5d4 bonus damage (6d4 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0. On successful hit, target cannot flee during its next turn"
+Ingrain,0,"user lays roots that heal it each turn equal to (user's Talent), user cannot move or be switched out until it ends the rooting, minor action to end"
+Instruct,3 per battle,target must use the same move it used on its last turn during its next turn
+Ion Deluge,0,"creates a 5x5 zone of electrical energy ground, Normal Type moves used in this zone are Electric Type instead"
+Iron Defense,3 per battle,"user's Defense stat is increased by +2, minor action to maintain"
+Iron Head,3 per battle,"trigger 6, target is dazed (save 9)"
+Iron Tail,3 per battle,"trigger 6, target's Defense is reduced by -1 (save 9)"
+Judgment,2 per battle,"if the user is holding a plate, this move will change to the Type of that plate"
+Jump Kick,2 per battle,recoil - 1d10 (only on miss)
+Jungle Healing,2 per battle,"allies lose status effects, user heals 1/4th of their HP"
+Karate Chop,0,this move is a critical hit on a natural 10 instead of 11
+Kinesis,3 per battle,target gets a -1 to hit (save 7)
+King's Shield,2 per battle,"if the user is hit with a physical move before the end of its next turn, the Pokemon that hit it has its Attack stat decreased by -2 (save 11)"
+Knock Off,0,"if the target has a held item, this move deals 2d12 damage instead. on successful hit, the target's held item is knocked away and cannot be used for the rest of the battle"
+Land's Wrath,2 per battle,-
+Laser Focus,0,"user's attacks are considered critical hits on natural 10's instead of 11's, minor action to maintain"
+Last Resort,3 per battle,this move may only be used if all the user's other moves are exhausted for the battle
+Lava Plume,3 per battle,"trigger 5, target burned (save 9)"
+Leaf Blade,3 per battle,this move is a critical hit on a natural 10 instead of 11
+Leaf Storm,1 per battle,recoil - user's Sp. Attack stat is reduced by -2 (save 7)
+Leaf Tornado,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Leafage,0,-
+Leech Life,2 per battle,"on successful hit, user regains HP equal to its Brawn + Grade"
+Leech Seed,2 per battle,"target becomes seeded (save 9), when target starts its turn it looses HP equal to the user's Talent, and user regains that much HP"
+Leer,0,target's Defense stat is decreased by -1 (save 7)
+Lick,0,"trigger 6, target is paralyzed (save 7)"
+Life Dew,2 per battle,allies and user heal 1/4th of their hp
+Light of Ruin,1 per battle,recoil - 2d6 damage
+Light Screen,0,allies gain a resistance to special move damage equal to the user's Grade until the end of user's next turn
+Liquidation,2 per battle,"trigger 6, target's Defense is reduced by -1 (save 11)"
+Lock-On,1 per battle,user gains a +3 to hit during its next turn
+Lovely Kiss,2 per battle,target falls asleep
+Low Kick,0,"if the target is huge, this attack deals 4d6 damage, large 3d6, medium 2d6, small or tiny 1d6"
+Low Sweep,0,the target's Speed is reduced by -1 (save 7)
+Lucky Chant,0,"allies cannot be criticaled against, minor action to maintain"
+Lunar Dance,1 per battle,"user faints, if its trainer replaces it with another Pokemon during the next turn, the replacement Pokemon is cured of all conditions and healed to full HP"
+Lunge,3 per battle,"on successful hit, target's Defense is reduced by -1 (save 7)"
+Luster Purge,1 per battle,"trigger 4, target's Sp. Defense stat is reduced by -1 (save 9)"
+Mach Punch,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Magic Coat,3 per battle,"user cannot take ongoing damage, minor action to maintain"
+Magic Powder,,"target is now pure psychic type, if target is terastalized, nothing happens"
+Magic Room,2 per battle,creates a 5x5 zone where held items loose all effects
+Magical Leaf,0,user gains a +1 to hit with this move
+Magma Storm,0,"this move gains 1d10 bonus damage for each turn the user hits with this move in succession to a max of 4d10 bonus damage (6d10 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0. On successful hit, target cannot flee during its next turn"
+Magnet Bomb,0,user gains a +1 to hit with this move
+Magnet Rise,2 per battle,"user levitates, becoming immune to Ground Type moves, minor action to maintain"
+Magnetic Flux,0,all allies with the Plus or Minus ability have their Attack stat and Sp. Attack stat increased by +1 until the end of the Battle
+Magnitude,0,"Roll 2d6 to determine the damage of this move. 2 (1d4), 3(1d6), 4(1d8), 5(1d10), 6(1d12), 7-8(2d6), 9-10(3d6), 11(2d12), 12(3d10)"
+Malicious Moonsault,1 per day,-
+Mat Block,2 per battle,allies gain a resistance to physical and special move damage equal to the user's Grade until the end of the user's next turn
+Max Guard,1 per battle,"during the user's next turn, it cannot be hit by any move, even if the move states it ignores that"
+Me First,0,"user copies the last move used this Battle. the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Mean Look,1 per battle,target cannot flee (save 11)
+Meditate,0,"user's Attack stat is increased by +1, minor action to maintain"
+Mega Drain,3 per battle,"on successful hit, the user regains HP equal to its Talent + its Grade"
+Mega Kick,1 per battle,-
+Mega Punch,0,-
+Megahorn,2 per battle,-
+Memento,2 per battle,"user faints, target's Attack stat and Sp. Attack stat are decreased by -2 (save 9)"
+Metal Burst,2 per battle,damage for this move is double the damage dice of the last move that damaged the user
+Metal Claw,0,"trigger 6, user's Attack is increased by +1 until the end of the battle"
+Metal Sound,0,target's Sp. Defense stat is decreased by -2 (save 7)
+Meteor Beam,2 per battle, 
+Meteor Mash,2 per battle,"trigger 5, user's Attack is increased by +1 until the end of the battle"
+Metronome,0,GM may use this Metronome Randomizer to determine which move is used
+Milk Drink,2 per battle,user regains HP equal to its 2x (user's Grade + Talent)
+Mimic,2 per battle,user copies the last move used this Battle. the user may use the move until the end of the Battle
+Mind Reader,1 per battle,user gains a +3 to hit during its next turn
+Minimize,2 per battle,"user decreases its size category by one, user's Defense stat and Sp. Defense stat are increased by +1, minor action to maintain"
+Miracle Eye,0,"if target is a Dark Type, it is no longer immune to Psychic damage (save 9), if target is not a Dark Type, its Defense stat is decreased by -1 (save 7)"
+Mirror Coat,0,"user bides for one turn, the second turn, user attacks an adjacent Pokemon. On a successful hit, the user deals damage equal to the amount of damage taken from special attacks while biding"
+Mirror Move,0,user copies the last move used this Battle
+Mirror Shot,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Mist,0,creates a 5x5 zone where allies cannot have their stats decreased
+Mist Ball,1 per battle,"trigger 4, target's Sp. Attack stat is reduced by -1 (save 9)"
+Misty Explosion,1 per battle, 
+Misty Terrain,2 per battle,"creates a 5x5 zone where Pokemon cannot gain conditions, also Dragon Type damage is reduced by the 2x (user's Grade)"
+Moonblast,3 per battle,"trigger 5, target's Sp. Attack stat is reduced by -1 (save 7)"
+Moongeist Beam,1 per battle,cannot be protected against
+Moonlight,1 per battle,"user regains (user's Grade) d8 + Talent HP, this changes to d12's in Harsh Sunlight and d6's in all other weather conditions"
+Morning Sun,1 per battle,"user regains (user's Grade) d8 + Talent HP, this changes to d12's in Harsh Sunlight and d6's in all other weather conditions"
+Mud Bomb,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Mud Shot,3 per battle,"on successful hit, target's Speed stat is reduced by -1 (save 7)"
+Mud Sport,3 per battle,creates a 5x5 zone where Electric damage is reduced by 2x (user's Grade)
+Muddy Water,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Mud-Slap,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Multi-Attack,2 per battle,"this move is Normal type, unless the user is holding a Memory"
+Mystical Fire,2 per battle,"trigger 5, target's Sp. Attack stat is reduced by -1 (save 9)"
+Nasty Plot,0,"user's Sp. Attack stat is increased by +2, minor action to maintain"
+Natural Gift,3 per battle,"this move consumes the user's held Berry, if the user has no Berry, this move fails. Damage Type of this move is determined by the kind of Berry consumed"
+Nature Power,0,simulates another move depending on the current terrain
+Nature's Madness,2 per battle,"if target is at 100% health, this move deals 3d10 damage, if the target is above 50%, this move deals 2d10 damage, if the target is below 50% health, this move deals 1d10 damage"
+Needle Arm,3 per battle,"trigger 6, target is dazed (save 9)"
+Night Daze,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Night Shade,3 per battle,this move deals (user's Grade) d6 damage
+Night Slash,3 per battle,this move is a critical hit on a natural 10 instead of 11
+Nightmare,3 per battle,can only target an asleep target. target takes damaged equal to (target's Grade) d6 at the beginning of each of its turns until it wakes up
+No Retreat,1 per battle,"user increases all stats by +2, but is unable to flee; trigger 11"
+Noble Roar,0,target's Attack stat and Sp. Attack stat are decreased by -1 (save 7)
+Nuzzle,0,"trigger 6, target is paralyzed (save 7)"
+Oblivion Wing,2 per battle,"on successful hit, the user regains HP equal to 2x (its Talent + its Grade)"
+Obstruct,2 per battle,"during the user's next turn, it cannot be hit by any move, if the move was establishing contact, -4 to Defense"
+Oceanic Operetta,1 per day,-
+Octazooka,2 per battle,"trigger 5, target gets a -1 penalty to hit (save 9)"
+Octolock,3 per battle,"target cant flee anymore, for 3 turns, apply -1 Def and -1 SpDef to the target"
+Odor Sleuth,0,"if target is a Ghost Type, it is no longer immune to Normal and Fighting damage (save 9), if target is not a Ghost Type, its Defense stat is decreased by -1 (save 7)"
+Ominous Wind,1 per battle,"trigger 6, all user's stats are increased by +1 until the end of the Battle"
+Origin Pulse,2 per battle,-
+Outrage,2 per battle,"user attack an adjacent foe at random. User must use this move again the following round (this does not count towards the uses per battle limit). At the end of the second round roll a (save 7). If save fails, user becomes confused. If save passes, user must use this move again the following round. At the end of the third round, user becomes confused."
+Overdrive,2 per battle, 
+Overheat,1 per battle,recoil - user's Sp. Attack stat is reduced by -2 (save 7)
+Pain Split,0,"current HP of user and target are added together, user and target's HP each becomes half of the total rounded down"
+Parabolic Charge,0,"on successful hit, the user regains HP equal to its Talent + its Grade"
+Parting Shot,0,"target's Attack stat and Sp. Attack stat are decreased by -1 (save 7), then the user is switched out for another Pokemon on its team"
+Pay Day,4 per battle,Coins are thrown onto the battlefield equal to 100x the user's Grade. This coins may be claimed after the Battle if the user's Trainer wins the Battle
+Payback,2 per battle,"If the user was damaged by the target this round, this move deals 2d10 damage instead"
+Peck,0,-
+Perish Song,1 per battle,"target faints in three turns, unless it is Soundproof/Switched Out"
+Petal Blizzard,3 per battle,-
+Petal Dance,2 per battle,"user must use this move again the following round (this does not count towards the uses per battle limit). At the end of the second round roll a (save 7). If save fails, user becomes confused. If save passes, user must use this move again the following round. At the end of the third round, user becomes confused."
+Phantom Force,2 per battle,user gains a +2 to hit with this move
+Photon Geyser,1 per battle, 
+Pin Missile,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Play Nice,0,target's Attack stat is decreased by -2 (save 7)
+Play Rough,2 per battle,"trigger 5, target's Defense is reduced by -1 (save 9)"
+Pluck,0,"on successful hit, if the target is hold a Berry, the user eats the Berry and gains its effect"
+Poison Fang,3 per battle,"trigger 5, target is poisoned (save 7)"
+Poison Gas,0,target is poisoned (save 7)
+Poison Jab,0,"trigger 6, target is poisoned (save 7)"
+Poison Powder,0,target is poisoned (save 7)
+Poison Sting,0,"trigger 6, target is poisoned (save 7)"
+Poison Tail,0,"trigger 6, target is poisoned (save 7)"
+Pollen Puff,3 per battle,"if the target is an ally, this move heals (target's Grade) d6 damage instead"
+Pound,0,-
+Powder,0,"target is covered in flamable powder, the next time the target uses a Fire Type attack, it damages itself as well as its target"
+Powder Snow,0,"trigger 6, target is frozen (save 7)"
+Power Gem,0,-
+Power Split,2 per battle,"user and target average their Attack stats, user and target average their Sp. Attack stats"
+Power Swap,2 per battle,"user and target switch Attack stats, user and target switch Sp. Attack stats"
+Power Trick,2 per battle,"user adds 7 to its Attack stat and subtracts 7 from its Defense Stat, then switches its Attack Stat and Defense stat until the end of the Battle"
+Power Trip,2 per battle,this move gains 1d6 bonus damage for each point of temporary stat increase the user currently has
+Power Whip,2 per battle,-
+Power-Up Punch,0,"on successful hit, user's Attack is increased by +1 until the end of the battle"
+Precipice Blades,2 per battle,-
+Present,3 per battle,"Roll 1d6 to determine the damage of this move, on a result of 1-5 this move deals 1-5d6 damage accordingly. On the result of a 6, instead of dealing damage, this move heals the user for user's Grade d6 damage + user's Brawn"
+Prismatic Laser,2 per battle,user cannot attack the turn after using this move
+Protect,2 per battle,user cannot be damaged by moves until the end of its next turn
+Psybeam,0,"trigger 6, target is confused (save 7)"
+Psych Up,2 per battle,user copies the bonus to one stat the target has until the end of the Battle
+Psychic,2 per battle,"trigger 5, target's Sp. Defense stat is reduced by -1 (save 9)"
+Psychic Fangs,2 per battle,cannot be protected against
+Psychic Terrain,2 per battle,"creates a 5x5 zone, in the zone Psychic Type moves are Empowered to hit, no Pokemon can change their position in the initiative order while in this zone"
+Psycho Boost,1 per battle,recoil - user's Sp. Attack stat is reduced by -2 (save 7)
+Psycho Cut,0,this move is a critical hit on a natural 10 instead of 11
+Psycho Shift,2 per battle,user transfers any conditons it is suffering to the target (same save)
+Psyshock,2 per battle,this move is considered a Physical Move
+Psystrike,2 per battle,this move is considered a Physical Move
+Psywave,3 per battle,"Roll 2d6 to determine the damage of this move. 2 (1d4), 3(1d6), 4(1d8), 5(1d10), 6(1d12), 7-8(2d6), 9-10(3d6), 11(2d12), 12(3d10)"
+Pulverizing Pancake,1 per day,-
+Punishment,1 per battle,the damage from this attack is increased by 1d12 for each point of temporary stat increase the target currently has to a max of 3d12 bonus damage (4d12 total) . 
+Purify,0,"user heals all of its own conditions, it regains HP equal to its Talent"
+Pursuit,0,"if the target is fleeing, this move deals 2d8 damage instead"
+Quash,3 per battle,target is moved to the last position in the initive order starting next turn
+Quick Attack,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Quick Guard,3 per battle,"user and allies cannot be damaged from moves that reorder the initive order, until the end of the user's next turn"
+Quiver Dance,0,"user's Sp. Attack stat, Sp. Defense Stat, and Speed stat are increased by +1, minor action to maintain"
+Rage,0,"on successful hit, user's Attack is increased by +1 until the end of the battle. this move gains 1d4 bonus damage for each turn the user hits with this move in succession to a max of 5d4 bonus damage (6d4 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Rage Powder,0,target must attack user if able during their turn (save 9)
+Rain Dance,1 per battle,the weather is changed to Rain
+Rapid Spin,0,"on successful hit, target looses any bonuses to damage from consecutively hitting with moves like Fury Cutter"
+Razor Leaf,0,this move is a critical hit on a natural 10 instead of 11
+Razor Shell,2 per battle,"trigger 5, target's Defense is reduced by -1 (save 9)"
+Razor Wind,2 per battle,"user charges for one turn, then attacks the second turn. this move is a critical hit on a natural 10 instead of 11"
+Recover,2 per battle,user regains (user's Grade) d8 + Talent HP
+Recycle,2 per battle,"if the user consumed a held item previously in the Battle, it regains that item, this move will fail if the user is holding an item. this move cannot be used to replace an item that was consumed through a move like Fling, Pluck, or Bugbite"
+Reflect,0,user cannot be damaged by moves until the end of its next turn
+Reflect Type,3 per battle,user becomes the same Type or Types as its target until the end of the Battle
+Refresh,0,"user cures itself of poisoned, burned, and paralyzed statuses"
+Relic Song,2 per battle,"trigger 5, target falls asleep (save 9)"
+Rest,2 per battle,"user fall asleep for two turns, after spending two turns asleep, it wakes up with full HP and cured of all conditions"
+Retaliate,1 per battle,"if an ally fainted this round or the previous round, this move deals 4d6 damage instead"
+Return,0,"IQ or Happiness determines damage. If IQ/Happiness is between 1-10, deal 2d4 damage. If IQ is between 20 and 40, deal 2d6 damage. 40 and 80, 2d8 damage, 80 to 120, 2d10 damage, if 120 and above, 2d12 damage."
+Revelation Dance,3 per battle,the Type of this move is changed to the user's Type or Types
+Revenge,2 per battle,"if the user has taken damage from the target this turn, this move deals 2d12 instead"
+Reversal,3 per battle,"if user is at 100% health, this move deals 1d10 damage, if the user is above 50%, this move deals 2d10 damage, if the user is below 50% health, this move deals 3d10 damage, if the user is at 5HP or less, this move deals 4d10 damage"
+Rising Voltage,, 
+Roar,0,"target is switched out for another Pokemon, in the wild, the target starts fleeing if able"
+Roar of Time,1 per battle,user cannot attack the turn after using this move
+Rock Blast,2 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Rock Climb,0,"trigger 6, target is confused (save 7)"
+Rock Polish,0,"user's Speed stat is increased by +2, minor action to maintain"
+Rock Slide,2 per battle,"trigger 5, target is dazed (save 9)"
+Rock Smash,3 per battle,"trigger 5, target's Defense is reduced by -1 (save 7)"
+Rock Throw,3 per battle,-
+Rock Tomb,3 per battle,"on successful hit, target's Speed is reduced by -1 (save 9)"
+Rock Wrecker,1 per battle,user cannot move during its following turn
+Role Play,2 per battle,user gains the ability of the target until the end of the Battle
+Rolling Kick,3 per battle,"trigger 5, target is dazed (save 7)"
+Rollout,0,"this move gains 1d6 bonus damage for each turn the user hits with this move in succession to a max of 4d6 bonus damage (5d6 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Roost,2 per battle,"user becomes grounded, regains HP equal to (user's Grade + Talent) d6"
+Rototiller,2 per battle,all Grass Type Pokemon's Attack Stats and Sp. Attack Stats are increased by +1 until the end of the Battle
+Round,3 per battle,this move gains 1d12 bonus damage for each ally that hit with Round this turn
+Sacred Fire,1 per battle,"trigger 4, target is dazed (save 9)"
+Sacred Sword,3 per battle,this move ignores temporary bonuses the target has to Defense
+Safeguard,0,"creates a 5x5 zone, in the zone allies cannot gain conditions"
+Sand Attack,3 per battle,target gets a -1 to hit (save 9)
+Sand Tomb,3 per battle,the weather becomes Sandstorm for the next 5 rounds
+Sandstorm,2 per battle,weather is changed to Sandstorm
+Scald,3 per battle,"trigger 5, target is burned (save 7)"
+Scary Face,2 per battle,target's Speed stat is decreased by -2 (save 9)
+Scorching Sands,2 per battle, 
+Scratch,0,-
+Screech,0,target's Defense stat is decreased by -2 (save 7)
+Searing Shot,1 per battle,"trigger 5, target is burned (save 11)"
+Secret Power,0,"trigger 6, target becomes; paralyzed (inside buildings or plain terrain), dazed (sand or cave), confused (rock), poisoned (tall grass), falls asleep (long grass), Speed reduced by -1 (pond water), Attack reduced by -1 (sea water), Defense reduced by -1 (under water) (save 7)"
+Secret Sword,2 per battle,this move is considered a Physical Move
+Seed Bomb,3 per battle,-
+Seed Flare,1 per battle,"trigger 4, target's Sp. Defense stat is reduced by -1 (save 9)"
+Seismic Toss,0,this move deals user's Grade d6 damage
+Self-Destruct,1 per battle,user faints after using this move
+Shadow Ball,3 per battle,"trigger 6, target's Sp. Defense stat is reduced by -1 (save 9)"
+Shadow Bone,2 per battle,"trigger 5, target's Defense is reduced by -1 (save 9)"
+Shadow Claw,3 per battle,this move is a critical hit on a natural 10 instead of 11
+Shadow Force,1 per battle,"the user disappears for a turn, on the second turn the user attacks with this move"
+Shadow Sneak,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Sharpen,0,"user's Attack stat and Brawn stat are increased by +1, minor action to maintain"
+Sheer Cold,1 per battle,??
+Shell Side Arm,2 per battle, 
+Shell Smash,3 per battle,"user's Defense and Sp. Defense stat are decreased by -1, user's Attack stat, Sp. Attack stat, and Speed stat are increased by +2 until the end of the Battle"
+Shell Trap,1 per battle,"interrupt attack, when the user is hit with a physical move"
+Shift Gear,2 per battle,"user's Attack stat is increased by +1, user's Speed stat is increased by +2, minor action to maintain"
+Shock Wave,0,user gains a +1 to hit with this move
+Shore Up,2 per battle,"user regains (user's Grade) d8 + Talent HP, this changes to d12's in Sandstorm"
+Signal Beam,3 per battle,"trigger 5, target is confused (save 7)"
+Silver Wind,1 per battle,"trigger 6, all user's stats are increased by +1 until the end of the Battle"
+Simple Beam,3 per battle,target's gains the simple ability until the end of the Battle
+Sing,3 per battle,target falls asleep
+Sinister Arrow Raid,1 per day,-
+Sketch,1 per battle,"user learns the last move used by the target, Sketch is forgotten"
+Skill Swap,2 per battle,user exchanges abilities with target
+Skull Bash,2 per battle,"the user tucks its head for one turn and the user's Defense is increased by +1 until the end of the Battle, on the second turn the user attacks with this move"
+Sky Attack,1 per battle,"user flies high for one turn, on the second turn user attacks. this move is a critical hit on a natural 10 instead of 11. trigger 4, target is dazed (save 7)"
+Sky Drop,2 per battle,"user grabs the target and flies both the target and the user high for one round. Target may not take any action while flying high. on the second turn, target is dropped and takes damage"
+Sky Uppercut,3 per battle,May strike flying foes
+Slack Off,2 per battle,user regains HP equal to user's Grade * Health  + Talent
+Slam,0,Welcome to the Jam
+Slash,0,this move is a critical hit on a natural 10 instead of 11
+Sleep Powder,3 per battle,target falls asleep (save 9)
+Sleep Talk,2 per battle,can only be used while user is asleep. user uses another random move it knows
+Sludge,0,"trigger 6, target is poisoned (save 7)"
+Sludge Bomb,2 per battle,"trigger 5, target is poisoned (save 9)"
+Sludge Wave,2 per battle,"trigger 5, target is poisoned (save 9)"
+Smack Down,3 per battle,"on successful hit, if the target is a Flying type, it becomes grounded and is no longer immue to ground damage until the end of the Battle"
+Smart Strike,2 per battle,user gains a +2 to hit with this move
+Smelling Salts,2 per battle,"if the target is paralyzed, this move deals 4d6 damage instead. on successful hit, target is cured of paralysis"
+Smog,0,"trigger 6, target is poisoned (save 7)"
+Smokescreen,0,target gets a -1 to hit (save 7)
+Snarl,3 per battle,"trigger 6, target's Sp. Attack stat is reduced by -1 (save 9)"
+Snatch,2 per battle,"if target would be healed or have a stat increased, the user gets that benefit instead (save 7)"
+Snipe Shot,3 per battle,ignores opposing pokemons abilities
+Snore,3 per battle,"trigger 5, target is dazed (save 9). this move may only be used if the user is asleep. "
+Soak,0,target becomes an Water Type and looses all other Types (save 9)
+Soft-Boiled,2 per battle,user regains HP equal to (user's Grade) d6 + Talent
+Solar Beam,2 per battle,"user charges for one turn, then attacks the second turn. If Sunny Weather is in effect, negate charge time, and increase range to Grade*3"
+Solar Blade,2 per battle,"the user focuses energy for one turn, on the second turn the user attacks with this move"
+Sonic Boom,0,this move deals 5 damage
+Soul-Stealing 7-Star Strike,1 per day,-
+Spacial Rend,1 per battle,this move is a critical hit on a natural 10 instead of 11
+Spark,0,"trigger 6, target is paralyzed (save 7)"
+Sparkling Aria,2 per battle,"on successful hit, target is cured of burned conditions"
+Spectral Thief,2 per battle,"on successful hit, user gains all temporary stat bonuses the target had, target looses all tempoary stat bonuses"
+Speed Swap,2 per battle,user exchanges Speed stats with the target
+Spider Web,2 per battle,target cannot flee (save 11)
+Spike Cannon,3 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage"
+Spikes,0,"creates a 5x5 zone of spikes, Pokemon starting their turn in the zone take (user's Grade) d4 damage from the spikes"
+Spiky Shield,2 per battle,"user cannot take damage until the end of its next turn, if attacked with a Physical move, the attacker takes (user's Grade) d6 damage"
+Spirit Shackle,2 per battle,"on successful hit, target may not move during its next turn"
+Spit Up,2 per battle,"if the user has used Stockpile for one turn, this move deals 2d10 damage, two turns, 4d10 damage, three turns 6d10 damage. if the user has not used Stockpile, this move fails"
+Spite,2 per battle,target looses one use of the last move it used against the user
+Splash,0,-
+Spore,3 per battle,target falls asleep (save 9)
+Spotlight,3 per battle,all foes must attack the target if able (save 7)
+Stealth Rock,0,"creates a 5x5 zone of floating stones, Pokemon starting their turn in the zone take (user's Grade) d4 damage from the spikes"
+Steam Eruption,1 per battle,"trigger 4, target is burned (save 9)"
+Steamroller,0,"trigger 6, target is dazed (save 7)"
+Steel Beam,1 per battle, 
+Steel Wing,0,"trigger 6, user's Defense is increased by +1 until the end of the battle"
+Sticky Web,0,"creates a 5x5 zone of webbing, Pokemon starting their turn in the zone have their Speed stat decreased by -2 (save 7)"
+Stockpile,0,"user's Defense stat and Sp. Defense stat are increased by +1, minor action to maintain"
+Stoked Sparksurfer,1 per day,"on successful hit, target is paralyzed (save 9)"
+Stomp,0,"trigger 6, target is dazed (save 7)"
+Stomping Tantrum,2 per battle,"if the user's move the previous turn missed, this move deals 4d6 damage instead"
+Stone Edge,1 per battle,this move is a critical hit on a natural 10 instead of 11
+Stored Power,2 per battle,this move gains 1d6 bonus damage for each point of temporary stat increase the user currently has
+Storm Throw,2 per battle,this move is a critical hit on a natural 10 instead of 11
+Strange Steam,2 per battle, 
+Strength,3 per battle,-
+Strength Sap,2 per battle,user regains HP equal to target's attack stat)
+String Shot,0,target's Speed stat is decreased by -2 (save 9)
+Struggle,0,"A move known by all Pokemon, but only usable if all its other moves are exhausted for the Battle. User takes half the damage it deals with this attack"
+Struggle Bug,0,"trigger 6, target's Sp. Attack stat is reduced by -1 (save 7)"
+Stuff Cheeks,2 per battle,"if the user held an berry and ate it, +4 to defense"
+Stun Spore,0,target is paralyzed (save 7)
+Submission,0,recoil - 1d8
+Substitute,2 per battle,"user makes a copy of itself. the copy takes half the user's current HP, foes have a 50% chance to hit the copy instead of the user"
+Sucker Punch,1 per battle,"interrupt, can be used right before the user is attacked by an adjacent target"
+Sunny Day,1 per battle,weather is changed to Sunny
+Sunsteel Strike,1 per battle,-
+Super Fang,2 per battle,Deal damage equal to half the opponents current health points
+Superpower,1 per battle,the user's Attack and Defense are reduced by -1 (save 7)
+Supersonic,0,target is confused (save 7)
+Surf,3 per battle,-
+Swagger,3 per battle,"target is confused (save 9), but target's Attack stat is increased by +1 until the end of the Battle"
+Swallow,2 per battle,"user regains HP equal to (user's Grade) d8 + Talent, if user used Stockpile previously in battle, it regains d12's instead"
+Sweet Kiss,2 per battle,target is confused (save 9)
+Sweet Scent,0,Pokemon attacking target get a +1 to hit (save 7)
+Swift,0,user gains a +1 to hit with this move
+Switcheroo,2 per battle,user switches held items with target
+Swords Dance,0,"user's Attack stat and Brawn stat are increased by +2, minor action to maintain"
+Synchronoise,2 per battle,"on successful hit, if the user is burned, frozen, poisoned, or paralyzed, the target gains the same condition"
+Synthesis,1 per battle,"user regains (user's Grade) d8 + Talent HP, this changes to d12's in Harsh Sunlight and d6's in all other weather conditions"
+Tackle,0,-
+Tail Glow,0,"user's Sp. Attack stat and Talent stat are increased by +2, minor action to maintain"
+Tail Slap,2 per battle,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d6 damage"
+Tail Whip,0,target's Defense stat is decreased by -1 (save 7)
+Tailwind,3 per battle,"allies Speed stat is increased by +2, minor action to maintain"
+Take Down,0,recoil - 1d6
+Tar Shot,3 per battle,"targets speed is decreased by -2, also weak to fire type attacks"
+Taunt,0,target may not use status moves and must attack if able (save 9)
+Tearful Look,0,target's Attack stat and Sp. Attack stat are decreased by -1 (save 7)
+Teatime,2 per battle,every pokemon on the field eats their hold berry
+Techno Blast,1 per battle,"if user is holding a drive, the Type of this move becomes the same Type as the drive"
+Teeter Dance,0,target is confused (save 7)
+Telekinesis,3 per battle,Pokemon attacking target get a +1 to hit (save 7)
+Teleport,0,flee from any battle
+Terrain Pulse,2 per battle, 
+Thief,0,"on successful hit, if the user is holding no item it steals the target's held item"
+Thousand Arrows,2 per battle,"on successful hit, target is grounded"
+Thousand Waves,2 per battle,"on successful hit, target cannot flee"
+Thrash,2 per battle,"user attack an adjacent foe at random. User must use this move again the following round (this does not count towards the uses per battle limit). At the end of the second round roll a (save 7). If save fails, user becomes confused. If save passes, user must use this move again the following round. At the end of the third round, user becomes confused."
+Throat Chop,3 per battle,"on successful hit, target cannot use sound based moves for 2 turns"
+Thunder,2 per battle,"trigger 5, target is paralyzed (save 9)"
+Thunder Cage,3 per battle, 
+Thunder Fang,3 per battle,"trigger 5, target is paralyzed (save 7)"
+Thunder Punch,3 per battle,"trigger 6, target is paralyzed (save 9)"
+Thunder Shock,0,"trigger 6, target is paralyzed (save 7)"
+Thunder Wave,0,target is paralyzed (save 7)
+Thunderbolt,3 per battle,"trigger 6, target is paralyzed (save 9)"
+Tickle,0,target's Attack stat and Defense stat are decreased by -1 (save 7)
+Topsy-Turvy,0,target's temporary stat bonuses and penalties are reversed in value
+Torment,3 per battle,target cannot use the save move two turns in a row (save 7)
+Toxic,2 per battle,target is poisoned (save 9)
+Toxic Spikes,0,"creates a 5x5 zone of poison spikes, Pokemon starting their turn in the zone become poisoned (save 7)"
+Toxic Thread,0,"target is poisoned (save 7), as long as it is poisoned its Speed stat is reduced by -1"
+Transform,2 per battle,user becomes the same kind of Pokemon as target and learns all its move until the end of Battle
+Tri Attack,2 per battle,"trigger 6, target is burned (save 9), trigger 6, target is frozen (save 9), trigger 6, target is paralyzed (save 9)"
+Trick,2 per battle,user switches held items with target
+Trick Room,1 per battle,"starting next turn, the initive order is reversed"
+Trick-or-Treat,0,target gains the Ghost Type in addition to its other Types (save 9)
+Triple Kick,2 per battle,"attack once, if you hit, attack again with a -1, if you miss you deal 1d4 damage. If you hit, attack again with a -2, if you miss you deal 2d8 damage, if you hit you deal 3d12 damage"
+Trop Kick,3 per battle,"on successful hit, target's Attack is reduced by -1 (save 7)"
+Trump Card,1 per battle,"if three of the user's other moves are exhausted, this move deals 4d10 damage, if two of the user's other moves are exhausted, this move deals 3d10 damage, if one of the user's other moves is exhausted, this move deals 2d10 damage, if none of the user's other moves are exhausted, this move deals 1d10 damage"
+Twineedle,0,"attack twice. If both attacks hit; trigger 6, target is poisoned (save 7)"
+Twister,0,"trigger 6, target is dazed (save 7)"
+Uproar,2 per battle,user uses this move three turns in a row (this does not count towards the limit per battle). no Pokemon can fall asleep this turn or next
+U-turn,0,"after the attack, the user is switched out for another Pokemon from its team"
+Vacuum Wave,0,"the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+V-create,1 per battle,"the user's Defense, Sp. Defense and Speed are reduced by -1 (save 7)"
+Venom Drench,0,"target is poisoned (save 7), as long as target is poisoned its Attack stat, Sp. Attack stat, and Speed stat is reduced by -1"
+Venoshock,2 per battle,"if the target is poisoned, this move deals 2d12 damage instead"
+Vine Whip,0,-
+Vital Throw,2 per battle,user gains a +2 to hit with this move. user is moved to the end of the initiative order starting next turn
+Volt Switch,0,"after the attack, the user is switched out for another Pokemon from its team"
+Volt Tackle,3 per battle,"trigger 6, target is paralyzed (save 9). recoil - 1d12"
+Wake-Up Slap,2 per battle,"if the target is sleeping, this move deals 4d6 damage instead. on successful hit, target wakes up"
+Water Gun,0,-
+Water Pledge,2 per battle,"if an alley used Fire Pledge as a pledge this turn, this move deals 3d10 damage instead and creates a special weather condition called Rainbow. While the Rainbow is the current weater conditon, you and your allies gain a +1 on trigger rolls. You may choose to use this move as a pledge instead of doing 2d8 damage. If you do, an ally using Grass Pledge later this turn will gain increased benefits from the move."
+Water Pulse,0,"trigger 6, target is poisoned (save 7)"
+Water Shuriken,0,"attack twice, if both hit, attack again with a -1, if that hits attack again with a -2, if that hits attack again with a -3. Each successful hit deals 1d4 damage. the first time this move is used in battle, the user goes to the top of the intiative order starting next turn"
+Water Sport,3 per battle,"creates a 5x5 zone of water, any Pokemon using Fire moves in the zone has their damage cut in half"
+Water Spout,1 per battle,"if user is at 100% health, this move deals 3d10 damage, if the user is above 50%, this move deals 2d10 damage, if the user is below 50% health, this move deals 1d10 damage"
+Waterfall,3 per battle,"trigger 6, target is dazed (save 9)"
+Weather Ball,2 per battle,the Type of this move is changed by the current weather
+Whirlpool,0,"this move gains 1d6 bonus damage for each turn the user hits with this move in succession to a max of 4d6 bonus damage (5d6 total). If the user uses another move, or misses with this move, it resets the bonus damage to 0"
+Whirlwind,0,"target is switched out for another Pokemon, in the wild, the target starts fleeing if able"
+Wide Guard,2 per battle,creates a 5x5 zone where Pokemon cannot be targeted by ranged moves
+Wild Charge,3 per battle,recoil - 1d6
+Will-O-Wisp,3 per battle,target is burned (save 9)
+Wing Attack,0,-
+Wish,2 per battle,"one turn after this move is used, user or its replacement regain HP equal to (user's Grade) d10"
+Withdraw,0,"user's Defense stat is increased by +2, minor action to maintain"
+Wonder Room,2 per battle,"creates a 5x5 zone, any Pokemon in this zone has its Defense and Sp. Defense swapped"
+Wood Hammer,3 per battle,recoil - 1d12
+Work Up,0,"user's Attack and Sp. Attack are increased by +1, minor action to maintain"
+Worry Seed,2 per battle,target gains the insomnia ability until the end of the Battle
+Wrap,0,??
+Wring Out,1 per battle,"if target is at 100% health, this move deals 3d10 damage, if the target is above 50%, this move deals 2d10 damage, if the target is below 50% health, this move deals 1d10 damage"
+X-Scissor,3 per battle,-
+Yawn,2 per battle,target falls asleep at the end of its next turn
+Zap Cannon,1 per battle,"on successful hit, target is paralyzed (save 9)"
+Zen Headbutt,3 per battle,"trigger 6, target is dazed (save 9)"
+Zing Zap,2 per battle,"trigger 6, target is dazed (save 11)"

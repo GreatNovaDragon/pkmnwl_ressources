@@ -57,6 +57,9 @@
                  r: {
                    min: 0,
                    max: 15,
+                   pointLabels: {
+                       font: {size: 15}
+                   }
                  }
                }
              }
@@ -73,7 +76,7 @@
 
 <div class="w3-row">
     <a href="javascript:void(0)" onclick="openCity(event, 'LevelUp');">
-        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Level Up</div>
+        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding  w3-border-red">Level Up</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'TM');">
         <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">TM</div>
@@ -84,7 +87,7 @@
 </div>
 
 
-<div id="LevelUp" class="w3-container city" style=" display: none; flex-wrap: wrap ;  justify-content: space-evenly">
+<div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
     @foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
@@ -258,8 +261,4 @@ function openCity(evt, cityName) {
 </script>
 
 <a asp-page="./Edit" asp-route-id="@Model.Pokemon?.ID">Edit</a> |
-<
-a
-asp - page = "./Index" > Back
-to List</
-a >
+<a asp - page="./Index"> Back to List</a >
