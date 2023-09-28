@@ -108,8 +108,7 @@ public class Learnsets
 {
     public string ID { get; set; }
 
-    public string? MoveId { get; set; }
-    public Move? move { get; set; }
+    public Move move { get; set; }
     public string how { get; set; }
 
     public int level { get; set; }

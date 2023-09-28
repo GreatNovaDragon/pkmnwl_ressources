@@ -93,7 +93,7 @@ public class Helpers
     }
 
 
-    public static List<mv> csv2moves(string whereItIs)
+    public static mv[] csv2moves(string whereItIs)
     {
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
@@ -101,10 +101,10 @@ public class Helpers
         };
         using var reader = new StreamReader(whereItIs);
         using var csv = new CsvReader(reader, config);
-        return csv.GetRecords<mv>().ToList();
+        return csv.GetRecords<mv>().ToArray();
     }
 
-    public static List<ab> csv2ab(string whereItIs)
+    public static ab[] csv2ab(string whereItIs)
     {
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
@@ -112,7 +112,7 @@ public class Helpers
         };
         using var reader = new StreamReader(whereItIs);
         using var csv = new CsvReader(reader, config);
-        return csv.GetRecords<ab>().ToList();
+        return csv.GetRecords<ab>().ToArray();
     }
 
     public class mv

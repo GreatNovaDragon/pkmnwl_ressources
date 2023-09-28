@@ -10,19 +10,15 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table id="abilities" class="display">
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ability[0].Name_DE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ability[0].Name)
+            Name
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Ability[0].Effect)
         </th>
-        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -30,20 +26,22 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name_DE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
+                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name} / {item.Name_DE}")</a>
+            </td> 
             <td>
                 @Html.DisplayFor(modelItem => item.Effect)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
     }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $('#abilities').DataTable({
+         "order": []
+        });
+    });
+    </script>
+}

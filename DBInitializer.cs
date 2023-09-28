@@ -74,7 +74,7 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferItems(ApplicationDbContext context, PokeApiClient apiclient)
@@ -87,6 +87,7 @@ public class DBInitializer
 
 
         var items = await apiclient.GetNamedResourcePageAsync<Item>(9999, 0);
+        var itms = new List<Data.Item>();
         foreach (var i in items.Results)
         {
             var Item = await apiclient.GetResourceAsync(i);
@@ -102,7 +103,7 @@ public class DBInitializer
                 : Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
                     : "No Data";
-            context.Items.Add(new Data.Item
+            itms.Add(new Data.Item
             {
                 ID = ID,
                 Name = Name,
@@ -111,7 +112,8 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        context.AddRange(itms);
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferAbilities(ApplicationDbContext context, PokeApiClient apiclient)
@@ -123,7 +125,7 @@ public class DBInitializer
         }
 
         var abilities = await apiclient.GetNamedResourcePageAsync<Ability>(9999, 0);
-
+        List<Data.Ability> abs = new List<Data.Ability>();
         foreach (var i in abilities.Results)
         {
             var Item = await apiclient.GetResourceAsync(i);
@@ -137,7 +139,7 @@ public class DBInitializer
             var Effect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
                 ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
                     : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Entry";
@@ -153,7 +155,7 @@ public class DBInitializer
             }
 
 
-            context.Abilities.Add(new Data.Ability
+            abs.Add(new Data.Ability
             {
                 ID = ID,
                 Name = Name,
@@ -162,7 +164,8 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        context.AddRange(abs);
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
@@ -175,6 +178,8 @@ public class DBInitializer
 
         var types = context.Types.ToList();
         var moves = await apiclient.GetNamedResourcePageAsync<Move>(999, 0);
+        List<Data.Move> mvs = new List<Data.Move>();
+
         var dclass = context.MoveClass.ToList();
         foreach (var i in moves.Results)
         {
@@ -187,9 +192,9 @@ public class DBInitializer
 
             var Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
             var Effect = (m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
-                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
+                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Entry").Replace("$effect_chance%", $"{m.EffectChance}");
@@ -212,7 +217,7 @@ public class DBInitializer
                 Effect = mn.effect;
             }
 
-            context.Moves.Add(new Data.Move
+            mvs.Add(new Data.Move
             {
                 ID = ID,
                 Name = Name,
@@ -225,7 +230,13 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        foreach (var m in mvs)
+        {
+            Console.WriteLine($"{m.Name_DE}");
+        }
+
+        context.AddRange(mvs);
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferMon(ApplicationDbContext context, PokeApiClient apiclient)
@@ -236,10 +247,10 @@ public class DBInitializer
             return;
         }
 
-        var abilities = context.Abilities.ToList();
-        var types = context.Types.ToList();
+        var abilities = context.Abilities.ToArray();
+        var types = context.Types.ToArray();
         var pkmn = await apiclient.GetNamedResourcePageAsync<Pokemon>(1500, 0);
-
+        var pokes = new List<Data.Pokemon>();
         foreach (var p in pkmn.Results)
         {
             var poke = await apiclient.GetResourceAsync(p);
@@ -278,12 +289,13 @@ public class DBInitializer
 
             var learnset = new List<Learnsets>();
 
+            var moves = context.Moves.ToArray();
             foreach (var m in poke.Moves)
             {
                 var l = new Learnsets
                 {
                     ID = Guid.NewGuid().ToString(),
-                    MoveId = m.Move.Name,
+                    move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
                     how = m.VersionGroupDetails.Last().MoveLearnMethod.Name,
                     level = m.VersionGroupDetails.Last().LevelLearnedAt / 5
                 };
@@ -318,7 +330,7 @@ public class DBInitializer
             var SPEED = StatToInt(poke.Stats.FirstOrDefault(m => m.Stat.Name == "speed").BaseStat);
             ;
 
-            context.Pokedex.Add(new Data.Pokemon
+            pokes.Add(new Data.Pokemon
             {
                 ID = ID,
                 Order = Order,
@@ -339,7 +351,8 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        context.AddRange(pokes);
+        await context.SaveChangesAsync();
     }
 
 
