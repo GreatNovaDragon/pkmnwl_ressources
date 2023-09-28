@@ -15,7 +15,7 @@
     <thead>
     <tr>
         <th>
-            DexNumber
+            Dex
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Pokemon[0].Name)
@@ -24,25 +24,6 @@
         <th>
             Typen
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].HEALTH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].ATK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].DEF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].SP_ATK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].SP_DEF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pokemon[0].SPEED)
-        </th>
-        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -73,28 +54,6 @@
                     @Html.Raw("/")
                 }
                 @Html.DisplayFor(modelItem => item.Type2.Name_DE)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HEALTH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ATK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DEF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SP_ATK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SP_DEF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPEED)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
     }
