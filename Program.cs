@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using pkmnWildLife;
 using pkmnWildLife.Data;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -50,6 +52,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
     await DBInitializer.InitializeDB(context);
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
