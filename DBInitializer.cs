@@ -292,15 +292,33 @@ public class DBInitializer
             var moves = context.Moves.ToArray();
             foreach (var m in poke.Moves)
             {
-                var l = new Learnsets
-                {
-                    ID = Guid.NewGuid().ToString(),
-                    move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
-                    how = m.VersionGroupDetails.Last().MoveLearnMethod.Name,
-                    level = m.VersionGroupDetails.Last().LevelLearnedAt / 5
-                };
+                
+               
+                    var verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "sword-shield");
+                    if (verm.IsNullOrEmpty())
+                    {
+                        verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "scarlet-violet");
+                    }
+                    if (verm.IsNullOrEmpty())
+                    {
+                        verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "ultra-sun-ultra-moon");
+                    }
 
-                learnset.Add(l);
+                    foreach (var vers in verm)
+                    {
+                        var l = new Learnsets
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
+                            how = vers.MoveLearnMethod.Name,
+                            level = int.Parse(Math.Ceiling(((double)vers.LevelLearnedAt /5)).ToString())
+                        };
+                        
+                        learnset.Add(l);
+                    }
+                
+
+                
             }
 
             var Abilities = new List<Data.Ability>();
