@@ -15,7 +15,7 @@ public class DetailsModel : PageModel
     }
 
     public Pokemon Pokemon { get; set; } = default!;
-    public List<Learnsets> Learnsets { get; set; }
+    public List<Learnset> Learnsets { get; set; }
 
     public List<Ability> Abilities { get; set; }
 
@@ -23,14 +23,15 @@ public class DetailsModel : PageModel
     {
         if (id == null || _context.Pokedex == null) return NotFound();
 
-        var pokemon = await _context.Pokedex.Include(p => p.learnset).ThenInclude(m => m.move)
-            .ThenInclude(m => m.MoveClass).Include(m => m.learnset).ThenInclude(m => m.move)
-            .ThenInclude(m => m.type)
+        var pokemon = await _context.Pokedex
             .Include(p => p.Abilities).FirstOrDefaultAsync(m => m.ID == id);
         if (pokemon == null) return NotFound();
 
+        var Learnset = _context.Learnsets.Include(p => p.mon).Include(m => m.move).ThenInclude(mv => mv.type)
+            .Include(m => m.move).ThenInclude(mv => mv.MoveClass).Where(m => m.mon == pokemon).ToList();
+
         Pokemon = pokemon;
-        Learnsets = Pokemon.learnset;
+        Learnsets = Learnset;
         Abilities = Pokemon.Abilities;
         return Page();
     }

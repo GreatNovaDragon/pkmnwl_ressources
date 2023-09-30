@@ -21,13 +21,13 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<Character> Characters { get; set; }
     public DbSet<Skill> Skills { get; set; }
     public DbSet<AttackMod> AttackModifiers { get; set; }
-
+    public DbSet<Learnset> Learnsets { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Character>().HasMany(e => e.Abilities).WithMany();
         builder.Entity<Pokemon>().HasMany(e => e.Abilities).WithMany();
-        builder.Entity<Pokemon>().HasMany(e => e.learnset);
         builder.Entity<Character>().HasMany(e => e.Inventory).WithMany();
+        builder.Entity<Character>().HasMany(e => e.Moves).WithMany();
         base.OnModelCreating(builder);
     }
 }
@@ -92,9 +92,6 @@ public class Pokemon
     public string? Name_DE { get; set; }
 
     public string? Form { get; set; }
-
-    public List<Learnsets> learnset { get; set; }
-
     public List<Ability> Abilities { get; set; }
     public Type Type1 { get; set; }
     public Type? Type2 { get; set; }
@@ -105,16 +102,21 @@ public class Pokemon
     public int SP_ATK { get; set; }
     public int SP_DEF { get; set; }
     public int SPEED { get; set; }
+    
 }
 
-public class Learnsets
+public class Learnset
 {
     public string ID { get; set; }
+    
+    public Pokemon mon { get; set; }
 
     public Move move { get; set; }
     public string how { get; set; }
 
     public int level { get; set; }
+    
+    public string? source { get; set; }
 }
 
 public class Character

@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Routing.Matching;
+using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
@@ -14,14 +15,14 @@ public class DBInitializer
     public static async Task InitializeDB(ApplicationDbContext context)
     {
         var apiclient = new PokeApiClient();
-        await TransferTraits(context);
-        await TransferAbilities(context, apiclient);
-
         await TransferTypes(context, apiclient);
         await TransferMoveClasses(context, apiclient);
         await TransferMoves(context, apiclient);
-        await TransferItems(context, apiclient);
+        await TransferTraits(context);
+        await TransferAbilities(context, apiclient);
         await TransferMon(context, apiclient);
+        await TransferItems(context, apiclient);
+        await TransferLearnsets(context, apiclient);
     }
 
 
@@ -34,11 +35,11 @@ public class DBInitializer
         }
 
         var types = await apiclient.GetNamedResourcePageAsync<Type>(9999, 0);
-
+        var tps = new List<Data.Type>();
         foreach (var TypeR in types.Results)
         {
             var Type = await apiclient.GetResourceAsync(TypeR);
-            context.Types.Add(new Data.Type
+            tps.Add(new Data.Type
             {
                 ID = Type.Name,
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
@@ -46,7 +47,8 @@ public class DBInitializer
             });
         }
 
-        context.SaveChangesAsync();
+        context.AddRange(tps);
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
@@ -58,11 +60,12 @@ public class DBInitializer
         }
 
         var moveClass = await apiclient.GetNamedResourcePageAsync<MoveDamageClass>(10, 0);
+        var movecls = new List<MoveClass>();
 
         foreach (var TypeR in moveClass.Results)
         {
             var Type = await apiclient.GetResourceAsync(TypeR);
-            context.MoveClasses.Add(new MoveClass
+            movecls.Add(new MoveClass
             {
                 ID = Type.Name,
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
@@ -70,6 +73,7 @@ public class DBInitializer
             });
         }
 
+        context.AddRange(movecls);
         await context.SaveChangesAsync();
     }
 
@@ -88,8 +92,17 @@ public class DBInitializer
         {
             var Item = await apiclient.GetResourceAsync(i);
 
+            string[] undesirables =
+            {
+                "dynamax-crystals", "sandwhich-ingredients", "tm-materials", "picnic", "species-candies",
+                "all-machines", "all-mail", "plot-advancement"
+            };
+
+            if (undesirables.Contains(Item.Category.Name))
+                continue;
 
             var ID = $"{Item.Name}_{Item.Id}";
+
             var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
                 : Item.Name;
@@ -159,6 +172,8 @@ public class DBInitializer
                 Effect = Effect,
                 IsTrait = false
             });
+
+            Console.WriteLine(Name);
         }
 
         context.AddRange(abs);
@@ -185,7 +200,7 @@ public class DBInitializer
                 IsTrait = true
             });
         context.AddRange(trs);
-        context.SaveChangesAsync();
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
@@ -248,9 +263,10 @@ public class DBInitializer
                 DamageDice = DamageDice,
                 MoveClass = DamageClass
             });
+
+            Console.WriteLine(Name + "move");
         }
 
-        foreach (var m in mvs) Console.WriteLine($"{m.Name_DE}");
 
         context.AddRange(mvs);
         await context.SaveChangesAsync();
@@ -304,45 +320,6 @@ public class DBInitializer
 
             if (Name_DE == Name) Name_DE = null;
 
-            var learnset = new List<Learnsets>();
-
-            var moves = context.MoveDex.ToArray();
-            foreach (var m in poke.Moves)
-            {
-                var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield"); 
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk"); 
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask"); 
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet"); 
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl"); 
-                if(vergd.IsNullOrEmpty())
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon"); 
-                
-                
-                
-                
-                
-                foreach (var vers in vergd)
-                {
-                    var l = new Learnsets
-                    {
-                        ID = Guid.NewGuid().ToString(),
-                        move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
-                        how = vers.MoveLearnMethod.Name,
-                        level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString())
-                    };
-
-                    learnset.Add(l);
-                }
-            }
-
             var Abilities = new List<Data.Ability>();
 
             foreach (var a in poke.Abilities)
@@ -351,6 +328,8 @@ public class DBInitializer
                     w.ID == a.Ability.Name);
 
                 Abilities.Add(ab);
+
+                Console.WriteLine(Name + " ability " + ab.Name_DE);
             }
 
 
@@ -378,7 +357,6 @@ public class DBInitializer
                 Name_DE = Name_DE,
                 ImageLink = image,
                 Form = form,
-                learnset = learnset,
                 Abilities = Abilities,
                 Type1 = Type1,
                 Type2 = Type2,
@@ -389,13 +367,101 @@ public class DBInitializer
                 SP_ATK = SP_ATK,
                 SPEED = SPEED
             });
+
+            Console.WriteLine(Name);
         }
 
         context.AddRange(pokes);
-        
+
         await context.SaveChangesAsync();
     }
 
+    public static async Task TransferLearnsets(ApplicationDbContext context, PokeApiClient apiclient)
+    {
+
+        if (context.Learnsets.Any())
+        {
+            Console.WriteLine("There already are learnsets");
+            return;
+        }
+            
+        var moves_local = context.MoveDex.ToArray();
+        var pokemon = context.Pokedex.ToArray();
+        foreach (var poke in pokemon)
+        {
+            var moves = apiclient.GetResourceAsync<Pokemon>(poke.ID).Result.Moves;
+            var learnset = new List<Learnset>();
+            foreach (var m in moves)
+            {
+                var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
+                string basedon = "The Crown Tundra";
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
+                    basedon = "The Isle of Armor";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield");
+                    basedon = "SwiSh";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk");
+                    basedon = "The Indigo Disk";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask");
+                    basedon = "The Teal Mask";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet");
+                    basedon = "ScarVio";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m =>
+                        m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl");
+                    basedon = "BDSP";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon");
+                    basedon = "USUM";
+                }
+
+                var move = moves_local.FirstOrDefault(mv => mv.ID == m.Move.Name);
+                foreach (var vers in vergd)
+                {
+                    var how = vers.MoveLearnMethod.Name;
+                    var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
+                    var l = new Learnset
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        move = move,
+                        how = how,
+                        level = level,
+                        source = basedon,
+                        mon = poke
+                    };
+                    
+                    learnset.Add(l);
+                    Console.WriteLine($"{move.ID} {how} {level} {basedon} {poke.ID}");
+                }
+            }
+            
+            context.AddRange(learnset);
+            context.SaveChanges();
+        }
+    }
 
     public static int StatToInt(int stat, double? nerf = null)
     {

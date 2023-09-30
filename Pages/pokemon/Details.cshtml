@@ -112,6 +112,8 @@
                         </dd>
                         <dt>Move Type</dt>
                         <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Source Game</dt>
+                        <dd>@Html.Raw(move.source)</dd>
 
 
                         @if (!move.move.DamageDice.IsNullOrEmpty())
@@ -165,7 +167,8 @@
                         </dd>
                         <dt>Move Type</dt>
                         <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
-
+                        <dt>Source Game</dt>
+                        <dd>@Html.Raw(move.source)</dd>
 
                         @if (!move.move.DamageDice.IsNullOrEmpty())
                         {
@@ -218,7 +221,8 @@
                         <dt>Move Type</dt>
                         <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
 
-
+                        <dt>Source Game</dt>
+                        <dd>@Html.Raw(move.source)</dd>
                         @if (!move.move.DamageDice.IsNullOrEmpty())
                         {
                             <dt>Damage Dice</dt>

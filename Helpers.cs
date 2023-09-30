@@ -10,7 +10,7 @@ namespace pkmnWildLife;
 
 public class Helpers
 {
-    public static string MoveSetRenderer(Learnsets move)
+    public static string MoveSetRenderer(Learnset move)
     {
         var ret = @$" 
 <div class=""w3-container  w3-cell w3-mobile"" >
