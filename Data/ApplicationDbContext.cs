@@ -12,16 +12,15 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
-    public DbSet<Ability> Abilities { get; set; }
-    public DbSet<Move> Moves { get; set; }
+    public DbSet<Ability> AbilityDex { get; set; }
+    public DbSet<Move> MoveDex { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<Type> Types { get; set; }
-    public DbSet<MoveClass> MoveClass { get; set; }
+    public DbSet<MoveClass> MoveClasses { get; set; }
     public DbSet<Pokemon> Pokedex { get; set; }
     public DbSet<Character> Characters { get; set; }
     public DbSet<Skill> Skills { get; set; }
     public DbSet<AttackMod> AttackModifiers { get; set; }
-    public DbSet<Move> Move { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -40,7 +39,11 @@ public class Ability
     public string? Name_DE { get; set; }
     public string Name { get; set; }
     public string Effect { get; set; }
+    
+    public bool IsTrait { get; set; }
+    public string? Requirement { get; set; }
 }
+
 
 public class Move
 {

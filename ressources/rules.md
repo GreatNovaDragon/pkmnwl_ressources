@@ -1,56 +1,114 @@
-| Level | Equivalent | Benefits                 |
-|-------|-----------:|:-------------------------|
-| 1     |          5 | Starting Ability & Moves |
-| 2     |         10 | *None*                   |
-| 3     |         15 | Attribute Increase       |
-| 4     |         20 | Move Upgrade             |
-| 5     |         25 | Grade+, New Ability      |
-| 6     |         30 | *None*                   |
-| 7     |         35 | Attribute Increase       |
-| 8     |         40 | Move Upgrade             |
-| 9     |         45 | Grade+, New Ability      |
-| 10    |         50 | *None*                   |
-| 11    |         55 | Attribute Increase       |
-| 12    |         60 | Move Upgrade             |
-| 13    |         65 | Grade+, New Ability      |
-| 14    |         70 | *None*                   |
-| 15    |         75 | Attribute Increase       |
-| 16    |         80 | Move Upgrade             |
-| 17    |         85 | Grade+, New Ability      |
-| 18    |         90 | *None*                   |
-| 19    |         95 | Attribute Increase       |
-| 20    |        100 | Move Upgrade             |
+
 
 ## Character Creation
 
 To create a character in this roleplaying system, follow these steps:
 
-1. Choose a Pokémon from the Conversion Sheet list. Copy their Health,
+1. Choose a Pokémon Copy their Health,
    Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
-   Talent, and size category. Optionally, roll a D4 for each stat and
-   add the result to it.
+   Talent, and size category.
 
-2. Calculate their starting Health Points by adding their Health score
+2. You additionally get a bonus array to apply to your stats attacking and defending stats as you wish:
+    - GENERALIST: +1, +1, +0, +0
+    - SPECIALIST: +2, +0, +0, +0
+    - EXPERT: +3, +0, +0, -1
+    - WEAK SPOT: +1, +1, +1, -1
+    - LOPSIDED: +2, +1, -0, -1
+    - CUSTOM: Apply bonuses as you wish, ensuring that the total comes to 2, but no bonus actually is higher than 3.
+
+3. Calculate their starting Health Points by adding their Health score
    to 20.
 
-3. Select the Pokémon’s starting Ability, moves from the Conversion
+4. Select the Pokémon’s starting Ability, moves from the Conversion
    Sheet, and record them.
 
-4. Assign a Grade of 1 and a Grit of 2 to your character. More details
+5. Assign a Grade of 1 and a Grit of 2 to your character. More details
    about Grade and Grit will be provided in the Playing the Game
    section.
 
-**Optional: Character Skills:**
+6. Pick a Background
 
-Your character has 9 points to distribute among 12 available skills.
-Remember, you cannot allocate more than 5 points into a single skill.
-Detailed explanations of these optional skills will be given in the
-Playing the Game section.
+
+- **Adventurer**: You delve into dungeons without fear, helping others as you go. Take the trait. Start with 15 S, a
+  week’s worth of rations, one oran berry, one stun seed, and a trapbust orb. At level 10, advance to *Mercenary*,
+  *Rescuer*, or *Folk Hero*.
+
+- **Explorer**: Conquering the untamed wild, you seek out marvellous places. Take the trait Anchor. Start with 10 S, two
+  weeks worth of rations, three oran berry, and three escape orbs. At level 10, advance to *Rescuer*, *Detective*, or
+  *Dungeoneer*.
+- **Researcher**: Time can hide no secrets from you and your thirst for knowledge. Take the trait *Evaluator*. Start
+  with 10 S, a week’s worth of rations, two oran berries, two heal seeds and a scanner orb.At level 10, advance to
+  *Detective*, *Mythbound*, or *Archaeologist*.
+- **Prodigy**: You have been gifted with unique and magnificent talents. Take the trait *Type Advantage Master*. Start
+  with 5 S, a week’s worth of rations, one oran berry, a stun seed, and a reviver seed. At level 10, advance to
+  *Mythbound*, *Thief*, or *Performer*.
+- **Outlaw**: You’re fleeing from your past, one day to face it head on. Take the trait *Actor*. Start with 5 S, three
+  days’ worth of rations, two oran berries, a blinker seed, a trawl orb and an escape orb. At level 10, advance to
+  *Thief*, *Mercenary*, or *Shadow Blade*.
+
+7. Select one Grade 1 trait
+
+**Character Skills**
+
+Skills represent a number out of 100. To calculate them, roll (3d6) x 5, assigning
+the result to whichever skill you like. You may do this six times and fill in the rest
+of the skills with a flat ‘15’; this is your base success chance.
+When you perform an action, you may be asked to make a skill roll. Roll your
+percentile dice – your d10 and d100 – and aim to get below your skill number.
+Here are the skills:
+
+Athletics
+Craft
+Endurance
+Finesse
+
+Medicine
+Perception
+Performance
+Persuasion
+
+Specialist
+Knowledge
+Stealth
+Survival
+
+For Craft and Specialist Knowledge, you must list your specialty.
 
 ### Character Advancement
 
-As you accumulate Experience (XP), you will level up. With each new
-level:
+
+| Level | Equivalent | Gained Lvl-pts | Benefits                       |
+|-------|-----------:|----------------|:-------------------------------|
+| 1     |          5 |                | Starting Ability & Moves       |
+| 2     |         10 |              1 | *None*                         |
+| 3     |         15 |              1 | *None*                         |
+| 4     |         20 |              1 | Move Upgrade                   |
+| 5     |         25 |              2 | Grade+                         |
+| 6     |         30 |              2 | *None*                         |
+| 7     |         35 |              2 | *None*                         |
+| 8     |         40 |              2 | Move Upgrade                   |
+| 9     |         45 |              2 | Grade+                         |
+| 10    |         50 |              3 | Choose Destiny                 |
+| 11    |         55 |              3 | *None*                         |
+| 12    |         60 |              3 | Move Upgrade                   |
+| 13    |         65 |              3 | Grade+                         |
+| 14    |         70 |              3 | *None*                         |
+| 15    |         75 |              4 | *None*                         |
+| 16    |         80 |              4 | Move Upgrade                   |
+| 17    |         85 |              4 | Grade+                         |
+| 18    |         90 |              4 | *None*                         |
+| 19    |         95 |              4 | *None*                         |
+| 20    |        100 |              5 | Move Upgrade, Solidify Destiny |
+
+
+
+When you level up, you gain one level-up point, with the amount increasing by two
+every five levels. You may buy the following upgrades with level-up points:
+
+- +5 to Health or speed, or +1 to an attacking or defending stat
+- Increase a skill by 5% (no skill may be above 95%)
+- One trait from any bracket available to you. Grade 1 abilities cost 1 point. Grade 2 2 points, Grade 3 5 points, Grade 4 cost 8 points and Grade 5 cost 10 points
+- One of your Pokemons available Abilities
 
 1. You can learn new moves if available and may gain additional
    benefits, such as increasing one attribute or acquiring an extra
@@ -60,27 +118,13 @@ level:
    is not retroactive, so it will not apply if your Health score is
    boosted through stat increases or evolution.
 
-If optional skills are in play:
-
-3. You gain 2 skill points at each level to enhance your skills. Keep
-   in mind that evenly distributing skill points results in only one
-   skill with 2d6 skill dice. Allocate your points wisely and
-   collaborate with your party to fill skill gaps.
-
 Move Upgrades:
 
-4. Move Upgrades are enhancements to specific Moves, making them more
+3. Move Upgrades are enhancements to specific Moves, making them more
    versatile or specialized. These are optional, and the Dungeon Master
    (DM) may choose not to include them. Each move can have only one
    Move Upgrade.
 
-Additional Abilities:
-
-5. Additional Abilities do not replace existing abilities. This means a
-   Pokémon can have up to 6 abilities by level 17 if they acquire
-   additional abilities. The DM has the option to exclude these. If
-   Technique Upgrades and Additional Abilities are not part of your
-   game, treat these levels as Attribute Increase levels.
 
 # Playing the Game
 
@@ -565,3 +609,272 @@ differently from their Mystery Dungeon counterparts.
 
 - **Golden Seeds:** Permanently increases a Pokémon’s Grade by 1, this
   allows a Pokémon to achieve Grades higher than
+
+## Destinies
+
+### ARCHAEOLOGIST
+
+> The past hides great secrets. Ancient ruins, fallen cities: to understand pokémon of the present, we must ask the
+> echoing remnants of the past.
+
+You are skilled in decoding ancient runes, talented with an archaeology kit, and can
+use your knowledge to peer through the *Sands of Time*. At level 20, your status as
+Legend allows you to look through the *Seas of Time*.
+
+Skill Increase: Specialist Knowledge (History) or Perception increases by
+10%, to a maximum of 95%.
+
+Equipment Proficiency: Archaeology Kit
+
+Ability (Level 10): Sands of Time. By spending at least 30 minutes studying
+an object or structure, you can accurately tell what pokémon in the past have
+interacted with it, as well as any stories and legends, and whether it has any
+secret functions or magical effects cast upon it.
+Ability (Level 20): Seas of Time. Your knowledge about the past eclipses that
+of even the greatest scholars. Once daily you may study an object or place
+and declare a fact of the past to be true. For instance, that an ancient battle
+took place, that the relic would point to a specific legendary pokémon’s
+sleeping place, or that an ancient tool is actually a primitive key. If the Guild
+Master permits, this knowledge is accepted and written into canon.
+
+### DETECTIVE
+
+> Truth can be elusive. It hides in the hearts of pokémon like how treasure hides in the most treacherous dungeons. It
+> won’t elude me. Not again.
+
+You are an expert at deducting the truth, with a knack for reading pokémon like
+books thanks to your *Keen Intuition*. At level 20, you are known for your legendary
+*Flawless Deduction*.
+
+Skill Increase: Perception or Persuasion increases by 10%, to a max of 95%.
+Equipment Proficiency: Forensics Kit
+
+Ability (Level 10): Keen Intuition. Thrice daily you can call upon your skills
+of deduction to give you insight. The Guild Master will give you two truths
+and one lie about any situation, individual or item. It is up to you to deduce
+which is the falsehood and what knowledge you can trust, however.
+
+Ability (Level 20): Flawless Deduction. If you have at least three pieces of
+evidence, you can accurately deduce facts about your current case. By
+cashing in three pieces of evidence, you can ask the Guild Master one
+question, which they have to answer truthfully. You can perform this action
+as long as you have evidence to spend, and can reasonably argue how each
+item or piece of knowledge would help you glean the answer to your
+question.
+
+### DUNGEONEER
+
+> Mystery dungeons have always been my home. Whenever I rest in town, I dream of returning to those winding,
+> treasure-filled mazes.
+
+Your passion for dungeons and exploration has gifted you with a sense of *Momentum*. At level 20, your Legend has named
+you as an *Expert Dungeoneer*.
+
+Skill Increase: Athletics or Survival increases by 10%, to a maximum of 95%.
+Equipment Proficiency: Camping Gear
+
+Ability (Level 10): Momentum: Whenever you make a successful skill roll in a
+dungeon, you gain one point of momentum, up to 5 at once. You lose one
+momentum point after failing a skill roll, and all momentum by leaving the
+dungeon or being knocked out. Momentum can be used as follows:
+Each point of momentum allows you to move one additional space in
+combat. At 5 momentum, your attacks deal an additional 1d6 damage.
+
+- You may spend one point to add 5% to the success chance of a roll.
+- You may spend one point of momentum to reduce damage taken by 1.
+- You may spend three points of momentum to perform a Basic Attack
+  after landing a successful attack on a foe.
+  You may spend all momentum to instantly shrug off a status condition.
+
+Ability (Level 20): Expert Dungeoneer: You may, before entering a dungeon, make
+three claims about it, two of which are then written into truth. These may be about
+the pokemon, items, secrets, terrain, reputation, etc. If the Guild Master permits,
+the chosen two facts are written into canon and become true for all future visits.
+
+### FOLK HERO
+
+> The pokémon around me are the real treasure. I’ll cement my name in their memories forever.
+
+You have a need to help others, and tend to do so with flair and *Surmounting Wit*.
+At level 20, your Legend has escalated to that of *Folk Mythology*.
+
+Skill Increase: Persuasion or Craft (Any) increases by 10%, to a max of 95%.
+
+Equipment Proficiency: Carpenter’s Tools
+
+Ability (Level 10): Surmounting Wit. You shine when situations are bleakest.
+If outnumbered, trapped, facing a foe larger or higher in level than you, or if
+a party member has fainted, you gain +15% to all skill rolls.
+
+Ability (Level 20): Folk Mythology. Once daily, you may escape a tough
+situation by describing one of your feats from a folk tale. For example, that
+you scared off a rampaging gyarados by baring your teeth, or leapt over a
+ravine three copperajah wide to rescue a baby mareep. Keep track of your
+folk tale feats as you use them, for future reference.
+
+### MERCENARY
+
+> With no home, no honour, and nothing to lose, my skills are all I can depend on.
+
+You’re a cut-throat for hire, selling your skills to pave your path in the world. Your
+*Desperation* makes you lethal, as well as your legendary *Hunter’s Prowess*.
+
+Skill Increase: Endurance or Stealth increases by 10%, to a max of 95%.
+Equipment Proficiency: Trapmaking Tools
+
+Ability (Level 10): Desperation. Your skills hone as your HP lowers. At 50%
+HP, you gain +1 to both attacking stats. At 25%, you gain +3. If your HP hits
+0, you may continue fighting for 1d4 rounds with a +5 to
+your attacking stats, before falling unconscious for 2d6 hours.
+
+Ability (Level 20): Hunter’s Prowess. Assign yourself a target that must be
+taken down. You always have an approximate idea of their location, move
+twice as fast directly towards them, deal double damage if they are below
+half HP, and your allies may add your Attack or Sp. Atk as well as their own
+when attacking them. You cannot change targets until they are neutralised,
+and must wait 24 hours before picking a new target.
+
+### MYTHBOUND
+
+> My life has been forever touched by something mysterious and wonderful.
+
+After a chance encounter with a mythical pokémon, your latent abilities have
+flowered, allowing you to *Call Upon Myth* or, later, S*ummon Myth*.
+
+Skill Increase: Finesse or Specialist Knowledge (Mythology) increases by
+10%, to a maximum of 95%.
+
+Equipment Proficiency: Artist’s Tools of your choice
+
+Ability (Level 10): Call Upon Myth. Depending on your chosen mythical
+patron, you may activate a special ability once per day.
+
+Celebi or Hoopa
+Move 10 spaces in any
+direction, including
+through obstacles.
+
+Manaphy or Keldeo
+Double swim speed and
+gain the ability to breathe
+underwater for 30 mins.
+
+Meloetta or Magearna
+Read the thoughts and
+emotions of pokémon
+within ten tiles.
+
+Victini or Marshadow
+Make one attack a
+guaranteed critical hit.
+
+Diancie or Jirachi
+Materialise a gem worth
+50 S, or one reviver seed.
+
+Shaymin or Mew
+Cure all allies of statuses
+and purge all pollution in
+a 5 space radius.
+
+Ability (Level 20): Summon Myth. Your bond with your mythical patron has
+grown into a close friendship. You may summon them as a friendly NPC at
+any time, command them in combat, and make use of their unique abilities
+– such as Mew’s ability to transform DNA, or Hoopa’s teleportation.
+
+### PERFORMER
+
+> The roar of applause, the praise from the crowd – I live to perform!
+
+Music, acting or dance, you adore the thrill of delivering an *Inspired Performance*.
+Your Legend revolves around your breathtaking *Stage Mastery*.
+
+Skill Increase: Performance or Persuasion increases by 10%, to max 95%.
+Equipment Proficiency: Musical instrument of your choice
+
+Ability (Level 10): Inspired Performance. Thrice daily you may perform in a
+way that motivates or demotivates a target:
+Increase or decrease the success chance of a roll by 10%.
+Grant +2 or -2 to one of the target’s stats, lasting for one hour.
+Grant the target temporary HP equal to your level*Grade, lasting for one
+hour or until the temporary hit points are depleted.
+
+Ability (Level 20): Stage Mastery. Choose any three sound or dance based
+moves that you would not otherwise be able to learn, and add them to your
+available move set. You may also use one of the following abilities per day:
+Dancer’s Stride: When moving in combat, you may deal 1d10 damage to
+each foe you move past, uncontested and untyped.
+Soothing Serenade: Heal allies within earshot for 4d6 HP, and cure
+any statuses based on rage, confusion or fear.
+Captivating Speech: Sway the hearts of up to 10 pokémon within
+earshot, changing their attitude towards a target of your choosing up
+to three spaces in any direction on this scale:
+Hostile | Hated | Disliked | Neutral | Liked | Loved | Exalted
+
+### RESCUER
+
+> As long as there are pokémon in need, I’ll be there to help out.
+
+You’ve devoted your life to saving others. Not only is your *Emergency Healing*
+appreciated, but your *Rescuer’s Prowess* is unparalleled.
+
+Skill Increase: Medicine or Survival increases by 10%, to a max of 95%.
+Equipment Proficiency: Medic’s Tools
+Ability (Level 10): Emergency Healing. If your own HP is below 50%, any
+healing you apply to an ally is doubled. If you share one portion of rations
+with another pokémon, you both receive the benefits of the full meal.
+Ability (Level 20): Rescuer’s Prowess. Assign a target that must be rescued.
+You move twice as quickly and ignore difficult terrain when moving towards
+them, require half the rations and rest when in the same dungeon as them,
+and receive a +5 bonus to all stats when they are within sight. You cannot
+change targets until they are rescued, and must wait 24 hours before picking
+a new target.
+
+### SHADOW BLADE
+
+> Rejected from society, I embrace the lawless wilds. No pokémon will govern me.
+
+A criminal by trade, you’re as fearsome as you are versatile. Known now for your
+knack for *Armed Strikes*, your Legend reveres your *Bladed Mastery*.
+
+Skill Increase: Athletics or Stealth increases by 10%, to a maximum of 95%.
+
+Equipment Proficiency: Bladed & improvised weaponry
+Ability (Level 10): Armed Strikes. Your Basic Attacks are made with a weapon.
+They deal an extra 1d10 damage, are boosted in accuracy to 100%, and have a
+10% chance to flinch.
+
+Ability (Level 20): Bladed Mastery. By giving a short description of a past
+adventure, you may choose the type of damage your weapon deals – for
+instance, that it was struck by lightning for electric type, or tempered in the
+flames of groudon’s heart for fire type. You may also choose for it to deal an
+extra 1d10 damage or have a 20% chance of inflicting one status condition of
+your choice. These bonuses last for 24 hours and can be changed daily.
+
+### THIEF
+
+> All the world is mine, so I help myself: only treasure can rival my brilliance.
+
+You’re a talented pickpocket with a knack for finding loot. Famous for your ability
+to *Steal Hearts*, officers will grow to rue your *Artistic Escapes*.
+Skill Increase: Finesse or Stealth increases by 10%, to a maximum of 95%.
+
+Equipment Proficiency: Thieves’ Tools
+
+Ability (Level 10): Steal Hearts. After successfully stealing an item from a foe,
+you may choose to inflict the Infatuated or Confused status upon them,
+lasting 10 turns or 30 minutes outside of battle.
+
+Ability (Level 20): Artistic
+Escapes. In low visibility, such as
+dusk or fog, you may become
+totally invisible. Your invisibility
+ends if you attack or if visibility
+around you increases. While
+invisible, you cannot be tracked
+by sight, sound or scent, and you
+receive a bonus of 20% to
+Perception rolls, to a maximum
+of 95%. If you deal an attack to a
+foe who cannot see you, the
+attack’s damage is doubled.

@@ -1,0 +1,51 @@
+@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="abilities" class="display">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ability[0].Effect)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.Ability[0].Requirement)
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Ability)
+    {
+        <tr>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name} / {item.Name_DE}")</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Effect)
+            </td>
+            <td> @Html.DisplayFor(modelItem => item.Requirement)</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $('#abilities').DataTable({
+         "order": []
+        });
+    });
+    </script>
+}

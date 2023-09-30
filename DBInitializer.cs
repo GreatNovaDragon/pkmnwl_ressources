@@ -14,17 +14,13 @@ public class DBInitializer
     public static async Task InitializeDB(ApplicationDbContext context)
     {
         var apiclient = new PokeApiClient();
-
-        await TransferTypes(context, apiclient);
-
-        await TransferMoveClasses(context, apiclient);
-
-        await TransferItems(context, apiclient);
-
+        await TransferTraits(context);
         await TransferAbilities(context, apiclient);
 
+        await TransferTypes(context, apiclient);
+        await TransferMoveClasses(context, apiclient);
         await TransferMoves(context, apiclient);
-
+        await TransferItems(context, apiclient);
         await TransferMon(context, apiclient);
     }
 
@@ -55,7 +51,7 @@ public class DBInitializer
 
     private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
     {
-        if (context.MoveClass.Any())
+        if (context.MoveClasses.Any())
         {
             Console.WriteLine("There already are MoveClasses");
             return;
@@ -66,7 +62,7 @@ public class DBInitializer
         foreach (var TypeR in moveClass.Results)
         {
             var Type = await apiclient.GetResourceAsync(TypeR);
-            context.MoveClass.Add(new MoveClass
+            context.MoveClasses.Add(new MoveClass
             {
                 ID = Type.Name,
                 Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
@@ -118,14 +114,14 @@ public class DBInitializer
 
     private static async Task TransferAbilities(ApplicationDbContext context, PokeApiClient apiclient)
     {
-        if (context.Abilities.Any())
+        if (context.AbilityDex.Where(m => !m.IsTrait).Any())
         {
             Console.WriteLine("There already are Abilities");
             return;
         }
 
         var abilities = await apiclient.GetNamedResourcePageAsync<Ability>(9999, 0);
-        List<Data.Ability> abs = new List<Data.Ability>();
+        var abs = new List<Data.Ability>();
         foreach (var i in abilities.Results)
         {
             var Item = await apiclient.GetResourceAsync(i);
@@ -160,7 +156,8 @@ public class DBInitializer
                 ID = ID,
                 Name = Name,
                 Name_DE = Name_DE,
-                Effect = Effect
+                Effect = Effect,
+                IsTrait = false
             });
         }
 
@@ -168,9 +165,32 @@ public class DBInitializer
         await context.SaveChangesAsync();
     }
 
+    private static async Task TransferTraits(ApplicationDbContext context)
+    {
+        if (context.AbilityDex.Where(m => m.IsTrait).Any())
+        {
+            Console.WriteLine("There already are Traits");
+            return;
+        }
+
+        var traits = Helpers.csv2trait("traits.csv");
+        var trs = new List<Data.Ability>();
+        foreach (var tr in traits)
+            trs.Add(new Data.Ability
+            {
+                ID = tr.Name.ToLower().Normalize() + "_trait",
+                Effect = tr.effect,
+                Name = tr.Name,
+                Requirement = tr.Requirement,
+                IsTrait = true
+            });
+        context.AddRange(trs);
+        context.SaveChangesAsync();
+    }
+
     private static async Task TransferMoves(ApplicationDbContext context, PokeApiClient apiclient)
     {
-        if (context.Moves.Any())
+        if (context.MoveDex.Any())
         {
             Console.WriteLine("There already are Moves");
             return;
@@ -178,9 +198,9 @@ public class DBInitializer
 
         var types = context.Types.ToList();
         var moves = await apiclient.GetNamedResourcePageAsync<Move>(999, 0);
-        List<Data.Move> mvs = new List<Data.Move>();
+        var mvs = new List<Data.Move>();
 
-        var dclass = context.MoveClass.ToList();
+        var dclass = context.MoveClasses.ToList();
         foreach (var i in moves.Results)
         {
             var m = await apiclient.GetResourceAsync(i);
@@ -230,10 +250,7 @@ public class DBInitializer
             });
         }
 
-        foreach (var m in mvs)
-        {
-            Console.WriteLine($"{m.Name_DE}");
-        }
+        foreach (var m in mvs) Console.WriteLine($"{m.Name_DE}");
 
         context.AddRange(mvs);
         await context.SaveChangesAsync();
@@ -247,7 +264,7 @@ public class DBInitializer
             return;
         }
 
-        var abilities = context.Abilities.ToArray();
+        var abilities = context.AbilityDex.ToArray();
         var types = context.Types.ToArray();
         var pkmn = await apiclient.GetNamedResourcePageAsync<Pokemon>(1500, 0);
         var pokes = new List<Data.Pokemon>();
@@ -289,36 +306,41 @@ public class DBInitializer
 
             var learnset = new List<Learnsets>();
 
-            var moves = context.Moves.ToArray();
+            var moves = context.MoveDex.ToArray();
             foreach (var m in poke.Moves)
             {
+                var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield"); 
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk"); 
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask"); 
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet"); 
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl"); 
+                if(vergd.IsNullOrEmpty())
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon"); 
                 
-               
-                    var verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "sword-shield");
-                    if (verm.IsNullOrEmpty())
+                
+                
+                
+                
+                foreach (var vers in vergd)
+                {
+                    var l = new Learnsets
                     {
-                        verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "scarlet-violet");
-                    }
-                    if (verm.IsNullOrEmpty())
-                    {
-                        verm = m.VersionGroupDetails.Where(sa => sa.VersionGroup.Name == "ultra-sun-ultra-moon");
-                    }
+                        ID = Guid.NewGuid().ToString(),
+                        move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
+                        how = vers.MoveLearnMethod.Name,
+                        level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString())
+                    };
 
-                    foreach (var vers in verm)
-                    {
-                        var l = new Learnsets
-                        {
-                            ID = Guid.NewGuid().ToString(),
-                            move = moves.FirstOrDefault(mo => mo.ID == m.Move.Name),
-                            how = vers.MoveLearnMethod.Name,
-                            level = int.Parse(Math.Ceiling(((double)vers.LevelLearnedAt /5)).ToString())
-                        };
-                        
-                        learnset.Add(l);
-                    }
-                
-
-                
+                    learnset.Add(l);
+                }
             }
 
             var Abilities = new List<Data.Ability>();
@@ -370,6 +392,7 @@ public class DBInitializer
         }
 
         context.AddRange(pokes);
+        
         await context.SaveChangesAsync();
     }
 

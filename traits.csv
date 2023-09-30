@@ -1,0 +1,228 @@
+Actor,Once per day you may use your Performance skill instead of another skill for a roll.,Grade 1
+Anchor,"You cannot be warped, pushed or blown away.",Grade 1
+Brick-Tough,Gain an additional 10HP.,Grade 1
+Cheerleader,Allies within one space deal + 2 damage with their attacks.,Grade 1
+Evaluator,You can accurately tell a foe's remaining HP.,Grade 1
+Fame,You are well-known and NPCs may treat you favorably for it.,Grade 1
+Item Catcher,"If a foe throws an item at you, you may reactively catch it.",Grade 1
+Nontraitor,"If Confused, your attacks will not target allies. ",Grade 1
+Type-Advantage Master,"Moves that are strong against opponents
+  have a higher critical hit chance, requiring less for a critical hit.",Grade 1
+Absorber,"After defeating a foe, you may regain HP equal to their level.",Grade 2
+Bodyguard,"If a team member within one space of you is below 1/4 HP, you may take damage in their stead.",Grade 2
+Go For Broke,"Once per day, expend 1 grit to boost Attack,
+  Defense, Special Attack, Special Defense, and Speed by 1 point. While
+  under this effect, you cannot use Grit to heal, nor can you be healed
+  by items or moves with healing properties.",Grade 2
+Gap Prober,Ignore allies in the way when making ranged attacks.,Grade 2
+Instructor,"Once per day, you may allow an ally to use your skill score instead of theirs when performing an action.",Grade 2
+Light Sleeper,"If an enemy moves within the same room while you sleep, or within 30 feet of you in an open space, you will instantly awaken.",Grade 2
+Nonsleeper,You cannot be put to sleep by traps or enemy attacks.,Grade 2
+Power Pitcher,Thrown objects deal an additional 50% damage.,Grade 2
+Preferred Terrain,Your speed gains a 50% bonus when on your preferred terrain.,Grade 2
+Pushy,"When an attack lands, you may choose to reduce the damage by 1 to 3 points and move the target that many spaces in any direction.",Grade 2
+Self-Curer,You recover from status problems twice as quickly.,Grade 2
+Survivalist,10% chance to resist the effects of eating spoiled food.,Grade 2
+Targeter,"If you attacked a foe in your previous turn and choose to target them again, deal an additional 1 damage.",Grade 2
+Wary Fighter,"After missing an attack, you can move an extra 5
+  feet and leave a foe's Threatened Area without provoking an attack of
+  opportunity.",Grade 2
+Danger Sense,"If an enemy attacks the party from stealth or by surprise, you may act during their surprise round.",Grade 3
+Deep Breather,"When entering a new area, regain 1 PP on each move.",Grade 3
+Distance Dodge,Attacks from 5+ spaces away gain a -15% penalty to hitting you.,Grade 3
+Dizzying Payback,10% chance of foes who hit you becoming confused.,Grade 3
+Focused,Attacks dealt by / towards you are boosted in accuracy by 10%.,Grade 3
+Forager,When searching for food items your yield is doubled.,Grade 3
+Hardy,10% chance to resist a knockout at 1HP.,Grade 3
+Light Stepper,"Foes are not awakened by your presence, even if you pass within a space of them.",Grade 3
+PP Saver,"When attacking, roll 1d10. On a 10, you do not consume PP.",Grade 3
+Practice Swinger," Failing to hit a target boosts the user's Attack
+  and Special Attack by 1 point each until the end of the next turn.",Grade 3
+Prolong,"When using a move that applies a negative status effect
+  to a foe, the foe has a -1 disadvantage to that roll.",Grade 3
+Retaliator,"When attacking a foe, you may add 2 damage if they hurt one of your allies in their previous turn, and 5 if they knocked your ally out.",Grade 3
+Streak Hitter,"If your attack downs a foe, you may refresh your action and attack another foe within range.",Grade 3
+Tight Grip,"Your held items cannot be knocked off, stolen or dropped.",Grade 3
+Wise Healer,When healing you heal Grade + 2 * Vitality score more,Grade 3
+Condition Immunity,"Choose one status condition: Burning, Frozen,
+  Paralyzed, Sleeping, Poisoned, or Confusion. Enemy Pokémon
+  automatically fail to inflict this status effect on you (Can be chosen multiple times)",Grade 3
+Aggressor,"Increase your Attack and Special Attack by 3. However, you must also decrease your Defense and Special Defense by 3.",Grade 4
+Clutch Performer,"If HP drops below 50%, Defense and Special
+  Defense increase by 1 point. Below 25%, they increase by an additional
+  point, and below 10%, they increase by another point, up to a maximum
+  of 3 points each.",Grade 4
+Coin Watcher,"When picking up PokÃ©, you gain 20% more than usual.",Grade 4
+Collector,Enemies have a 1/10 chance of dropping treasure boxes.,Grade 4
+Defender,"Increase your Defense and Special Defense by 3. However, you must also decrease your Attack and Special Attack by 3.",Grade 4
+Erratic Player,"Super-effective and not very effective moves deal 5 more and less damage respectively, when used both by and towards you.",Grade 4
+Haggler,Merchants in dungeons will reduce their prices by 10% for you.,Grade 4
+Intimidator,"When a foe attacks you, on Trigger 6, the attack
+  automatically misses.",Grade 4
+Instigator,"If you deliberately escalate a verbal confrontation into a physical fight, you may attack first before initiative order is determined.",Grade 4
+Long Reach,Your attacks are increased in range by 1 space.,Grade 4
+Nature Gifter,"If you eat a berry, you may share the effects with any allies within one space of you.",Grade 4
+Preferred Weather,Gain an additional 1 to all four attacking and defending stats while your preferred weather is active.,Grade 4
+Quick Healer,"When entering a new area, regain 1/10th of your max HP.",Grade 4
+Sharpshooter,"Reduces the target number for an accuracy roll's
+  critical hit by 1.",Grade 4
+Trap Buster,"If you accidentally step on a trap, flip a coin. On a heads, the trap is destroyed.",Grade 4
+Coup de Grace,"When you defeat an enemy, you may perform a final blow that forces all other enemies to roll 1d10. On a 1, the enemy is frightened and flees combat, or is paralyzed with fear.",Grade 5
+Critical Dodger,You are not affected by critical hits.,Grade 5
+Extra Striker,"After an attack and on Trigger 6, you can attack
+  again, but only one extra attack can be performed this way.",Grade 5
+No-Charger,"Moves that would require two turns to charge are unleashed in one turn, but consume 2 PP.",Grade 5
+Preparation,"At the beginning of an adventure, roll two d100+d10. At any point you may replace the accuracy or skill roll of yourself, an ally, or an enemy, with the result of one of the rolls.",Grade 5
+Terraformer,"You can manipulate the terrain to create obstacles for foes or cover for allies. If you choose not to use your move action during your combat turn, you may instead move and shape up to 10 by 10 feet of matter such as dirt, rock or sand.",Grade 5
+Underdog,"When outnumbered, you may target an additional enemy with your attacks. Your attacks also deal +1 damage for each foe youâ€™re outnumbered by.",Grade 5
+Wrecking Ball,"During your move action, you may destroy one environment object without requiring a roll â€“ a tree, a fence, a boulder, etc. However, if you use this more than 3 times in an encounter, you will begin to take damage from the strain.",Grade 5
+Desperation,"Your skills hone as your HP lowers. At 50%
+HP, you gain +1 to both attacking stats. At 25%, you gain +3. If your HP hits
+0, you may continue fighting for 1d4 rounds with a +5 to
+your attacking stats, before falling unconscious for 2d6 hours.",Mercenary + Level 10
+Hunter's Prowess,"Assign yourself a target that must be
+taken down. You always have an approximate idea of their location, move
+twice as fast directly towards them, deal double damage if they are below
+half HP, and your allies may add your Attack or Sp. Atk as well as their own
+when attacking them. You cannot change targets until they are neutralised,
+and must wait 24 hours before picking a new target.",Mercenary + Level 20
+Call upon Myth,"Depending on your chosen mythical
+patron, you may activate a special ability once per day.
+
+Celebi or Hoopa
+Move 10 spaces in any
+direction, including
+through obstacles.
+
+Manaphy or Keldeo
+Double swim speed and
+gain the ability to breathe
+underwater for 30 mins.
+
+Meloetta or Magearna
+Read the thoughts and
+emotions of pokémon
+within ten tiles.
+
+Victini or Marshadow
+Make one attack a
+guaranteed critical hit.
+
+Diancie or Jirachi
+Materialise a gem worth
+50 S, or one reviver seed.
+
+Shaymin or Mew
+Cure all allies of statuses
+and purge all pollution in
+a 5 space radius.",Mythbound + Level 10
+Summon Myth,"Summon Myth. Your bond with your mythical patron has
+grown into a close friendship. You may summon them as a friendly NPC at
+any time, command them in combat, and make use of their unique abilities
+– such as Mew’s ability to transform DNA, or Hoopa’s teleportation.",Mythbound + Level 20
+Inspired Performance," Thrice daily you may perform in a
+way that motivates or demotivates a target:
+Increase or decrease the success chance of a roll by 10%.
+Grant +2 or -2 to one of the target’s stats, lasting for one hour.
+Grant the target temporary HP equal to your level*Grade, lasting for one
+hour or until the temporary hit points are depleted.",Performer + Lvl 10
+Stage Mastery," Choose any three sound or dance based
+moves that you would not otherwise be able to learn, and add them to your
+available move set. You may also use one of the following abilities per day:
+Dancer’s Stride: When moving in combat, you may deal 1d10 damage to
+each foe you move past, uncontested and untyped.
+Soothing Serenade: Heal allies within earshot for 4d6 HP, and cure
+any statuses based on rage, confusion or fear.
+Captivating Speech: Sway the hearts of up to 10 pokémon within
+earshot, changing their attitude towards a target of your choosing up
+to three spaces in any direction on this scale:
+Hostile | Hated | Disliked | Neutral | Liked | Loved | Exalted",Performer + Lvl 20
+Emergency Healing,"If your own HP is below 50%, any
+healing you apply to an ally is doubled. If you share one portion of rations
+with another pokémon, you both receive the benefits of the full meal.",Rescuer + Lvl 10
+Rescuers Prowess,"Assign a target that must be rescued.
+You move twice as quickly and ignore difficult terrain when moving towards
+them, require half the rations and rest when in the same dungeon as them,
+and receive a +5 bonus to all stats when they are within sight. You cannot
+change targets until they are rescued, and must wait 24 hours before picking
+a new target.",Rescuer + Lvl 20
+Armed Strikes,"Your Basic Attacks are made with a weapon.
+They deal an extra 1d10 damage, are boosted in accuracy to 100%, and have a
+10% chance to flinch.",Shadow Blade + Lvl 10
+Bladed Mystery,"By giving a short description of a past
+adventure, you may choose the type of damage your weapon deals – for
+instance, that it was struck by lightning for electric type, or tempered in the
+flames of groudon’s heart for fire type. You may also choose for it to deal an
+extra 1d10 damage or have a 20% chance of inflicting one status condition of
+your choice. These bonuses last for 24 hours and can be changed daily.",Shadow Blade + Lvl 20
+Steal Hearts," After successfully stealing an item from a foe,
+you may choose to inflict the Infatuated or Confused status upon them,
+lasting 10 turns or 30 minutes outside of battle.",Thief + Lvl 10
+Artistic Escapes," In low visibility, such as
+dusk or fog, you may become
+totally invisible. Your invisibility
+ends if you attack or if visibility
+around you increases. While
+invisible, you cannot be tracked
+by sight, sound or scent, and you
+receive a bonus of 20% to
+Perception rolls, to a maximum
+of 95%. If you deal an attack to a
+foe who cannot see you, the
+attack’s damage is doubled.",Thief + Lvl 20
+Type Bulldozer,"Ignore the effects of 'not very effective' type matchups, instead dealing normal damage.",Type-Advantage Master
+Sands of Time,"By spending at least 30 minutes studying an object or structure, you can accurately tell what pokémon in the past have interacted with it, as well as any stories and legends, and whether it has any secret functions or magical effects cast upon it.",Archaelogist Destiny Level 10
+Seas of Time,"Your knowledge about the past eclipses that
+of even the greatest scholars. Once daily you may study an object or place
+and declare a fact of the past to be true. For instance, that an ancient battle
+took place, that the relic would point to a specific legendary pokémon’s
+sleeping place, or that an ancient tool is actually a primitive key. If the Guild
+Master permits, this knowledge is accepted and written into canon.",Archaelogist Destiny Level 20
+Keen Intuition,"Thrice daily you can call upon your skills
+of deduction to give you insight. The Guild Master will give you two truths
+and one lie about any situation, individual or item. It is up to you to deduce
+which is the falsehood and what knowledge you can trust, however.",Detective + Level 10
+Flawless Deduction,"If you have at least three pieces of
+evidence, you can accurately deduce facts about your current case. By
+cashing in three pieces of evidence, you can ask the Guild Master one
+question, which they have to answer truthfully. You can perform this action
+as long as you have evidence to spend, and can reasonably argue how each
+item or piece of knowledge would help you glean the answer to your
+question.",Detective + Level 20
+Doom Force,"After defeating an enemy, on
+  Trigger 4, all enemy Pokémon within a 10-foot radius take half the
+  damage dealt to the fallen foe as typeless damage.",Doomstrike
+Momentum,"Whenever you make a successful skill roll in a
+dungeon, you gain one point of momentum, up to 5 at once. You lose one
+momentum point after failing a skill roll, and all momentum by leaving the
+dungeon or being knocked out. Momentum can be used as follows:
+Each point of momentum allows you to move one additional space in
+combat. At 5 momentum, your attacks deal an additional 1d6 damage.
+You may spend one point to add 5% to the success chance of a roll.
+You may spend one point of momentum to reduce damage taken by 1d6.
+You may spend three points of momentum to perform a Basic Attack
+after landing a successful attack on a foe.
+You may spend all momentum to instantly shrug off a status condition.",Dungeoneer + Level 10
+Expert Dungeoneer,"You may, before entering a dungeon, make
+three claims about it, two of which are then written into truth. These may be about
+the pokemon, items, secrets, terrain, reputation, etc. If the Guild Master permits,
+the chosen two facts are written into canon and become true for all future visits.",Dungeoneer + Level 20
+Doomstrike,"(Requires 'Extra Striker'):After defeating an enemy,
+  gain an additional attacking action during this turn.",Extra Striker
+Quick Striker,"Requires Extra Striker
+  additional attacking action per turn. You may also gain the bonus
+  attacking action from Extra Striker.",Extra Striker
+Surmounting Wit,"You shine when situations are bleakest.
+If outnumbered, trapped, facing a foe larger or higher in level than you, or if
+a party member has fainted, you gain +15% to all skill rolls.",Folk Hero + Level 10
+Folk Mythology,"Once daily, you may escape a tough
+situation by describing one of your feats from a folk tale. For example, that
+you scared off a rampaging gyarados by baring your teeth, or leapt over a
+ravine three copperajah wide to rescue a baby mareep. Keep track of your
+folk tale feats as you use them, for future reference.",Folk Hero + Level 20
+Awakening,"Once per day, spend 1 grit to
+  'Awaken.' If capable of Mega Evolution, you immediately Mega Evolve
+  without a Mega Evolution Stone. If not, your Attack, Defense, Special
+  Attack, Special Defense, Speed increase by 1 point, and Brawn and
+  Talent increase by 2 points for the remainder of a battle. Can stack
+  with “Go For Broke.”",Go for Broke

@@ -18,9 +18,9 @@ public class DetailsModel : PageModel
 
     public async Task<IActionResult> OnGetAsync(string id)
     {
-        if (id == null || _context.Abilities == null) return NotFound();
+        if (id == null || _context.AbilityDex == null) return NotFound();
 
-        var ability = await _context.Abilities.FirstOrDefaultAsync(m => m.ID == id);
+        var ability = await _context.AbilityDex.FirstOrDefaultAsync(m => m.ID == id);
         if (ability == null)
             return NotFound();
         Ability = ability;

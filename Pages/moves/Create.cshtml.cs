@@ -24,9 +24,9 @@ public class CreateModel : PageModel
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        if (!ModelState.IsValid || _context.Moves == null || Move == null) return Page();
+        if (!ModelState.IsValid || _context.MoveDex == null || Move == null) return Page();
 
-        _context.Moves.Add(Move);
+        _context.MoveDex.Add(Move);
         await _context.SaveChangesAsync();
 
         return RedirectToPage("./Index");

@@ -17,6 +17,6 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        if (_context.Abilities != null) Ability = await _context.Abilities.ToListAsync();
+        if (_context.AbilityDex != null) Ability = await _context.AbilityDex.ToListAsync();
     }
 }

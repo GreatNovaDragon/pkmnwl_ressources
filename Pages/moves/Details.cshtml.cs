@@ -18,9 +18,9 @@ public class DetailsModel : PageModel
 
     public async Task<IActionResult> OnGetAsync(string id)
     {
-        if (id == null || _context.Moves == null) return NotFound();
+        if (id == null || _context.MoveDex == null) return NotFound();
 
-        var move = await _context.Moves.FirstOrDefaultAsync(m => m.ID == id);
+        var move = await _context.MoveDex.FirstOrDefaultAsync(m => m.ID == id);
         if (move == null)
             return NotFound();
         Move = move;

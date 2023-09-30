@@ -1,839 +1,1070 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="pandoc" name="generator"/>
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
-    <title>rules</title>
-    <style>
-        html {
-            color: #1a1a1a;
-            background-color: #fdfdfd;
-        }
-
-        body {
-            margin: 0 auto;
-            max-width: 36em;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            hyphens: auto;
-            overflow-wrap: break-word;
-            text-rendering: optimizeLegibility;
-            font-kerning: normal;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 0.9em;
-                padding: 12px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-        }
-
-        @media print {
-            html {
-                background-color: white;
-            }
-
-            body {
-                background-color: transparent;
-                color: black;
-                font-size: 12pt;
-            }
-
-            p, h2, h3 {
-                orphans: 3;
-                widows: 3;
-            }
-
-            h2, h3, h4 {
-                page-break-after: avoid;
-            }
-        }
-
-        p {
-            margin: 1em 0;
-        }
-
-        a {
-            color: #1a1a1a;
-        }
-
-        a:visited {
-            color: #1a1a1a;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        svg {
-            height: auto;
-            max-width: 100%;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 1.4em;
-        }
-
-        h5, h6 {
-            font-size: 1em;
-            font-style: italic;
-        }
-
-        h6 {
-            font-weight: normal;
-        }
-
-        ol, ul {
-            padding-left: 1.7em;
-            margin-top: 1em;
-        }
-
-        li > ol, li > ul {
-            margin-top: 0;
-        }
-
-        blockquote {
-            margin: 1em 0 1em 1.7em;
-            padding-left: 1em;
-            border-left: 2px solid #e6e6e6;
-            color: #606060;
-        }
-
-        code {
-            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-            font-size: 85%;
-            margin: 0;
-            hyphens: manual;
-        }
-
-        pre {
-            margin: 1em 0;
-            overflow: auto;
-        }
-
-        pre code {
-            padding: 0;
-            overflow: visible;
-            overflow-wrap: normal;
-        }
-
-        .sourceCode {
-            background-color: transparent;
-            overflow: visible;
-        }
-
-        hr {
-            background-color: #1a1a1a;
-            border: none;
-            height: 1px;
-            margin: 1em 0;
-        }
-
-        table {
-            margin: 1em 0;
-            border-collapse: collapse;
-            width: 100%;
-            overflow-x: auto;
-            display: block;
-            font-variant-numeric: lining-nums tabular-nums;
-        }
-
-        table caption {
-            margin-bottom: 0.75em;
-        }
-
-        tbody {
-            margin-top: 0.5em;
-            border-top: 1px solid #1a1a1a;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        th {
-            border-top: 1px solid #1a1a1a;
-            padding: 0.25em 0.5em 0.25em 0.5em;
-        }
-
-        td {
-            padding: 0.125em 0.5em 0.25em 0.5em;
-        }
-
-        header {
-            margin-bottom: 4em;
-            text-align: center;
-        }
-
-        #TOC li {
-            list-style: none;
-        }
-
-        #TOC ul {
-            padding-left: 1.3em;
-        }
-
-        #TOC > ul {
-            padding-left: 0;
-        }
-
-        #TOC a:not(:hover) {
-            text-decoration: none;
-        }
-
-        code {
-            white-space: pre-wrap;
-        }
-
-        span.smallcaps {
-            font-variant: small-caps;
-        }
-
-        div.columns {
-            display: flex;
-            gap: min(4vw, 1.5em);
-        }
-
-        div.column {
-            flex: auto;
-            overflow-x: auto;
-        }
-
-        div.hanging-indent {
-            margin-left: 1.5em;
-            text-indent: -1.5em;
-        }
-
-        /* The extra [class] is a hack that increases specificity enough to
-           override a similar rule in reveal.js */
-        ul.task-list[class] {
-            list-style: none;
-        }
-
-        ul.task-list li input[type="checkbox"] {
-            font-size: inherit;
-            width: 0.8em;
-            margin: 0 0.8em 0.2em -1.6em;
-            vertical-align: middle;
-        }
-
-        .display.math {
-            display: block;
-            text-align: center;
-            margin: 0.5rem auto;
-        }
-    </style>
-    <!--[if lt IE 9]>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>rules</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 </head>
 <body>
-<table>
-    <thead>
-    <tr class="header">
-        <th>Level</th>
-        <th style="text-align: right;">Equivalent</th>
-        <th style="text-align: left;">Benefits</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-        <td>1</td>
-        <td style="text-align: right;">5</td>
-        <td style="text-align: left;">Starting Ability &amp; Moves</td>
-    </tr>
-    <tr class="even">
-        <td>2</td>
-        <td style="text-align: right;">10</td>
-        <td style="text-align: left;"><em>None</em></td>
-    </tr>
-    <tr class="odd">
-        <td>3</td>
-        <td style="text-align: right;">15</td>
-        <td style="text-align: left;">Attribute Increase</td>
-    </tr>
-    <tr class="even">
-        <td>4</td>
-        <td style="text-align: right;">20</td>
-        <td style="text-align: left;">Move Upgrade</td>
-    </tr>
-    <tr class="odd">
-        <td>5</td>
-        <td style="text-align: right;">25</td>
-        <td style="text-align: left;">Grade+, New Ability</td>
-    </tr>
-    <tr class="even">
-        <td>6</td>
-        <td style="text-align: right;">30</td>
-        <td style="text-align: left;"><em>None</em></td>
-    </tr>
-    <tr class="odd">
-        <td>7</td>
-        <td style="text-align: right;">35</td>
-        <td style="text-align: left;">Attribute Increase</td>
-    </tr>
-    <tr class="even">
-        <td>8</td>
-        <td style="text-align: right;">40</td>
-        <td style="text-align: left;">Move Upgrade</td>
-    </tr>
-    <tr class="odd">
-        <td>9</td>
-        <td style="text-align: right;">45</td>
-        <td style="text-align: left;">Grade+, New Ability</td>
-    </tr>
-    <tr class="even">
-        <td>10</td>
-        <td style="text-align: right;">50</td>
-        <td style="text-align: left;"><em>None</em></td>
-    </tr>
-    <tr class="odd">
-        <td>11</td>
-        <td style="text-align: right;">55</td>
-        <td style="text-align: left;">Attribute Increase</td>
-    </tr>
-    <tr class="even">
-        <td>12</td>
-        <td style="text-align: right;">60</td>
-        <td style="text-align: left;">Move Upgrade</td>
-    </tr>
-    <tr class="odd">
-        <td>13</td>
-        <td style="text-align: right;">65</td>
-        <td style="text-align: left;">Grade+, New Ability</td>
-    </tr>
-    <tr class="even">
-        <td>14</td>
-        <td style="text-align: right;">70</td>
-        <td style="text-align: left;"><em>None</em></td>
-    </tr>
-    <tr class="odd">
-        <td>15</td>
-        <td style="text-align: right;">75</td>
-        <td style="text-align: left;">Attribute Increase</td>
-    </tr>
-    <tr class="even">
-        <td>16</td>
-        <td style="text-align: right;">80</td>
-        <td style="text-align: left;">Move Upgrade</td>
-    </tr>
-    <tr class="odd">
-        <td>17</td>
-        <td style="text-align: right;">85</td>
-        <td style="text-align: left;">Grade+, New Ability</td>
-    </tr>
-    <tr class="even">
-        <td>18</td>
-        <td style="text-align: right;">90</td>
-        <td style="text-align: left;"><em>None</em></td>
-    </tr>
-    <tr class="odd">
-        <td>19</td>
-        <td style="text-align: right;">95</td>
-        <td style="text-align: left;">Attribute Increase</td>
-    </tr>
-    <tr class="even">
-        <td>20</td>
-        <td style="text-align: right;">100</td>
-        <td style="text-align: left;">Move Upgrade</td>
-    </tr>
-    </tbody>
-</table>
 <h2 id="character-creation">Character Creation</h2>
 <p>To create a character in this roleplaying system, follow these
-    steps:</p>
+steps:</p>
 <ol type="1">
-    <li><p>Choose a Pokémon from the Conversion Sheet list. Copy their
-        Health, Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
-        Talent, and size category. Optionally, roll a D4 for each stat and add
-        the result to it.</p></li>
-    <li><p>Calculate their starting Health Points by adding their Health
-        score to 20.</p></li>
-    <li><p>Select the Pokémon’s starting Ability, moves from the Conversion
-        Sheet, and record them.</p></li>
-    <li><p>Assign a Grade of 1 and a Grit of 2 to your character. More
-        details about Grade and Grit will be provided in the Playing the Game
-        section.</p></li>
+<li><p>Choose a Pokémon Copy their Health, Attack, Special Attack,
+Defense, Special Defense, Speed, Brawn, Talent, and size
+category.</p></li>
+<li><p>You additionally get a bonus array to apply to your stats
+attacking and defending stats as you wish:</p>
+<ul>
+<li>GENERALIST: +1, +1, +0, +0</li>
+<li>SPECIALIST: +2, +0, +0, +0</li>
+<li>EXPERT: +3, +0, +0, -1</li>
+<li>WEAK SPOT: +1, +1, +1, -1</li>
+<li>LOPSIDED: +2, +1, -0, -1</li>
+<li>CUSTOM: Apply bonuses as you wish, ensuring that the total comes to
+2, but no bonus actually is higher than 3.</li>
+</ul></li>
+<li><p>Calculate their starting Health Points by adding their Health
+score to 20.</p></li>
+<li><p>Select the Pokémon’s starting Ability, moves from the Conversion
+Sheet, and record them.</p></li>
+<li><p>Assign a Grade of 1 and a Grit of 2 to your character. More
+details about Grade and Grit will be provided in the Playing the Game
+section.</p></li>
+<li><p>Pick a Background</p></li>
 </ol>
-<p><strong>Optional: Character Skills:</strong></p>
-<p>Your character has 9 points to distribute among 12 available skills.
-    Remember, you cannot allocate more than 5 points into a single skill.
-    Detailed explanations of these optional skills will be given in the
-    Playing the Game section.</p>
+<ul>
+<li><p><strong>Adventurer</strong>: You delve into dungeons without
+fear, helping others as you go. Take the trait. Start with 15 S, a
+week’s worth of rations, one oran berry, one stun seed, and a trapbust
+orb. At level 10, advance to <em>Mercenary</em>, <em>Rescuer</em>, or
+<em>Folk Hero</em>.</p></li>
+<li><p><strong>Explorer</strong>: Conquering the untamed wild, you seek
+out marvellous places. Take the trait Anchor. Start with 10 S, two weeks
+worth of rations, three oran berry, and three escape orbs. At level 10,
+advance to <em>Rescuer</em>, <em>Detective</em>, or
+<em>Dungeoneer</em>.</p></li>
+<li><p><strong>Researcher</strong>: Time can hide no secrets from you
+and your thirst for knowledge. Take the trait <em>Evaluator</em>. Start
+with 10 S, a week’s worth of rations, two oran berries, two heal seeds
+and a scanner orb.At level 10, advance to <em>Detective</em>,
+<em>Mythbound</em>, or <em>Archaeologist</em>.</p></li>
+<li><p><strong>Prodigy</strong>: You have been gifted with unique and
+magnificent talents. Take the trait <em>Type Advantage Master</em>.
+Start with 5 S, a week’s worth of rations, one oran berry, a stun seed,
+and a reviver seed. At level 10, advance to <em>Mythbound</em>,
+<em>Thief</em>, or <em>Performer</em>.</p></li>
+<li><p><strong>Outlaw</strong>: You’re fleeing from your past, one day
+to face it head on. Take the trait <em>Actor</em>. Start with 5 S, three
+days’ worth of rations, two oran berries, a blinker seed, a trawl orb
+and an escape orb. At level 10, advance to <em>Thief</em>,
+<em>Mercenary</em>, or <em>Shadow Blade</em>.</p></li>
+</ul>
+<ol start="7" type="1">
+<li>Select one Grade 1 trait</li>
+</ol>
+<p><strong>Character Skills</strong></p>
+<p>Skills represent a number out of 100. To calculate them, roll (3d6) x
+5, assigning the result to whichever skill you like. You may do this six
+times and fill in the rest of the skills with a flat ‘15’; this is your
+base success chance. When you perform an action, you may be asked to
+make a skill roll. Roll your percentile dice – your d10 and d100 – and
+aim to get below your skill number. Here are the skills:</p>
+<p>Athletics Craft Endurance Finesse</p>
+<p>Medicine Perception Performance Persuasion</p>
+<p>Specialist Knowledge Stealth Survival</p>
+<p>For Craft and Specialist Knowledge, you must list your specialty.</p>
 <h3 id="character-advancement">Character Advancement</h3>
-<p>As you accumulate Experience (XP), you will level up. With each new
-    level:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th style="text-align: right;">Equivalent</th>
+<th>Gained Lvl-pts</th>
+<th style="text-align: left;">Benefits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">5</td>
+<td></td>
+<td style="text-align: left;">Starting Ability &amp; Moves</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">10</td>
+<td>1</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">15</td>
+<td>1</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: right;">20</td>
+<td>1</td>
+<td style="text-align: left;">Move Upgrade</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: right;">25</td>
+<td>2</td>
+<td style="text-align: left;">Grade+</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: right;">30</td>
+<td>2</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td style="text-align: right;">35</td>
+<td>2</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td style="text-align: right;">40</td>
+<td>2</td>
+<td style="text-align: left;">Move Upgrade</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td style="text-align: right;">45</td>
+<td>2</td>
+<td style="text-align: left;">Grade+</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td style="text-align: right;">50</td>
+<td>3</td>
+<td style="text-align: left;">Choose Destiny</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td style="text-align: right;">55</td>
+<td>3</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td style="text-align: right;">60</td>
+<td>3</td>
+<td style="text-align: left;">Move Upgrade</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td style="text-align: right;">65</td>
+<td>3</td>
+<td style="text-align: left;">Grade+</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td style="text-align: right;">70</td>
+<td>3</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td style="text-align: right;">75</td>
+<td>4</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td style="text-align: right;">80</td>
+<td>4</td>
+<td style="text-align: left;">Move Upgrade</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td style="text-align: right;">85</td>
+<td>4</td>
+<td style="text-align: left;">Grade+</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td style="text-align: right;">90</td>
+<td>4</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td style="text-align: right;">95</td>
+<td>4</td>
+<td style="text-align: left;"><em>None</em></td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td style="text-align: right;">100</td>
+<td>5</td>
+<td style="text-align: left;">Move Upgrade, Solidify Destiny</td>
+</tr>
+</tbody>
+</table>
+<p>When you level up, you gain one level-up point, with the amount
+increasing by two every five levels. You may buy the following upgrades
+with level-up points:</p>
+<ul>
+<li>+5 to Health or speed, or +1 to an attacking or defending stat</li>
+<li>Increase a skill by 5% (no skill may be above 95%)</li>
+<li>One trait from any bracket available to you. Grade 1 abilities cost
+1 point. Grade 2 2 points, Grade 3 5 points, Grade 4 cost 8 points and
+Grade 5 cost 10 points</li>
+<li>One of your Pokemons available Abilities</li>
+</ul>
 <ol type="1">
-    <li><p>You can learn new moves if available and may gain additional
-        benefits, such as increasing one attribute or acquiring an extra
-        ability.</p></li>
-    <li><p>Your maximum Hit Points increase by your Health score. This
-        increase is not retroactive, so it will not apply if your Health score
-        is boosted through stat increases or evolution.</p></li>
-</ol>
-<p>If optional skills are in play:</p>
-<ol start="3" type="1">
-    <li>You gain 2 skill points at each level to enhance your skills. Keep
-        in mind that evenly distributing skill points results in only one skill
-        with 2d6 skill dice. Allocate your points wisely and collaborate with
-        your party to fill skill gaps.
-    </li>
+<li><p>You can learn new moves if available and may gain additional
+benefits, such as increasing one attribute or acquiring an extra
+ability.</p></li>
+<li><p>Your maximum Hit Points increase by your Health score. This
+increase is not retroactive, so it will not apply if your Health score
+is boosted through stat increases or evolution.</p></li>
 </ol>
 <p>Move Upgrades:</p>
-<ol start="4" type="1">
-    <li>Move Upgrades are enhancements to specific Moves, making them more
-        versatile or specialized. These are optional, and the Dungeon Master
-        (DM) may choose not to include them. Each move can have only one Move
-        Upgrade.
-    </li>
-</ol>
-<p>Additional Abilities:</p>
-<ol start="5" type="1">
-    <li>Additional Abilities do not replace existing abilities. This means a
-        Pokémon can have up to 6 abilities by level 17 if they acquire
-        additional abilities. The DM has the option to exclude these. If
-        Technique Upgrades and Additional Abilities are not part of your game,
-        treat these levels as Attribute Increase levels.
-    </li>
+<ol start="3" type="1">
+<li>Move Upgrades are enhancements to specific Moves, making them more
+versatile or specialized. These are optional, and the Dungeon Master
+(DM) may choose not to include them. Each move can have only one Move
+Upgrade.</li>
 </ol>
 <h1 id="playing-the-game">Playing the Game</h1>
 <p>To play Pokémon Wild Life, you will require a variety of dice. The
-    most common dice used for resolving conflict and checks are two 6-sided
-    dice (henceforth referred to as 2D6)</p>
+most common dice used for resolving conflict and checks are two 6-sided
+dice (henceforth referred to as 2D6)</p>
 <h2 id="combat-in-pokémon-wild-life">Combat in Pokémon Wild Life</h2>
 <p>To play Pokémon Wild Life, you will require a variety of dice. The
-    most common dice used for resolving conflict and checks are two 6-sided
-    dice (henceforth referred to as 2D6).</p>
+most common dice used for resolving conflict and checks are two 6-sided
+dice (henceforth referred to as 2D6).</p>
 <p>In Pokémon Wild Life, combat is structured into Rounds and Turns. A
-    Round concludes when every participating Pokémon has taken their
-    turn.</p>
+Round concludes when every participating Pokémon has taken their
+turn.</p>
 <p>Each Pokémon has three actions available during a single turn, but
-    only one of these actions can be repeated at the expense of the
-    others.</p>
+only one of these actions can be repeated at the expense of the
+others.</p>
 <ul>
-    <li><p><strong>Combat Actions:</strong> A Pokémon may perform only one
-        Combat Action per turn, unless instructed otherwise. To execute a combat
-        action, specify the Physical or Special move you intend to use, roll
-        2D6, and add the relevant Attack stat. A successful attack is determined
-        by surpassing or equaling the opponent’s relevant Defense score plus
-        2D6.</p></li>
-    <li><p><strong>Utility Actions:</strong> One Utility Action is allowed
-        per turn, unless specified otherwise. To initiate a Utility action,
-        declare the Status Move you wish to use. Most Status Moves take effect
-        without the need for resolution.</p></li>
-    <li><p><strong>Move Actions:</strong> Pokémon can take up to 3 Move
-        Actions per turn. However, any additional Move Actions beyond the first
-        one will prevent the Pokémon from performing a Combat Action or Utility
-        Action. Movement occurs in 5-foot increments (Squares), matching the
-        number specified by the Pokémon’s Speed stat.</p></li>
+<li><p><strong>Combat Actions:</strong> A Pokémon may perform only one
+Combat Action per turn, unless instructed otherwise. To execute a combat
+action, specify the Physical or Special move you intend to use, roll
+2D6, and add the relevant Attack stat. A successful attack is determined
+by surpassing or equaling the opponent’s relevant Defense score plus
+2D6.</p></li>
+<li><p><strong>Utility Actions:</strong> One Utility Action is allowed
+per turn, unless specified otherwise. To initiate a Utility action,
+declare the Status Move you wish to use. Most Status Moves take effect
+without the need for resolution.</p></li>
+<li><p><strong>Move Actions:</strong> Pokémon can take up to 3 Move
+Actions per turn. However, any additional Move Actions beyond the first
+one will prevent the Pokémon from performing a Combat Action or Utility
+Action. Movement occurs in 5-foot increments (Squares), matching the
+number specified by the Pokémon’s Speed stat.</p></li>
 </ul>
 <p>At the end of a round, if a Pokémon is afflicted by a negative status
-    condition, they may attempt to recover from it. This is done by rolling
-    2D6 individually for each Status effect. Keep in mind that only one
-    Status effect can be rolled to recover from at a time. This mechanic
-    adds an element of strategy and decision-making to the flow of
-    combat.</p>
+condition, they may attempt to recover from it. This is done by rolling
+2D6 individually for each Status effect. Keep in mind that only one
+Status effect can be rolled to recover from at a time. This mechanic
+adds an element of strategy and decision-making to the flow of
+combat.</p>
 <h3 id="trigger-saves">Trigger &amp; Saves</h3>
 <p>Certain moves come with two key components: Trigger effects and Save
-    effects.</p>
+effects.</p>
 <ul>
-    <li><p><strong>Trigger Effects:</strong> When a move lists a Trigger
-        effect, you roll 1d6. If your roll matches or exceeds the specified
-        target number, the effect is activated.</p></li>
-    <li><p><strong>Save Effects:</strong> Save effects relate to detrimental
-        status conditions that can afflict your Pokémon. At the end of a round,
-        you have the opportunity to roll to recover from these negative
-        effects.</p>
-        <ul>
-            <li><p>To attempt recovery, you roll 2d6. If you choose to empower your
-                save roll, you roll 2d8 instead.</p></li>
-            <li><p>Success in rolling a number equal to or higher than the provided
-                target number results in the removal of the negative effect.</p></li>
-            <li><p>Importantly, you are limited to rolling for the removal of just
-                one negative status per round. This mechanic adds a strategic element to
-                managing and recovering from status conditions during battles.</p></li>
-        </ul>
-    </li>
+<li><p><strong>Trigger Effects:</strong> When a move lists a Trigger
+effect, you roll 1d6. If your roll matches or exceeds the specified
+target number, the effect is activated.</p></li>
+<li><p><strong>Save Effects:</strong> Save effects relate to detrimental
+status conditions that can afflict your Pokémon. At the end of a round,
+you have the opportunity to roll to recover from these negative
+effects.</p>
+<ul>
+<li><p>To attempt recovery, you roll 2d6. If you choose to empower your
+save roll, you roll 2d8 instead.</p></li>
+<li><p>Success in rolling a number equal to or higher than the provided
+target number results in the removal of the negative effect.</p></li>
+<li><p>Importantly, you are limited to rolling for the removal of just
+one negative status per round. This mechanic adds a strategic element to
+managing and recovering from status conditions during battles.</p></li>
+</ul></li>
 </ul>
 <h3 id="combat-tactics-and-environment">Combat Tactics and
-    Environment</h3>
+Environment</h3>
 <ul>
-    <li><p><strong>Threatened Area and Attacks of Opportunity:</strong> A
-        five-foot radius surrounding a Pokémon is that Pokémon’s Threatened
-        Area. If a Pokémon is within the Threatened Area of another Pokémon and
-        attempts to leave, the Foe may use an attack of opportunity.</p></li>
-    <li><p><strong>Cover:</strong> Cover is provided by solid objects that
-        stand between you and your target. Trees, walls, and boulders are all
-        common examples of cover. A creature must be behind such an obstacle so
-        that at least half of its body is protected to claim the benefit of
-        cover. While a Pokémon has cover, it gains +1 bonus to both defense
-        scores.</p></li>
-    <li><p><strong>Attacking an Unseen Target:</strong> When you attack an
-        unseen target, you are guessing where it is. If your guess is wrong,
-        even a successful attack roll misses. Alternatively, your Pokémon can
-        use a utility action to search for the hidden foe. This usually involves
-        a Perception check against the foe’s Guile check, with a +2 bonus if
-        your Pokémon has special moves like Foresight or Odor Sleuth. If your
-        check is higher, you can attack without penalties.</p></li>
+<li><p><strong>Threatened Area and Attacks of Opportunity:</strong> A
+five-foot radius surrounding a Pokémon is that Pokémon’s Threatened
+Area. If a Pokémon is within the Threatened Area of another Pokémon and
+attempts to leave, the Foe may use an attack of opportunity.</p></li>
+<li><p><strong>Cover:</strong> Cover is provided by solid objects that
+stand between you and your target. Trees, walls, and boulders are all
+common examples of cover. A creature must be behind such an obstacle so
+that at least half of its body is protected to claim the benefit of
+cover. While a Pokémon has cover, it gains +1 bonus to both defense
+scores.</p></li>
+<li><p><strong>Attacking an Unseen Target:</strong> When you attack an
+unseen target, you are guessing where it is. If your guess is wrong,
+even a successful attack roll misses. Alternatively, your Pokémon can
+use a utility action to search for the hidden foe. This usually involves
+a Perception check against the foe’s Guile check, with a +2 bonus if
+your Pokémon has special moves like Foresight or Odor Sleuth. If your
+check is higher, you can attack without penalties.</p></li>
 </ul>
 <h3 id="combat-mechanics">Combat Mechanics</h3>
 <ul>
-    <li><p><strong>Critical Hits:</strong> A critical hit occurs when your
-        attack roll results in an 11 (before bonuses) for the attack or special
-        attack. When this happens, you roll the dice again for that attack and
-        add the new result to the damage total. Only the damage dice are
-        doubled; any bonus damage like Brawn, Talent, or affinity bonuses
-        remains unchanged.</p></li>
-    <li><p><strong>Knock-out and Death:</strong> A Pokémon is considered
-        knocked out when their Health Points reach zero. A Pokémon dies when
-        their health score reaches a negative of their maximum hit point
-        score.</p></li>
+<li><p><strong>Critical Hits:</strong> A critical hit occurs when your
+attack roll results in an 11 (before bonuses) for the attack or special
+attack. When this happens, you roll the dice again for that attack and
+add the new result to the damage total. Only the damage dice are
+doubled; any bonus damage like Brawn, Talent, or affinity bonuses
+remains unchanged.</p></li>
+<li><p><strong>Knock-out and Death:</strong> A Pokémon is considered
+knocked out when their Health Points reach zero. A Pokémon dies when
+their health score reaches a negative of their maximum hit point
+score.</p></li>
 </ul>
 <h3 id="other-combat-actions">Other Combat Actions</h3>
 <ul>
-    <li><p><strong>Assist:</strong> A Pokémon can use a combat action to
-        help another Pokémon in need. For instance, helping wake a sleeping
-        Pokémon by jostling them awake. Many of these tasks do not usually
-        require a roll, however, if the assistance is complex or risky, the DM
-        may decide if a check is needed. Usually, a Pokémon must be near another
-        Pokémon to assist them.</p></li>
-    <li><p><strong>Defend:</strong> A Pokémon may choose to defend instead
-        of attack, gaining +2 to both Defense scores until the start of its next
-        turn. It loses this bonus if it cannot move, its speed is 0, or it is
-        unable to use actions or make withdraw strikes.</p></li>
-    <li><p><strong>Grab:</strong> Using a free hand or appendage, a Pokémon
-        may attempt to grab another Pokémon no more than one size category
-        higher than itself. This involves a contested check, and the outcome may
-        lead to actions like Moving a Grabbed Pokémon or Pinning a Grabbed
-        Pokémon.</p></li>
+<li><p><strong>Assist:</strong> A Pokémon can use a combat action to
+help another Pokémon in need. For instance, helping wake a sleeping
+Pokémon by jostling them awake. Many of these tasks do not usually
+require a roll, however, if the assistance is complex or risky, the DM
+may decide if a check is needed. Usually, a Pokémon must be near another
+Pokémon to assist them.</p></li>
+<li><p><strong>Defend:</strong> A Pokémon may choose to defend instead
+of attack, gaining +2 to both Defense scores until the start of its next
+turn. It loses this bonus if it cannot move, its speed is 0, or it is
+unable to use actions or make withdraw strikes.</p></li>
+<li><p><strong>Grab:</strong> Using a free hand or appendage, a Pokémon
+may attempt to grab another Pokémon no more than one size category
+higher than itself. This involves a contested check, and the outcome may
+lead to actions like Moving a Grabbed Pokémon or Pinning a Grabbed
+Pokémon.</p></li>
 </ul>
 <h3 id="environmental-interactions-and-special-actions">Environmental
-    Interactions and Special Actions</h3>
+Interactions and Special Actions</h3>
 <ul>
-    <li><p><strong>Hide:</strong> To hide, a Pokémon must be in an area that
-        covers or conceals its presence, such as behind tall trees or in a dark
-        alley. The creature makes a contested check, Guile check contested by
-        the foe’s Perception check if optional skills are in use.</p></li>
-    <li><p><strong>Interact with Environment:</strong> Interacting with
-        environment objects, such as cutting rope or pulling a convenient lever,
-        can take as little as a utility action. The DM decides how long it takes
-        to interact with an environment object in actions. If it is too complex
-        an action, the DM may rule that it would take more than a round to
-        complete.</p></li>
-    <li><p><strong>Knock Down:</strong> A foe that is no larger than one
-        size category above your Pokémon can be knocked over. This involves a
-        contested check, and if you succeed, the target is knocked prone with
-        associated penalties and bonuses to attacks against it.</p></li>
-    <li><p><strong>Neutral Attack:</strong> A basic, type less physical
-        attack. It uses the Attack stat for accuracy, deals 1d4 points of
-        damage, plus the user’s Brawn, and cannot have its damage boosted by
-        Technician.</p></li>
-    <li><p><strong>Push:</strong> A Pokémon may attempt to push another away
-        if the target is no more than one size category larger than it. This
-        involves a contested check, and success results in the target being
-        pushed 5 feet away from the user.</p></li>
-    <li><p><strong>Use an Item:</strong> A Pokémon may use an item (e.g.,
-        eating a healing berry) as a utility action.</p></li>
+<li><p><strong>Hide:</strong> To hide, a Pokémon must be in an area that
+covers or conceals its presence, such as behind tall trees or in a dark
+alley. The creature makes a contested check, Guile check contested by
+the foe’s Perception check if optional skills are in use.</p></li>
+<li><p><strong>Interact with Environment:</strong> Interacting with
+environment objects, such as cutting rope or pulling a convenient lever,
+can take as little as a utility action. The DM decides how long it takes
+to interact with an environment object in actions. If it is too complex
+an action, the DM may rule that it would take more than a round to
+complete.</p></li>
+<li><p><strong>Knock Down:</strong> A foe that is no larger than one
+size category above your Pokémon can be knocked over. This involves a
+contested check, and if you succeed, the target is knocked prone with
+associated penalties and bonuses to attacks against it.</p></li>
+<li><p><strong>Neutral Attack:</strong> A basic, type less physical
+attack. It uses the Attack stat for accuracy, deals 1d4 points of
+damage, plus the user’s Brawn, and cannot have its damage boosted by
+Technician.</p></li>
+<li><p><strong>Push:</strong> A Pokémon may attempt to push another away
+if the target is no more than one size category larger than it. This
+involves a contested check, and success results in the target being
+pushed 5 feet away from the user.</p></li>
+<li><p><strong>Use an Item:</strong> A Pokémon may use an item (e.g.,
+eating a healing berry) as a utility action.</p></li>
 </ul>
 <h3 id="grit">Grit</h3>
 <p>Grit is a valuable resource you can use to gain an advantage in
-    various situations. When you use Grit as a Utility Action, you can
-    choose from the following Combat actions:</p>
+various situations. When you use Grit as a Utility Action, you can
+choose from the following Combat actions:</p>
 <ul>
-    <li><p><strong>Recover Hit points:</strong> You can heal yourself by an
-        amount equal to your Grade multiplied by your Health Score.</p></li>
-    <li><p><strong>Brace for Impact:</strong> This action lets you defend
-        against enemy attacks, reducing the damage you take by an amount equal
-        to 5 times your Grade, applied after damage calculations.</p></li>
-    <li><p><strong>Empower an Attack Roll or Check:</strong> This ability
-        can be used both in and out of combat. When you empower your Attack
-        Roll, instead of rolling 2D6, you roll 2 eight-sided dice for greater
-        accuracy. When empowering a check using optional Skills, you roll an
-        additional die appropriate for your skill level.</p></li>
-    <li><p><strong>Empower Damage:</strong> When dealing damage, roll an
-        additional d6 for each Grade you possess.</p></li>
+<li><p><strong>Recover Hit points:</strong> You can heal yourself by an
+amount equal to your Grade multiplied by your Health Score.</p></li>
+<li><p><strong>Brace for Impact:</strong> This action lets you defend
+against enemy attacks, reducing the damage you take by an amount equal
+to 5 times your Grade, applied after damage calculations.</p></li>
+<li><p><strong>Empower an Attack Roll or Check:</strong> This ability
+can be used both in and out of combat. When you empower your Attack
+Roll, instead of rolling 2D6, you roll 2 eight-sided dice for greater
+accuracy. When empowering a check using optional Skills, you roll an
+additional die appropriate for your skill level.</p></li>
+<li><p><strong>Empower Damage:</strong> When dealing damage, roll an
+additional d6 for each Grade you possess.</p></li>
 </ul>
 <p>Grit naturally recovers after you have had 8 hours of rest, making it
-    a resource you can strategically use to turn the tide in your favor
-    during battles and challenges.</p>
+a resource you can strategically use to turn the tide in your favor
+during battles and challenges.</p>
 <h3 id="grade-stab-advantage-resistance-brawn-and-talent">Grade, STAB,
-    Advantage, Resistance, Brawn, and Talent</h3>
+Advantage, Resistance, Brawn, and Talent</h3>
 <p>Grade is related to STAB, Type Advantage, and Type Resistance.</p>
 <ul>
-    <li><p><strong>STAB:</strong> If your Pokémon shares the same type as
-        the attack they are using, they deal extra damage equal to their Grade
-        multiplied by</p>
-        <ol start="2" type="1">
-            <li></li>
-        </ol>
-    </li>
-    <li><p><strong>Advantage:</strong> If the Pokémon you are attacking is
-        weak to the type of attack you are using, you deal extra damage equal to
-        your Pokémon’s grade multiplied by 2, or 4 if it takes 4 times
-        damage.</p></li>
-    <li><p><strong>Resistance:</strong> If the Pokémon you are being
-        attacked by is using a move whose type you resist, reduce the damage
-        done to you by your Grade multiplied by 2, or 4 if you take quarter
-        damage.</p></li>
-    <li><p><strong>Brawn and Talent:</strong> These are added to Physical
-        and Special attack damage rolls respectively as bonus damage. If
-        Optional Skills are in play, Brawn and Talent cannot be increased with
-        stat increases, and are instead increased by upgrading a Vigor or
-        Knowledge skill, respectively.</p></li>
+<li><p><strong>STAB:</strong> If your Pokémon shares the same type as
+the attack they are using, they deal extra damage equal to their Grade
+multiplied by</p>
+<ol start="2" type="1">
+<li></li>
+</ol></li>
+<li><p><strong>Advantage:</strong> If the Pokémon you are attacking is
+weak to the type of attack you are using, you deal extra damage equal to
+your Pokémon’s grade multiplied by 2, or 4 if it takes 4 times
+damage.</p></li>
+<li><p><strong>Resistance:</strong> If the Pokémon you are being
+attacked by is using a move whose type you resist, reduce the damage
+done to you by your Grade multiplied by 2, or 4 if you take quarter
+damage.</p></li>
+<li><p><strong>Brawn and Talent:</strong> These are added to Physical
+and Special attack damage rolls respectively as bonus damage. If
+Optional Skills are in play, Brawn and Talent cannot be increased with
+stat increases, and are instead increased by upgrading a Vigor or
+Knowledge skill, respectively.</p></li>
 </ul>
 <h3 id="status-conditions">Status Conditions</h3>
 <ul>
-    <li><p><strong>Burn and Poison:</strong> The target suffers damage equal
-        to the affinity bonus of the user at the beginning of each Round until
-        they recover from it.</p></li>
-    <li><p><strong>Binding:</strong> The target takes damage equal to their
-        own affinity bonus at the start of each Round and is unable to move
-        until they recover, or after 4 turns.</p></li>
-    <li><p><strong>Confusion:</strong> The target can only successfully
-        attack on Trigger 3; otherwise, they may damage a random ally or
-        themselves.</p></li>
-    <li><p><strong>Curse:</strong> The target suffers 8 points of damage at
-        the start of every Round.</p></li>
-    <li><p><strong>Dazed:</strong> Dazed lasts for one round after it is
-        inflicted. The user cannot use Combat actions and has their speed
-        halved.</p></li>
-    <li><p><strong>Paralysis:</strong> Paralysis is a severe condition
-        similar to Dazed, but more debilitating. It lasts for multiple rounds,
-        rendering the user unable to perform Combat actions, and their speed is
-        reduced.</p></li>
-    <li><p><strong>Embargo:</strong> The user cannot activate the effects of
-        their held item.</p></li>
-    <li><p><strong>Encore:</strong> The user may only use their last used
-        move or their Neutral Attack.</p></li>
-    <li><p><strong>Heal Block:</strong> The user cannot use any Healing
-        Moves or utilize Grit for healing. Go For Broke applies this restriction
-        on players, with the exception that it cannot be saved from.</p></li>
-    <li><p><strong>Infatuation:</strong> The target may only use an attack
-        on Trigger 3. The user can still use Utility actions (unless it is an
-        attack with the Swift upgrade) or Movement actions.</p></li>
+<li><p><strong>Burn and Poison:</strong> The target suffers damage equal
+to the affinity bonus of the user at the beginning of each Round until
+they recover from it.</p></li>
+<li><p><strong>Binding:</strong> The target takes damage equal to their
+own affinity bonus at the start of each Round and is unable to move
+until they recover, or after 4 turns.</p></li>
+<li><p><strong>Confusion:</strong> The target can only successfully
+attack on Trigger 3; otherwise, they may damage a random ally or
+themselves.</p></li>
+<li><p><strong>Curse:</strong> The target suffers 8 points of damage at
+the start of every Round.</p></li>
+<li><p><strong>Dazed:</strong> Dazed lasts for one round after it is
+inflicted. The user cannot use Combat actions and has their speed
+halved.</p></li>
+<li><p><strong>Paralysis:</strong> Paralysis is a severe condition
+similar to Dazed, but more debilitating. It lasts for multiple rounds,
+rendering the user unable to perform Combat actions, and their speed is
+reduced.</p></li>
+<li><p><strong>Embargo:</strong> The user cannot activate the effects of
+their held item.</p></li>
+<li><p><strong>Encore:</strong> The user may only use their last used
+move or their Neutral Attack.</p></li>
+<li><p><strong>Heal Block:</strong> The user cannot use any Healing
+Moves or utilize Grit for healing. Go For Broke applies this restriction
+on players, with the exception that it cannot be saved from.</p></li>
+<li><p><strong>Infatuation:</strong> The target may only use an attack
+on Trigger 3. The user can still use Utility actions (unless it is an
+attack with the Swift upgrade) or Movement actions.</p></li>
 </ul>
 <h2 id="inventory">Inventory</h2>
 <p>A character can carry 20 items, plus their Attack skill. An item slot
-    can store any number of items depending on the weight category.<br/>
-    Items are divided into 5 weight categories. One hundred tiny items of
-    the same type can be stored in a single item slot. Ten small items of
-    the same type can be stored in a single slot. One regular item can be
-    stored in one slot. One large item requires two item slots to store. One
-    heavy item requires four item slots to store.</p>
+can store any number of items depending on the weight category.<br />
+Items are divided into 5 weight categories. One hundred tiny items of
+the same type can be stored in a single item slot. Ten small items of
+the same type can be stored in a single slot. One regular item can be
+stored in one slot. One large item requires two item slots to store. One
+heavy item requires four item slots to store.</p>
 <h2 id="optional-skills">Optional Skills</h2>
 <p>Optional skills provide a way to customize your character’s
-    abilities, particularly outside of combat scenarios, like social
-    interactions or physical challenges. Each Pokémon can allocate up to 8
-    points in any one of these skills, but they cannot start with more than
-    5 points in a single skill.</p>
+abilities, particularly outside of combat scenarios, like social
+interactions or physical challenges. Each Pokémon can allocate up to 8
+points in any one of these skills, but they cannot start with more than
+5 points in a single skill.</p>
 <p>Skills are categorized into four different proficiency levels:</p>
 <ul>
-    <li><p><strong>Untrained:</strong> Characters with 0 points in the skill
-        cannot use it for skill checks.</p></li>
-    <li><p><strong>Novice:</strong> Characters with less than 5 points in
-        the skill roll two 4-sided dice for checks.</p></li>
-    <li><p><strong>Proficient:</strong> Characters with between 5 and 7
-        points in the skill roll two 6-sided dice for checks.</p></li>
-    <li><p><strong>Expert:</strong> Characters with 8 points in the skill
-        roll two 8-sided dice for checks.</p></li>
+<li><p><strong>Untrained:</strong> Characters with 0 points in the skill
+cannot use it for skill checks.</p></li>
+<li><p><strong>Novice:</strong> Characters with less than 5 points in
+the skill roll two 4-sided dice for checks.</p></li>
+<li><p><strong>Proficient:</strong> Characters with between 5 and 7
+points in the skill roll two 6-sided dice for checks.</p></li>
+<li><p><strong>Expert:</strong> Characters with 8 points in the skill
+roll two 8-sided dice for checks.</p></li>
 </ul>
 <h3 id="interaction-skills">Interaction Skills</h3>
 <p>Interaction skills are closely tied to Attack and Speed
-    attributes.</p>
+attributes.</p>
 <ul>
-    <li><p><strong>Guile:</strong> Guile revolves around stealth and
-        deception, such as sneaking past a guard unnoticed or pickpocketing
-        without detection. Guile checks are contested by Perception or Intuition
-        checks.</p></li>
-    <li><p><strong>Perception:</strong> Use perception actively to detect
-        anything unusual with your senses. When trying to spot a hidden foe, it
-        is contested by the opponent’s Guile; otherwise, the DM sets the
-        difficulty.</p></li>
-    <li><p><strong>Persuasion:</strong> Persuasion involves convincing
-        others to believe or act differently, including Flattery (contested by
-        Willpower), Intimidation (contested by Wits), Lying (contested by
-        Intuition), or Diplomacy (DM sets the difficulty).</p></li>
-    <li><p><strong>Wits:</strong> Wits represent quick reactions in
-        unpredictable situations, like evading traps or saving allies from
-        danger. If reacting to traps or hazards, the DM sets the difficulty,
-        while reacting to intimidation or embarrassment attempts is contested
-        against the opponent’s Wits check.</p></li>
+<li><p><strong>Guile:</strong> Guile revolves around stealth and
+deception, such as sneaking past a guard unnoticed or pickpocketing
+without detection. Guile checks are contested by Perception or Intuition
+checks.</p></li>
+<li><p><strong>Perception:</strong> Use perception actively to detect
+anything unusual with your senses. When trying to spot a hidden foe, it
+is contested by the opponent’s Guile; otherwise, the DM sets the
+difficulty.</p></li>
+<li><p><strong>Persuasion:</strong> Persuasion involves convincing
+others to believe or act differently, including Flattery (contested by
+Willpower), Intimidation (contested by Wits), Lying (contested by
+Intuition), or Diplomacy (DM sets the difficulty).</p></li>
+<li><p><strong>Wits:</strong> Wits represent quick reactions in
+unpredictable situations, like evading traps or saving allies from
+danger. If reacting to traps or hazards, the DM sets the difficulty,
+while reacting to intimidation or embarrassment attempts is contested
+against the opponent’s Wits check.</p></li>
 </ul>
 <h3 id="knowledge-skills">Knowledge Skills</h3>
 <p>Knowledge skills are linked to Special Attack and Special Defense
-    attributes.</p>
+attributes.</p>
 <ul>
-    <li><p><strong>Education:</strong> Education encompasses knowledge of
-        various subjects, such as languages (e.g., Super Mystery Dungeon’s foot
-        runes), identifying materials or obscure items, or even learning moves
-        from TMs not typically available.</p></li>
-    <li><p><strong>Intuition:</strong> Use Intuition to distinguish truth
-        from falsehood, sense motives, or act on instinct. Identifying forgeries
-        or disguises is contested by the opponent’s Guile, while detecting lies
-        or impostors is contested by an opponent’s Persuasion check.</p></li>
-    <li><p><strong>Proficiency:</strong> Proficiency involves executing a
-        trade or talent, like crafting items, farming berries, discerning the
-        use of artifacts, or detecting sabotage. The DM sets the difficulty,
-        especially for tasks like identifying sabotaged tools contested by the
-        saboteur’s Guile check.</p></li>
-    <li><p><strong>Survival:</strong> Survival skills help you navigate
-        wilderness hazards and find sustenance. Use it to forage for food and
-        materials, contend with natural challenges, and gauge if tools are
-        tampered with (contested by Guile).</p></li>
+<li><p><strong>Education:</strong> Education encompasses knowledge of
+various subjects, such as languages (e.g., Super Mystery Dungeon’s foot
+runes), identifying materials or obscure items, or even learning moves
+from TMs not typically available.</p></li>
+<li><p><strong>Intuition:</strong> Use Intuition to distinguish truth
+from falsehood, sense motives, or act on instinct. Identifying forgeries
+or disguises is contested by the opponent’s Guile, while detecting lies
+or impostors is contested by an opponent’s Persuasion check.</p></li>
+<li><p><strong>Proficiency:</strong> Proficiency involves executing a
+trade or talent, like crafting items, farming berries, discerning the
+use of artifacts, or detecting sabotage. The DM sets the difficulty,
+especially for tasks like identifying sabotaged tools contested by the
+saboteur’s Guile check.</p></li>
+<li><p><strong>Survival:</strong> Survival skills help you navigate
+wilderness hazards and find sustenance. Use it to forage for food and
+materials, contend with natural challenges, and gauge if tools are
+tampered with (contested by Guile).</p></li>
 </ul>
 <h3 id="vigor-skills">Vigor Skills</h3>
 <p>Vigor skills relate to Health and Defense attributes.</p>
 <ul>
-    <li><p><strong>Athletics:</strong> Athletics allows you to perform
-        physical feats, such as pursuing foes, climbing cliffs, leaping gaps, or
-        swimming against currents. It is the go-to skill for physical
-        prowess.</p></li>
-    <li><p><strong>Fortitude:</strong> Fortitude measures your resilience,
-        whether enduring extreme temperatures, surviving without sustenance, or
-        resisting illness.</p></li>
-    <li><p><strong>Strength:</strong> Strength demonstrates physical power,
-        like lifting heavy objects, carrying comrades, breaking barriers, or
-        engaging in strength contests against another Pokémon.</p></li>
-    <li><p><strong>Willpower:</strong> Willpower is all about maintaining
-        focus and discipline in challenging situations, resisting temptation,
-        psychic control, distractions, or flattery attempts (contested by
-        Guile). The DM sets the difficulty for various scenarios where willpower
-        comes into play.</p></li>
+<li><p><strong>Athletics:</strong> Athletics allows you to perform
+physical feats, such as pursuing foes, climbing cliffs, leaping gaps, or
+swimming against currents. It is the go-to skill for physical
+prowess.</p></li>
+<li><p><strong>Fortitude:</strong> Fortitude measures your resilience,
+whether enduring extreme temperatures, surviving without sustenance, or
+resisting illness.</p></li>
+<li><p><strong>Strength:</strong> Strength demonstrates physical power,
+like lifting heavy objects, carrying comrades, breaking barriers, or
+engaging in strength contests against another Pokémon.</p></li>
+<li><p><strong>Willpower:</strong> Willpower is all about maintaining
+focus and discipline in challenging situations, resisting temptation,
+psychic control, distractions, or flattery attempts (contested by
+Guile). The DM sets the difficulty for various scenarios where willpower
+comes into play.</p></li>
 </ul>
 <h2 id="additional-abilities">Additional Abilities</h2>
 <p>These abilities are drawn from the Pokémon Mystery Dungeon games and
-    provide unique advantages to your character. Some may have prerequisites
-    that need to be met before they can be obtained.</p>
+provide unique advantages to your character. Some may have prerequisites
+that need to be met before they can be obtained.</p>
 <h3 id="rescue-teamexplorers-iq-abilities"><strong>Rescue Team/Explorers
-    IQ Abilities:</strong></h3>
+IQ Abilities:</strong></h3>
 <ul>
-    <li><p><strong>Non-Traitor:</strong> When confused, your character will
-        not accidentally attack allies.</p></li>
-    <li><p><strong>Self-Curing:</strong> Gain a +1 bonus on rolls to recover
-        from status ailments.</p></li>
-    <li><p><strong>Sure-Hit Attacker:</strong> Receive a +1-accuracy bonus
-        when making attacks.</p></li>
-    <li><p><strong>Cheerleader:</strong> Boost the Attack and Special Attack
-        of allies within 5 feet by 1.</p></li>
-    <li><p><strong>PP Saver:</strong> Moves with limited uses gain an extra
-        use.</p></li>
-    <li><p><strong>Type-Advantage Master:</strong> Moves that are strong
-        against opponents have a higher critical hit chance, requiring less for
-        a critical hit.</p></li>
-    <li><p><strong>Wise Healer:</strong> When using Grit to recover HP, heal
-        an amount equal to Grade plus 2 times Health score.</p></li>
-    <li><p><strong>Wary Fighter:</strong> After missing an attack, you can
-        move an extra 5 feet and leave a foe’s Threatened Area without provoking
-        an attack of opportunity.</p></li>
-    <li><p><strong>Practice Swinger:</strong> Failing to hit a target boosts
-        the user’s Attack and Special Attack by 1 point each until the end of
-        the next turn.</p></li>
-    <li><p><strong>Sharpshooter:</strong> Reduces the target number for an
-        accuracy roll’s critical hit by 1.</p></li>
-    <li><p><strong>Clutch Performer:</strong> If HP drops below 50%, Defense
-        and Special Defense increase by 1 point. Below 25%, they increase by an
-        additional point, and below 10%, they increase by another point, up to a
-        maximum of 3 points each.</p></li>
-    <li><p><strong>Critical Dodger:</strong> When a foe’s strike would be
-        critical, on Trigger 5, the attack misses.</p></li>
-    <li><p><strong>Extra Striker:</strong> After an attack and on Trigger 6,
-        you can attack again, but only one extra attack can be performed this
-        way.</p></li>
-    <li><p><strong>Quick Striker (Requires ‘Extra Striker’):</strong> Gain a
-        permanent additional attacking action per turn. You may also gain the
-        bonus attacking action from Extra Striker.</p></li>
+<li><p><strong>Non-Traitor:</strong> When confused, your character will
+not accidentally attack allies.</p></li>
+<li><p><strong>Self-Curing:</strong> Gain a +1 bonus on rolls to recover
+from status ailments.</p></li>
+<li><p><strong>Sure-Hit Attacker:</strong> Receive a +1-accuracy bonus
+when making attacks.</p></li>
+<li><p><strong>Cheerleader:</strong> Boost the Attack and Special Attack
+of allies within 5 feet by 1.</p></li>
+<li><p><strong>PP Saver:</strong> Moves with limited uses gain an extra
+use.</p></li>
+<li><p><strong>Type-Advantage Master:</strong> Moves that are strong
+against opponents have a higher critical hit chance, requiring less for
+a critical hit.</p></li>
+<li><p><strong>Wise Healer:</strong> When using Grit to recover HP, heal
+an amount equal to Grade plus 2 times Health score.</p></li>
+<li><p><strong>Wary Fighter:</strong> After missing an attack, you can
+move an extra 5 feet and leave a foe’s Threatened Area without provoking
+an attack of opportunity.</p></li>
+<li><p><strong>Practice Swinger:</strong> Failing to hit a target boosts
+the user’s Attack and Special Attack by 1 point each until the end of
+the next turn.</p></li>
+<li><p><strong>Sharpshooter:</strong> Reduces the target number for an
+accuracy roll’s critical hit by 1.</p></li>
+<li><p><strong>Clutch Performer:</strong> If HP drops below 50%, Defense
+and Special Defense increase by 1 point. Below 25%, they increase by an
+additional point, and below 10%, they increase by another point, up to a
+maximum of 3 points each.</p></li>
+<li><p><strong>Critical Dodger:</strong> When a foe’s strike would be
+critical, on Trigger 5, the attack misses.</p></li>
+<li><p><strong>Extra Striker:</strong> After an attack and on Trigger 6,
+you can attack again, but only one extra attack can be performed this
+way.</p></li>
+<li><p><strong>Quick Striker (Requires ‘Extra Striker’):</strong> Gain a
+permanent additional attacking action per turn. You may also gain the
+bonus attacking action from Extra Striker.</p></li>
 </ul>
 <h3 id="super-mystery-dungeon-emera-abilities"><strong>Super Mystery
-    Dungeon Emera Abilities:</strong></h3>
+Dungeon Emera Abilities:</strong></h3>
 <ul>
-    <li><p><strong>Doomstrike (Requires ‘Extra Striker’):</strong> After
-        defeating an enemy, gain an additional attacking action during this
-        turn.</p></li>
-    <li><p><strong>Doomforce (Requires ‘Doomstrike’):</strong> After
-        defeating an enemy, on Trigger 4, all enemy Pokémon within a 10-foot
-        radius take half the damage dealt to the fallen foe as typeless
-        damage.</p></li>
-    <li><p><strong>Go For Broke:</strong> Once per day, expend 1 grit to
-        boost Attack, Defense, Special Attack, Special Defense, and Speed by 1
-        point, and Brawn and Talent by 2 points for the remainder of the battle.
-        While under this effect, you cannot use Grit to heal, nor can you be
-        healed by items or moves with healing properties.</p></li>
-    <li><p><strong>Awakening (Requires ‘Go For Broke’):</strong> Once per
-        day, spend 1 grit to ‘Awaken.’ If capable of Mega Evolution, you
-        immediately Mega Evolve without a Mega Evolution Stone. If not, your
-        Attack, Defense, Special Attack, Special Defense, Speed increase by 1
-        point, and Brawn and Talent increase by 2 points for the remainder of a
-        battle. Can stack with “Go For Broke.”</p></li>
-    <li><p><strong>Intimidator:</strong> When a foe attacks you, on Trigger
-        6, the attack automatically misses.</p></li>
-    <li><p><strong>Prolong:</strong> When using a move that applies a
-        negative status effect to a foe, the foe has a -1 disadvantage to that
-        roll.</p></li>
-    <li><p><strong>Type Bulldozer (Requires ‘Type-Advantage
-        Master’):</strong> Foes that would resist the move’s type now take
-        normally effective damage. This does not affect type immunity.</p></li>
+<li><p><strong>Doomstrike (Requires ‘Extra Striker’):</strong> After
+defeating an enemy, gain an additional attacking action during this
+turn.</p></li>
+<li><p><strong>Doomforce (Requires ‘Doomstrike’):</strong> After
+defeating an enemy, on Trigger 4, all enemy Pokémon within a 10-foot
+radius take half the damage dealt to the fallen foe as typeless
+damage.</p></li>
+<li><p><strong>Go For Broke:</strong> Once per day, expend 1 grit to
+boost Attack, Defense, Special Attack, Special Defense, and Speed by 1
+point, and Brawn and Talent by 2 points for the remainder of the battle.
+While under this effect, you cannot use Grit to heal, nor can you be
+healed by items or moves with healing properties.</p></li>
+<li><p><strong>Awakening (Requires ‘Go For Broke’):</strong> Once per
+day, spend 1 grit to ‘Awaken.’ If capable of Mega Evolution, you
+immediately Mega Evolve without a Mega Evolution Stone. If not, your
+Attack, Defense, Special Attack, Special Defense, Speed increase by 1
+point, and Brawn and Talent increase by 2 points for the remainder of a
+battle. Can stack with “Go For Broke.”</p></li>
+<li><p><strong>Intimidator:</strong> When a foe attacks you, on Trigger
+6, the attack automatically misses.</p></li>
+<li><p><strong>Prolong:</strong> When using a move that applies a
+negative status effect to a foe, the foe has a -1 disadvantage to that
+roll.</p></li>
+<li><p><strong>Type Bulldozer (Requires ‘Type-Advantage
+Master’):</strong> Foes that would resist the move’s type now take
+normally effective damage. This does not affect type immunity.</p></li>
 </ul>
 <h3 id="original-abilities"><strong>Original Abilities:</strong></h3>
 <ul>
-    <li><strong>Condition Immunity:</strong> Choose one status condition:
-        Burning, Frozen, Paralyzed, Sleeping, Poisoned, or Confusion. Enemy
-        Pokémon automatically fail to inflict this status effect on you (does
-        not affect moves that cause these effects on the user).
-    </li>
+<li><strong>Condition Immunity:</strong> Choose one status condition:
+Burning, Frozen, Paralyzed, Sleeping, Poisoned, or Confusion. Enemy
+Pokémon automatically fail to inflict this status effect on you (does
+not affect moves that cause these effects on the user).</li>
 </ul>
 <h2 id="move-abilities"><strong>Move Abilities:</strong></h2>
 <ul>
-    <li><p><strong>Aftermath:</strong> When the foe succeeds in ending the
-        effect triggered by this move, it suffers damage equal to your
-        Grade.</p></li>
-    <li><p><strong>Chain Reaction:</strong> When this move scores a critical
-        hit, reduce the number needed to trigger the technique’s effect by
-        1.</p></li>
-    <li><p><strong>Defiant:</strong> If surrounded, this move’s attack roll
-        is empowered without spending Grit.</p></li>
-    <li><p><strong>Fulfilling:</strong> When this move is used, either
-        regain hit points equal to its Grade or gain a +1 bonus to checks made
-        to end effects during this Round.</p></li>
-    <li><p><strong>Grounding:</strong> Attacks made using a move with
-        Grounding allow Ground-type moves to hit Flying-types.</p></li>
-    <li><p><strong>Intense:</strong> This move does an additional +2 damage
-        if your Pokémon is Grade 3 or lower; if Grade 4 or higher, it does +3
-        damage.</p></li>
-    <li><p><strong>Invigorating:</strong> Once per round, if this move deals
-        damage, the user regains hit points equal to its Grade.</p></li>
-    <li><p><strong>Mastery:</strong> If a damage roll with this move would
-        result in the minimum amount of damage, reroll, and take the higher
-        result.</p></li>
-    <li><p><strong>Precise:</strong> Targets of this move do not gain a
-        bonus from Cover or by using the Defend action.</p></li>
-    <li><p><strong>Punishing:</strong> When this technique’s damage roll is
-        empowered, it deals an additional +1d6 damage.</p></li>
-    <li><p><strong>Sinister:</strong> Targets subject to an effect from this
-        move suffer a -1 penalty to checks made to end it.</p></li>
-    <li><p><strong>Staggering:</strong> If the target is vulnerable to this
-        move’s damage type, their Brawn and Talent become 0 until their next
-        Turn, and they cannot gain bonuses to their Brawn or Talent during this
-        time.</p></li>
-    <li><p><strong>Swift:</strong> Spend one Grit: A Physical or Special
-        move with Swift can be used as a Utility action, and a Status move with
-        Swift can be used as a Move action. This move cannot be used twice in a
-        single turn.</p></li>
-    <li><p><strong>Unyielding:</strong> When this move is used, the user
-        cannot be moved from its position except by choice until its next
-        turn.</p></li>
+<li><p><strong>Aftermath:</strong> When the foe succeeds in ending the
+effect triggered by this move, it suffers damage equal to your
+Grade.</p></li>
+<li><p><strong>Chain Reaction:</strong> When this move scores a critical
+hit, reduce the number needed to trigger the technique’s effect by
+1.</p></li>
+<li><p><strong>Defiant:</strong> If surrounded, this move’s attack roll
+is empowered without spending Grit.</p></li>
+<li><p><strong>Fulfilling:</strong> When this move is used, either
+regain hit points equal to its Grade or gain a +1 bonus to checks made
+to end effects during this Round.</p></li>
+<li><p><strong>Grounding:</strong> Attacks made using a move with
+Grounding allow Ground-type moves to hit Flying-types.</p></li>
+<li><p><strong>Intense:</strong> This move does an additional +2 damage
+if your Pokémon is Grade 3 or lower; if Grade 4 or higher, it does +3
+damage.</p></li>
+<li><p><strong>Invigorating:</strong> Once per round, if this move deals
+damage, the user regains hit points equal to its Grade.</p></li>
+<li><p><strong>Mastery:</strong> If a damage roll with this move would
+result in the minimum amount of damage, reroll, and take the higher
+result.</p></li>
+<li><p><strong>Precise:</strong> Targets of this move do not gain a
+bonus from Cover or by using the Defend action.</p></li>
+<li><p><strong>Punishing:</strong> When this technique’s damage roll is
+empowered, it deals an additional +1d6 damage.</p></li>
+<li><p><strong>Sinister:</strong> Targets subject to an effect from this
+move suffer a -1 penalty to checks made to end it.</p></li>
+<li><p><strong>Staggering:</strong> If the target is vulnerable to this
+move’s damage type, their Brawn and Talent become 0 until their next
+Turn, and they cannot gain bonuses to their Brawn or Talent during this
+time.</p></li>
+<li><p><strong>Swift:</strong> Spend one Grit: A Physical or Special
+move with Swift can be used as a Utility action, and a Status move with
+Swift can be used as a Move action. This move cannot be used twice in a
+single turn.</p></li>
+<li><p><strong>Unyielding:</strong> When this move is used, the user
+cannot be moved from its position except by choice until its next
+turn.</p></li>
 </ul>
 <h2 id="seeds">Seeds</h2>
 <p>Due to the nature of how the System works, these seeds function
-    differently from their Mystery Dungeon counterparts.</p>
+differently from their Mystery Dungeon counterparts.</p>
 <ul>
-    <li><p><strong>Joy Seeds:</strong> Permanently increases a Pokémon’s
-        Brawn and Talent by 1 point.</p></li>
-    <li><p><strong>Golden Seeds:</strong> Permanently increases a Pokémon’s
-        Grade by 1, this allows a Pokémon to achieve Grades higher than</p></li>
+<li><p><strong>Joy Seeds:</strong> Permanently increases a Pokémon’s
+Brawn and Talent by 1 point.</p></li>
+<li><p><strong>Golden Seeds:</strong> Permanently increases a Pokémon’s
+Grade by 1, this allows a Pokémon to achieve Grades higher than</p></li>
 </ul>
+<h2 id="destinies">Destinies</h2>
+<h3 id="archaeologist">ARCHAEOLOGIST</h3>
+<blockquote>
+<p>The past hides great secrets. Ancient ruins, fallen cities: to
+understand pokémon of the present, we must ask the echoing remnants of
+the past.</p>
+</blockquote>
+<p>You are skilled in decoding ancient runes, talented with an
+archaeology kit, and can use your knowledge to peer through the
+<em>Sands of Time</em>. At level 20, your status as Legend allows you to
+look through the <em>Seas of Time</em>.</p>
+<p>Skill Increase: Specialist Knowledge (History) or Perception
+increases by 10%, to a maximum of 95%.</p>
+<p>Equipment Proficiency: Archaeology Kit</p>
+<p>Ability (Level 10): Sands of Time. By spending at least 30 minutes
+studying an object or structure, you can accurately tell what pokémon in
+the past have interacted with it, as well as any stories and legends,
+and whether it has any secret functions or magical effects cast upon it.
+Ability (Level 20): Seas of Time. Your knowledge about the past eclipses
+that of even the greatest scholars. Once daily you may study an object
+or place and declare a fact of the past to be true. For instance, that
+an ancient battle took place, that the relic would point to a specific
+legendary pokémon’s sleeping place, or that an ancient tool is actually
+a primitive key. If the Guild Master permits, this knowledge is accepted
+and written into canon.</p>
+<h3 id="detective">DETECTIVE</h3>
+<blockquote>
+<p>Truth can be elusive. It hides in the hearts of pokémon like how
+treasure hides in the most treacherous dungeons. It won’t elude me. Not
+again.</p>
+</blockquote>
+<p>You are an expert at deducting the truth, with a knack for reading
+pokémon like books thanks to your <em>Keen Intuition</em>. At level 20,
+you are known for your legendary <em>Flawless Deduction</em>.</p>
+<p>Skill Increase: Perception or Persuasion increases by 10%, to a max
+of 95%. Equipment Proficiency: Forensics Kit</p>
+<p>Ability (Level 10): Keen Intuition. Thrice daily you can call upon
+your skills of deduction to give you insight. The Guild Master will give
+you two truths and one lie about any situation, individual or item. It
+is up to you to deduce which is the falsehood and what knowledge you can
+trust, however.</p>
+<p>Ability (Level 20): Flawless Deduction. If you have at least three
+pieces of evidence, you can accurately deduce facts about your current
+case. By cashing in three pieces of evidence, you can ask the Guild
+Master one question, which they have to answer truthfully. You can
+perform this action as long as you have evidence to spend, and can
+reasonably argue how each item or piece of knowledge would help you
+glean the answer to your question.</p>
+<h3 id="dungeoneer">DUNGEONEER</h3>
+<blockquote>
+<p>Mystery dungeons have always been my home. Whenever I rest in town, I
+dream of returning to those winding, treasure-filled mazes.</p>
+</blockquote>
+<p>Your passion for dungeons and exploration has gifted you with a sense
+of <em>Momentum</em>. At level 20, your Legend has named you as an
+<em>Expert Dungeoneer</em>.</p>
+<p>Skill Increase: Athletics or Survival increases by 10%, to a maximum
+of 95%. Equipment Proficiency: Camping Gear</p>
+<p>Ability (Level 10): Momentum: Whenever you make a successful skill
+roll in a dungeon, you gain one point of momentum, up to 5 at once. You
+lose one momentum point after failing a skill roll, and all momentum by
+leaving the dungeon or being knocked out. Momentum can be used as
+follows: Each point of momentum allows you to move one additional space
+in combat. At 5 momentum, your attacks deal an additional 1d6
+damage.</p>
+<ul>
+<li>You may spend one point to add 5% to the success chance of a
+roll.</li>
+<li>You may spend one point of momentum to reduce damage taken by
+1.</li>
+<li>You may spend three points of momentum to perform a Basic Attack
+after landing a successful attack on a foe. You may spend all momentum
+to instantly shrug off a status condition.</li>
+</ul>
+<p>Ability (Level 20): Expert Dungeoneer: You may, before entering a
+dungeon, make three claims about it, two of which are then written into
+truth. These may be about the pokemon, items, secrets, terrain,
+reputation, etc. If the Guild Master permits, the chosen two facts are
+written into canon and become true for all future visits.</p>
+<h3 id="folk-hero">FOLK HERO</h3>
+<blockquote>
+<p>The pokémon around me are the real treasure. I’ll cement my name in
+their memories forever.</p>
+</blockquote>
+<p>You have a need to help others, and tend to do so with flair and
+<em>Surmounting Wit</em>. At level 20, your Legend has escalated to that
+of <em>Folk Mythology</em>.</p>
+<p>Skill Increase: Persuasion or Craft (Any) increases by 10%, to a max
+of 95%.</p>
+<p>Equipment Proficiency: Carpenter’s Tools</p>
+<p>Ability (Level 10): Surmounting Wit. You shine when situations are
+bleakest. If outnumbered, trapped, facing a foe larger or higher in
+level than you, or if a party member has fainted, you gain +15% to all
+skill rolls.</p>
+<p>Ability (Level 20): Folk Mythology. Once daily, you may escape a
+tough situation by describing one of your feats from a folk tale. For
+example, that you scared off a rampaging gyarados by baring your teeth,
+or leapt over a ravine three copperajah wide to rescue a baby mareep.
+Keep track of your folk tale feats as you use them, for future
+reference.</p>
+<h3 id="mercenary">MERCENARY</h3>
+<blockquote>
+<p>With no home, no honour, and nothing to lose, my skills are all I can
+depend on.</p>
+</blockquote>
+<p>You’re a cut-throat for hire, selling your skills to pave your path
+in the world. Your <em>Desperation</em> makes you lethal, as well as
+your legendary <em>Hunter’s Prowess</em>.</p>
+<p>Skill Increase: Endurance or Stealth increases by 10%, to a max of
+95%. Equipment Proficiency: Trapmaking Tools</p>
+<p>Ability (Level 10): Desperation. Your skills hone as your HP lowers.
+At 50% HP, you gain +1 to both attacking stats. At 25%, you gain +3. If
+your HP hits 0, you may continue fighting for 1d4 rounds with a +5 to
+your attacking stats, before falling unconscious for 2d6 hours.</p>
+<p>Ability (Level 20): Hunter’s Prowess. Assign yourself a target that
+must be taken down. You always have an approximate idea of their
+location, move twice as fast directly towards them, deal double damage
+if they are below half HP, and your allies may add your Attack or Sp.
+Atk as well as their own when attacking them. You cannot change targets
+until they are neutralised, and must wait 24 hours before picking a new
+target.</p>
+<h3 id="mythbound">MYTHBOUND</h3>
+<blockquote>
+<p>My life has been forever touched by something mysterious and
+wonderful.</p>
+</blockquote>
+<p>After a chance encounter with a mythical pokémon, your latent
+abilities have flowered, allowing you to <em>Call Upon Myth</em> or,
+later, S<em>ummon Myth</em>.</p>
+<p>Skill Increase: Finesse or Specialist Knowledge (Mythology) increases
+by 10%, to a maximum of 95%.</p>
+<p>Equipment Proficiency: Artist’s Tools of your choice</p>
+<p>Ability (Level 10): Call Upon Myth. Depending on your chosen mythical
+patron, you may activate a special ability once per day.</p>
+<p>Celebi or Hoopa Move 10 spaces in any direction, including through
+obstacles.</p>
+<p>Manaphy or Keldeo Double swim speed and gain the ability to breathe
+underwater for 30 mins.</p>
+<p>Meloetta or Magearna Read the thoughts and emotions of pokémon within
+ten tiles.</p>
+<p>Victini or Marshadow Make one attack a guaranteed critical hit.</p>
+<p>Diancie or Jirachi Materialise a gem worth 50 S, or one reviver
+seed.</p>
+<p>Shaymin or Mew Cure all allies of statuses and purge all pollution in
+a 5 space radius.</p>
+<p>Ability (Level 20): Summon Myth. Your bond with your mythical patron
+has grown into a close friendship. You may summon them as a friendly NPC
+at any time, command them in combat, and make use of their unique
+abilities – such as Mew’s ability to transform DNA, or Hoopa’s
+teleportation.</p>
+<h3 id="performer">PERFORMER</h3>
+<blockquote>
+<p>The roar of applause, the praise from the crowd – I live to
+perform!</p>
+</blockquote>
+<p>Music, acting or dance, you adore the thrill of delivering an
+<em>Inspired Performance</em>. Your Legend revolves around your
+breathtaking <em>Stage Mastery</em>.</p>
+<p>Skill Increase: Performance or Persuasion increases by 10%, to max
+95%. Equipment Proficiency: Musical instrument of your choice</p>
+<p>Ability (Level 10): Inspired Performance. Thrice daily you may
+perform in a way that motivates or demotivates a target: Increase or
+decrease the success chance of a roll by 10%. Grant +2 or -2 to one of
+the target’s stats, lasting for one hour. Grant the target temporary HP
+equal to your level*Grade, lasting for one hour or until the temporary
+hit points are depleted.</p>
+<p>Ability (Level 20): Stage Mastery. Choose any three sound or dance
+based moves that you would not otherwise be able to learn, and add them
+to your available move set. You may also use one of the following
+abilities per day: Dancer’s Stride: When moving in combat, you may deal
+1d10 damage to each foe you move past, uncontested and untyped. Soothing
+Serenade: Heal allies within earshot for 4d6 HP, and cure any statuses
+based on rage, confusion or fear. Captivating Speech: Sway the hearts of
+up to 10 pokémon within earshot, changing their attitude towards a
+target of your choosing up to three spaces in any direction on this
+scale: Hostile | Hated | Disliked | Neutral | Liked | Loved |
+Exalted</p>
+<h3 id="rescuer">RESCUER</h3>
+<blockquote>
+<p>As long as there are pokémon in need, I’ll be there to help out.</p>
+</blockquote>
+<p>You’ve devoted your life to saving others. Not only is your
+<em>Emergency Healing</em> appreciated, but your <em>Rescuer’s
+Prowess</em> is unparalleled.</p>
+<p>Skill Increase: Medicine or Survival increases by 10%, to a max of
+95%. Equipment Proficiency: Medic’s Tools Ability (Level 10): Emergency
+Healing. If your own HP is below 50%, any healing you apply to an ally
+is doubled. If you share one portion of rations with another pokémon,
+you both receive the benefits of the full meal. Ability (Level 20):
+Rescuer’s Prowess. Assign a target that must be rescued. You move twice
+as quickly and ignore difficult terrain when moving towards them,
+require half the rations and rest when in the same dungeon as them, and
+receive a +5 bonus to all stats when they are within sight. You cannot
+change targets until they are rescued, and must wait 24 hours before
+picking a new target.</p>
+<h3 id="shadow-blade">SHADOW BLADE</h3>
+<blockquote>
+<p>Rejected from society, I embrace the lawless wilds. No pokémon will
+govern me.</p>
+</blockquote>
+<p>A criminal by trade, you’re as fearsome as you are versatile. Known
+now for your knack for <em>Armed Strikes</em>, your Legend reveres your
+<em>Bladed Mastery</em>.</p>
+<p>Skill Increase: Athletics or Stealth increases by 10%, to a maximum
+of 95%.</p>
+<p>Equipment Proficiency: Bladed &amp; improvised weaponry Ability
+(Level 10): Armed Strikes. Your Basic Attacks are made with a weapon.
+They deal an extra 1d10 damage, are boosted in accuracy to 100%, and
+have a 10% chance to flinch.</p>
+<p>Ability (Level 20): Bladed Mastery. By giving a short description of
+a past adventure, you may choose the type of damage your weapon deals –
+for instance, that it was struck by lightning for electric type, or
+tempered in the flames of groudon’s heart for fire type. You may also
+choose for it to deal an extra 1d10 damage or have a 20% chance of
+inflicting one status condition of your choice. These bonuses last for
+24 hours and can be changed daily.</p>
+<h3 id="thief">THIEF</h3>
+<blockquote>
+<p>All the world is mine, so I help myself: only treasure can rival my
+brilliance.</p>
+</blockquote>
+<p>You’re a talented pickpocket with a knack for finding loot. Famous
+for your ability to <em>Steal Hearts</em>, officers will grow to rue
+your <em>Artistic Escapes</em>. Skill Increase: Finesse or Stealth
+increases by 10%, to a maximum of 95%.</p>
+<p>Equipment Proficiency: Thieves’ Tools</p>
+<p>Ability (Level 10): Steal Hearts. After successfully stealing an item
+from a foe, you may choose to inflict the Infatuated or Confused status
+upon them, lasting 10 turns or 30 minutes outside of battle.</p>
+<p>Ability (Level 20): Artistic Escapes. In low visibility, such as dusk
+or fog, you may become totally invisible. Your invisibility ends if you
+attack or if visibility around you increases. While invisible, you
+cannot be tracked by sight, sound or scent, and you receive a bonus of
+20% to Perception rolls, to a maximum of 95%. If you deal an attack to a
+foe who cannot see you, the attack’s damage is doubled.</p>
 </body>
 </html>

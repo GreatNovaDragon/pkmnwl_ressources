@@ -18,9 +18,9 @@ public class EditModel : PageModel
 
     public async Task<IActionResult> OnGetAsync(string id)
     {
-        if (id == null || _context.Moves == null) return NotFound();
+        if (id == null || _context.MoveDex == null) return NotFound();
 
-        var move = await _context.Moves.FirstOrDefaultAsync(m => m.ID == id);
+        var move = await _context.MoveDex.FirstOrDefaultAsync(m => m.ID == id);
         if (move == null) return NotFound();
         Move = move;
         return Page();
@@ -50,6 +50,6 @@ public class EditModel : PageModel
 
     private bool MoveExists(string id)
     {
-        return (_context.Moves?.Any(e => e.ID == id)).GetValueOrDefault();
+        return (_context.MoveDex?.Any(e => e.ID == id)).GetValueOrDefault();
     }
 }
