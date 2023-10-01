@@ -1,4 +1,5 @@
 @page
+@using Microsoft.IdentityModel.Tokens
 @model IndexModel
 
 @{
@@ -16,8 +17,9 @@
         <th>
             Name
         </th>
+        <th style="display:none;"> Name en</th>
         <th>
-            @Html.DisplayNameFor(model => model.Ability[0].Effect)
+            Effekt
         </th>
     </tr>
     </thead>
@@ -26,7 +28,16 @@
     {
         <tr>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name} / {item.Name_DE}")</a>
+                <a asp-page="./Details" asp-route-id="@item.ID">
+                    @if (item.Name_DE.IsNullOrEmpty())
+                    {
+                        @Html.DisplayFor(modelItem => item.Name)
+                    }
+                    @Html.Raw(item.Name_DE)
+                </a>
+            </td>
+            <td style="display:none;">
+                @Html.Raw(item.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Effect)

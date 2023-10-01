@@ -14,6 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Ability.ID"/>
+            <input type="hidden" asp-for="Ability.IsTrait"/>
             <div class="form-group">
                 <label asp-for="Ability.Name_DE" class="control-label"></label>
                 <input asp-for="Ability.Name_DE" class="form-control"/>

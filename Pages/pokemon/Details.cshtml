@@ -1,6 +1,7 @@
 @page
 @using Microsoft.IdentityModel.Tokens
 @using Westwind.AspNetCore.Markdown
+@using Markdig.Renderers
 @model DetailsModel
 
 @{
@@ -8,7 +9,11 @@
 }
 
 <h1>
-    @Html.DisplayFor(modelItem => modelItem.Pokemon.Name) / @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
+    @if (Model.Pokemon.Name_DE.IsNullOrEmpty())
+    {
+        @Html.DisplayFor(modelItem => modelItem.Pokemon.Name)
+    } 
+    @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
     @if (!Model.Pokemon.Form.IsNullOrEmpty())
     {
         @Html.Raw($"({Model.Pokemon.Form})")
@@ -17,16 +22,18 @@
 
 <div class="w3-cell-row">
     <div class="w3-container w3-third w3-cell">
-        <h3>Types</h3>
-        @Html.DisplayFor(modelItem => modelItem.Pokemon.Type1.Name) /
-        @Html.DisplayFor(modelItem => modelItem.Pokemon.Type2!.Name)
+        <h3>Typen</h3>
+        @Html.Raw(Model.Pokemon.Type1.Name_DE)
+        @if (Model.Pokemon.Type2 != null)
+        {
+            @Html.Raw($"/ {Model.Pokemon.Type2!.Name_DE}")
+        }
 
-
-        <h2>Abilities</h2>
+        <h2>Fähigkeiten</h2>
 
         @foreach (var a in Model.Pokemon.Abilities)
         {
-            <h3>@Html.Raw($"{a.Name}/{a.Name_DE}")</h3>
+            <h3>@Html.Raw($"{a.Name_DE}")</h3>
             @Html.Raw(Markdown.Parse(a.Effect))
         }
     </div>
@@ -45,7 +52,7 @@
            new Chart(ctx, {
              type: 'radar',
              data: {
-               labels: ['Vitality @Html.Raw(Model.Pokemon.HEALTH)/15', 'ATK @Html.Raw(Model.Pokemon.ATK)/15', 'DEF @Html.Raw(Model.Pokemon.DEF)/15', 'SpATK @Html.Raw(Model.Pokemon.SP_ATK)/15' , 'SpDEF @Html.Raw(Model.Pokemon.SP_DEF)/15', 'Speed @Html.Raw(Model.Pokemon.SPEED)/15'],
+               labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/15', 'ATK @Html.Raw(Model.Pokemon.ATK)/15', 'DEF @Html.Raw(Model.Pokemon.DEF)/15', 'SpATK @Html.Raw(Model.Pokemon.SP_ATK)/15' , 'SpDEF @Html.Raw(Model.Pokemon.SP_DEF)/15', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/15'],
                datasets: [{
                  label: '',
                  data: [@Html.Raw(Model.Pokemon.HEALTH), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
@@ -94,31 +101,31 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name)/@Html.Raw(move.move.Name_DE) </a>
+                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
                     </h3>
                 </header>
 
                 <div class="w3-container">
                     <dl>
                         <dt>
-                            Learned via
+                            Gelernt via
                         </dt>
                         <dd>@Html.Raw(move.how)</dd>
-                        <dt>Learned at Level</dt>
+                        <dt>Gelernt auf Level</dt>
                         <dd>@Html.Raw(move.level)</dd>
-                        <dt>Move Class</dt>
+                        <dt>Angrifssklasse</dt>
                         <dd>
-                            @Html.Raw(move.move.MoveClass.Name)/@Html.Raw(move.move.MoveClass.Name_DE)
+                            @Html.Raw(move.move.MoveClass.Name_DE)
                         </dd>
-                        <dt>Move Type</dt>
-                        <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
-                        <dt>Source Game</dt>
+                        <dt>Move Typ</dt>
+                        <dd>@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Quellen-Game</dt>
                         <dd>@Html.Raw(move.source)</dd>
 
 
                         @if (!move.move.DamageDice.IsNullOrEmpty())
                         {
-                            <dt>Damage Dice</dt>
+                            <dt>Schadenswürfel Dice</dt>
                             <dd>@Html.Raw(move.move.DamageDice)</dd>
                         }
                         else
@@ -131,7 +138,7 @@
 
 
                 <div class="w3-container w3-light-blue">
-                    <h4>Effect</h4>
+                    <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
                     @Html.Raw(Markdown.Parse(move.move.Effect))
@@ -149,30 +156,31 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name)/@Html.Raw(move.move.Name_DE) </a>
+                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
                     </h3>
                 </header>
 
                 <div class="w3-container">
                     <dl>
                         <dt>
-                            Learned via
+                            Gelernt via
                         </dt>
                         <dd>@Html.Raw(move.how)</dd>
-                        <dt>Learned at Level</dt>
+                        <dt>Gelernt auf Level</dt>
                         <dd>@Html.Raw(move.level)</dd>
-                        <dt>Move Class</dt>
+                        <dt>Angrifssklasse</dt>
                         <dd>
-                            @Html.Raw(move.move.MoveClass.Name)/@Html.Raw(move.move.MoveClass.Name_DE)
+                            @Html.Raw(move.move.MoveClass.Name_DE)
                         </dd>
-                        <dt>Move Type</dt>
-                        <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
-                        <dt>Source Game</dt>
+                        <dt>Move Typ</dt>
+                        <dd>@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Quellen-Game</dt>
                         <dd>@Html.Raw(move.source)</dd>
+
 
                         @if (!move.move.DamageDice.IsNullOrEmpty())
                         {
-                            <dt>Damage Dice</dt>
+                            <dt>Schadenswürfel Dice</dt>
                             <dd>@Html.Raw(move.move.DamageDice)</dd>
                         }
                         else
@@ -185,7 +193,7 @@
 
 
                 <div class="w3-container w3-light-blue">
-                    <h4>Effect</h4>
+                    <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
                     @Html.Raw(Markdown.Parse(move.move.Effect))
@@ -202,30 +210,31 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name)/@Html.Raw(move.move.Name_DE) </a>
+                        <a href="/moves/Details?id={move.move.ID}"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
                     </h3>
                 </header>
 
                 <div class="w3-container">
                     <dl>
                         <dt>
-                            Learned via
+                            Gelernt via
                         </dt>
                         <dd>@Html.Raw(move.how)</dd>
-                        <dt>Learned at Level</dt>
+                        <dt>Gelernt auf Level</dt>
                         <dd>@Html.Raw(move.level)</dd>
-                        <dt>Move Class</dt>
+                        <dt>Angrifssklasse</dt>
                         <dd>
-                            @Html.Raw(move.move.MoveClass.Name)/@Html.Raw(move.move.MoveClass.Name_DE)
+                            @Html.Raw(move.move.MoveClass.Name_DE)
                         </dd>
-                        <dt>Move Type</dt>
-                        <dd>@Html.Raw(move.move.type.Name)/@Html.Raw(move.move.type.Name_DE)</dd>
-
-                        <dt>Source Game</dt>
+                        <dt>Move Typ</dt>
+                        <dd>@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Quellen-Game</dt>
                         <dd>@Html.Raw(move.source)</dd>
+
+
                         @if (!move.move.DamageDice.IsNullOrEmpty())
                         {
-                            <dt>Damage Dice</dt>
+                            <dt>Schadenswürfel Dice</dt>
                             <dd>@Html.Raw(move.move.DamageDice)</dd>
                         }
                         else
@@ -238,7 +247,7 @@
 
 
                 <div class="w3-container w3-light-blue">
-                    <h4>Effect</h4>
+                    <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
                     @Html.Raw(Markdown.Parse(move.move.Effect))

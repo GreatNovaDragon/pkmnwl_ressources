@@ -17,6 +17,7 @@
         <th>
             Dex
         </th>
+        <th style="display:none;"> Name en</th>
         <th>
             @Html.DisplayNameFor(model => model.Pokemon[0].Name)
         </th>
@@ -33,12 +34,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Order)
             </td>
+            <td style="display:none;">@Html.DisplayFor(modelItem => item.Name) </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID">
-                    @Html.DisplayFor(modelItem => item.Name)
-                    @if (!item.Name_DE.IsNullOrEmpty())
+                    @Html.Raw($" {item.Name_DE}")
+                    @if (item.Name_DE.IsNullOrEmpty())
                     {
-                        @Html.Raw($" / {item.Name_DE}")
+                        @Html.DisplayFor(modelItem => item.Name)
+                        
                     }
                     @if (!item.Form.IsNullOrEmpty())
                     {

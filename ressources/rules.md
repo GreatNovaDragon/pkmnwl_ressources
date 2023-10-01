@@ -4,17 +4,15 @@
 
 To create a character in this roleplaying system, follow these steps:
 
-1. Choose a Pokémon Copy their Health,
-   Attack, Special Attack, Defense, Special Defense, Speed, Brawn,
-   Talent, and size category.
+1. Wähle ein Pokemon, und kopiere deseen 
 
 2. You additionally get a bonus array to apply to your stats attacking and defending stats as you wish:
-    - GENERALIST: +1, +1, +0, +0
-    - SPECIALIST: +2, +0, +0, +0
-    - EXPERT: +3, +0, +0, -1
-    - WEAK SPOT: +1, +1, +1, -1
-    - LOPSIDED: +2, +1, -0, -1
-    - CUSTOM: Apply bonuses as you wish, ensuring that the total comes to 2, but no bonus actually is higher than 3.
+    - **Generalist**: +1, +1, +0, +0
+    - **Specialist**: +2, +0, +0, +0
+    - **Expert**: +3, +0, +0, -1
+    - **Weak Spot**: +1, +1, +1, -1
+    - **Lopsided**: +2, +1, -0, -1
+    - **Custom**: Apply bonuses as you wish, ensuring that the total comes to 2, but no bonus actually is higher than 3.
 
 3. Calculate their starting Health Points by adding their Health score
    to 20.
@@ -57,48 +55,47 @@ When you perform an action, you may be asked to make a skill roll. Roll your
 percentile dice – your d10 and d100 – and aim to get below your skill number.
 Here are the skills:
 
-Athletics
-Craft
-Endurance
-Finesse
+- Athletics
+- Craft
+- Endurance
+- Finesse
 
-Medicine
-Perception
-Performance
-Persuasion
+- Medicine
+- Perception
+- Performance
+- Persuasion
 
-Specialist
-Knowledge
-Stealth
-Survival
+- Specialist  Knowledge
+- Stealth
+- Survival
 
 For Craft and Specialist Knowledge, you must list your specialty.
 
 ### Character Advancement
 
 
-| Level | Equivalent | Gained Lvl-pts | Benefits                       |
-|-------|-----------:|----------------|:-------------------------------|
-| 1     |          5 |                | Starting Ability & Moves       |
-| 2     |         10 |              1 | *None*                         |
-| 3     |         15 |              1 | *None*                         |
-| 4     |         20 |              1 | Move Upgrade                   |
-| 5     |         25 |              2 | Grade+                         |
-| 6     |         30 |              2 | *None*                         |
-| 7     |         35 |              2 | *None*                         |
-| 8     |         40 |              2 | Move Upgrade                   |
-| 9     |         45 |              2 | Grade+                         |
-| 10    |         50 |              3 | Choose Destiny                 |
-| 11    |         55 |              3 | *None*                         |
-| 12    |         60 |              3 | Move Upgrade                   |
-| 13    |         65 |              3 | Grade+                         |
-| 14    |         70 |              3 | *None*                         |
-| 15    |         75 |              4 | *None*                         |
-| 16    |         80 |              4 | Move Upgrade                   |
-| 17    |         85 |              4 | Grade+                         |
-| 18    |         90 |              4 | *None*                         |
-| 19    |         95 |              4 | *None*                         |
-| 20    |        100 |              5 | Move Upgrade, Solidify Destiny |
+| Level | Equivalent | Gained Lvl-pts. | Benefits                       |
+|-------|-----------:|-----------------|:-------------------------------|
+| 1     |          5 |                 | Starting Ability & Moves       |
+| 2     |         10 | 1               | *None*                         |
+| 3     |         15 | 1               | *None*                         |
+| 4     |         20 | 1               | Move Upgrade                   |
+| 5     |         25 | 2               | Grade+                         |
+| 6     |         30 | 2               | *None*                         |
+| 7     |         35 | 2               | *None*                         |
+| 8     |         40 | 2               | Move Upgrade                   |
+| 9     |         45 | 2               | Grade+                         |
+| 10    |         50 | 3               | Choose Destiny                 |
+| 11    |         55 | 3               | *None*                         |
+| 12    |         60 | 3               | Move Upgrade                   |
+| 13    |         65 | 3               | Grade+                         |
+| 14    |         70 | 3               | *None*                         |
+| 15    |         75 | 4               | *None*                         |
+| 16    |         80 | 4               | Move Upgrade                   |
+| 17    |         85 | 4               | Grade+                         |
+| 18    |         90 | 4               | *None*                         |
+| 19    |         95 | 4               | *None*                         |
+| 20    |        100 | 5               | Move Upgrade, Solidify Destiny |
 
 
 
@@ -368,190 +365,6 @@ the same type can be stored in a single slot. One regular item can be
 stored in one slot. One large item requires two item slots to store. One
 heavy item requires four item slots to store.
 
-## Optional Skills
-
-Optional skills provide a way to customize your character's abilities,
-particularly outside of combat scenarios, like social interactions or
-physical challenges. Each Pokémon can allocate up to 8 points in any one
-of these skills, but they cannot start with more than 5 points in a
-single skill.
-
-Skills are categorized into four different proficiency levels:
-
-- **Untrained:** Characters with 0 points in the skill cannot use it for
-  skill checks.
-
-- **Novice:** Characters with less than 5 points in the skill roll two
-  4-sided dice for checks.
-
-- **Proficient:** Characters with between 5 and 7 points in the skill
-  roll two 6-sided dice for checks.
-
-- **Expert:** Characters with 8 points in the skill roll two 8-sided
-  dice for checks.
-
-### Interaction Skills
-
-Interaction skills are closely tied to Attack and Speed attributes.
-
-- **Guile:** Guile revolves around stealth and deception, such as
-  sneaking past a guard unnoticed or pickpocketing without detection.
-  Guile checks are contested by Perception or Intuition checks.
-
-- **Perception:** Use perception actively to detect anything unusual
-  with your senses. When trying to spot a hidden foe, it is contested by
-  the opponent's Guile; otherwise, the DM sets the difficulty.
-
-- **Persuasion:** Persuasion involves convincing others to believe or
-  act differently, including Flattery (contested by Willpower),
-  Intimidation (contested by Wits), Lying (contested by Intuition), or
-  Diplomacy (DM sets the difficulty).
-
-- **Wits:** Wits represent quick reactions in unpredictable situations,
-  like evading traps or saving allies from danger. If reacting to traps
-  or hazards, the DM sets the difficulty, while reacting to intimidation
-  or embarrassment attempts is contested against the opponent's Wits
-  check.
-
-### Knowledge Skills
-
-Knowledge skills are linked to Special Attack and Special Defense
-attributes.
-
-- **Education:** Education encompasses knowledge of various subjects,
-  such as languages (e.g., Super Mystery Dungeon's foot runes),
-  identifying materials or obscure items, or even learning moves from
-  TMs not typically available.
-
-- **Intuition:** Use Intuition to distinguish truth from falsehood,
-  sense motives, or act on instinct. Identifying forgeries or disguises
-  is contested by the opponent's Guile, while detecting lies or
-  impostors is contested by an opponent's Persuasion check.
-
-- **Proficiency:** Proficiency involves executing a trade or talent,
-  like crafting items, farming berries, discerning the use of artifacts,
-  or detecting sabotage. The DM sets the difficulty, especially for
-  tasks like identifying sabotaged tools contested by the saboteur's
-  Guile check.
-
-- **Survival:** Survival skills help you navigate wilderness hazards and
-  find sustenance. Use it to forage for food and materials, contend with
-  natural challenges, and gauge if tools are tampered with (contested by
-  Guile).
-
-### Vigor Skills
-
-Vigor skills relate to Health and Defense attributes.
-
-- **Athletics:** Athletics allows you to perform physical feats, such as
-  pursuing foes, climbing cliffs, leaping gaps, or swimming against
-  currents. It is the go-to skill for physical prowess.
-
-- **Fortitude:** Fortitude measures your resilience, whether enduring
-  extreme temperatures, surviving without sustenance, or resisting
-  illness.
-
-- **Strength:** Strength demonstrates physical power, like lifting heavy
-  objects, carrying comrades, breaking barriers, or engaging in strength
-  contests against another Pokémon.
-
-- **Willpower:** Willpower is all about maintaining focus and discipline
-  in challenging situations, resisting temptation, psychic control,
-  distractions, or flattery attempts (contested by Guile). The DM sets
-  the difficulty for various scenarios where willpower comes into play.
-
-## Additional Abilities
-
-These abilities are drawn from the Pokémon Mystery Dungeon games and
-provide unique advantages to your character. Some may have prerequisites
-that need to be met before they can be obtained.
-
-### **Rescue Team/Explorers IQ Abilities:**
-
-- **Non-Traitor:** When confused, your character will not accidentally
-  attack allies.
-
-- **Self-Curing:** Gain a +1 bonus on rolls to recover from status
-  ailments.
-
-- **Sure-Hit Attacker:** Receive a +1-accuracy bonus when making
-  attacks.
-
-- **Cheerleader:** Boost the Attack and Special Attack of allies within
-  5 feet by 1.
-
-- **PP Saver:** Moves with limited uses gain an extra use.
-
-- **Type-Advantage Master:** Moves that are strong against opponents
-  have a higher critical hit chance, requiring less for a critical hit.
-
-- **Wise Healer:** When using Grit to recover HP, heal an amount equal
-  to Grade plus 2 times Health score.
-
-- **Wary Fighter:** After missing an attack, you can move an extra 5
-  feet and leave a foe's Threatened Area without provoking an attack of
-  opportunity.
-
-- **Practice Swinger:** Failing to hit a target boosts the user's Attack
-  and Special Attack by 1 point each until the end of the next turn.
-
-- **Sharpshooter:** Reduces the target number for an accuracy roll's
-  critical hit by 1.
-
-- **Clutch Performer:** If HP drops below 50%, Defense and Special
-  Defense increase by 1 point. Below 25%, they increase by an additional
-  point, and below 10%, they increase by another point, up to a maximum
-  of 3 points each.
-
-- **Critical Dodger:** When a foe's strike would be critical, on Trigger
-  5, the attack misses.
-
-- **Extra Striker:** After an attack and on Trigger 6, you can attack
-  again, but only one extra attack can be performed this way.
-
-- **Quick Striker (Requires 'Extra Striker'):** Gain a permanent
-  additional attacking action per turn. You may also gain the bonus
-  attacking action from Extra Striker.
-
-### **Super Mystery Dungeon Emera Abilities:**
-
-- **Doomstrike (Requires 'Extra Striker'):** After defeating an enemy,
-  gain an additional attacking action during this turn.
-
-- **Doomforce (Requires 'Doomstrike'):** After defeating an enemy, on
-  Trigger 4, all enemy Pokémon within a 10-foot radius take half the
-  damage dealt to the fallen foe as typeless damage.
-
-- **Go For Broke:** Once per day, expend 1 grit to boost Attack,
-  Defense, Special Attack, Special Defense, and Speed by 1 point, and
-  Brawn and Talent by 2 points for the remainder of the battle. While
-  under this effect, you cannot use Grit to heal, nor can you be healed
-  by items or moves with healing properties.
-
-- **Awakening (Requires 'Go For Broke'):** Once per day, spend 1 grit to
-  'Awaken.' If capable of Mega Evolution, you immediately Mega Evolve
-  without a Mega Evolution Stone. If not, your Attack, Defense, Special
-  Attack, Special Defense, Speed increase by 1 point, and Brawn and
-  Talent increase by 2 points for the remainder of a battle. Can stack
-  with “Go For Broke.”
-
-- **Intimidator:** When a foe attacks you, on Trigger 6, the attack
-  automatically misses.
-
-- **Prolong:** When using a move that applies a negative status effect
-  to a foe, the foe has a -1 disadvantage to that roll.
-
-- **Type Bulldozer (Requires 'Type-Advantage Master'):** Foes that would
-  resist the move's type now take normally effective damage. This does
-  not affect type immunity.
-
-### **Original Abilities:**
-
-- **Condition Immunity:** Choose one status condition: Burning, Frozen,
-  Paralyzed, Sleeping, Poisoned, or Confusion. Enemy Pokémon
-  automatically fail to inflict this status effect on you (does not
-  affect moves that cause these effects on the user).
-
 ## **Move Abilities:**
 
 - **Aftermath:** When the foe succeeds in ending the effect triggered by
@@ -626,11 +439,12 @@ Skill Increase: Specialist Knowledge (History) or Perception increases by
 
 Equipment Proficiency: Archaeology Kit
 
-Ability (Level 10): Sands of Time. By spending at least 30 minutes studying
+- Ability (Level 10): Sands of Time. By spending at least 30 minutes studying
 an object or structure, you can accurately tell what pokémon in the past have
 interacted with it, as well as any stories and legends, and whether it has any
 secret functions or magical effects cast upon it.
-Ability (Level 20): Seas of Time. Your knowledge about the past eclipses that
+
+- Ability (Level 20): Seas of Time. Your knowledge about the past eclipses that
 of even the greatest scholars. Once daily you may study an object or place
 and declare a fact of the past to be true. For instance, that an ancient battle
 took place, that the relic would point to a specific legendary pokémon’s
@@ -649,12 +463,12 @@ books thanks to your *Keen Intuition*. At level 20, you are known for your legen
 Skill Increase: Perception or Persuasion increases by 10%, to a max of 95%.
 Equipment Proficiency: Forensics Kit
 
-Ability (Level 10): Keen Intuition. Thrice daily you can call upon your skills
+- Ability (Level 10): Keen Intuition. Thrice daily you can call upon your skills
 of deduction to give you insight. The Guild Master will give you two truths
 and one lie about any situation, individual or item. It is up to you to deduce
 which is the falsehood and what knowledge you can trust, however.
 
-Ability (Level 20): Flawless Deduction. If you have at least three pieces of
+- Ability (Level 20): Flawless Deduction. If you have at least three pieces of
 evidence, you can accurately deduce facts about your current case. By
 cashing in three pieces of evidence, you can ask the Guild Master one
 question, which they have to answer truthfully. You can perform this action
@@ -673,20 +487,20 @@ you as an *Expert Dungeoneer*.
 Skill Increase: Athletics or Survival increases by 10%, to a maximum of 95%.
 Equipment Proficiency: Camping Gear
 
-Ability (Level 10): Momentum: Whenever you make a successful skill roll in a
+- Ability (Level 10): Momentum: Whenever you make a successful skill roll in a
 dungeon, you gain one point of momentum, up to 5 at once. You lose one
 momentum point after failing a skill roll, and all momentum by leaving the
 dungeon or being knocked out. Momentum can be used as follows:
 Each point of momentum allows you to move one additional space in
 combat. At 5 momentum, your attacks deal an additional 1d6 damage.
 
-- You may spend one point to add 5% to the success chance of a roll.
-- You may spend one point of momentum to reduce damage taken by 1.
-- You may spend three points of momentum to perform a Basic Attack
-  after landing a successful attack on a foe.
-  You may spend all momentum to instantly shrug off a status condition.
+  - You may spend one point to add 5% to the success chance of a roll.
+  - You may spend one point of momentum to reduce damage taken by 1d4.
+  - You may spend three points of momentum to perform a Basic Attack
+    after landing a successful attack on a foe.
+  - You may spend all momentum to instantly shrug off a status condition.
 
-Ability (Level 20): Expert Dungeoneer: You may, before entering a dungeon, make
+- Ability (Level 20): Expert Dungeoneer: You may, before entering a dungeon, make
 three claims about it, two of which are then written into truth. These may be about
 the pokemon, items, secrets, terrain, reputation, etc. If the Guild Master permits,
 the chosen two facts are written into canon and become true for all future visits.
@@ -702,11 +516,11 @@ Skill Increase: Persuasion or Craft (Any) increases by 10%, to a max of 95%.
 
 Equipment Proficiency: Carpenter’s Tools
 
-Ability (Level 10): Surmounting Wit. You shine when situations are bleakest.
+- Ability (Level 10): Surmounting Wit. You shine when situations are bleakest.
 If outnumbered, trapped, facing a foe larger or higher in level than you, or if
 a party member has fainted, you gain +15% to all skill rolls.
 
-Ability (Level 20): Folk Mythology. Once daily, you may escape a tough
+- Ability (Level 20): Folk Mythology. Once daily, you may escape a tough
 situation by describing one of your feats from a folk tale. For example, that
 you scared off a rampaging gyarados by baring your teeth, or leapt over a
 ravine three copperajah wide to rescue a baby mareep. Keep track of your
@@ -722,12 +536,12 @@ You’re a cut-throat for hire, selling your skills to pave your path in the wor
 Skill Increase: Endurance or Stealth increases by 10%, to a max of 95%.
 Equipment Proficiency: Trapmaking Tools
 
-Ability (Level 10): Desperation. Your skills hone as your HP lowers. At 50%
+- Ability (Level 10): Desperation. Your skills hone as your HP lowers. At 50%
 HP, you gain +1 to both attacking stats. At 25%, you gain +3. If your HP hits
 0, you may continue fighting for 1d4 rounds with a +5 to
 your attacking stats, before falling unconscious for 2d6 hours.
 
-Ability (Level 20): Hunter’s Prowess. Assign yourself a target that must be
+- Ability (Level 20): Hunter’s Prowess. Assign yourself a target that must be
 taken down. You always have an approximate idea of their location, move
 twice as fast directly towards them, deal double damage if they are below
 half HP, and your allies may add your Attack or Sp. Atk as well as their own
@@ -746,38 +560,38 @@ Skill Increase: Finesse or Specialist Knowledge (Mythology) increases by
 
 Equipment Proficiency: Artist’s Tools of your choice
 
-Ability (Level 10): Call Upon Myth. Depending on your chosen mythical
+- Ability (Level 10): Call Upon Myth. Depending on your chosen mythical
 patron, you may activate a special ability once per day.
 
-Celebi or Hoopa
-Move 10 spaces in any
-direction, including
-through obstacles.
+  - Celebi or Hoopa:
+  Move 10 spaces in any
+  direction, including
+  through obstacles.
 
-Manaphy or Keldeo
-Double swim speed and
-gain the ability to breathe
-underwater for 30 mins.
+  - Manaphy or Keldeo:
+  Double swim speed and
+  gain the ability to breathe
+  underwater for 30 mins.
 
-Meloetta or Magearna
-Read the thoughts and
-emotions of pokémon
-within ten tiles.
+  - Meloetta or Magearna:
+  Read the thoughts and
+  emotions of pokémon
+  within ten tiles.
 
-Victini or Marshadow
-Make one attack a
-guaranteed critical hit.
+  - Victini or Marshadow:
+  Make one attack a
+  guaranteed critical hit.
 
-Diancie or Jirachi
-Materialise a gem worth
-50 S, or one reviver seed.
+  - Diancie or Jirachi:
+  Materialise a gem worth
+  50 S, or one reviver seed.
 
-Shaymin or Mew
-Cure all allies of statuses
-and purge all pollution in
-a 5 space radius.
+  - Shaymin or Mew:
+  Cure all allies of statuses
+  and purge all pollution in
+  a 5 space radius.
 
-Ability (Level 20): Summon Myth. Your bond with your mythical patron has
+- Ability (Level 20): Summon Myth. Your bond with your mythical patron has
 grown into a close friendship. You may summon them as a friendly NPC at
 any time, command them in combat, and make use of their unique abilities
 – such as Mew’s ability to transform DNA, or Hoopa’s teleportation.
@@ -792,14 +606,14 @@ Your Legend revolves around your breathtaking *Stage Mastery*.
 Skill Increase: Performance or Persuasion increases by 10%, to max 95%.
 Equipment Proficiency: Musical instrument of your choice
 
-Ability (Level 10): Inspired Performance. Thrice daily you may perform in a
+- Ability (Level 10): Inspired Performance. Thrice daily you may perform in a
 way that motivates or demotivates a target:
-Increase or decrease the success chance of a roll by 10%.
-Grant +2 or -2 to one of the target’s stats, lasting for one hour.
-Grant the target temporary HP equal to your level*Grade, lasting for one
-hour or until the temporary hit points are depleted.
+  - Increase or decrease the success chance of a roll by 10%. 
+  - Grant +2 or -2 to one of the target’s stats, lasting for one hour.
+  - Grant the target temporary HP equal to your level*Grade, lasting for one
+  hour or until the temporary hit points are depleted.
 
-Ability (Level 20): Stage Mastery. Choose any three sound or dance based
+- Ability (Level 20): Stage Mastery. Choose any three sound or dance based
 moves that you would not otherwise be able to learn, and add them to your
 available move set. You may also use one of the following abilities per day:
 Dancer’s Stride: When moving in combat, you may deal 1d10 damage to
@@ -820,10 +634,10 @@ appreciated, but your *Rescuer’s Prowess* is unparalleled.
 
 Skill Increase: Medicine or Survival increases by 10%, to a max of 95%.
 Equipment Proficiency: Medic’s Tools
-Ability (Level 10): Emergency Healing. If your own HP is below 50%, any
+- Ability (Level 10): Emergency Healing. If your own HP is below 50%, any
 healing you apply to an ally is doubled. If you share one portion of rations
 with another pokémon, you both receive the benefits of the full meal.
-Ability (Level 20): Rescuer’s Prowess. Assign a target that must be rescued.
+- Ability (Level 20): Rescuer’s Prowess. Assign a target that must be rescued.
 You move twice as quickly and ignore difficult terrain when moving towards
 them, require half the rations and rest when in the same dungeon as them,
 and receive a +5 bonus to all stats when they are within sight. You cannot
@@ -840,11 +654,11 @@ knack for *Armed Strikes*, your Legend reveres your *Bladed Mastery*.
 Skill Increase: Athletics or Stealth increases by 10%, to a maximum of 95%.
 
 Equipment Proficiency: Bladed & improvised weaponry
-Ability (Level 10): Armed Strikes. Your Basic Attacks are made with a weapon.
+- Ability (Level 10): Armed Strikes. Your Basic Attacks are made with a weapon.
 They deal an extra 1d10 damage, are boosted in accuracy to 100%, and have a
 10% chance to flinch.
 
-Ability (Level 20): Bladed Mastery. By giving a short description of a past
+- Ability (Level 20): Bladed Mastery. By giving a short description of a past
 adventure, you may choose the type of damage your weapon deals – for
 instance, that it was struck by lightning for electric type, or tempered in the
 flames of groudon’s heart for fire type. You may also choose for it to deal an
@@ -861,11 +675,11 @@ Skill Increase: Finesse or Stealth increases by 10%, to a maximum of 95%.
 
 Equipment Proficiency: Thieves’ Tools
 
-Ability (Level 10): Steal Hearts. After successfully stealing an item from a foe,
+- Ability (Level 10): Steal Hearts. After successfully stealing an item from a foe,
 you may choose to inflict the Infatuated or Confused status upon them,
 lasting 10 turns or 30 minutes outside of battle.
 
-Ability (Level 20): Artistic
+- Ability (Level 20): Artistic
 Escapes. In low visibility, such as
 dusk or fog, you may become
 totally invisible. Your invisibility

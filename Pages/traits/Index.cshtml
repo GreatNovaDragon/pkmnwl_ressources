@@ -29,7 +29,7 @@
     {
         <tr>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name} / {item.Name_DE}")</a>
+                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name}")</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Effect)

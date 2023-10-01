@@ -32,6 +32,7 @@ public class EditModel : PageModel
     {
         if (!ModelState.IsValid) return Page();
 
+
         _context.Attach(Ability).State = EntityState.Modified;
 
         try

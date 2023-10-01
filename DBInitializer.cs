@@ -499,7 +499,7 @@ public class DBInitializer
             case 4:
                 return "1d6";
             case 5:
-                return "2d8";
+                return "1d8";
             case 6:
                 return "1d10";
             case 7:
