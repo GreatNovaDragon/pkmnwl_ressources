@@ -21,7 +21,7 @@ public class DBInitializer
         await TransferTraits(context);
         await TransferAbilities(context, apiclient);
         await TransferMon(context, apiclient);
-        await TransferItems(context, apiclient);
+        // await TransferItems(context, apiclient);
         await TransferLearnsets(context, apiclient);
     }
 
