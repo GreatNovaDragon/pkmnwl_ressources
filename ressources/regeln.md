@@ -3,54 +3,55 @@
 Um einen Charakter in diesem Rollenspielsystem zu erstellen, folgen Sie
 diesen Schritten:
 
-1.  Wähle ein Pokémon und kopiere seine Lebenspunkte, seinen Angriff,
-    seinen Spezialangriff, seine Verteidigung, seine
-    Spezialverteidigung, seine Geschwindigkeit, seine Muskeln, sein
-    Talent und seine Größenkategorie.
-2.  Zusätzlich erhältst du ein Bonusfeld, das du nach Belieben auf deine
-    Angriffs- und Verteidigungswerte anwenden kannst:
+1. Wähle ein Pokémon und kopiere seine Lebenspunkte, seinen Angriff,
+   seinen Spezialangriff, seine Verteidigung, seine
+   Spezialverteidigung, seine Geschwindigkeit, seine Muskeln, sein
+   Talent und seine Größenkategorie.
+2. Zusätzlich erhältst du ein Bonusfeld, das du nach Belieben auf deine
+   Angriffs- und Verteidigungswerte anwenden kannst:
 
-- - **Generalist**: +1, +1, +0, +0
-  - **Spezialist**: +2, +0, +0, +0
-  - **Experte**: +3, +0, +0, -1
-  - **Schwachstelle**: +1, +1, +1, -1
-  - **Schieflage**: +2, +1, -0, -1
-  - **Benutzerdefiniert**: Wenden Sie die Boni nach Belieben an und
-    achten Sie darauf, dass die Gesamtsumme 2 beträgt, aber kein Bonus
-    tatsächlich höher als 3 ist.
+-
+    - **Generalist**: +1, +1, +0, +0
+    - **Spezialist**: +2, +0, +0, +0
+    - **Experte**: +3, +0, +0, -1
+    - **Schwachstelle**: +1, +1, +1, -1
+    - **Schieflage**: +2, +1, -0, -1
+    - **Benutzerdefiniert**: Wenden Sie die Boni nach Belieben an und
+      achten Sie darauf, dass die Gesamtsumme 2 beträgt, aber kein Bonus
+      tatsächlich höher als 3 ist.
 
-1.  Berechne ihre anfänglichen Lebenspunkte, indem du ihren
-    Lebenspunktestand zu 20 addierst.
-2.  Wähle die Start-Fähigkeit des Pokémon und die Attacken und trage sie ein
-3.  Weisen Sie Ihrem Charakter einen Grad von 1 und einen Grit von 2 zu.
-4.  Wählen Sie einen Hintergrund
+1. Berechne ihre anfänglichen Lebenspunkte, indem du ihren
+   Lebenspunktestand zu 20 addierst.
+2. Wähle die Start-Fähigkeit des Pokémon und die Attacken und trage sie ein
+3. Weisen Sie Ihrem Charakter einen Grad von 1 und einen Grit von 2 zu.
+4. Wählen Sie einen Hintergrund
 
-  - **Abenteurer**: Du dringst ohne Furcht in Verliese ein und hilfst
+- **Abenteurer**: Du dringst ohne Furcht in Verliese ein und hilfst
   anderen dabei. Nimm die Eigenschaft an. Beginne mit 15 S, einem
   Wochenvorrat, einer Oranbeere, einem Betäubungssamen und einer
   Kugelfallkugel. Auf Stufe 10 kannst du zum *Söldner*, *Retter* oder
   *Volkshelden* aufsteigen.
-  - **Entdecker**: Du eroberst die ungezähmte Wildnis und erkundest
+- **Entdecker**: Du eroberst die ungezähmte Wildnis und erkundest
   wunderbare Orte. Nimm die Eigenschaft Anker. Beginne mit 10 S,
   Rationen für zwei Wochen, drei Oranbeeren und drei Fluchtkugeln. Auf
   Stufe 10 kannst du zum *Retter*, *Detektiv *oder *Dungeonist* aufsteigen.
-  - **Forscherin**: Die Zeit kann keine Geheimnisse vor Ihnen und Ihrem
+- **Forscherin**: Die Zeit kann keine Geheimnisse vor Ihnen und Ihrem
   Wissensdurst verbergen. Nimm die Eigenschaft *Auswerter *an. Beginne
   mit 10 S, einem Wochenvorrat, zwei Oranbeeren, zwei Heilungssamen und
   einer Scannerkugel und steige auf Stufe 10 zum *Detektiv*,
   *Mythosgebundenen* oder *Archäologen* auf.
-  - **Wunderkind**: Du bist mit einzigartigen und großartigen Talenten
+- **Wunderkind**: Du bist mit einzigartigen und großartigen Talenten
   begabt worden. Nimm die Eigenschaft *Typen-Meister*. Beginne mit
   5 S, einer Wochenration, einer Oranbeere, einem Betäubungssamen und
   einem Wiederbelebungssamen. Steigere auf Stufe 10 zum *Mythosgebundenen*,
   *Dieb *oder *Performer* auf.
-  - **Geächteter**: Du fliehst vor deiner Vergangenheit, um dich ihr eines
+- **Geächteter**: Du fliehst vor deiner Vergangenheit, um dich ihr eines
   Tages ganz zu stellen. Nimm die Eigenschaft *Schauspieler*. Beginne
   mit 5 S, Rationen für drei Tage, zwei Oranbeeren, einem Blinkersamen,
   einer Schleppnetzkugel und einer Fluchtkugel. Auf Stufe 10 kannst du
   zu *Dieb*, *Söldner* oder *Schattenklinge* aufsteigen.
 
-7.  Wählen Sie ein Trait der Stufe 1
+7. Wählen Sie ein Trait der Stufe 1
 
 **Charakter-Fähigkeiten**
 
@@ -75,12 +76,11 @@ kommen. Hier sind die Fertigkeiten:
 - Spezial-wissen
 - Handwerk
 
-
 Für Handwerk und Spezialwissen müssen Sie Ihr Spezialgebiet angeben.
 
 ### <span id="anchor-1"></span>Charakter-Förderung
 
-| Lvl | Equivalent | Lvlaufstiegspkt. |Vorteile                              |
+| Lvl | Equivalent | Lvlaufstiegspkt. | Vorteile                             |
 |-----|------------|------------------|--------------------------------------|
 | 1   | 5          |                  | Startfähigkeiten & Attacken          |
 | 2   | 10         | 1                | *Keine*                              |
@@ -115,15 +115,15 @@ Levelaufstiegspunkten kannst du die folgenden Upgrades kaufen:
   5 Punkte, Grad 4 kostet 8 Punkte und Grad 5 kostet 10 Punkte.
 - Eine der verfügbaren Fähigkeiten deines Pokemons
 
-1.  Du kannst neue Attacken erlernen, wenn sie verfügbar sind
-2.  Deine maximalen Trefferpunkte erhöhen sich um deinen
-    Lebenspunktestand. Diese Erhöhung ist nicht rückwirkend, d.h. sie
-    gilt nicht, wenn deine Lebenspunkte durch Statuserhöhungen oder
-    Evolution erhöht werden.
-3.  Attacken-Upgrades sind Verbesserungen bestimmter Moves, die sie
-    vielseitiger oder spezialisierter machen. Sie sind optional und der
-    Dungeon Master (DM) kann sich dafür entscheiden, sie nicht
-    einzubauen. Jede Attacke kann nur ein Attacken-Upgrade haben.
+1. Du kannst neue Attacken erlernen, wenn sie verfügbar sind
+2. Deine maximalen Trefferpunkte erhöhen sich um deinen
+   Lebenspunktestand. Diese Erhöhung ist nicht rückwirkend, d.h. sie
+   gilt nicht, wenn deine Lebenspunkte durch Statuserhöhungen oder
+   Evolution erhöht werden.
+3. Attacken-Upgrades sind Verbesserungen bestimmter Moves, die sie
+   vielseitiger oder spezialisierter machen. Sie sind optional und der
+   Dungeon Master (DM) kann sich dafür entscheiden, sie nicht
+   einzubauen. Jede Attacke kann nur ein Attacken-Upgrade haben.
 
 # <span id="anchor-2"></span>Das Spiel spielen
 
@@ -176,15 +176,15 @@ und Speichereffekte.
   einer Runde hast du die Möglichkeit zu würfeln, um dich von diesen
   negativen Effekten zu erholen.
 
-   - Für einen Heilungsversuch würfelst du 2d6. Wenn du dich
-    entscheidest, deinen Schutzwurf zu verstärken, würfelst du
-    stattdessen 2d8.
-  - Wenn es gelingt, eine Zahl zu würfeln, die gleich oder höher ist als
-    die angegebene Zielzahl, wird der negative Effekt aufgehoben.
-  - Wichtig ist, dass ihr pro Runde nur für die Beseitigung eines
-    negativen Status würfeln dürft. Dieser Mechanismus fügt ein
-    strategisches Element zur Verwaltung und Wiederherstellung von
-    Statuszuständen während der Kämpfe hinzu.
+    - Für einen Heilungsversuch würfelst du 2d6. Wenn du dich
+      entscheidest, deinen Schutzwurf zu verstärken, würfelst du
+      stattdessen 2d8.
+    - Wenn es gelingt, eine Zahl zu würfeln, die gleich oder höher ist als
+      die angegebene Zielzahl, wird der negative Effekt aufgehoben.
+    - Wichtig ist, dass ihr pro Runde nur für die Beseitigung eines
+      negativen Status würfeln dürft. Dieser Mechanismus fügt ein
+      strategisches Element zur Verwaltung und Wiederherstellung von
+      Statuszuständen während der Kämpfe hinzu.
 
 ### <span id="anchor-5"></span>Kampftaktik und Umwelt
 
@@ -206,7 +206,7 @@ und Speichereffekte.
   Alternativ kann dein Pokémon eine Hilfsaktion einsetzen, um den
   versteckten Gegner zu suchen. Dies beinhaltet normalerweise eine
   Wahrnehmungsprobe gegen die Heimlichkeitsprobe des Gegners, mit einem +2-Bonus,
-  wenn dein Pokémon über Spezialfähigkeiten wie Scharfblick  oder
+  wenn dein Pokémon über Spezialfähigkeiten wie Scharfblick oder
   Schnüffler verfügt. Wenn deine Probe höher ausfällt, kannst du
   ohne Abzüge angreifen.
 
@@ -259,7 +259,7 @@ und Speichereffekte.
 - **Niederschlagen:** Ein Gegner, der nicht größer als eine Größenklasse
   über deinem Pokémon ist, kann umgeworfen werden. Dazu ist eine
   Kampfprüfung erforderlich. Wenn du sie bestehst, wird das Ziel am
-  Boden liegend niedergeschlagen, kann die nächste Runde nicht Angreifen und 
+  Boden liegend niedergeschlagen, kann die nächste Runde nicht Angreifen und
 - **Neutraler Angriff:** Ein grundlegender, typloser physischer Angriff.
   Er verwendet den Angriffswert für die Genauigkeit, verursacht 1d4
   Punkte Schaden plus den Angriff des Anwenders und kann nicht durch
@@ -314,16 +314,18 @@ Der Grad bezieht sich auf STAB, Typ-Vorteil und Typ-Resistenz.
 
 - **Brand:** Der Angriff ist halbiert und du erleidest 1*Grad Schaden pro Runde
 - **Vergiftung**: Du erleidest 2*Grad pro runde
-- **Schwere Vergiftung**. Du erleidest (1+Runden die du schwer vergiftet bist) x Grad Schaden 
+- **Schwere Vergiftung**. Du erleidest (1+Runden die du schwer vergiftet bist) x Grad Schaden
 - **Frostbrand**:  Der Spezialangriff ist halbiert und erleidest 1*Grad Schaden pro Runde
 - **Bindung:** Das Ziel erleidet zu Beginn jeder Runde Schaden in Höhe von 2*Grad und kann sich nicht bewegen, bis es
   sich erholt hat oder nach 4 Runden.
 - **Verwirrung:** Das Ziel kann nur bei Trigger 3 erfolgreich
   angreifen, andernfalls kann es einem zufälligen Verbündeten oder sich selbst Schaden zufügen.
 - **Fluch:** Das Ziel erleidet zu Beginn jeder Runde 8 Punkte Schaden.
-- **Benommenheit:** Die Benommenheit hält eine Runde lang an, nachdem sie zugefügt wurde. Der Anwender kann keine Kampfaktionen ausführen und seine Geschwindigkeit wird halbiert.
+- **Benommenheit:** Die Benommenheit hält eine Runde lang an, nachdem sie zugefügt wurde. Der Anwender kann keine
+  Kampfaktionen ausführen und seine Geschwindigkeit wird halbiert.
 - **Lähmung:** Lähmung ist ein schwerer Zustand, der dem der
-  Benommenheit ähnelt, aber noch schwächer ist. Er hält mehrere Runden lang an und macht den Anwender unfähig, Kampfhandlungen auszuführen, und seine Geschwindigkeit ist reduziert.
+  Benommenheit ähnelt, aber noch schwächer ist. Er hält mehrere Runden lang an und macht den Anwender unfähig,
+  Kampfhandlungen auszuführen, und seine Geschwindigkeit ist reduziert.
 - **Embargo:** Der Benutzer kann die Effekte des von ihm gehaltenen
   Gegenstandes nicht aktivieren.
 - **Zugabe:**Der Anwender kann nur seine zuletzt benutzte Bewegung oder
@@ -339,27 +341,35 @@ Der Grad bezieht sich auf STAB, Typ-Vorteil und Typ-Resistenz.
 
 ## <span id="anchor-12"></span>Angriffs-Upgrades:
 
-- **Nachwirkungen:** Wenn es dem Feind gelingt, den durch diese Attacke ausgelösten Effekt zu beenden, erleidet er Schaden in Höhe deines Grades * 3.
-- **Kettenreaktion:** Wenn diese Bewegung einen kritischen Treffer  erzielt, wird der Trigger, die zum Auslösen des Effekts der
+- **Nachwirkungen:** Wenn es dem Feind gelingt, den durch diese Attacke ausgelösten Effekt zu beenden, erleidet er
+  Schaden in Höhe deines Grades * 3.
+- **Kettenreaktion:** Wenn diese Bewegung einen kritischen Treffer erzielt, wird der Trigger, die zum Auslösen des
+  Effekts der
   Technik erforderlich sind, um 1 reduziert.
 - **Trotzig:** Wenn du umzingelt bist, wird der Angriffswurf dieser
   Attacke verstärkt, ohne dass du Grit ausgeben musst.
 - **Erfüllend:** Wenn diese Attack eingesetzt wird, erhältst du
-  entweder Trefferpunkte in Höhe ihres Grades zurück oder einen Bonus  von +1 auf Würfe zum Beenden von Effekten in dieser Runde.
+  entweder Trefferpunkte in Höhe ihres Grades zurück oder einen Bonus von +1 auf Würfe zum Beenden von Effekten in
+  dieser Runde.
 - **Erdung:** Erlaubt es Boden-Attacken Flug Pokemon zu trefen.
-- **Intensiv:** Diese Attacke fügt zusätzlich +2 Schaden zu, wenn dein Pokémon Grad 3 oder niedriger ist; wenn es Grad 4 oder höher ist, fügt  es +3 Schaden zu.
+- **Intensiv:** Diese Attacke fügt zusätzlich +2 Schaden zu, wenn dein Pokémon Grad 3 oder niedriger ist; wenn es Grad 4
+  oder höher ist, fügt es +3 Schaden zu.
 - **Belebend:** Einmal pro Runde, wenn diese Attacke Schaden
   verursacht, erhält der Anwender Trefferpunkte in Höhe seines Grades * 3 zurück.
 - **Gemeistert:** Wenn ein Schadenswurf mit dieser Attacke den
   Mindestschaden ergeben würde, wiederhole den Wurf und nimm das höhere Ergebnis.
 - **Präzise:** Ziele dieser Attacke erhalten keinen Bonus durch Deckung oder durch die Aktion "Verteidigen".
 - **Bestrafend:** Wenn der Schadenswurf dieser Attacke verstärkt wird, verursacht sie zusätzlich +1d6 Schaden.
-- **Unheimlich:** Ziele, die einem Effekt dieser Attacke ausgesetzt sind, erleiden einen Malus von -1 auf Checks, um den Effekt zu
+- **Unheimlich:** Ziele, die einem Effekt dieser Attacke ausgesetzt sind, erleiden einen Malus von -1 auf Checks, um den
+  Effekt zu
   beenden.
 - **Taumelnd:** Wenn das Ziel durch die Schadensart dieser Bewegung
-  sehr effektiv getroffend wird, werden seine Attacken keine Angriffsboni erhalten noch wird das Ziel irgendwelche Angriffswertsboni erhalten.
-- **Swift:** Gib einen Willenspunkt aus: Eine Angriffsattacke  mit Swift kann als Hilfsmittel-Aktionen verwendet werden, und
-  eine Hilfsmittel-Attacke mit Schnelligkeit kann als Bewegungsaktion verwendet werden. Diese Attacke kann nicht zweimal in einer einzigen Runde verwendet werden.
+  sehr effektiv getroffend wird, werden seine Attacken keine Angriffsboni erhalten noch wird das Ziel irgendwelche
+  Angriffswertsboni erhalten.
+- **Swift:** Gib einen Willenspunkt aus: Eine Angriffsattacke mit Swift kann als Hilfsmittel-Aktionen verwendet werden,
+  und
+  eine Hilfsmittel-Attacke mit Schnelligkeit kann als Bewegungsaktion verwendet werden. Diese Attacke kann nicht zweimal
+  in einer einzigen Runde verwendet werden.
 - **Unnachgiebig:** Wenn diese Bewegung eingesetzt wird, kann der
   Anwender bis zu seinem nächsten Zug nicht von seiner Position
   wegbewegt werden, es sei denn, er entscheidet sich dafür.
@@ -458,15 +468,15 @@ zu einem Maximum von 95%. Beherrschung der Ausrüstung: Campingausrüstung
   Angriffe zusätzlich 1d6 Schaden.
 
 
-   - Du kannst einen Punkt ausgeben, um die Erfolgschance eines Wurfs um
-    5% zu erhöhen.
-  - Du kannst einen Punkt Schwung ausgeben, um erlittenen Schaden um 1d4
-    zu reduzieren.
-  - Du kannst drei Punkte Schwung ausgeben, um einen Basisangriff
-    auszuführen, nachdem du einen erfolgreichen Angriff auf einen Feind
-    gelandet hast.
-  - Du kannst deinen gesamten Schwung ausgeben, um einen Zustandszustand
-    sofort abzuschütteln.
+- Du kannst einen Punkt ausgeben, um die Erfolgschance eines Wurfs um
+  5% zu erhöhen.
+- Du kannst einen Punkt Schwung ausgeben, um erlittenen Schaden um 1d4
+  zu reduzieren.
+- Du kannst drei Punkte Schwung ausgeben, um einen Basisangriff
+  auszuführen, nachdem du einen erfolgreichen Angriff auf einen Feind
+  gelandet hast.
+- Du kannst deinen gesamten Schwung ausgeben, um einen Zustandszustand
+  sofort abzuschütteln.
 
 <!-- -->
 
@@ -500,8 +510,8 @@ Beherrschung der Ausrüstung: Werkzeuge des Zimmermanns
   schwierigen Situation entkommen, indem du eine deiner Heldentaten aus
   einem Volksmärchen beschreibst. Zum Beispiel, dass du ein wütendes
   Garados verscheucht hast, indem du deine Zähne gefletscht hast, oder
-  dass du über eine drei Patinaraja  breite Schlucht gesprungen bist, um
-  ein Baby-oltilamm  zu retten. Notiere dir deine Volksmärchen-Fähigkeiten,
+  dass du über eine drei Patinaraja breite Schlucht gesprungen bist, um
+  ein Baby-oltilamm zu retten. Notiere dir deine Volksmärchen-Fähigkeiten,
   wenn du sie einsetzt, damit du sie später wieder verwenden kannst.
 
 ### <span id="anchor-18"></span>SÖLDNER
@@ -552,18 +562,19 @@ Beherrschung der Ausrüstung: Künstlerische Werkzeuge deiner Wahl
 
 <!-- -->
 
-- - Celebi oder Hoopa: Bewege dich 10 Felder in eine beliebige Richtung,
-    auch durch Hindernisse hindurch.
-  - Manaphy oder Keldeo: Verdoppelt die Schwimmgeschwindigkeit und
-    erhält die Fähigkeit, 30 Minuten lang unter Wasser zu atmen.
-  - Meloetta oder Magearna: Lies die Gedanken und Gefühle von Pokémon
-    innerhalb von zehn Feldern.
-  - Victini oder Marshadow: Macht einen Angriff zu einem garantierten
-    kritischen Treffer.
-  - Diancie oder Jirachi: Materialisiere einen Edelstein im Wert von 50
-    S oder einen Wiederbelebungssamen.
-  - Shaymin oder Mew: Heilt alle Verbündeten von Zuständen und reinigt
-    alle Verschmutzungen in einem Radius von 5 Feldern.
+-
+    - Celebi oder Hoopa: Bewege dich 10 Felder in eine beliebige Richtung,
+      auch durch Hindernisse hindurch.
+    - Manaphy oder Keldeo: Verdoppelt die Schwimmgeschwindigkeit und
+      erhält die Fähigkeit, 30 Minuten lang unter Wasser zu atmen.
+    - Meloetta oder Magearna: Lies die Gedanken und Gefühle von Pokémon
+      innerhalb von zehn Feldern.
+    - Victini oder Marshadow: Macht einen Angriff zu einem garantierten
+      kritischen Treffer.
+    - Diancie oder Jirachi: Materialisiere einen Edelstein im Wert von 50
+      S oder einen Wiederbelebungssamen.
+    - Shaymin oder Mew: Heilt alle Verbündeten von Zuständen und reinigt
+      alle Verschmutzungen in einem Radius von 5 Feldern.
 
 <!-- -->
 
@@ -592,11 +603,12 @@ deiner Wahl
 
 <!-- -->
 
-- - Erhöht oder verringert die Erfolgschance eines Wurfs um 10%.
-  - Gewährt +2 oder -2 auf einen der Werte des Ziels, eine Stunde lang.
-  - Gewährt dem Ziel temporäre HP in Höhe deiner Stufe\*Grad, die eine
-    Stunde lang oder bis zur Erschöpfung der temporären Trefferpunkte
-    anhält.
+-
+    - Erhöht oder verringert die Erfolgschance eines Wurfs um 10%.
+    - Gewährt +2 oder -2 auf einen der Werte des Ziels, eine Stunde lang.
+    - Gewährt dem Ziel temporäre HP in Höhe deiner Stufe\*Grad, die eine
+      Stunde lang oder bis zur Erschöpfung der temporären Trefferpunkte
+      anhält.
 
 <!-- -->
 

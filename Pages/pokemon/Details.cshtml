@@ -1,7 +1,6 @@
 @page
 @using Microsoft.IdentityModel.Tokens
 @using Westwind.AspNetCore.Markdown
-@using Markdig.Renderers
 @model DetailsModel
 
 @{
@@ -12,7 +11,7 @@
     @if (Model.Pokemon.Name_DE.IsNullOrEmpty())
     {
         @Html.DisplayFor(modelItem => modelItem.Pokemon.Name)
-    } 
+    }
     @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
     @if (!Model.Pokemon.Form.IsNullOrEmpty())
     {
@@ -101,7 +100,13 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            @Html.Raw(move.move.Name_DE)
+                            @if (move.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(move.move.Name)
+                            }
+                        </a>
                     </h3>
                 </header>
 
@@ -156,7 +161,13 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            @Html.Raw(move.move.Name_DE)
+                            @if (move.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(move.move.Name)
+                            }
+                        </a>
                     </h3>
                 </header>
 
@@ -210,7 +221,13 @@
             <div class="w3-card">
                 <header class="w3-container w3-blue">
                     <h3>
-                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID"> @Html.Raw(move.move.Name_DE) @if(move.move.Name_DE.IsNullOrEmpty()){@Html.Raw(move.move.Name)} </a>
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            @Html.Raw(move.move.Name_DE)
+                            @if (move.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(move.move.Name)
+                            }
+                        </a>
                     </h3>
                 </header>
 

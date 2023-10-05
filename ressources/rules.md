@@ -1,10 +1,8 @@
-
-
 ## Character Creation
 
 To create a character in this roleplaying system, follow these steps:
 
-1. Wähle ein Pokemon, und kopiere deseen 
+1. Wähle ein Pokemon, und kopiere deseen
 
 2. You additionally get a bonus array to apply to your stats attacking and defending stats as you wish:
     - **Generalist**: +1, +1, +0, +0
@@ -65,14 +63,13 @@ Here are the skills:
 - Performance
 - Persuasion
 
-- Specialist  Knowledge
+- Specialist Knowledge
 - Stealth
 - Survival
 
 For Craft and Specialist Knowledge, you must list your specialty.
 
 ### Character Advancement
-
 
 | Level | Equivalent | Gained Lvl-pts. | Benefits                       |
 |-------|-----------:|-----------------|:-------------------------------|
@@ -97,14 +94,13 @@ For Craft and Specialist Knowledge, you must list your specialty.
 | 19    |         95 | 4               | *None*                         |
 | 20    |        100 | 5               | Move Upgrade, Solidify Destiny |
 
-
-
 When you level up, you gain one level-up point, with the amount increasing by two
 every five levels. You may buy the following upgrades with level-up points:
 
 - +5 to Health or speed, or +1 to an attacking or defending stat
 - Increase a skill by 5% (no skill may be above 95%)
-- One trait from any bracket available to you. Grade 1 abilities cost 1 point. Grade 2 2 points, Grade 3 5 points, Grade 4 cost 8 points and Grade 5 cost 10 points
+- One trait from any bracket available to you. Grade 1 abilities cost 1 point. Grade 2 2 points, Grade 3 5 points, Grade
+  4 cost 8 points and Grade 5 cost 10 points
 - One of your Pokemons available Abilities
 
 1. You can learn new moves if available and may gain additional
@@ -121,7 +117,6 @@ Move Upgrades:
    versatile or specialized. These are optional, and the Dungeon Master
    (DM) may choose not to include them. Each move can have only one
    Move Upgrade.
-
 
 # Playing the Game
 
@@ -440,16 +435,16 @@ Skill Increase: Specialist Knowledge (History) or Perception increases by
 Equipment Proficiency: Archaeology Kit
 
 - Ability (Level 10): Sands of Time. By spending at least 30 minutes studying
-an object or structure, you can accurately tell what pokémon in the past have
-interacted with it, as well as any stories and legends, and whether it has any
-secret functions or magical effects cast upon it.
+  an object or structure, you can accurately tell what pokémon in the past have
+  interacted with it, as well as any stories and legends, and whether it has any
+  secret functions or magical effects cast upon it.
 
 - Ability (Level 20): Seas of Time. Your knowledge about the past eclipses that
-of even the greatest scholars. Once daily you may study an object or place
-and declare a fact of the past to be true. For instance, that an ancient battle
-took place, that the relic would point to a specific legendary pokémon’s
-sleeping place, or that an ancient tool is actually a primitive key. If the Guild
-Master permits, this knowledge is accepted and written into canon.
+  of even the greatest scholars. Once daily you may study an object or place
+  and declare a fact of the past to be true. For instance, that an ancient battle
+  took place, that the relic would point to a specific legendary pokémon’s
+  sleeping place, or that an ancient tool is actually a primitive key. If the Guild
+  Master permits, this knowledge is accepted and written into canon.
 
 ### DETECTIVE
 
@@ -464,17 +459,17 @@ Skill Increase: Perception or Persuasion increases by 10%, to a max of 95%.
 Equipment Proficiency: Forensics Kit
 
 - Ability (Level 10): Keen Intuition. Thrice daily you can call upon your skills
-of deduction to give you insight. The Guild Master will give you two truths
-and one lie about any situation, individual or item. It is up to you to deduce
-which is the falsehood and what knowledge you can trust, however.
+  of deduction to give you insight. The Guild Master will give you two truths
+  and one lie about any situation, individual or item. It is up to you to deduce
+  which is the falsehood and what knowledge you can trust, however.
 
 - Ability (Level 20): Flawless Deduction. If you have at least three pieces of
-evidence, you can accurately deduce facts about your current case. By
-cashing in three pieces of evidence, you can ask the Guild Master one
-question, which they have to answer truthfully. You can perform this action
-as long as you have evidence to spend, and can reasonably argue how each
-item or piece of knowledge would help you glean the answer to your
-question.
+  evidence, you can accurately deduce facts about your current case. By
+  cashing in three pieces of evidence, you can ask the Guild Master one
+  question, which they have to answer truthfully. You can perform this action
+  as long as you have evidence to spend, and can reasonably argue how each
+  item or piece of knowledge would help you glean the answer to your
+  question.
 
 ### DUNGEONEER
 
@@ -488,22 +483,22 @@ Skill Increase: Athletics or Survival increases by 10%, to a maximum of 95%.
 Equipment Proficiency: Camping Gear
 
 - Ability (Level 10): Momentum: Whenever you make a successful skill roll in a
-dungeon, you gain one point of momentum, up to 5 at once. You lose one
-momentum point after failing a skill roll, and all momentum by leaving the
-dungeon or being knocked out. Momentum can be used as follows:
-Each point of momentum allows you to move one additional space in
-combat. At 5 momentum, your attacks deal an additional 1d6 damage.
+  dungeon, you gain one point of momentum, up to 5 at once. You lose one
+  momentum point after failing a skill roll, and all momentum by leaving the
+  dungeon or being knocked out. Momentum can be used as follows:
+  Each point of momentum allows you to move one additional space in
+  combat. At 5 momentum, your attacks deal an additional 1d6 damage.
 
-  - You may spend one point to add 5% to the success chance of a roll.
-  - You may spend one point of momentum to reduce damage taken by 1d4.
-  - You may spend three points of momentum to perform a Basic Attack
-    after landing a successful attack on a foe.
-  - You may spend all momentum to instantly shrug off a status condition.
+    - You may spend one point to add 5% to the success chance of a roll.
+    - You may spend one point of momentum to reduce damage taken by 1d4.
+    - You may spend three points of momentum to perform a Basic Attack
+      after landing a successful attack on a foe.
+    - You may spend all momentum to instantly shrug off a status condition.
 
 - Ability (Level 20): Expert Dungeoneer: You may, before entering a dungeon, make
-three claims about it, two of which are then written into truth. These may be about
-the pokemon, items, secrets, terrain, reputation, etc. If the Guild Master permits,
-the chosen two facts are written into canon and become true for all future visits.
+  three claims about it, two of which are then written into truth. These may be about
+  the pokemon, items, secrets, terrain, reputation, etc. If the Guild Master permits,
+  the chosen two facts are written into canon and become true for all future visits.
 
 ### FOLK HERO
 
@@ -517,14 +512,14 @@ Skill Increase: Persuasion or Craft (Any) increases by 10%, to a max of 95%.
 Equipment Proficiency: Carpenter’s Tools
 
 - Ability (Level 10): Surmounting Wit. You shine when situations are bleakest.
-If outnumbered, trapped, facing a foe larger or higher in level than you, or if
-a party member has fainted, you gain +15% to all skill rolls.
+  If outnumbered, trapped, facing a foe larger or higher in level than you, or if
+  a party member has fainted, you gain +15% to all skill rolls.
 
 - Ability (Level 20): Folk Mythology. Once daily, you may escape a tough
-situation by describing one of your feats from a folk tale. For example, that
-you scared off a rampaging gyarados by baring your teeth, or leapt over a
-ravine three copperajah wide to rescue a baby mareep. Keep track of your
-folk tale feats as you use them, for future reference.
+  situation by describing one of your feats from a folk tale. For example, that
+  you scared off a rampaging gyarados by baring your teeth, or leapt over a
+  ravine three copperajah wide to rescue a baby mareep. Keep track of your
+  folk tale feats as you use them, for future reference.
 
 ### MERCENARY
 
@@ -537,16 +532,16 @@ Skill Increase: Endurance or Stealth increases by 10%, to a max of 95%.
 Equipment Proficiency: Trapmaking Tools
 
 - Ability (Level 10): Desperation. Your skills hone as your HP lowers. At 50%
-HP, you gain +1 to both attacking stats. At 25%, you gain +3. If your HP hits
-0, you may continue fighting for 1d4 rounds with a +5 to
-your attacking stats, before falling unconscious for 2d6 hours.
+  HP, you gain +1 to both attacking stats. At 25%, you gain +3. If your HP hits
+  0, you may continue fighting for 1d4 rounds with a +5 to
+  your attacking stats, before falling unconscious for 2d6 hours.
 
 - Ability (Level 20): Hunter’s Prowess. Assign yourself a target that must be
-taken down. You always have an approximate idea of their location, move
-twice as fast directly towards them, deal double damage if they are below
-half HP, and your allies may add your Attack or Sp. Atk as well as their own
-when attacking them. You cannot change targets until they are neutralised,
-and must wait 24 hours before picking a new target.
+  taken down. You always have an approximate idea of their location, move
+  twice as fast directly towards them, deal double damage if they are below
+  half HP, and your allies may add your Attack or Sp. Atk as well as their own
+  when attacking them. You cannot change targets until they are neutralised,
+  and must wait 24 hours before picking a new target.
 
 ### MYTHBOUND
 
@@ -561,40 +556,40 @@ Skill Increase: Finesse or Specialist Knowledge (Mythology) increases by
 Equipment Proficiency: Artist’s Tools of your choice
 
 - Ability (Level 10): Call Upon Myth. Depending on your chosen mythical
-patron, you may activate a special ability once per day.
+  patron, you may activate a special ability once per day.
 
-  - Celebi or Hoopa:
-  Move 10 spaces in any
-  direction, including
-  through obstacles.
+    - Celebi or Hoopa:
+      Move 10 spaces in any
+      direction, including
+      through obstacles.
 
-  - Manaphy or Keldeo:
-  Double swim speed and
-  gain the ability to breathe
-  underwater for 30 mins.
+    - Manaphy or Keldeo:
+      Double swim speed and
+      gain the ability to breathe
+      underwater for 30 mins.
 
-  - Meloetta or Magearna:
-  Read the thoughts and
-  emotions of pokémon
-  within ten tiles.
+    - Meloetta or Magearna:
+      Read the thoughts and
+      emotions of pokémon
+      within ten tiles.
 
-  - Victini or Marshadow:
-  Make one attack a
-  guaranteed critical hit.
+    - Victini or Marshadow:
+      Make one attack a
+      guaranteed critical hit.
 
-  - Diancie or Jirachi:
-  Materialise a gem worth
-  50 S, or one reviver seed.
+    - Diancie or Jirachi:
+      Materialise a gem worth
+      50 S, or one reviver seed.
 
-  - Shaymin or Mew:
-  Cure all allies of statuses
-  and purge all pollution in
-  a 5 space radius.
+    - Shaymin or Mew:
+      Cure all allies of statuses
+      and purge all pollution in
+      a 5 space radius.
 
 - Ability (Level 20): Summon Myth. Your bond with your mythical patron has
-grown into a close friendship. You may summon them as a friendly NPC at
-any time, command them in combat, and make use of their unique abilities
-– such as Mew’s ability to transform DNA, or Hoopa’s teleportation.
+  grown into a close friendship. You may summon them as a friendly NPC at
+  any time, command them in combat, and make use of their unique abilities
+  – such as Mew’s ability to transform DNA, or Hoopa’s teleportation.
 
 ### PERFORMER
 
@@ -607,23 +602,23 @@ Skill Increase: Performance or Persuasion increases by 10%, to max 95%.
 Equipment Proficiency: Musical instrument of your choice
 
 - Ability (Level 10): Inspired Performance. Thrice daily you may perform in a
-way that motivates or demotivates a target:
-  - Increase or decrease the success chance of a roll by 10%. 
-  - Grant +2 or -2 to one of the target’s stats, lasting for one hour.
-  - Grant the target temporary HP equal to your level*Grade, lasting for one
-  hour or until the temporary hit points are depleted.
+  way that motivates or demotivates a target:
+    - Increase or decrease the success chance of a roll by 10%.
+    - Grant +2 or -2 to one of the target’s stats, lasting for one hour.
+    - Grant the target temporary HP equal to your level*Grade, lasting for one
+      hour or until the temporary hit points are depleted.
 
 - Ability (Level 20): Stage Mastery. Choose any three sound or dance based
-moves that you would not otherwise be able to learn, and add them to your
-available move set. You may also use one of the following abilities per day:
-Dancer’s Stride: When moving in combat, you may deal 1d10 damage to
-each foe you move past, uncontested and untyped.
-Soothing Serenade: Heal allies within earshot for 4d6 HP, and cure
-any statuses based on rage, confusion or fear.
-Captivating Speech: Sway the hearts of up to 10 pokémon within
-earshot, changing their attitude towards a target of your choosing up
-to three spaces in any direction on this scale:
-Hostile | Hated | Disliked | Neutral | Liked | Loved | Exalted
+  moves that you would not otherwise be able to learn, and add them to your
+  available move set. You may also use one of the following abilities per day:
+  Dancer’s Stride: When moving in combat, you may deal 1d10 damage to
+  each foe you move past, uncontested and untyped.
+  Soothing Serenade: Heal allies within earshot for 4d6 HP, and cure
+  any statuses based on rage, confusion or fear.
+  Captivating Speech: Sway the hearts of up to 10 pokémon within
+  earshot, changing their attitude towards a target of your choosing up
+  to three spaces in any direction on this scale:
+  Hostile | Hated | Disliked | Neutral | Liked | Loved | Exalted
 
 ### RESCUER
 
@@ -634,15 +629,16 @@ appreciated, but your *Rescuer’s Prowess* is unparalleled.
 
 Skill Increase: Medicine or Survival increases by 10%, to a max of 95%.
 Equipment Proficiency: Medic’s Tools
+
 - Ability (Level 10): Emergency Healing. If your own HP is below 50%, any
-healing you apply to an ally is doubled. If you share one portion of rations
-with another pokémon, you both receive the benefits of the full meal.
+  healing you apply to an ally is doubled. If you share one portion of rations
+  with another pokémon, you both receive the benefits of the full meal.
 - Ability (Level 20): Rescuer’s Prowess. Assign a target that must be rescued.
-You move twice as quickly and ignore difficult terrain when moving towards
-them, require half the rations and rest when in the same dungeon as them,
-and receive a +5 bonus to all stats when they are within sight. You cannot
-change targets until they are rescued, and must wait 24 hours before picking
-a new target.
+  You move twice as quickly and ignore difficult terrain when moving towards
+  them, require half the rations and rest when in the same dungeon as them,
+  and receive a +5 bonus to all stats when they are within sight. You cannot
+  change targets until they are rescued, and must wait 24 hours before picking
+  a new target.
 
 ### SHADOW BLADE
 
@@ -654,16 +650,17 @@ knack for *Armed Strikes*, your Legend reveres your *Bladed Mastery*.
 Skill Increase: Athletics or Stealth increases by 10%, to a maximum of 95%.
 
 Equipment Proficiency: Bladed & improvised weaponry
+
 - Ability (Level 10): Armed Strikes. Your Basic Attacks are made with a weapon.
-They deal an extra 1d10 damage, are boosted in accuracy to 100%, and have a
-10% chance to flinch.
+  They deal an extra 1d10 damage, are boosted in accuracy to 100%, and have a
+  10% chance to flinch.
 
 - Ability (Level 20): Bladed Mastery. By giving a short description of a past
-adventure, you may choose the type of damage your weapon deals – for
-instance, that it was struck by lightning for electric type, or tempered in the
-flames of groudon’s heart for fire type. You may also choose for it to deal an
-extra 1d10 damage or have a 20% chance of inflicting one status condition of
-your choice. These bonuses last for 24 hours and can be changed daily.
+  adventure, you may choose the type of damage your weapon deals – for
+  instance, that it was struck by lightning for electric type, or tempered in the
+  flames of groudon’s heart for fire type. You may also choose for it to deal an
+  extra 1d10 damage or have a 20% chance of inflicting one status condition of
+  your choice. These bonuses last for 24 hours and can be changed daily.
 
 ### THIEF
 
@@ -676,19 +673,19 @@ Skill Increase: Finesse or Stealth increases by 10%, to a maximum of 95%.
 Equipment Proficiency: Thieves’ Tools
 
 - Ability (Level 10): Steal Hearts. After successfully stealing an item from a foe,
-you may choose to inflict the Infatuated or Confused status upon them,
-lasting 10 turns or 30 minutes outside of battle.
+  you may choose to inflict the Infatuated or Confused status upon them,
+  lasting 10 turns or 30 minutes outside of battle.
 
 - Ability (Level 20): Artistic
-Escapes. In low visibility, such as
-dusk or fog, you may become
-totally invisible. Your invisibility
-ends if you attack or if visibility
-around you increases. While
-invisible, you cannot be tracked
-by sight, sound or scent, and you
-receive a bonus of 20% to
-Perception rolls, to a maximum
-of 95%. If you deal an attack to a
-foe who cannot see you, the
-attack’s damage is doubled.
+  Escapes. In low visibility, such as
+  dusk or fog, you may become
+  totally invisible. Your invisibility
+  ends if you attack or if visibility
+  around you increases. While
+  invisible, you cannot be tracked
+  by sight, sound or scent, and you
+  receive a bonus of 20% to
+  Perception rolls, to a maximum
+  of 95%. If you deal an attack to a
+  foe who cannot see you, the
+  attack’s damage is doubled.

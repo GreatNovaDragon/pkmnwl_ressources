@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Routing.Matching;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
@@ -62,15 +61,17 @@ public class DBInitializer
         var moveClass = await apiclient.GetNamedResourcePageAsync<MoveDamageClass>(10, 0);
         var movecls = new List<MoveClass>();
 
-        foreach (var TypeR in moveClass.Results)
+        foreach (var mc in moveClass.Results)
         {
-            var Type = await apiclient.GetResourceAsync(TypeR);
+            var m = await apiclient.GetResourceAsync(mc);
             movecls.Add(new MoveClass
             {
-                ID = Type.Name,
-                Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
-                Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
+                ID = m.Name,
+                Name = m.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
+                Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
             });
+
+            Console.WriteLine(m.Name);
         }
 
         context.AddRange(movecls);
@@ -172,8 +173,6 @@ public class DBInitializer
                 Effect = Effect,
                 IsTrait = false
             });
-
-            Console.WriteLine(Name);
         }
 
         context.AddRange(abs);
@@ -216,6 +215,8 @@ public class DBInitializer
         var mvs = new List<Data.Move>();
 
         var dclass = context.MoveClasses.ToList();
+
+
         foreach (var i in moves.Results)
         {
             var m = await apiclient.GetResourceAsync(i);
@@ -226,13 +227,19 @@ public class DBInitializer
                 : m.Name;
 
             var Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
-            var Effect = (m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
-                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
+
+            var Effect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                        .Replace("Has a $effect_chance% chance", $"Roll a {m.EffectChance / 10} or lower on a d10")
+                        .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                        : "No Entry").Replace("$effect_chance%", $"{m.EffectChance}");
+                        : "No Entry";
+
+            Effect = accuracy_string(m.Accuracy) + Effect;
+
 
             var Target = m.Target.Name;
 
@@ -243,15 +250,15 @@ public class DBInitializer
                 dclass.FirstOrDefault(e =>
                     e.ID == m.DamageClass.Name);
 
-            var moves_old = Helpers.csv2moves("moves_old.csv");
+            /*  var moves_old = Helpers.csv2moves("moves_old.csv");
 
 
-            if (moves_old.Where(mn => mn.move == Name).Any())
-            {
-                var mn = moves_old.Where(m => m.move == Name).FirstOrDefault();
-                Effect = mn.effect;
-            }
-
+              if (moves_old.Where(mn => mn.move == Name).Any())
+              {
+                  var mn = moves_old.Where(m => m.move == Name).FirstOrDefault();
+                  Effect = mn.effect;
+              }
+  */
             mvs.Add(new Data.Move
             {
                 ID = ID,
@@ -263,8 +270,6 @@ public class DBInitializer
                 DamageDice = DamageDice,
                 MoveClass = DamageClass
             });
-
-            Console.WriteLine(Name + "move");
         }
 
 
@@ -322,6 +327,7 @@ public class DBInitializer
 
             var Abilities = new List<Data.Ability>();
 
+
             foreach (var a in poke.Abilities)
             {
                 var ab = abilities.FirstOrDefault(w =>
@@ -367,8 +373,6 @@ public class DBInitializer
                 SP_ATK = SP_ATK,
                 SPEED = SPEED
             });
-
-            Console.WriteLine(Name);
         }
 
         context.AddRange(pokes);
@@ -378,13 +382,12 @@ public class DBInitializer
 
     public static async Task TransferLearnsets(ApplicationDbContext context, PokeApiClient apiclient)
     {
-
         if (context.Learnsets.Any())
         {
             Console.WriteLine("There already are learnsets");
             return;
         }
-            
+
         var moves_local = context.MoveDex.ToArray();
         var pokemon = context.Pokedex.ToArray();
         foreach (var poke in pokemon)
@@ -394,7 +397,7 @@ public class DBInitializer
             foreach (var m in moves)
             {
                 var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
-                string basedon = "The Crown Tundra";
+                var basedon = "The Crown Tundra";
                 if (vergd.IsNullOrEmpty())
                 {
                     vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
@@ -452,14 +455,13 @@ public class DBInitializer
                         source = basedon,
                         mon = poke
                     };
-                    
+
                     learnset.Add(l);
-                    Console.WriteLine($"{move.ID} {how} {level} {basedon} {poke.ID}");
                 }
             }
-            
+
             context.AddRange(learnset);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 
@@ -468,7 +470,8 @@ public class DBInitializer
         var calc = stat;
         if (nerf.HasValue)
             calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
-
+        if (calc > 300) return 15;
+        if (calc > 270) return 14;
         if (calc > 240) return 13;
         if (calc > 210) return 12;
         if (calc > 180) return 11;
@@ -542,6 +545,35 @@ public class DBInitializer
                 return "4d10";
             default:
                 return "1d2";
+        }
+    }
+
+    public static string accuracy_string(int? accuracy)
+    {
+        switch (accuracy)
+        {
+            case 30:
+                return "Roll an 9 or higher on a 2d6 for this move to succeed. ";
+            case 50:
+                return "Roll an 5 or lower on a d10 for this move to succeed. ";
+            case 55:
+                return "Roll an 7 or higher on a 2d6 for this move to succeed. ";
+            case 60:
+                return "Roll an 6 or lower on a d10 for this move to succeed. ";
+            case 70:
+                return "Roll an 6 or lower on a d10 for this move to succeed. ";
+            case 75:
+                return "Roll an 3 or lower on a d4 for this move to succeed. ";
+            case 80:
+                return "Roll an 8 or lower on a d10 for this move to succeed. ";
+            case 85:
+                return "Roll an 10 or lower on a 2d6 for this move to succeed. ";
+            case 90:
+                return "If you roll an 1 on a d10, this move fails. ";
+            case 95:
+                return "If you roll an 2 on a 2d6, this move fails. ";
+            default:
+                return "";
         }
     }
 }
