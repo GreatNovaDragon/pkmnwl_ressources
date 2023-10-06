@@ -51,10 +51,10 @@
            new Chart(ctx, {
              type: 'radar',
              data: {
-               labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/15', 'ATK @Html.Raw(Model.Pokemon.ATK)/15', 'DEF @Html.Raw(Model.Pokemon.DEF)/15', 'SpATK @Html.Raw(Model.Pokemon.SP_ATK)/15' , 'SpDEF @Html.Raw(Model.Pokemon.SP_DEF)/15', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/15'],
+               labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/50', 'ATK @Html.Raw(Model.Pokemon.ATK)/25', 'DEF @Html.Raw(Model.Pokemon.DEF)/25', 'SpATK @Html.Raw(Model.Pokemon.SP_ATK)/25' , 'SpDEF @Html.Raw(Model.Pokemon.SP_DEF)/25', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/25'],
                datasets: [{
                  label: '',
-                 data: [@Html.Raw(Model.Pokemon.HEALTH), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
+                 data: [@Html.Raw(Model.Pokemon.HEALTH/2), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
                  borderWidth: 1
                }]
              },
@@ -62,7 +62,7 @@
                scales: {
                  r: {
                    min: 0,
-                   max: 15,
+                   max: 25,
                    pointLabels: {
                        font: {size: 15}
                    }

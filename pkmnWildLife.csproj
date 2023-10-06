@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="AspNet.Security.OAuth.Lichess" Version="7.0.4"/>
         <PackageReference Include="CsvHelper" Version="30.0.1"/>
         <PackageReference Include="Discord.OAuth2.AspNetCore" Version="3.0.0"/>
@@ -120,6 +116,7 @@
 
     <ItemGroup>
         <Folder Include="Pages\abilities\"/>
+        <Folder Include="Pages\bluh\" />
         <Folder Include="Pages\moves\"/>
         <Folder Include="Pages\pokemon\"/>
         <Folder Include="Pages\traits\"/>

@@ -24,7 +24,7 @@ public class DetailsModel : PageModel
         if (id == null || _context.Pokedex == null) return NotFound();
 
         var pokemon = await _context.Pokedex
-            .Include(p => p.Abilities).FirstOrDefaultAsync(m => m.ID == id);
+            .Include(p => p.Abilities).Include(p => p.Type1).Include(p => p.Type2).FirstOrDefaultAsync(m => m.ID == id);
         if (pokemon == null) return NotFound();
 
         var Learnset = _context.Learnsets.Include(p => p.mon).Include(m => m.move).ThenInclude(mv => mv.type)

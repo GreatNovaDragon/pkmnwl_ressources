@@ -104,6 +104,7 @@ public class Pokemon
     public int SPEED { get; set; }
 }
 
+
 public class Learnset
 {
     public string ID { get; set; }
