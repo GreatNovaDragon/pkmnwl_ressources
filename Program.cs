@@ -13,20 +13,6 @@ builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var configuration = builder.Configuration;
 
-// set secrets with dotnet user-secrets set "Auth:sjdhfdshf" "secret"
-builder.Services.AddAuthentication().AddLichess(options =>
-{
-    options.ClientId = configuration["Auth:Lichess:ClientID"];
-    options.ClientSecret = configuration["Auth:Lichess:ClientSecret"];
-}).AddDiscord(
-    options =>
-    {
-        options.ClientId = configuration["Auth:Discord:ClientID"];
-        options.ClientSecret = configuration["Auth:Discord:ClientSecret"];
-    });
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
 
@@ -57,8 +43,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
 
 app.MapRazorPages();
 
