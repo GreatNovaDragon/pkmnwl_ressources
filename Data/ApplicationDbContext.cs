@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace pkmnWildLife.Data;
@@ -103,7 +102,6 @@ public class Pokemon
     public int SP_DEF { get; set; }
     public int SPEED { get; set; }
 }
-
 
 public class Learnset
 {

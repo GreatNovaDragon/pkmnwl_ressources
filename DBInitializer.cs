@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
@@ -150,22 +149,23 @@ public class DBInitializer
                 ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
                 : Item.Name;
             var Name_DE = Item.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
-            var Effect =  Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect.Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
-                    : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                        ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                        : "No Entry";
+            var Effect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect.Replace("one stage", "2")
+                    .Replace("two stages", "4").Replace("three stages", "6")
+                : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
+                    : "No Entry";
 
 
-           // var moves_old = Helpers.csv2ab("abilities_old.csv");
+            // var moves_old = Helpers.csv2ab("abilities_old.csv");
 
 
-           /* if (moves_old.Where(mn => mn.ability == Name).Any())
-            {
-                var mn = moves_old.Where(m => m.ability == Name).FirstOrDefault();
-                Effect = mn.effect;
-            }
-*/
+            /* if (moves_old.Where(mn => mn.ability == Name).Any())
+             {
+                 var mn = moves_old.Where(m => m.ability == Name).FirstOrDefault();
+                 Effect = mn.effect;
+             }
+ */
 
             abs.Add(new Data.Ability
             {
@@ -308,7 +308,15 @@ public class DBInitializer
             var Name = species.Names
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
 
-            var image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+            var image = poke.Sprites.Other.DreamWorld.FrontDefault;
+            if (image.IsNullOrEmpty())
+            {
+                image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+            }
+            if (image.IsNullOrEmpty())
+            {
+                image = poke.Sprites.FrontDefault;
+            }
 
             var Name_DE = species.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
@@ -351,7 +359,7 @@ public class DBInitializer
                 ? types.FirstOrDefault(w =>
                     w.ID == poke.Types[1].Type.Name)
                 : null;
-            
+
 
             var HEALTH = StatToInt(poke.Stats[0].BaseStat, 2);
             var ATK = StatToInt(poke.Stats[1].BaseStat);
@@ -383,209 +391,237 @@ public class DBInitializer
             i++;
             Console.WriteLine(
                 $"pokemon {i}/{pkmn.Results.Count()}");
+        }
+
+
+        context.AddRange(pokes);
+
+        await context.SaveChangesAsync();
+    }
+
+    public static async Task TransferLearnsets(ApplicationDbContext context, PokeApiClient apiclient)
+    {
+        if (context.Learnsets.Any())
+        {
+            Console.WriteLine("There already are learnsets");
+            return;
+        }
+
+        var moves_local = context.MoveDex.ToArray();
+        var pokemon = context.Pokedex.ToArray();
+        var p = 0;
+        foreach (var poke in pokemon)
+        {
+            var moves = apiclient.GetResourceAsync<Pokemon>(poke.ID).Result.Moves;
+            var learnset = new List<Learnset>();
+            var m_it = 0;
+            foreach (var m in moves)
+            {
+                var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
+                var basedon = "The Crown Tundra";
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
+                    basedon = "The Isle of Armor";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield");
+                    basedon = "SwiSh";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk");
+                    basedon = "The Indigo Disk";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask");
+                    basedon = "The Teal Mask";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet");
+                    basedon = "ScarVio";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m =>
+                        m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl");
+                    basedon = "BDSP";
+                }
+
+                if (vergd.IsNullOrEmpty())
+                {
+                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon");
+                    basedon = "USUM";
+                }
+
+                var move = moves_local.FirstOrDefault(mv => mv.ID == m.Move.Name);
+                var meth_it = 0;
+                foreach (var vers in vergd)
+                {
+                    var how = vers.MoveLearnMethod.Name;
+                    var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
+                    var l = new Learnset
+                    {
+                        ID = Guid.NewGuid().ToString(),
+                        move = move,
+                        how = how,
+                        level = level,
+                        source = basedon,
+                        mon = poke
+                    };
+
+                    learnset.Add(l);
+                    meth_it++;
+
+                    Console.WriteLine(
+                        $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length})");
+                }
+
+                m_it++;
+                Console.WriteLine($"LP ({m_it}/{moves.Count})/({p}/{pokemon.Length})");
             }
 
+            context.AddRange(learnset);
+            p++;
+            Console.WriteLine($"P ({p}/{pokemon.Length})");
 
-            context.AddRange(pokes);
 
             await context.SaveChangesAsync();
         }
 
-        public static async Task TransferLearnsets(ApplicationDbContext context, PokeApiClient apiclient)
-        {
-            if (context.Learnsets.Any())
-            {
-                Console.WriteLine("There already are learnsets");
-                return;
-            }
+        var lese = context.Learnsets;
+        var unknown_Adds = new List<Learnset>();
 
-            var moves_local = context.MoveDex.ToArray();
-            var pokemon = context.Pokedex.ToArray();
-            var p = 0;
-            foreach (var poke in pokemon)
+        foreach (var move in moves_local)
+        {
+            var apimove = apiclient.GetResourceAsync<Move>(move.ID).Result.LearnedByPokemon;
+            foreach (var po in apimove)
             {
-                var moves = apiclient.GetResourceAsync<Pokemon>(poke.ID).Result.Moves;
-                var learnset = new List<Learnset>();
-                var m_it = 0;
-                foreach (var m in moves)
+                var query = from ls in lese where ls.mon.ID == po.Name && ls.move == move select ls;
+                if (query.Any()) continue;
+
+                var set = new Learnset
                 {
-                    var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
-                    var basedon = "The Crown Tundra";
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
-                        basedon = "The Isle of Armor";
-                    }
+                    ID = Guid.NewGuid().ToString(),
+                    move = move,
+                    how = "Unknown",
+                    level = 0,
+                    source = "THE VOID",
+                    mon = context.Pokedex.FirstOrDefault(pman => pman.ID == po.Name)
+                };
 
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield");
-                        basedon = "SwiSh";
-                    }
-
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk");
-                        basedon = "The Indigo Disk";
-                    }
-
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask");
-                        basedon = "The Teal Mask";
-                    }
-
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet");
-                        basedon = "ScarVio";
-                    }
-
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m =>
-                            m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl");
-                        basedon = "BDSP";
-                    }
-
-                    if (vergd.IsNullOrEmpty())
-                    {
-                        vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon");
-                        basedon = "USUM";
-                    }
-
-                    var move = moves_local.FirstOrDefault(mv => mv.ID == m.Move.Name);
-                    var meth_it = 0;
-                    foreach (var vers in vergd)
-                    {
-                        var how = vers.MoveLearnMethod.Name;
-                        var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
-                        var l = new Learnset
-                        {
-                            ID = Guid.NewGuid().ToString(),
-                            move = move,
-                            how = how,
-                            level = level,
-                            source = basedon,
-                            mon = poke
-                        };
-
-                        learnset.Add(l);
-                        meth_it++;
-
-                        Console.WriteLine(
-                            $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length})");
-                    }
-
-                    m_it++;
-                    Console.WriteLine($"LP ({m_it}/{moves.Count})/({p}/{pokemon.Length})");
-                }
-
-                context.AddRange(learnset);
-                p++;
-                Console.WriteLine($"P ({p}/{pokemon.Length})");
-
-
-                await context.SaveChangesAsync();
+                unknown_Adds.Add(set);
             }
         }
 
-        public static int StatToInt(int stat, double? nerf = null)
+        context.AddRange(unknown_Adds);
+        await context.SaveChangesAsync();
+    }
+
+    public static int StatToInt(int stat, double? nerf = null)
+    {
+        var calc = stat;
+        if (nerf.HasValue)
+            calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
+        return Convert.ToInt32(calc * ((double)18 / 200));
+    }
+
+
+    public static string? StrengthToDice(int? strength, double? nerf = null)
+    {
+        if (!strength.HasValue) return null;
+
+        var calc = strength.Value / 10;
+        if (nerf.HasValue)
+            calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
+
+        switch (calc)
         {
-            var calc = stat;
-            if (nerf.HasValue)
-                calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
-            return Convert.ToInt32(calc*((double)18/200));
-        }
-
-
-        public static string? StrengthToDice(int? strength, double? nerf = null)
-        {
-            if (!strength.HasValue) return null;
-
-            var calc = strength.Value / 10;
-            if (nerf.HasValue)
-                calc = Convert.ToInt32(Math.Ceiling(nerf.Value * calc));
-
-            switch (calc)
-            {
-                case <= 3:
-                    return "1d4";
-                case 4:
-                    return "1d6";
-                case 5:
-                    return "1d8";
-                case 6:
-                    return "1d10";
-                case 7:
-                    return "2d6";
-                case 8:
-                    return "3d4";
-                case 9:
-                    return "2d8";
-                case 10:
-                    return "4d4";
-                case 11:
-                    return "2d10";
-                case 12:
-                    return "2d10";
-                case 13:
-                    return "2d12";
-                case 14:
-                    return "4d6";
-                case 15:
-                    return "4d6";
-                case 16:
-                    return "4d6";
-                case 17:
-                    return "4d6";
-                case 18:
-                    return "4d8";
-                case 19:
-                    return "4d8";
-                case 20:
-                    return "4d8";
-                case 21:
-                    return "2d20";
-                case 22:
-                    return "4d10";
-                case 23:
-                    return "4d10";
-                case 24:
-                    return "4d10";
-                case 25:
-                    return "4d10";
-                default:
-                    return "1d2";
-            }
-        }
-
-        public static string accuracy_string(int? accuracy)
-        {
-            switch (accuracy)
-            {
-                case 30:
-                    return "Roll an 9 or higher on a 2d6 for this move to succeed. ";
-                case 50:
-                    return "Roll an 5 or lower on a d10 for this move to succeed. ";
-                case 55:
-                    return "Roll an 7 or higher on a 2d6 for this move to succeed. ";
-                case 60:
-                    return "Roll an 6 or lower on a d10 for this move to succeed. ";
-                case 70:
-                    return "Roll an 6 or lower on a d10 for this move to succeed. ";
-                case 75:
-                    return "Roll an 3 or lower on a d4 for this move to succeed. ";
-                case 80:
-                    return "Roll an 8 or lower on a d10 for this move to succeed. ";
-                case 85:
-                    return "Roll an 10 or lower on a 2d6 for this move to succeed. ";
-                case 90:
-                    return "If you roll an 1 on a d10, this move fails. ";
-                case 95:
-                    return "If you roll an 2 on a 2d6, this move fails. ";
-                default:
-                    return "";
-            }
+            case <= 3:
+                return "1d4";
+            case 4:
+                return "1d6";
+            case 5:
+                return "1d8";
+            case 6:
+                return "1d10";
+            case 7:
+                return "2d6";
+            case 8:
+                return "3d4";
+            case 9:
+                return "2d8";
+            case 10:
+                return "4d4";
+            case 11:
+                return "2d10";
+            case 12:
+                return "2d10";
+            case 13:
+                return "2d12";
+            case 14:
+                return "4d6";
+            case 15:
+                return "4d6";
+            case 16:
+                return "4d6";
+            case 17:
+                return "4d6";
+            case 18:
+                return "4d8";
+            case 19:
+                return "4d8";
+            case 20:
+                return "4d8";
+            case 21:
+                return "2d20";
+            case 22:
+                return "4d10";
+            case 23:
+                return "4d10";
+            case 24:
+                return "4d10";
+            case 25:
+                return "4d10";
+            default:
+                return "1d2";
         }
     }
+
+    public static string accuracy_string(int? accuracy)
+    {
+        switch (accuracy)
+        {
+            case 30:
+                return "Roll an 9 or higher on a 2d6 for this move to succeed. ";
+            case 50:
+                return "Roll an 5 or lower on a d10 for this move to succeed. ";
+            case 55:
+                return "Roll an 7 or higher on a 2d6 for this move to succeed. ";
+            case 60:
+                return "Roll an 6 or lower on a d10 for this move to succeed. ";
+            case 70:
+                return "Roll an 6 or lower on a d10 for this move to succeed. ";
+            case 75:
+                return "Roll an 3 or lower on a d4 for this move to succeed. ";
+            case 80:
+                return "Roll an 8 or lower on a d10 for this move to succeed. ";
+            case 85:
+                return "Roll an 10 or lower on a 2d6 for this move to succeed. ";
+            case 90:
+                return "If you roll an 1 on a d10, this move fails. ";
+            case 95:
+                return "If you roll an 2 on a 2d6, this move fails. ";
+            default:
+                return "";
+        }
+    }
+}

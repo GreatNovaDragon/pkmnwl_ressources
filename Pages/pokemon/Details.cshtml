@@ -37,7 +37,7 @@
         }
     </div>
     <div class="w3-container w3-third w3-cell">
-        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image"/>
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image" style="width:100%"/>
     </div>
     <div class="w3-container w3-third w3-cell">
         <canvas id="myChart"></canvas>
@@ -54,7 +54,7 @@
                labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/50', 'ATK @Html.Raw(Model.Pokemon.ATK)/25', 'DEF @Html.Raw(Model.Pokemon.DEF)/25', 'SpATK @Html.Raw(Model.Pokemon.SP_ATK)/25' , 'SpDEF @Html.Raw(Model.Pokemon.SP_DEF)/25', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/25'],
                datasets: [{
                  label: '',
-                 data: [@Html.Raw(Model.Pokemon.HEALTH/2), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
+                 data: [@Html.Raw(Model.Pokemon.HEALTH / 2), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
                  borderWidth: 1
                }]
              },
@@ -80,15 +80,21 @@
 <h2>Learnable Moves</h2>
 
 
-<div class="w3-row">
+<div class="w3-row-padding">
     <a href="javascript:void(0)" onclick="openCity(event, 'LevelUp');">
-        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding  w3-border-red">Level Up</div>
+        <div class="w3-col tablink w3-bottombar w3-hover-light-grey   w3-border-red" style="width:20%">Level Up</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'TM');">
-        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">TM</div>
+        <div class=" w3-col tablink w3-bottombar w3-hover-light-grey " style="width:20%">TM</div>
     </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'TutorEgg');">
-        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tutor and EggMoves</div>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Tutor');">
+        <div class="w3-col tablink w3-bottombar w3-hover-light-grey " style="width:20%">Tutor</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Egg');">
+        <div class="w3-col tablink w3-bottombar w3-hover-light-grey" style="width:20%">Ei</div>
+    </a>
+    <a href="javascript:void(0)" onclick="openCity(event, 'Unknown');">
+        <div class="w3-col tablink w3-bottombar w3-hover-light-grey" style="width:20%">Unbekannt Wie</div>
     </a>
 </div>
 
@@ -213,9 +219,129 @@
         </div>
     }
 </div>
-<div id="TutorEgg" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
+<div id="Tutor" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
-    @foreach (var move in Model.Learnsets.Where(e => !new List<string> { "machine", "level-up" }.Contains(e.how)).OrderBy(m => m.how))
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "tutor").OrderBy(m => m.move.Name_DE))
+    {
+        <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
+            <div class="w3-card">
+                <header class="w3-container w3-blue">
+                    <h3>
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            @Html.Raw(move.move.Name_DE)
+                            @if (move.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(move.move.Name)
+                            }
+                        </a>
+                    </h3>
+                </header>
+
+                <div class="w3-container">
+                    <dl>
+                        <dt>
+                            Gelernt via
+                        </dt>
+                        <dd>@Html.Raw(move.how)</dd>
+                        <dt>Gelernt auf Level</dt>
+                        <dd>@Html.Raw(move.level)</dd>
+                        <dt>Angrifssklasse</dt>
+                        <dd>
+                            @Html.Raw(move.move.MoveClass.Name_DE)
+                        </dd>
+                        <dt>Move Typ</dt>
+                        <dd>@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Quellen-Game</dt>
+                        <dd>@Html.Raw(move.source)</dd>
+
+
+                        @if (!move.move.DamageDice.IsNullOrEmpty())
+                        {
+                            <dt>Schadenswürfel Dice</dt>
+                            <dd>@Html.Raw(move.move.DamageDice)</dd>
+                        }
+                        else
+                        {
+                            <dt>&nbsp;</dt>
+                            <dd>&nbsp;</dd>
+                        }
+                    </dl>
+                </div>
+
+
+                <div class="w3-container w3-light-blue">
+                    <h4>Effekt</h4>
+                </div>
+                <div class="w3-container">
+                    @Html.Raw(Markdown.Parse(move.move.Effect))
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div id="Egg" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
+
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "egg").OrderBy(m => m.move.Name_DE))
+    {
+        <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
+            <div class="w3-card">
+                <header class="w3-container w3-blue">
+                    <h3>
+                        <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            @Html.Raw(move.move.Name_DE)
+                            @if (move.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(move.move.Name)
+                            }
+                        </a>
+                    </h3>
+                </header>
+
+                <div class="w3-container">
+                    <dl>
+                        <dt>
+                            Gelernt via
+                        </dt>
+                        <dd>@Html.Raw(move.how)</dd>
+                        <dt>Gelernt auf Level</dt>
+                        <dd>@Html.Raw(move.level)</dd>
+                        <dt>Angrifssklasse</dt>
+                        <dd>
+                            @Html.Raw(move.move.MoveClass.Name_DE)
+                        </dd>
+                        <dt>Move Typ</dt>
+                        <dd>@Html.Raw(move.move.type.Name_DE)</dd>
+                        <dt>Quellen-Game</dt>
+                        <dd>@Html.Raw(move.source)</dd>
+
+
+                        @if (!move.move.DamageDice.IsNullOrEmpty())
+                        {
+                            <dt>Schadenswürfel Dice</dt>
+                            <dd>@Html.Raw(move.move.DamageDice)</dd>
+                        }
+                        else
+                        {
+                            <dt>&nbsp;</dt>
+                            <dd>&nbsp;</dd>
+                        }
+                    </dl>
+                </div>
+
+
+                <div class="w3-container w3-light-blue">
+                    <h4>Effekt</h4>
+                </div>
+                <div class="w3-container">
+                    @Html.Raw(Markdown.Parse(move.move.Effect))
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div id="Unknown" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
+
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "Unknown").OrderBy(m => m.move.Name_DE))
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
