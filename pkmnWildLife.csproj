@@ -13,6 +13,9 @@
         <None Update="app.db">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
+        <None Include="wwwroot\PokemonSwShCharSheetsGer.pdf">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="AspNet.Security.OAuth.Lichess" Version="7.0.4"/>
