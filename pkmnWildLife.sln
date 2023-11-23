@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pkmnWildLife", "pkmnWildLife.csproj", "{B33714F8-177D-4657-ABAD-C438E00CAAAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pkmnWildLife", "pkmnWildLife.csproj", "{B33714F8-177D-4657-ABAD-C438E00CAAAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
