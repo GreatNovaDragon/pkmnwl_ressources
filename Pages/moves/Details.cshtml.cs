@@ -1,7 +1,11 @@
+#region
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using pkmnWildLife.Data;
+
+#endregion
 
 namespace pkmnWildLife.Pages.moves;
 

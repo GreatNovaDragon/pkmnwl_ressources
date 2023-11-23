@@ -1,6 +1,10 @@
+#region
+
 using Microsoft.EntityFrameworkCore;
 using pkmnWildLife;
 using pkmnWildLife.Data;
+
+#endregion
 
 var builder = WebApplication.CreateBuilder(args);
 

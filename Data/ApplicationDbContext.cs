@@ -1,6 +1,10 @@
+#region
+
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
+#endregion
 
 namespace pkmnWildLife.Data;
 

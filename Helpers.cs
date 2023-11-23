@@ -1,10 +1,14 @@
-﻿using System.Globalization;
+﻿#region
+
+using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using Westwind.AspNetCore.Markdown;
+
+#endregion
 
 namespace pkmnWildLife;
 

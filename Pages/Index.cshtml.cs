@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿#region
+
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+#endregion
 
 namespace pkmnWildLife.Pages;
 

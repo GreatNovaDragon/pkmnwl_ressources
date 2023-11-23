@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿#region
+
+using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
@@ -6,6 +8,8 @@ using Item = PokeApiNet.Item;
 using Move = PokeApiNet.Move;
 using Pokemon = PokeApiNet.Pokemon;
 using Type = PokeApiNet.Type;
+
+#endregion
 
 namespace pkmnWildLife;
 
@@ -236,14 +240,14 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                        .Replace("Has a $effect_chance% chance", $"Roll a {m.EffectChance / 10} or lower on a d10")
+                        .Replace("Has a $effect_chance% chance", $"Roll a {20 - m.EffectChance / 5} or higher on a d20")
                         .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                        : "No Entry";
+                        : "No Data";
 
             Effect = accuracy_string(m.Accuracy) + Effect;
-
+            Effect = Effect.Replace("Inflicts regular damage.", "");
 
             var Target = m.Target.Name;
 
@@ -254,15 +258,6 @@ public class DBInitializer
                 dclass.FirstOrDefault(e =>
                     e.ID == m.DamageClass.Name);
 
-            /*  var moves_old = Helpers.csv2moves("moves_old.csv");
-
-
-              if (moves_old.Where(mn => mn.move == Name).Any())
-              {
-                  var mn = moves_old.Where(m => m.move == Name).FirstOrDefault();
-                  Effect = mn.effect;
-              }
-  */
             mvs.Add(new Data.Move
             {
                 ID = ID,
@@ -309,14 +304,8 @@ public class DBInitializer
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
 
             var image = poke.Sprites.Other.DreamWorld.FrontDefault;
-            if (image.IsNullOrEmpty())
-            {
-                image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
-            }
-            if (image.IsNullOrEmpty())
-            {
-                image = poke.Sprites.FrontDefault;
-            }
+            if (image.IsNullOrEmpty()) image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+            if (image.IsNullOrEmpty()) image = poke.Sprites.FrontDefault;
 
             var Name_DE = species.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
@@ -598,30 +587,13 @@ public class DBInitializer
 
     public static string accuracy_string(int? accuracy)
     {
-        switch (accuracy)
+        if (accuracy.HasValue)
         {
-            case 30:
-                return "Roll an 9 or higher on a 2d6 for this move to succeed. ";
-            case 50:
-                return "Roll an 5 or lower on a d10 for this move to succeed. ";
-            case 55:
-                return "Roll an 7 or higher on a 2d6 for this move to succeed. ";
-            case 60:
-                return "Roll an 6 or lower on a d10 for this move to succeed. ";
-            case 70:
-                return "Roll an 6 or lower on a d10 for this move to succeed. ";
-            case 75:
-                return "Roll an 3 or lower on a d4 for this move to succeed. ";
-            case 80:
-                return "Roll an 8 or lower on a d10 for this move to succeed. ";
-            case 85:
-                return "Roll an 10 or lower on a 2d6 for this move to succeed. ";
-            case 90:
-                return "If you roll an 1 on a d10, this move fails. ";
-            case 95:
-                return "If you roll an 2 on a 2d6, this move fails. ";
-            default:
+            if (accuracy == 100)
                 return "";
+            return $"Roll an {accuracy / 5} or lower on a d20 for this move to succeed. ";
         }
+
+        return "";
     }
 }
