@@ -37,9 +37,8 @@ public class DBInitializer
             return;
         }
 
-        var types = await apiclient.GetNamedResourcePageAsync<Type>(9999, 0);
         var tps = new List<Data.Type>();
-        foreach (var TypeR in types.Results)
+        await foreach (var TypeR in apiclient.GetAllNamedResourcesAsync<Type>())
         {
             var Type = await apiclient.GetResourceAsync(TypeR);
             tps.Add(new Data.Type
@@ -62,10 +61,9 @@ public class DBInitializer
             return;
         }
 
-        var moveClass = await apiclient.GetNamedResourcePageAsync<MoveDamageClass>(10, 0);
         var movecls = new List<MoveClass>();
 
-        foreach (var mc in moveClass.Results)
+        await foreach (var mc in apiclient.GetAllNamedResourcesAsync<MoveDamageClass>())
         {
             var m = await apiclient.GetResourceAsync(mc);
             movecls.Add(new MoveClass
@@ -91,9 +89,8 @@ public class DBInitializer
         }
 
 
-        var items = await apiclient.GetNamedResourcePageAsync<Item>(9999, 0);
         var itms = new List<Data.Item>();
-        foreach (var i in items.Results)
+        await foreach (var i in apiclient.GetAllNamedResourcesAsync<Item>())
         {
             var Item = await apiclient.GetResourceAsync(i);
 
@@ -138,16 +135,13 @@ public class DBInitializer
             return;
         }
 
-        var abilities = await apiclient.GetNamedResourcePageAsync<Ability>(9999, 0);
         var abs = new List<Data.Ability>();
 
         var it = 0;
 
-        foreach (var i in abilities.Results)
+        await foreach (var i in apiclient.GetAllNamedResourcesAsync<Ability>())
         {
             var Item = await apiclient.GetResourceAsync(i);
-
-
             var ID = Item.Name;
             var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
@@ -180,7 +174,7 @@ public class DBInitializer
                 IsTrait = false
             });
             it++;
-            Console.WriteLine($"Ability {it}/{abilities.Results.Count()}");
+            Console.WriteLine($"Ability {it}");
         }
 
         context.AddRange(abs);
@@ -219,13 +213,12 @@ public class DBInitializer
         }
 
         var types = context.Types.ToList();
-        var moves = await apiclient.GetNamedResourcePageAsync<Move>(999, 0);
         var mvs = new List<Data.Move>();
 
         var dclass = context.MoveClasses.ToList();
 
         var it = 0;
-        foreach (var i in moves.Results)
+        await foreach (var i in apiclient.GetAllNamedResourcesAsync<Move>())
         {
             var m = await apiclient.GetResourceAsync(i);
 
@@ -271,7 +264,7 @@ public class DBInitializer
             });
 
             it++;
-            Console.WriteLine($"Move {it}/{moves.Results.Count}");
+            Console.WriteLine($"Move {it}");
         }
 
 
@@ -289,10 +282,9 @@ public class DBInitializer
 
         var abilities = context.AbilityDex.ToArray();
         var types = context.Types.ToArray();
-        var pkmn = await apiclient.GetNamedResourcePageAsync<Pokemon>(1500, 0);
         var pokes = new List<Data.Pokemon>();
         var i = 0;
-        foreach (var p in pkmn.Results)
+        await foreach (var p in apiclient.GetAllNamedResourcesAsync<Pokemon>())
         {
             var poke = await apiclient.GetResourceAsync(p);
             var species = apiclient.GetResourceAsync(poke.Species).Result;
@@ -379,7 +371,7 @@ public class DBInitializer
             });
             i++;
             Console.WriteLine(
-                $"pokemon {i}/{pkmn.Results.Count()}");
+                $"pokemon {i}");
         }
 
 
@@ -457,6 +449,14 @@ public class DBInitializer
                 {
                     var how = vers.MoveLearnMethod.Name;
                     var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
+
+                    if (how != "level-up")
+                    {
+                        level = 0;
+                        if (how != "egg")
+                            level = int.MaxValue;
+                    }
+
                     var l = new Learnset
                     {
                         ID = Guid.NewGuid().ToString(),
@@ -502,7 +502,7 @@ public class DBInitializer
                     ID = Guid.NewGuid().ToString(),
                     move = move,
                     how = "Unknown",
-                    level = 0,
+                    level = int.MaxValue,
                     source = "THE VOID",
                     mon = context.Pokedex.FirstOrDefault(pman => pman.ID == po.Name)
                 };

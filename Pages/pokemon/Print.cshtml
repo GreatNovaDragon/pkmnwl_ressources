@@ -1,0 +1,195 @@
+@page
+@using Microsoft.IdentityModel.Tokens
+@model PrintModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<div class="w3-row">
+
+    <div class="w3-container w3-quarter">
+        <h1>
+            @if (Model.Pokemon.Name_DE.IsNullOrEmpty())
+            {
+                @Html.DisplayFor(modelItem => modelItem.Pokemon.Name)
+            }
+            @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
+            @if (!Model.Pokemon.Form.IsNullOrEmpty())
+            {
+                @Html.Raw($"({Model.Pokemon.Form})")
+            }
+        </h1>
+        <h3>
+            @Html.Raw(Model.Pokemon.Type1.Name_DE)
+            @if (Model.Pokemon.Type2 != null)
+            {
+                @Html.Raw($"/ {Model.Pokemon.Type2!.Name_DE}")
+            }
+        </h3>
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image" style="width:50%"/>
+
+        <h4>Fähigkeiten</h4>
+        <p>
+            @foreach (var a in Model.Pokemon.Abilities)
+            {
+                @Html.Raw($"{a.Name_DE} ")
+            }
+        </p>
+        <h4>Statistiken</h4>
+        <table>
+            <tr>
+                <td>Gesundheit</td>
+                <td>@Html.Raw(Model.Pokemon.HEALTH)/50</td>
+            </tr>
+            <tr>
+                <td>Angriff</td>
+                <td>@Html.Raw(Model.Pokemon.ATK)/25</td>
+            </tr>
+            <tr>
+                <td>Verteidigung</td>
+                <td>@Html.Raw(Model.Pokemon.DEF)/25</td>
+            </tr>
+            <tr>
+                <td>Spezial-Angriff</td>
+                <td>@Html.Raw(Model.Pokemon.SP_ATK)/25</td>
+            </tr>
+            <tr>
+                <td>Spezial-Verteidigung</td>
+                <td>@Html.Raw(Model.Pokemon.SPEED)/25</td>
+            </tr>
+            <tr>
+                <td>Initiative</td>
+                <td>@Html.Raw(Model.Pokemon.SPEED)/25</td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+    <div class="w3-container w3-threequarter w3-row">
+        <div class="w3-container w3-half">
+            @if (Model.Pokemon.ID == "mew")
+            {
+                <p>Mew kann jede TM und jede Tutorattacke Erlernen</p>
+            }
+            <table class="w3-striped w3-bordered w3-border w3-tiny">
+                <thead>
+                <tr>
+                    <th>Lvl</th>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Klasse</th>
+                    <th>Schaden</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).Where(mv => new List<string> { "machine", "level-up" }.Contains(mv.how)))
+                {
+                    <tr >
+                        <td>
+                            @if (ls.how == "level-up")
+                            {
+                                @Html.Raw(ls.level)
+                            }
+                            else
+                            {
+                                @Html.Raw("TM")
+                            }
+                        </td>
+                        <td>
+                            @if (ls.move.Name_DE.IsNullOrEmpty())
+                            {
+                                @Html.Raw(ls.move.Name)
+                            }
+                            else
+                            {
+                                @Html.Raw(ls.move.Name_DE)
+                            }
+                        </td>
+                        <td>
+                            @Html.Raw(ls.move.type.Name_DE)
+                        </td>
+                        <td>
+                            @Html.Raw(ls.move.MoveClass.Name_DE)
+                        </td>
+                        <td>
+                            @Html.Raw(ls.move.DamageDice)
+                        </td>
+
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+        </div>
+        @if (!Model.Pokemon.ID.Equals("mew"))
+        {
+            <div class="w3-container w3-half">
+                <table class="w3-striped w3-bordered w3-border w3-tiny">
+                    <thead>
+                    <tr>
+                        <th>Wie</th>
+                        <th>Name</th>
+                        <th>Typ</th>
+                        <th>Klasse</th>
+                        <th>Schaden</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).Where(mv => !new List<string> { "machine", "level-up" }.Contains(mv.how)))
+                    {
+                        <tr >
+                            <td>
+                                @if (ls.how == "level-up")
+                                {
+                                    @Html.Raw(ls.level)
+                                }
+                                else if (ls.how == "Unknown")
+                                {
+                                    @Html.Raw("???")
+                                }
+                                else
+                                {
+                                    @Html.Raw(ls.how)
+                                }
+                            </td>
+                            <td>
+                                @if (ls.move.Name_DE.IsNullOrEmpty())
+                                {
+                                    @Html.Raw(ls.move.Name)
+                                }
+                                else
+                                {
+                                    @Html.Raw(ls.move.Name_DE)
+                                }
+                            </td>
+                            <td>
+                                @Html.Raw(ls.move.type.Name_DE)
+                            </td>
+                            <td>
+                                @Html.Raw(ls.move.MoveClass.Name_DE)
+                            </td>
+                            <td>
+                                @Html.Raw(ls.move.DamageDice)
+                            </td>
+
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+
+            </div>
+        }
+    </div>
+
+</div>
+</body>
