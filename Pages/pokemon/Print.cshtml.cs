@@ -11,7 +11,7 @@ namespace pkmnWildLife.Pages.pokemon;
 
 public class PrintModel : PageModel
 {
-    private readonly ApplicationDbContext _context;
+    public readonly ApplicationDbContext _context;
 
     public PrintModel(ApplicationDbContext context)
     {
@@ -34,7 +34,7 @@ public class PrintModel : PageModel
         var Learnset = _context.Learnsets.Include(p => p.mon).Include(m => m.move).ThenInclude(mv => mv.type)
             .Include(m => m.move).ThenInclude(mv => mv.MoveClass).Where(m => m.mon == pokemon).ToList();
 
-        if (pokemon.ID == "mew") Learnset.RemoveAll(m => m.how != "level-up");
+        // if (pokemon.ID == "mew") Learnset.RemoveAll(m => m.how != "level-up");
 
         Pokemon = pokemon;
         Learnsets = Learnset;

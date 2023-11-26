@@ -11,10 +11,10 @@
         <EmbeddedResource Remove="Pages\bluh\**"/>
         <None Remove="Pages\bluh\**"/>
         <None Update="app.db">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
         <None Include="wwwroot\PokemonSwShCharSheetsGer.pdf">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>
     <ItemGroup>

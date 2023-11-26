@@ -8,14 +8,14 @@
 }
 
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/icons/style.css"/>
 
 </head>
 <body>
 <div class="w3-row">
-
-    <div class="w3-container w3-quarter">
-        <h1>
+    <div class="w3-container w3-col w3-small" style="width: 12.5%">
+        <h2>
             @if (Model.Pokemon.Name_DE.IsNullOrEmpty())
             {
                 @Html.DisplayFor(modelItem => modelItem.Pokemon.Name)
@@ -25,7 +25,7 @@
             {
                 @Html.Raw($"({Model.Pokemon.Form})")
             }
-        </h1>
+        </h2>
         <h3>
             @Html.Raw(Model.Pokemon.Type1.Name_DE)
             @if (Model.Pokemon.Type2 != null)
@@ -33,118 +33,52 @@
                 @Html.Raw($"/ {Model.Pokemon.Type2!.Name_DE}")
             }
         </h3>
-        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image" style="width:50%"/>
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image"/>
 
-        <h4>Fähigkeiten</h4>
-        <p>
+        <h4 class="w3-small">Fähigkeiten</h4>
+        <p class="w3-small">
             @foreach (var a in Model.Pokemon.Abilities)
             {
                 @Html.Raw($"{a.Name_DE} ")
             }
         </p>
         <h4>Statistiken</h4>
-        <table>
-            <tr>
-                <td>Gesundheit</td>
-                <td>@Html.Raw(Model.Pokemon.HEALTH)/50</td>
-            </tr>
-            <tr>
-                <td>Angriff</td>
-                <td>@Html.Raw(Model.Pokemon.ATK)/25</td>
-            </tr>
-            <tr>
-                <td>Verteidigung</td>
-                <td>@Html.Raw(Model.Pokemon.DEF)/25</td>
-            </tr>
-            <tr>
-                <td>Spezial-Angriff</td>
-                <td>@Html.Raw(Model.Pokemon.SP_ATK)/25</td>
-            </tr>
-            <tr>
-                <td>Spezial-Verteidigung</td>
-                <td>@Html.Raw(Model.Pokemon.SPEED)/25</td>
-            </tr>
-            <tr>
-                <td>Initiative</td>
-                <td>@Html.Raw(Model.Pokemon.SPEED)/25</td>
-            </tr>
+        <dl class="w3-small">
 
-        </table>
+            <dt>Gesundheit</dt>
+            <dd>@Html.Raw(Model.Pokemon.HEALTH)/50</dd>
+
+            <dt>Angriff</dt>
+            <dd>@Html.Raw(Model.Pokemon.ATK)/25</dd>
+
+            <dt>Verteidigung</dt>
+            <dd>@Html.Raw(Model.Pokemon.DEF)/25</dd>
+
+            <dt>Spezial-Angriff</dt>
+            <dd>@Html.Raw(Model.Pokemon.SP_ATK)/25</dd>
+
+            <dt>Spezial-Verteidigung</dt>
+            <dd>@Html.Raw(Model.Pokemon.SPEED)/25</dd>
+
+            <dt>Initiative</dt>
+            <dd>@Html.Raw(Model.Pokemon.SPEED)/25</dd>
+
+
+        </dl>
 
 
     </div>
 
-    <div class="w3-container w3-threequarter w3-row">
-        <div class="w3-container w3-half">
-            @if (Model.Pokemon.ID == "mew")
-            {
-                <p>Mew kann jede TM und jede Tutorattacke Erlernen</p>
-            }
-            <table class="w3-striped w3-bordered w3-border w3-tiny">
-                <thead>
-                <tr>
-                    <th>Lvl</th>
-                    <th>Name</th>
-                    <th>Typ</th>
-                    <th>Klasse</th>
-                    <th>Schaden</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).Where(mv => new List<string> { "machine", "level-up" }.Contains(mv.how)))
+    <div class="w3-container w3-row w3-rest">
+        <div class="w3-row">
+            <div class="w3-container w3-third">
+                @if (Model.Pokemon.ID == "mew")
                 {
-                    <tr >
-                        <td>
-                            @if (ls.how == "level-up")
-                            {
-                                @Html.Raw(ls.level)
-                            }
-                            else
-                            {
-                                @Html.Raw("TM")
-                            }
-                        </td>
-                        <td>
-                            @if (ls.move.Name_DE.IsNullOrEmpty())
-                            {
-                                @Html.Raw(ls.move.Name)
-                            }
-                            else
-                            {
-                                @Html.Raw(ls.move.Name_DE)
-                            }
-                        </td>
-                        <td>
-                            @Html.Raw(ls.move.type.Name_DE)
-                        </td>
-                        <td>
-                            @Html.Raw(ls.move.MoveClass.Name_DE)
-                        </td>
-                        <td>
-                            @Html.Raw(ls.move.DamageDice)
-                        </td>
-
-                    </tr>
+                    <p>Mew kann jede TM und jede Tutorattacke Erlernen</p>
                 }
-
-                </tbody>
-            </table>
-        </div>
-        @if (!Model.Pokemon.ID.Equals("mew"))
-        {
-            <div class="w3-container w3-half">
                 <table class="w3-striped w3-bordered w3-border w3-tiny">
-                    <thead>
-                    <tr>
-                        <th>Wie</th>
-                        <th>Name</th>
-                        <th>Typ</th>
-                        <th>Klasse</th>
-                        <th>Schaden</th>
-                    </tr>
-                    </thead>
                     <tbody>
-                    @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).Where(mv => !new List<string> { "machine", "level-up" }.Contains(mv.how)))
+                    @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).ToArray()[..(Model.Learnsets.Count / 3)])
                     {
                         <tr >
                             <td>
@@ -152,14 +86,88 @@
                                 {
                                     @Html.Raw(ls.level)
                                 }
-                                else if (ls.how == "Unknown")
+                                else if (ls.how == "machine")
                                 {
-                                    @Html.Raw("???")
+                                    @Html.Raw("TM")
+                                }
+                                else if (ls.how == "egg")
+                                {
+                                    @Html.Raw("Ei")
+                                }
+                                else if (ls.how == "tutor")
+                                {
+                                    @Html.Raw("Tu")
+                                }
+                                else if (ls.how == "Unkown")
+                                {
+                                    @Html.Raw("?")
+                                }
+                            </td>
+                            <td>
+                                <div class="icon @Html.Raw(ls.move.type.ID)" style="height: 12px; width: 12px">
+                                    <img src="/icons/type/@Html.Raw($"{ls.move.type.ID}.svg")"/>
+                                </div>
+
+                            </td>
+                            <td>
+                                @if (ls.move.Name_DE.IsNullOrEmpty())
+                                {
+                                    @Html.Raw(ls.move.Name)
                                 }
                                 else
                                 {
-                                    @Html.Raw(ls.how)
+                                    @Html.Raw(ls.move.Name_DE)
                                 }
+                            </td>
+
+                            <td>
+                                <div class="icon @Html.Raw(ls.move.MoveClass.ID)" style="height: 12px; width: 12px;">
+                                    <img src="/icons/moveclass/@Html.Raw($"{ls.move.MoveClass.ID}.png")"/>
+                                </div>
+                            </td>
+                            <td>
+                                @Html.Raw(ls.move.DamageDice)
+                            </td>
+
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="w3-container w3-third">
+                <table class="w3-striped w3-bordered w3-border w3-tiny">
+                    <tbody>
+                    @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).ToArray()[(Model.Learnsets.Count / 3)..(Model.Learnsets.Count / 3 * 2)])
+                    {
+                        <tr >
+                            <td>
+                                @if (ls.how == "level-up")
+                                {
+                                    @Html.Raw(ls.level)
+                                }
+                                else if (ls.how == "machine")
+                                {
+                                    @Html.Raw("TM")
+                                }
+                                else if (ls.how == "egg")
+                                {
+                                    @Html.Raw("Ei")
+                                }
+                                else if (ls.how == "tutor")
+                                {
+                                    @Html.Raw("Tu")
+                                }
+                                else if (ls.how == "Unkown")
+                                {
+                                    @Html.Raw("?")
+                                }
+                            </td>
+                            <td>
+                                <div class="icon @Html.Raw(ls.move.type.ID)" style="height: 12px; width: 12px">
+                                    <img src="/icons/type/@Html.Raw($"{ls.move.type.ID}.svg")"/>
+                                </div>
+
                             </td>
                             <td>
                                 @if (ls.move.Name_DE.IsNullOrEmpty())
@@ -172,10 +180,9 @@
                                 }
                             </td>
                             <td>
-                                @Html.Raw(ls.move.type.Name_DE)
-                            </td>
-                            <td>
-                                @Html.Raw(ls.move.MoveClass.Name_DE)
+                                <div class="icon @Html.Raw(ls.move.MoveClass.ID)" style="height: 12px; width: 12px;">
+                                    <img src="/icons/moveclass/@Html.Raw($"{ls.move.MoveClass.ID}.png")"/>
+                                </div>
                             </td>
                             <td>
                                 @Html.Raw(ls.move.DamageDice)
@@ -186,10 +193,70 @@
 
                     </tbody>
                 </table>
-
             </div>
-        }
-    </div>
+            <div class="w3-container w3-third">
+                <table class="w3-striped w3-bordered w3-border w3-tiny">
+                    <tbody>
+                    @foreach (var ls in Model.Learnsets.OrderBy(mv => mv.how).OrderBy(mv => mv.level).ToArray()[(Model.Learnsets.Count / 3 * 2)..Model.Learnsets.Count])
+                    {
+                        <tr >
+                            <td>
+                                @if (ls.how == "level-up")
+                                {
+                                    @Html.Raw(ls.level)
+                                }
+                                else if (ls.how == "machine")
+                                {
+                                    @Html.Raw("TM")
+                                }
+                                else if (ls.how == "egg")
+                                {
+                                    @Html.Raw("Ei")
+                                }
+                                else if (ls.how == "tutor")
+                                {
+                                    @Html.Raw("Tu")
+                                }
+                                else if (ls.how == "Unkown")
+                                {
+                                    @Html.Raw("?")
+                                }
+                            </td>
+                            <td>
+                                <div class="icon @Html.Raw(ls.move.type.ID)" style="height: 12px; width: 12px">
+                                    <img src="/icons/type/@Html.Raw($"{ls.move.type.ID}.svg")"/>
+                                </div>
 
+                            </td>
+
+                            <td>
+                                @if (ls.move.Name_DE.IsNullOrEmpty())
+                                {
+                                    @Html.Raw(ls.move.Name)
+                                }
+                                else
+                                {
+                                    @Html.Raw(ls.move.Name_DE)
+                                }
+                            </td>
+
+                            <td>
+                                <div class="icon @Html.Raw(ls.move.MoveClass.ID)" style="height: 12px; width: 12px;">
+                                    <img src="/icons/moveclass/@Html.Raw($"{ls.move.MoveClass.ID}.png")"/>
+                                </div>
+                            </td>
+                            <td>
+                                @Html.Raw(ls.move.DamageDice)
+                            </td>
+
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
 </div>
 </body>
