@@ -17,7 +17,9 @@
         <th>
             Dex
         </th>
+        <th>&nbsp;</th>
         <th style="display:none;"> Name en</th>
+
         <th>
             @Html.DisplayNameFor(model => model.Pokemon[0].Name)
         </th>
@@ -25,6 +27,7 @@
         <th>
             Typen
         </th>
+        <th style="display: none"> Typen</th>
     </tr>
     </thead>
     <tbody>
@@ -33,6 +36,10 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                <img src="@item.ImageLink" height="40px"/>
+
             </td>
             <td style="display:none;">@Html.DisplayFor(modelItem => item.Name) </td>
             <td>
@@ -50,12 +57,26 @@
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.Type1.Name_DE)
+                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type1.ID}.png")"/>
                 @if (item.Type2 != null)
                 {
-                    @Html.Raw("/")
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type2.ID}.png")"/>
                 }
-                @Html.DisplayFor(modelItem => item.Type2.Name_DE)
+            </td>
+
+            <td style="display:none;">
+                @Html.Raw($"{item.Type1.Name}")
+                @if (item.Type2 != null)
+                {
+                    @Html.Raw($"/{item.Type2.Name}")
+
+                }
+                @Html.Raw($"{item.Type1.Name_DE}")
+                                @if (item.Type2 != null)
+                                {
+                                    @Html.Raw($"/{item.Type2.Name_DE}")
+                
+                                }
             </td>
         </tr>
     }

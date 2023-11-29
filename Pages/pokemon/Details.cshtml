@@ -22,10 +22,10 @@
 <div class="w3-cell-row">
     <div class="w3-container w3-third w3-cell">
         <h3>Typen</h3>
-        @Html.Raw(Model.Pokemon.Type1.Name_DE)
+        <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type1.ID}.png")"/>
         @if (Model.Pokemon.Type2 != null)
         {
-            @Html.Raw($"/ {Model.Pokemon.Type2!.Name_DE}")
+            <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type2.ID}.png")"/>
         }
 
         <h2>Fähigkeiten</h2>
@@ -100,13 +100,17 @@
 
 
 <div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
-    @foreach (var move in Model.Learnsets.Where(e => e.level != 0).OrderBy(e => e.level))
+    @foreach (var move in Model.Learnsets.Where(e => e.level != Int32.MaxValue).OrderBy(e => e.level))
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
-                <header class="w3-container w3-blue">
+                <header class="w3-container @move.move.type.ID">
+
                     <h3>
+
                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            <img src="/icons/type/normal/SYMBOL/@Html.Raw($"{move.move.type.ID}.png")" style="display: inline"/>
+
                             @Html.Raw(move.move.Name_DE)
                             @if (move.move.Name_DE.IsNullOrEmpty())
                             {
@@ -148,7 +152,7 @@
                 </div>
 
 
-                <div class="w3-container w3-light-blue">
+                <div class="w3-container @move.move.type.ID">
                     <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
@@ -165,9 +169,12 @@
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
-                <header class="w3-container w3-blue">
+                <header class="w3-container @move.move.type.ID">
+
                     <h3>
                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            <img src="/icons/type/normal/SYMBOL/@Html.Raw($"{move.move.type.ID}.png")" style="display: inline"/>
+
                             @Html.Raw(move.move.Name_DE)
                             @if (move.move.Name_DE.IsNullOrEmpty())
                             {
@@ -209,7 +216,7 @@
                 </div>
 
 
-                <div class="w3-container w3-light-blue">
+                <div class="w3-container @move.move.type.ID">
                     <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
@@ -225,9 +232,12 @@
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
-                <header class="w3-container w3-blue">
+                <header class="w3-container @move.move.type.ID">
+
                     <h3>
                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            <img src="/icons/type/normal/SYMBOL/@Html.Raw($"{move.move.type.ID}.png")" style="display: inline"/>
+
                             @Html.Raw(move.move.Name_DE)
                             @if (move.move.Name_DE.IsNullOrEmpty())
                             {
@@ -269,7 +279,7 @@
                 </div>
 
 
-                <div class="w3-container w3-light-blue">
+                <div class="w3-container @move.move.type.ID">
                     <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
@@ -285,9 +295,11 @@
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
-                <header class="w3-container w3-blue">
+                <header class="w3-container @move.move.type.ID">
                     <h3>
                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            <img src="/icons/type/normal/SYMBOL/@Html.Raw($"{move.move.type.ID}.png")" style="display: inline"/>
+
                             @Html.Raw(move.move.Name_DE)
                             @if (move.move.Name_DE.IsNullOrEmpty())
                             {
@@ -329,7 +341,7 @@
                 </div>
 
 
-                <div class="w3-container w3-light-blue">
+                <div class="w3-container @move.move.type.ID">
                     <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">
@@ -345,9 +357,12 @@
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">
-                <header class="w3-container w3-blue">
+                <header class="w3-container @move.move.type.ID">
+
                     <h3>
                         <a asp-page="/moves/Details" asp-route-id="@move.move.ID">
+                            <img src="/icons/type/normal/SYMBOL/@Html.Raw($"{move.move.type.ID}.png")" style="display: inline"/>
+
                             @Html.Raw(move.move.Name_DE)
                             @if (move.move.Name_DE.IsNullOrEmpty())
                             {
@@ -389,7 +404,7 @@
                 </div>
 
 
-                <div class="w3-container w3-light-blue">
+                <div class="w3-container @move.move.type.ID">
                     <h4>Effekt</h4>
                 </div>
                 <div class="w3-container">

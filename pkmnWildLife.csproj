@@ -120,12 +120,33 @@
         <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js"/>
         <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map"/>
         <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt"/>
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\bug.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\dark.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\dragon.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\electric.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\fairy.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\fighting.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\fire.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\flying.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\ghost.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\grass.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\ground.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\ice.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\normal.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\poison.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\psychic.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\rock.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\steel.svg" />
+        <_ContentIncludedByDefault Remove="wwwroot\icons\type\symbol only\water.svg" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Pages\abilities\"/>
+        <Folder Include="Pages\moveset\" />
         <Folder Include="Pages\moves\"/>
-        <Folder Include="Pages\partials\"/>
         <Folder Include="Pages\pokemon\"/>
         <Folder Include="Pages\traits\"/>
+        <Folder Include="wwwroot\icons\type\normal\SYMBOL\" />
+        <Folder Include="wwwroot\icons\type\tera\DE\" />
+        <Folder Include="wwwroot\icons\type\tera\SYMBOL\" />
     </ItemGroup>
 </Project>
