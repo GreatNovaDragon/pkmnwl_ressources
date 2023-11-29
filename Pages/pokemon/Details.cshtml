@@ -100,7 +100,7 @@
 
 
 <div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
-    @foreach (var move in Model.Learnsets.Where(e => e.level != Int32.MaxValue).OrderBy(e => e.level))
+    @foreach (var move in Model.Learnsets.Where(e => e.level != int.MaxValue).OrderBy(e => e.level))
     {
         <div class="w3-container w3-cell w3-mobile" style="flex:  1 1 33.333333%;">
             <div class="w3-card">

@@ -69,14 +69,12 @@
                 @if (item.Type2 != null)
                 {
                     @Html.Raw($"/{item.Type2.Name}")
-
                 }
                 @Html.Raw($"{item.Type1.Name_DE}")
-                                @if (item.Type2 != null)
-                                {
-                                    @Html.Raw($"/{item.Type2.Name_DE}")
-                
-                                }
+                @if (item.Type2 != null)
+                {
+                    @Html.Raw($"/{item.Type2.Name_DE}")
+                }
             </td>
         </tr>
     }
