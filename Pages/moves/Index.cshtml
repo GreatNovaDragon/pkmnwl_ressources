@@ -1,5 +1,4 @@
 @page
-@using Westwind.AspNetCore.Markdown
 @model IndexModel
 
 @{
@@ -18,11 +17,16 @@
         <th>
             Name
         </th>
-        <th>
-            DMG
-        </th>
+
         <th>
             Typ
+        </th>
+        <th style="display: none"> &nbsp;</th>
+        <th>
+            Kategorie
+        </th>
+        <th>
+            DMG
         </th>
         <th>
             Effekt
@@ -38,14 +42,28 @@
                 @Html.Raw(item.Name)
             </td>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw(item.Name_DE)</a>
+                <a asp-page="./Details" asp-route-id="@item.ID">
+                    @if (!item.Name_DE.IsNullOrEmpty())
+                    {
+                        @Html.Raw(item.Name_DE)
+                    }
+                    else
+                    {
+                        @item.Name
+                    }
+                </a>
             </td>
 
+
             <td>
-                @Html.DisplayFor(modelItem => item.DamageDice)
+                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.type.ID}.png")"/>
+            </td>
+            <td style="display: none">@item.type.Name / @item.type.Name_DE</td>
+            <td>
+                <img src="/icons/moveclass/bdsp/@Html.Raw($"{item.MoveClass.ID}.png")" style="display: inline"/> @item.MoveClass.Name_DE
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.type.Name_DE)
+                @Html.DisplayFor(modelItem => item.DamageDice)
             </td>
             <td>
                 @Html.Raw(Markdown.Parse(item.Effect))

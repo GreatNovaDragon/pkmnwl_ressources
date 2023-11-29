@@ -496,7 +496,8 @@ public class DBInitializer
             {
                 var query = from ls in lese where ls.mon.ID == po.Name && ls.move == move select ls;
                 if (query.Any()) continue;
-
+                var mon = context.Pokedex.FirstOrDefault(pman => pman.ID == po.Name);
+                if (mon == null) continue;
                 var set = new Learnset
                 {
                     ID = Guid.NewGuid().ToString(),
@@ -504,7 +505,7 @@ public class DBInitializer
                     how = "Unknown",
                     level = int.MaxValue,
                     source = "THE VOID",
-                    mon = context.Pokedex.FirstOrDefault(pman => pman.ID == po.Name)
+                    mon = mon
                 };
 
                 unknown_Adds.Add(set);

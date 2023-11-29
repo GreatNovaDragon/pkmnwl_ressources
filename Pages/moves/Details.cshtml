@@ -4,44 +4,139 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
-
 <div>
-    <h4>Move</h4>
-    <hr/>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Move.Name_DE)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Move.Name_DE)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Move.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Move.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Move.DamageDice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Move.DamageDice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Move.Target)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Move.Target)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Move.Effect)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Move.Effect)
-        </dd>
-    </dl>
+
+    <div class="w3-container w3-row-padding w3-margin-top">
+        <div class="w3-card">
+            <header class="w3-container @Model.Move.type.ID">
+                <h3>
+                    @Model.Move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Move.type.ID}.png")"class="w3-right"/>
+                </h3>
+
+            </header>
+
+            <div class="w3-row">
+                <div class="w3-half w3-container">
+                    <h4>Kategorie</h4>
+
+                    <img src="/icons/moveclass/bdsp/@Html.Raw($"{Model.Move.MoveClass.ID}.png")"/>
+                    @Html.Raw(Model.Move.MoveClass.Name_DE)
+                </div>
+                <div class="w3-half w3-container">
+                    <h4>DMG</h4>
+
+                    @if (Model.Move.DamageDice.IsNullOrEmpty())
+                    {
+                        <p> - </p>
+                    }
+                    else
+                    {
+                        <p>@Model.Move.DamageDice</p>
+                    }
+
+                </div>
+
+            </div>
+            <div class="w3-container">
+                @Html.Raw(Markdown.Parse(Model.Move.Effect))
+            </div>
+
+            <div class="w3-container">
+                <h3>Learned by</h3>
+
+
+                <table id="pokedex" class="w3-table-all">
+                    <thead>
+                    <tr>
+                        <th>
+                            Dex
+                        </th>
+                        <th>&nbsp;</th>
+                        <th style="display:none;"> Name en</th>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th style="width: 500px">
+                            Typen
+                        </th>
+                        <th style="display: none"> Typen</th>
+                        <th>Gelernt via</th>
+                        <th>Lernlevel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.LearnedBy)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.mon.Order)
+                            </td>
+                            <td>
+                                <img src="@item.mon.ImageLink" height="40px"/>
+
+                            </td>
+                            <td style="display:none;">@Html.DisplayFor(modelItem => item.mon.Name) </td>
+                            <td>
+                                <a asp-page="/pokemon/Details" asp-route-id="@item.mon.ID">
+                                    @Html.Raw($" {item.mon.Name_DE}")
+                                    @if (item.mon.Name_DE.IsNullOrEmpty())
+                                    {
+                                        @Html.DisplayFor(modelItem => item.mon.Name)
+                                    }
+                                    @if (!item.mon.Form.IsNullOrEmpty())
+                                    {
+                                        @Html.Raw($" ({item.mon.Form})")
+                                    }
+                                </a>
+                            </td>
+
+                            <td>
+                                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.mon.Type1.ID}.png")"/>
+                                @if (item.mon.Type2 != null)
+                                {
+                                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.mon.Type2.ID}.png")"/>
+                                }
+                            </td>
+
+                            <td style="display:none;">
+                                @Html.Raw($"{item.mon.Type1.Name}")
+                                @if (item.mon.Type2 != null)
+                                {
+                                    @Html.Raw($"/{item.mon.Type2.Name}")
+                                }
+                                @Html.Raw($"{item.mon.Type1.Name_DE}")
+                                @if (item.mon.Type2 != null)
+                                {
+                                    @Html.Raw($"/{item.mon.Type2.Name_DE}")
+                                }
+                            </td>
+                            <td>
+                                @item.how
+                            </td>
+                            <td>
+                                @if (item.level == int.MaxValue)
+                                {
+                                    @Html.Raw("-")
+                                }
+                                else
+                                {
+                                    @item.level
+                                }
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Move?.ID">Edit</a> |
