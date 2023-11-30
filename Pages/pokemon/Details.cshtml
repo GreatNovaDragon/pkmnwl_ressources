@@ -1,42 +1,53 @@
 @page
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "";
+    string? title = Model.Pokemon.Name_DE;
+
+    if (title == null)
+    {
+        title += Model.Pokemon.Name;
+    }
+
+    if (!Model.Pokemon.Form.IsNullOrEmpty())
+    {
+        title += $" ({Model.Pokemon.Form})";
+    }
+
+    ViewData["Title"] = title;
+
+    string headercolor;
+    if (Model.Pokemon.Type2 != null)
+    {
+        headercolor = $"linear-gradient(135deg, {Helpers.TypeToColor(Model.Pokemon.Type1)} 0%, {Helpers.TypeToColor(Model.Pokemon.Type2)} 100%); ";
+    }
+    else
+    {
+        headercolor = Helpers.TypeToColor(Model.Pokemon.Type1);
+    }
+
+    ViewData["Type1"] = Model.Pokemon.Type1.ID;
+    ViewData["Type2"] = Model.Pokemon.Type2?.ID;
+
+    ViewData["HeaderColor"] = headercolor;
 }
 
-<h1>
-    @if (Model.Pokemon.Name_DE.IsNullOrEmpty())
-    {
-        @Html.DisplayFor(modelItem => modelItem.Pokemon.Name)
-    }
-    @Html.DisplayFor(modelItem => modelItem.Pokemon.Name_DE)
-    @if (!Model.Pokemon.Form.IsNullOrEmpty())
-    {
-        @Html.Raw($"({Model.Pokemon.Form})")
-    }
-</h1>
 
 <div class="w3-cell-row">
     <div class="w3-container w3-third w3-cell">
-        <h3>Typen</h3>
-        <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type1.ID}.png")"/>
-        @if (Model.Pokemon.Type2 != null)
-        {
-            <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type2.ID}.png")"/>
-        }
-
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image"/>
+    </div>
+    <div class="w3-container w3-third w3-cell">
         <h2>Fähigkeiten</h2>
-
         @foreach (var a in Model.Pokemon.Abilities)
         {
             <h3>@Html.Raw($"{a.Name_DE}")</h3>
             @Html.Raw(Markdown.Parse(a.Effect))
         }
     </div>
-    <div class="w3-container w3-third w3-cell">
-        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image" style="width:100%"/>
-    </div>
+
     <div class="w3-container w3-third w3-cell">
         <canvas id="myChart"></canvas>
 
@@ -51,7 +62,6 @@
              data: {
                labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/50', 'Angriff @Html.Raw(Model.Pokemon.ATK)/25', 'Verteidigung @Html.Raw(Model.Pokemon.DEF)/25', 'Spezial-Angriff @Html.Raw(Model.Pokemon.SP_ATK)/25' , 'Spezial-Verteidigung @Html.Raw(Model.Pokemon.SP_DEF)/25', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/25'],
                datasets: [{
-                 label: '@Model.Pokemon.Name',
                  data: [@Html.Raw(Model.Pokemon.HEALTH / 2), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
                  borderWidth: 1,
                  backgroundColor: [
@@ -66,6 +76,7 @@
              },
              options: {
                  indexAxis: 'y', 
+                 plugins: { legend: {display: false}},
                scales: {
                  x: {
                    min: 0,
@@ -84,7 +95,7 @@
 </div>
 
 
-<h2>Learnable Moves</h2>
+<h2>Erlernbare Angriffe</h2>
 
 
 <div class="w3-row-padding">

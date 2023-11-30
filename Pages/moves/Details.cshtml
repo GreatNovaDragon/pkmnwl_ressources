@@ -2,19 +2,14 @@
 @model DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Move.Name_DE ?? Model.Move.Name;
+    ViewData["HeaderColor"] = Helpers.TypeToColor(Model.Move.type);
+    ViewData["Type1"] = Model.Move.type.ID;
 }
 <div>
 
     <div class="w3-container w3-row-padding w3-margin-top">
         <div class="w3-card">
-            <header class="w3-container @Model.Move.type.ID">
-                <h3>
-                    @Model.Move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Move.type.ID}.png")"class="w3-right"/>
-                </h3>
-
-            </header>
-
             <div class="w3-row">
                 <div class="w3-half w3-container">
                     <h4>Kategorie</h4>

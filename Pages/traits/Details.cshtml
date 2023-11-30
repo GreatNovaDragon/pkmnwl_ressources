@@ -2,7 +2,8 @@
 @model DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Ability.Name_DE ?? Model.Ability.Name;
+    ViewData["HeaderColor"] = "#f00";
 }
 
 <h1>Details</h1>

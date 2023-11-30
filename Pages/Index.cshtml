@@ -1,135 +1,15 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Homepage";
+    ViewData["HeaderColor"] = "#f00";
+
 }
-<h1 id="charakter-erstellung">
-    <span
-        id="anchor">
-    </span>Charakter-Erstellung
-</h1>
-<p>
-    <a href="PokemonSwShCharSheetsGer.pdf" download> Lade den Charaktersheet mit einen Klick hier runter</a>
-</p>
-<p>
-    Um einen Charakter in diesem Rollenspielsystem zu erstellen, folgen
-    Sie diesen Schritten:
-</p>
-<ol type="1">
-    <li>
-        Wähle ein Pokémon und kopiere seine Lebenspunkte, seinen Angriff,
-        seinen Spezialangriff, seine Verteidigung, seine Spezialverteidigung,
-        und seine Geschwindigkeit.
-    </li>
-    <li>
-        Zusätzlich erhältst du ein Bonusfeld, das du nach Belieben auf deine
-        Angriffs- und Verteidigungswerte anwenden kannst:
-    </li>
-</ol>
-<ul>
-    <li>
-        <ul>
-            <li><strong>Generalist</strong>: +1, +1, +0, +0</li>
-            <li><strong>Spezialist</strong>: +2, +0, +0, +0</li>
-            <li><strong>Experte</strong>: +3, +0, +0, -1</li>
-            <li><strong>Schwachstelle</strong>: +1, +1, +1, -1</li>
-            <li><strong>Schieflage</strong>: +2, +1, -0, -1</li>
-            <li>
-                <strong>Benutzerdefiniert</strong>: Wenden Sie die Boni nach
-                Belieben an und achten Sie darauf, dass die Gesamtsumme 2 beträgt, aber
-                kein Bonus tatsächlich höher als 3 ist.
-            </li>
-        </ul>
-    </li>
-</ul>
-<ol type="1">
-    <li>
-        Berechne ihre anfänglichen Lebenspunkte, indem du ihren
-        Lebenspunktestand zu 20 addierst.
-    </li>
-    <li>
-        Wähle die Start-Fähigkeit des Pokémon und die Attacken und trage sie
-        ein
-    </li>
-    <li>
-        Weisen Sie Ihrem Charakter einen Grad von 1 und einen Grit von 2
-        zu.
-    </li>
-    <li>Wählen Sie einen Hintergrund</li>
-</ol>
-<ul>
-    <li>
-        <strong>Abenteurer</strong>: Du dringst ohne Furcht in Verliese ein
-        und hilfst anderen dabei. Nimm den Trait Item-Fänger. Beginne mit 15 S,
-        einem Wochenvorrat, einer Oranbeere, einem Betäubungssamen und einer
-        Kugelfallkugel. Auf Stufe 10 kannst du zum <em>Söldner</em>,
-        <em>Retter</em> oder <em>Volkshelden</em> aufsteigen.
-    </li>
-    <li>
-        <strong>Entdecker</strong>: Du eroberst die ungezähmte Wildnis und
-        erkundest wunderbare Orte. Nimm die Eigenschaft Anker. Beginne mit 10 S,
-        Rationen für zwei Wochen, drei Oranbeeren und drei Fluchtkugeln. Auf
-        Stufe 10 kannst du zum <em>Retter</em>, <em>Detektiv </em>oder
-        <em>Dungeonist</em> aufsteigen.
-    </li>
-    <li>
-        <strong>Forscherin</strong>: Die Zeit kann keine Geheimnisse vor
-        Ihnen und Ihrem Wissensdurst verbergen. Nimm die Eigenschaft
-        <em>Auswerter </em>an. Beginne mit 10 S, einem Wochenvorrat, zwei
-        Oranbeeren, zwei Heilungssamen und einer Scannerkugel und steige auf
-        Stufe 10 zum <em>Detektiv</em>, <em>Mythosgebundenen</em> oder
-        <em>Archäologen</em> auf.
-    </li>
-    <li>
-        <strong>Wunderkind</strong>: Du bist mit einzigartigen und
-        großartigen Talenten begabt worden. Nimm die Eigenschaft
-        <em>Typen-Meister</em>. Beginne mit 5 S, einer Wochenration, einer
-        Oranbeere, einem Betäubungssamen und einem Wiederbelebungssamen.
-        Steigere auf Stufe 10 zum <em>Mythosgebundenen</em>, <em>Dieb </em>oder
-        <em>Performer</em> auf.
-    </li>
-    <li>
-        <strong>Geächteter</strong>: Du fliehst vor deiner Vergangenheit, um
-        dich ihr eines Tages ganz zu stellen. Nimm die Eigenschaft
-        <em>Schauspieler</em>. Beginne mit 5 S, Rationen für drei Tage, zwei
-        Oranbeeren, einem Blinkersamen, einer Schleppnetzkugel und einer
-        Fluchtkugel. Auf Stufe 10 kannst du zu <em>Dieb</em>, <em>Söldner</em>
-        oder <em>Schattenklinge</em> aufsteigen.
-    </li>
-</ul>
-<ol start="7" type="1">
-    <li>Wählen Sie ein Trait der Stufe 1</li>
-</ol>
-<p>
-    <strong>Charakter-Fähigkeiten</strong>
-</p>
-<p>
-    Fertigkeiten stellen eine Zahl von 100 dar. Um sie zu berechnen,
-    würfelst du (3d6) x 5 und ordnest das Ergebnis einer Fertigkeit deiner
-    Wahl zu. Du darfst dies sechsmal tun und die restlichen Fertigkeiten mit
-    einer glatten “15” ausfüllen; dies ist deine Basis-Erfolgschance. Wenn
-    du eine Aktion ausführst, kann es sein, dass du aufgefordert wirst,
-    einen Fertigkeitswurf zu machen. Würfle mit deinen Perzentilwürfeln -
-    deinen d10 und d100 - und versuche, unter deine Fertigkeitszahl zu
-    kommen. Hier sind die Fertigkeiten:
-</p>
-<ul>
-    <li>Athletik</li>
-    <li>Ausdauerkraft</li>
-    <li>Fingerfertigkeit</li>
-    <li>Medizin</li>
-    <li>Wahrnehmung</li>
-    <li>Auftreten</li>
-    <li>Überzeugen</li>
-    <li>Heimlichkeit</li>
-    <li>Überleben</li>
-    <li>Spezial-wissen</li>
-    <li>Handwerk</li>
-</ul>
-<p>
-    Für Handwerk und Spezialwissen müssen Sie Ihr Spezialgebiet
-    angeben.
-</p>
+
+<a asp-area="" asp-page="/rules/charactercreation">
+    Infos zur Charakter-Erstellung
+</a>
+
 <h3 id="charakter-förderung">
     <span
         id="anchor-1">

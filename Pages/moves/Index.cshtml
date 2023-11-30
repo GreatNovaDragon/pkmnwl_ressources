@@ -2,7 +2,8 @@
 @model IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Angriffsdex";
+    ViewData["HeaderColor"] = "#f00";
 }
 
 <h1>Index</h1>
@@ -34,7 +35,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Move.Where(m => m.type.Name != "Shadow"))
+    @foreach (var item in Model.Move)
     {
         <tr>
             <td style="display:none;">

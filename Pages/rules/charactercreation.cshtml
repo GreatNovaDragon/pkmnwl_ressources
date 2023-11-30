@@ -1,9 +1,13 @@
 ﻿@page
 
+@{
+    ViewData["Title"] = "Charakter-Erstellung";
+    ViewData["HeaderColor"] = "#f00";
+
+}
 <div>
-    <h1>Charakter-Erstellung</h1>
     <p>
-        <a href="PokemonSwShCharSheetsGer.pdf" download> Lade den Charaktersheet mit einen Klick hier runter</a>
+        <a href="/PokemonSwShCharSheetsGer.pdf" download> Lade den Charaktersheet mit einen Klick hier runter</a>
     </p>
 
     <p>
@@ -12,11 +16,11 @@
     <div class="w3-container">
         <h2> Species und Level</h2>
         <p>
-            Zuerst, wähle ein Pokemon. Nimm ein Quiz, wähle deinen Favoriten, oder Fragen den Gildenleiter. <br/>
+            Zuerst, wähle ein Pokemon. Nimm ein Quiz, wähle deinen Favoriten, oder Frage den Gildenleiter. <br/>
             Schreib dir die Typen und die Fähigkeiten auf deinen Charakterbogen - für die Fähigkeit wähle eine der Fähigkeiten die dein Pokemon regulär hätte.
             <br/>
-            Die meisten Abenteuer starten auf Level 1, jedoch kann der Gildenmeister auch das Abenteuer auf einem Höheren Beginnen. Damit beginnst du mit einigen Levelaufstiegspunkten, und auch zugriff auf weiteren Angriffen und Traits.
-            Wieviele Levelaufstiegspunkte du erhältst und wie du diese Ausgibts, erfährst du in <a asp-area="" asp-page="./levelup">Charakteraufstieg</a>.
+            Die meisten Abenteuer starten auf Level 1, jedoch kann der Gildenmeister auch das Abenteuer auf einem höheren Level beginnen. Damit beginnst du mit einigen Levelaufstiegspunkten, und auch mit Zugriff auf weiteren Angriffen und Traits.
+            <br/> Wieviele Levelaufstiegspunkte du erhältst und wie du diese Ausgibts, erfährst du in <a asp-area="" asp-page="./levelup">Charakteraufstieg</a>.
         </p>
     </div>
     <div class="w3-container">
@@ -25,13 +29,9 @@
             Auf deinem Charakterbogen sind diverse Charakterwerte. Diese sind von den Grundwerten abgeleitet.<br/>
             Kopiere zunächst die Grundwerte deines Pokemon. Die maximalen Kraftpunkte (KP) auf Level 1 sind deine Gesundheit + 20.
         </p>
-        <p>Zusätzlich auf deine (Spezial-)Angriffs- und (Spezial-)Verteidungswerte erhaltet ihr ein Bonusarray, dessen Werte ihr auf diese addieren könnt.</p>
+        <p>Zusätzlich auf deine (Spezial-)Angriffs- und (Spezial-)Verteidungswerte erhaltets du ein Bonusarray, dessen Werte ihr auf diese addieren könnt.</p>
         <p>
-            Wählt eins aus diesen Bonusarrays:
-
-
-
-        </p>
+        Wähle eines dieser Bonusarrays
         <ul>
             <li><strong>Generalist</strong>: +1, +1, +0, +0</li>
             <li><strong>Spezialist</strong>: +2, +0, +0, +0</li>
@@ -63,7 +63,7 @@
             <li>Handwerk</li>
         </ul>
         <p>
-            Für Handwerk und Spezialwissen müssen Sie Ihr Spezialgebiet angeben. Zum Beispiel Kochen oder Weben für das Handwerk, oder Geologie oder Geschichter für Spezialwissen.
+            Für Handwerk und Spezialwissen müssen das Gebiet angeben werden. Zum Beispiel Kochen oder Weben für das Handwerk, oder Geologie oder Geschichter für Spezialwissen.
         </p>
     </div>
     <div class="w3-container">
@@ -71,14 +71,17 @@
             Angriffe
         </h2>
         <p>
-            Im aktiven Kampfgeschehen hast du 1 bis 4 Angriffe zur Auswahl. Starte mit bis zu 4 Angriffen die bei deinem Level verfügbar sind. Zusätzlich kannst du ein Ei-Angriff auswählen. Wenn deine Attackenauswahl sehr eingeschränkt scheint, kann der Gildenmeister dir eine TM- oder einen Tutor-Angriff erlauben.
+            Im aktiven Kampfgeschehen hast du 1 bis 4 Angriffe zur Auswahl. Starte mit bis zu 4 Angriffen die bei deinem Level verfügbar sind. Zusätzlich kannst du einen Ei-Angriff auswählen. Wenn deine Attackenauswahl sehr eingeschränkt scheint, kann der Gildenmeister dir eine TM- oder einen Tutor-Angriff erlauben.
         </p>
     </div>
     <div class="w3-container">
-        <h2>Grade und Trait</h2>
+        <h2>Grade und Traits</h2>
         <p>
-            Grade zeichnen ein Pokemon aus wie Erfahren es ist. je höher dein Grad, desto höhere Traits kannst du auswählen, und spezifische Zustände wie Vergiftung verursachen mehr Schaden. Auf Level 5, 10, 15 und 20, oder wenn du es dir erkaufsts, erhöht sich dein Grad um 1.
-            Nimm einen Trait ersten Grades, und den kostenlosen Grades deines Hintergrundes. Zu Hintergrunden kommen wir später. Traits werden als Zusätzliche Fähigkeiten eingetragen. Du kannst dir nur Traits nehmen die deinem Grad oder niedriger entsprechen.
+            Neben Leveln, zeichnen auch Grade aus wie Kampferfahren ein Pokemon ist. je höher dein Grad, desto höhere Traits kannst du auswählen, und Statusveränderungen wie Vergiftung verursachen mehr Schaden. <br/>
+            Auf Level 5, 10, 15 und 20, erhöht sich dein Grad um 1. Es besteht auch die Möglichkeit sich Gradaufstiege mit Levelaufstiegspunkten zu erkaufen.
+            <br/><br/>
+            
+            Nimm einen Trait ersten Grades, und den kostenlosen Trait deines Hintergrundes. Traits werden als Zusätzliche Fähigkeiten eingetragen. Du kannst dir nur Traits nehmen die deinem Grad oder niedriger entsprechen.
 
             Die Traits sind in <a asp-area="" asp-page="/traits/Index">Traits</a> aufgelistet.
         </p>

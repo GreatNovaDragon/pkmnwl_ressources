@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Azure
+@using Microsoft.AspNetCore.Components.Web
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -20,27 +24,60 @@
 
 </head>
 <body>
-<header>
-    <div class="w3-bar w3-black">
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
 
-        <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/Index">Home</a>
-        <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/pokemon/Index">Pokédex</a>
-        <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/moves/Index">AngriffsDex</a>
-        <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/abilities/Index">FähigkeitenDex</a>
-        <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/traits/Index">Traits</a>
+    <button class="w3-bar-item w3-button w3-large"
+            onclick="w3_toggle()">
+        Close &times;
+    </button>
+
+
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/Index">Hauptregeln</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/rules/charactercreation">Character-Erstellung</a>
+
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/pokemon/Index">Pokédex</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/moves/Index">AngriffsDex</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/abilities/Index">FähigkeitenDex</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/traits/Index">Traits</a>
+</div>
+
+<div id="main">
+
+    <div style="color: #fff; background: @ViewData["HeaderColor"] ">
+        <div class="w3-container">
+            <h1>
+                <button id="openNav" onclick="w3_toggle()" style="background: inherit; border: none">&#9776;</button> @ViewData["Title"]
+                @if (ViewData["Type2"] != null)
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{ViewData["Type2"]}.png")" class="w3-right"/>
+                }
+                @if (ViewData["Type1"] != null)
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{ViewData["Type1"]}.png")" class="w3-right"/>
+                }
+
+            </h1>
+        </div>
     </div>
-</header>
-<div class="w3-container">
-    <main role="main" class="pb-3">
+
+    <main class="w3-container" role="main">
         @RenderBody()
     </main>
 </div>
 
-<footer class="w3-container w3-teal">
-    <div class="container">
-        &copy; 2023 - pkmnWildLife - <a asp-area="" asp-page="/Privacy">Privacy</a>
-    </div>
-</footer>
+
+<script>
+function w3_toggle() {
+    if (document.getElementById("mySidebar").style.display === 'block'){
+        document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+    }else{  document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+
+}
+}
+</script>
 @await RenderSectionAsync("Scripts", false)
 </body>
 </html>

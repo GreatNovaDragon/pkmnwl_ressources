@@ -384,7 +384,6 @@
     <ItemGroup>
         <Folder Include="Pages\abilities\"/>
         <Folder Include="Pages\moves\"/>
-        <Folder Include="Pages\pokemon\"/>
         <Folder Include="Pages\traits\"/>
         <Folder Include="wwwroot\icons\type\normal\SYMBOL\"/>
         <Folder Include="wwwroot\icons\type\tera\DE\"/>
