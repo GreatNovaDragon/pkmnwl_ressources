@@ -1,9 +1,9 @@
 ﻿#region
 
-using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using System.Globalization;
 
 #endregion
 
@@ -11,7 +11,7 @@ namespace pkmnWildLife;
 
 public class Helpers
 {
-    public static tr[] csv2trait(string whereItIs)
+    public static IEnumerable<tr> Csv2Trait(string whereItIs)
     {
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
@@ -21,7 +21,6 @@ public class Helpers
         using var csv = new CsvReader(reader, config);
         return csv.GetRecords<tr>().ToArray();
     }
-
 
     public class tr
     {

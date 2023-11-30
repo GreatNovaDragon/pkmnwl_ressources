@@ -8,19 +8,12 @@ using pkmnWildLife.Data;
 
 namespace pkmnWildLife.Pages.abilities;
 
-public class IndexModel : PageModel
+public class IndexModel(ApplicationDbContext context) : PageModel
 {
-    private readonly ApplicationDbContext _context;
-
-    public IndexModel(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-
     public IList<Ability> Ability { get; set; } = default!;
 
     public async Task OnGetAsync()
     {
-        if (_context.AbilityDex != null) Ability = await _context.AbilityDex.Where(a => !a.IsTrait).ToListAsync();
+        if (context.AbilityDex != null) Ability = await context.AbilityDex.Where(a => !a.IsTrait).ToListAsync();
     }
 }

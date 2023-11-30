@@ -1,8 +1,8 @@
 #region
 
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #endregion
 
@@ -117,8 +117,6 @@ public class Learnset
     public string how { get; set; }
 
     public int level { get; set; }
-
-    public string? source { get; set; }
 }
 
 public class Character

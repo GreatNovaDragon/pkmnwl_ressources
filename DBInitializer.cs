@@ -28,7 +28,6 @@ public class DBInitializer
         await TransferLearnsets(context, apiclient);
     }
 
-
     private static async Task TransferTypes(ApplicationDbContext context, PokeApiClient apiclient)
     {
         if (context.Types.Any())
@@ -87,7 +86,6 @@ public class DBInitializer
             Console.WriteLine("There already are Items");
             return;
         }
-
 
         var itms = new List<Data.Item>();
         await foreach (var i in apiclient.GetAllNamedResourcesAsync<Item>())
@@ -154,9 +152,7 @@ public class DBInitializer
                     ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                     : "No Entry";
 
-
             // var moves_old = Helpers.csv2ab("abilities_old.csv");
-
 
             /* if (moves_old.Where(mn => mn.ability == Name).Any())
              {
@@ -189,7 +185,7 @@ public class DBInitializer
             return;
         }
 
-        var traits = Helpers.csv2trait("traits.csv");
+        var traits = Helpers.Csv2Trait("traits.csv");
         var trs = new List<Data.Ability>();
         foreach (var tr in traits)
             trs.Add(new Data.Ability
@@ -267,7 +263,6 @@ public class DBInitializer
             Console.WriteLine($"Move {it}");
         }
 
-
         context.AddRange(mvs);
         await context.SaveChangesAsync();
     }
@@ -288,7 +283,6 @@ public class DBInitializer
         {
             var poke = await apiclient.GetResourceAsync(p);
             var species = apiclient.GetResourceAsync(poke.Species).Result;
-
 
             var ID = poke.Name;
             var Order = species.Order;
@@ -315,7 +309,6 @@ public class DBInitializer
             if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") &
                 !form.IsNullOrEmpty()) continue;
 
-
             if ((Name == "Minior") & form.Contains("Blue"))
                 form = form.Replace("Blue", "");
             else if ((Name == "Minior") & !form.Contains("Blue")) continue;
@@ -323,7 +316,6 @@ public class DBInitializer
             if (Name_DE == Name) Name_DE = null;
 
             var Abilities = new List<Data.Ability>();
-
 
             foreach (var a in poke.Abilities)
             {
@@ -333,14 +325,12 @@ public class DBInitializer
                 Abilities.Add(ab);
             }
 
-
             var Type1 = types.FirstOrDefault(w =>
                 w.ID == poke.Types[0].Type.Name);
             var Type2 = poke.Types.Count == 2
                 ? types.FirstOrDefault(w =>
                     w.ID == poke.Types[1].Type.Name)
                 : null;
-
 
             var HEALTH = StatToInt(poke.Stats[0].BaseStat, 2);
             var ATK = StatToInt(poke.Stats[1].BaseStat);
@@ -373,7 +363,6 @@ public class DBInitializer
             Console.WriteLine(
                 $"pokemon {i}");
         }
-
 
         context.AddRange(pokes);
 
@@ -463,7 +452,6 @@ public class DBInitializer
                         move = move,
                         how = how,
                         level = level,
-                        source = basedon,
                         mon = poke
                     };
 
@@ -481,7 +469,6 @@ public class DBInitializer
             context.AddRange(learnset);
             p++;
             Console.WriteLine($"P ({p}/{pokemon.Length})");
-
 
             await context.SaveChangesAsync();
         }
@@ -504,7 +491,6 @@ public class DBInitializer
                     move = move,
                     how = "Unknown",
                     level = int.MaxValue,
-                    source = "THE VOID",
                     mon = mon
                 };
 
@@ -524,7 +510,6 @@ public class DBInitializer
         return Convert.ToInt32(calc * ((double)18 / 200));
     }
 
-
     public static string? StrengthToDice(int? strength, double? nerf = null)
     {
         if (!strength.HasValue) return null;
@@ -537,50 +522,73 @@ public class DBInitializer
         {
             case <= 3:
                 return "1d4";
+
             case 4:
                 return "1d6";
+
             case 5:
                 return "1d8";
+
             case 6:
                 return "1d10";
+
             case 7:
                 return "2d6";
+
             case 8:
                 return "3d4";
+
             case 9:
                 return "2d8";
+
             case 10:
                 return "4d4";
+
             case 11:
                 return "2d10";
+
             case 12:
                 return "2d10";
+
             case 13:
                 return "2d12";
+
             case 14:
                 return "4d6";
+
             case 15:
                 return "4d6";
+
             case 16:
                 return "4d6";
+
             case 17:
                 return "4d6";
+
             case 18:
                 return "4d8";
+
             case 19:
                 return "4d8";
+
             case 20:
                 return "4d8";
+
             case 21:
                 return "2d20";
+
             case 22:
                 return "4d10";
+
             case 23:
                 return "4d10";
+
             case 24:
                 return "4d10";
+
             case 25:
                 return "4d10";
+
             default:
                 return "1d2";
         }

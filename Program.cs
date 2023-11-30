@@ -14,10 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-var configuration = builder.Configuration;
-
 builder.Services.AddRazorPages();
-
 
 var app = builder.Build();
 
@@ -40,7 +37,6 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
     await DBInitializer.InitializeDB(context);
 }
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

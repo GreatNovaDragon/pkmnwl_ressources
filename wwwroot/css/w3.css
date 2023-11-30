@@ -7,7 +7,6 @@ html {
     box-sizing: inherit
 }
 
-
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html {
     -ms-text-size-adjust: 100%;
@@ -47,9 +46,9 @@ a {
     background-color: transparent
 }
 
-a:active, a:hover {
-    outline-width: 0
-}
+    a:active, a:hover {
+        outline-width: 0
+    }
 
 abbr[title] {
     border-bottom: none;
@@ -129,14 +128,14 @@ button, [type=button], [type=reset], [type=submit] {
     -webkit-appearance: button
 }
 
-button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
-    border-style: none;
-    padding: 0
-}
+    button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+        border-style: none;
+        padding: 0
+    }
 
-button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
-    outline: 1px dotted ButtonText
-}
+    button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+        outline: 1px dotted ButtonText
+    }
 
 fieldset {
     border: 1px solid #c0c0c0;
@@ -169,9 +168,9 @@ textarea {
     outline-offset: -2px
 }
 
-[type=search]::-webkit-search-decoration {
-    -webkit-appearance: none
-}
+    [type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
 
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
@@ -269,9 +268,9 @@ a {
     border: 1px solid #ccc
 }
 
-.w3-bordered tr, .w3-table-all tr {
-    border-bottom: 1px solid #ddd
-}
+    .w3-bordered tr, .w3-table-all tr {
+        border-bottom: 1px solid #ddd
+    }
 
 .w3-striped tbody tr:nth-child(even) {
     background-color: #f1f1f1
@@ -300,9 +299,9 @@ a {
     vertical-align: top
 }
 
-.w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
-    padding-left: 16px
-}
+    .w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
+        padding-left: 16px
+    }
 
 .w3-btn, .w3-button {
     border: none;
@@ -318,9 +317,9 @@ a {
     white-space: nowrap
 }
 
-.w3-btn:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
+    .w3-btn:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
 
 .w3-btn, .w3-button {
     -webkit-touch-callout: none;
@@ -331,18 +330,18 @@ a {
     user-select: none
 }
 
-.w3-disabled, .w3-btn:disabled, .w3-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.3
-}
+    .w3-disabled, .w3-btn:disabled, .w3-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.3
+    }
 
-.w3-disabled *, :disabled * {
-    pointer-events: none
-}
+        .w3-disabled *, :disabled * {
+            pointer-events: none
+        }
 
-.w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
-    box-shadow: none
-}
+        .w3-btn.w3-disabled:hover, .w3-btn:disabled:hover {
+            box-shadow: none
+        }
 
 .w3-badge, .w3-tag {
     background-color: #000;
@@ -363,26 +362,26 @@ a {
     margin: 0
 }
 
-.w3-ul li {
-    padding: 8px 16px;
-    border-bottom: 1px solid #ddd
-}
+    .w3-ul li {
+        padding: 8px 16px;
+        border-bottom: 1px solid #ddd
+    }
 
-.w3-ul li:last-child {
-    border-bottom: none
-}
+        .w3-ul li:last-child {
+            border-bottom: none
+        }
 
 .w3-tooltip, .w3-display-container {
     position: relative
 }
 
-.w3-tooltip .w3-text {
-    display: none
-}
+    .w3-tooltip .w3-text {
+        display: none
+    }
 
-.w3-tooltip:hover .w3-text {
-    display: inline-block
-}
+    .w3-tooltip:hover .w3-text {
+        display: inline-block
+    }
 
 .w3-ripple:active {
     opacity: 0.5
@@ -413,19 +412,19 @@ a {
     cursor: pointer
 }
 
-.w3-dropdown-hover:hover .w3-dropdown-content {
-    display: block
-}
+    .w3-dropdown-hover:hover .w3-dropdown-content {
+        display: block
+    }
 
-.w3-dropdown-hover:first-child, .w3-dropdown-click:hover {
-    background-color: #ccc;
-    color: #000
-}
+    .w3-dropdown-hover:first-child, .w3-dropdown-click:hover {
+        background-color: #ccc;
+        color: #000
+    }
 
-.w3-dropdown-hover:hover > .w3-button:first-child, .w3-dropdown-click:hover > .w3-button:first-child {
-    background-color: #ccc;
-    color: #000
-}
+        .w3-dropdown-hover:hover > .w3-button:first-child, .w3-dropdown-click:hover > .w3-button:first-child {
+            background-color: #ccc;
+            color: #000
+        }
 
 .w3-dropdown-content {
     cursor: auto;
@@ -459,15 +458,15 @@ a {
     width: 100%
 }
 
-.w3-bar-block .w3-dropdown-hover .w3-dropdown-content, .w3-bar-block .w3-dropdown-click .w3-dropdown-content {
-    min-width: 100%
-}
+    .w3-bar-block .w3-dropdown-hover .w3-dropdown-content, .w3-bar-block .w3-dropdown-click .w3-dropdown-content {
+        min-width: 100%
+    }
 
-.w3-bar-block .w3-dropdown-hover .w3-button, .w3-bar-block .w3-dropdown-click .w3-button {
-    width: 100%;
-    text-align: left;
-    padding: 8px 16px
-}
+    .w3-bar-block .w3-dropdown-hover .w3-button, .w3-bar-block .w3-dropdown-click .w3-button {
+        width: 100%;
+        text-align: left;
+        padding: 8px 16px
+    }
 
 .w3-main, #main {
     transition: margin-left .4s
@@ -561,53 +560,53 @@ a {
     width: 100%
 }
 
-.w3-col.s1 {
-    width: 8.33333%
-}
+    .w3-col.s1 {
+        width: 8.33333%
+    }
 
-.w3-col.s2 {
-    width: 16.66666%
-}
+    .w3-col.s2 {
+        width: 16.66666%
+    }
 
-.w3-col.s3 {
-    width: 24.99999%
-}
+    .w3-col.s3 {
+        width: 24.99999%
+    }
 
-.w3-col.s4 {
-    width: 33.33333%
-}
+    .w3-col.s4 {
+        width: 33.33333%
+    }
 
-.w3-col.s5 {
-    width: 41.66666%
-}
+    .w3-col.s5 {
+        width: 41.66666%
+    }
 
-.w3-col.s6 {
-    width: 49.99999%
-}
+    .w3-col.s6 {
+        width: 49.99999%
+    }
 
-.w3-col.s7 {
-    width: 58.33333%
-}
+    .w3-col.s7 {
+        width: 58.33333%
+    }
 
-.w3-col.s8 {
-    width: 66.66666%
-}
+    .w3-col.s8 {
+        width: 66.66666%
+    }
 
-.w3-col.s9 {
-    width: 74.99999%
-}
+    .w3-col.s9 {
+        width: 74.99999%
+    }
 
-.w3-col.s10 {
-    width: 83.33333%
-}
+    .w3-col.s10 {
+        width: 83.33333%
+    }
 
-.w3-col.s11 {
-    width: 91.66666%
-}
+    .w3-col.s11 {
+        width: 91.66666%
+    }
 
-.w3-col.s12 {
-    width: 99.99999%
-}
+    .w3-col.s12 {
+        width: 99.99999%
+    }
 
 @media (min-width: 601px) {
     .w3-col.m1 {
@@ -797,9 +796,9 @@ a {
         text-align: center
     }
 
-    .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
-        width: 100%
-    }
+        .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
+            width: 100%
+        }
 }
 
 @media (max-width: 768px) {
@@ -1028,6 +1027,7 @@ a {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(359deg)
     }
@@ -1041,9 +1041,11 @@ a {
     0% {
         opacity: 0
     }
+
     50% {
         opacity: 1
     }
+
     100% {
         opacity: 0
     }
@@ -1057,6 +1059,7 @@ a {
     from {
         opacity: 0
     }
+
     to {
         opacity: 1
     }
@@ -1072,6 +1075,7 @@ a {
         top: -300px;
         opacity: 0
     }
+
     to {
         top: 0;
         opacity: 1
@@ -1088,6 +1092,7 @@ a {
         left: -300px;
         opacity: 0
     }
+
     to {
         left: 0;
         opacity: 1
@@ -1104,6 +1109,7 @@ a {
         right: -300px;
         opacity: 0
     }
+
     to {
         right: 0;
         opacity: 1
@@ -1120,6 +1126,7 @@ a {
         bottom: -300px;
         opacity: 0
     }
+
     to {
         bottom: 0;
         opacity: 1
@@ -1134,6 +1141,7 @@ a {
     from {
         transform: scale(0)
     }
+
     to {
         transform: scale(1)
     }
@@ -1143,9 +1151,9 @@ a {
     transition: width 0.4s ease-in-out
 }
 
-.w3-animate-input:focus {
-    width: 100% !important
-}
+    .w3-animate-input:focus {
+        width: 100% !important
+    }
 
 .w3-opacity, .w3-hover-opacity:hover {
     opacity: 0.60
