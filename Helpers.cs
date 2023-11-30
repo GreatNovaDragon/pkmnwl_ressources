@@ -1,9 +1,10 @@
 ﻿#region
 
+using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
-using System.Globalization;
+using Type = pkmnWildLife.Data.Type;
 
 #endregion
 
@@ -22,14 +23,7 @@ public class Helpers
         return csv.GetRecords<tr>().ToArray();
     }
 
-    public class tr
-    {
-        [Index(0)] public string Name { get; set; }
-        [Index(1)] public string effect { get; set; }
-        [Index(2)] public string Requirement { get; set; }
-    }
-
-    public static string TypeToColor(Data.Type type)
+    public static string TypeToColor(Type type)
     {
         return type.ID switch
         {
@@ -53,5 +47,12 @@ public class Helpers
             "water" => "#297fed",
             _ => "#000000"
         };
+    }
+
+    public class tr
+    {
+        [Index(0)] public string Name { get; set; }
+        [Index(1)] public string effect { get; set; }
+        [Index(2)] public string Requirement { get; set; }
     }
 }

@@ -50,6 +50,55 @@ public class DBInitializer
 
         context.AddRange(tps);
         await context.SaveChangesAsync();
+
+
+        var relations = new List<DamageRelations>();
+        foreach (var t in context.Types)
+        {
+            var Type = await apiclient.GetResourceAsync<Type>(t.ID);
+
+            var doublefrom = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.DoubleDamageFrom)
+                doublefrom.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var doubleto = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.DoubleDamageTo)
+                doubleto.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var halfto = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.HalfDamageTo)
+                halfto.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var halffrom = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.HalfDamageFrom)
+                halffrom.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var noto = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.NoDamageTo)
+                noto.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var nofrom = new List<Data.Type>();
+            foreach (var df in Type.DamageRelations.NoDamageFrom)
+                nofrom.Add(context.Types.FirstOrDefault(d => d.ID == df.Name));
+
+            var dr = new DamageRelations();
+
+            relations.Add(new DamageRelations
+            {
+                ID = $"relations_{t.ID}",
+                Type = t,
+
+                doubleDamageFrom = doublefrom,
+                doubleDamageTo = doubleto,
+                halfDamageFrom = halffrom,
+                halfDamageTo = halfto,
+                noDamageFrom = nofrom,
+                noDamageTo = noto
+            });
+        }
+
+        context.AddRange(relations);
+        await context.SaveChangesAsync();
     }
 
     private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
@@ -324,6 +373,7 @@ public class DBInitializer
 
                 Abilities.Add(ab);
             }
+
 
             var Type1 = types.FirstOrDefault(w =>
                 w.ID == poke.Types[0].Type.Name);

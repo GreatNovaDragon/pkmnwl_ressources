@@ -1,17 +1,203 @@
-﻿@{
+﻿@page
+
+@{
     ViewData["Title"] = "Charakteraufstieg";
     ViewData["HeaderColor"] = "#f00";
-
 }
-<!DOCTYPE html>
+<h3 id="charakter-förderung">
+    <span
+        id="anchor-1">
+    </span>Charakter-Förderung
+</h3>
+<table>
+    <colgroup>
+        <col style="width: 6%"/>
+        <col style="width: 16%"/>
+        <col style="width: 24%"/>
+        <col style="width: 52%"/>
+    </colgroup>
+    <thead>
+    <tr class="header">
+        <th>Lvl</th>
+        <th>Equivalent</th>
+        <th>Lvlaufstiegspkt.</th>
+        <th>Vorteile</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+        <td>1</td>
+        <td>5</td>
+        <td></td>
+        <td>Startfähigkeiten &amp; Attacken</td>
+    </tr>
+    <tr class="even">
+        <td>2</td>
+        <td>10</td>
+        <td>1</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="odd">
+        <td>3</td>
+        <td>15</td>
+        <td>1</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="even">
+        <td>4</td>
+        <td>20</td>
+        <td>1</td>
+        <td>Attacken Upgrade</td>
+    </tr>
+    <tr class="odd">
+        <td>5</td>
+        <td>25</td>
+        <td>2</td>
+        <td>Grad+</td>
+    </tr>
+    <tr class="even">
+        <td>6</td>
+        <td>30</td>
+        <td>2</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="odd">
+        <td>7</td>
+        <td>35</td>
+        <td>2</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="even">
+        <td>8</td>
+        <td>40</td>
+        <td>2</td>
+        <td>Attacken Upgrade</td>
+    </tr>
+    <tr class="odd">
+        <td>9</td>
+        <td>45</td>
+        <td>2</td>
+        <td>Grad+</td>
+    </tr>
+    <tr class="even">
+        <td>10</td>
+        <td>50</td>
+        <td>3</td>
+        <td>Schicksalswahl</td>
+    </tr>
+    <tr class="odd">
+        <td>11</td>
+        <td>55</td>
+        <td>3</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="even">
+        <td>12</td>
+        <td>60</td>
+        <td>3</td>
+        <td>Attacken Upgrade</td>
+    </tr>
+    <tr class="odd">
+        <td>13</td>
+        <td>65</td>
+        <td>3</td>
+        <td>Grad+</td>
+    </tr>
+    <tr class="even">
+        <td>14</td>
+        <td>70</td>
+        <td>3</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="odd">
+        <td>15</td>
+        <td>75</td>
+        <td>4</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="even">
+        <td>16</td>
+        <td>80</td>
+        <td>4</td>
+        <td>Upgrade verschieben</td>
+    </tr>
+    <tr class="odd">
+        <td>17</td>
+        <td>85</td>
+        <td>4</td>
+        <td>Grad+</td>
+    </tr>
+    <tr class="even">
+        <td>18</td>
+        <td>90</td>
+        <td>4</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="odd">
+        <td>19</td>
+        <td>95</td>
+        <td>4</td>
+        <td>
+            <em>Keine</em>
+        </td>
+    </tr>
+    <tr class="even">
+        <td>20</td>
+        <td>100</td>
+        <td>5</td>
+        <td>Attacken Upgrade, Schicksal festigen</td>
+    </tr>
+    </tbody>
+</table>
+<p>
+    Wenn du einen Level aufsteigst, erhältst du einen
+    Levelaufstiegspunkt, wobei sich die Anzahl alle fünf Stufen um zwei
+    erhöht. Mit den Levelaufstiegspunkten kannst du die folgenden Upgrades
+    kaufen:
+</p>
+<ul>
+    <li>
+        +5 auf Gesundheit oder Initiative, oder +1 auf einen Angriffs- oder
+        Verteidigungswert
+    </li>
+    <li>Erhöhe einen Skill um 5% (kein Skill darf über 95% liegen)</li>
+    <li>
+        Eine Traits aus einer beliebigen Gruppe, die dir zur Verfügung
+        steht. Traits des Grades 1 kosten 1 Punkt. Grad 2 2 Punkte, Grad 3 5
+        Punkte, Grad 4 kostet 8 Punkte und Grad 5 kostet 10 Punkte.
+    </li>
+    <li>Eine der verfügbaren Fähigkeiten deines Pokemons für 2 Punkte</li>
+    <li>Erhöhe den Grade deines Pokemons für 5 Punkte</li>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-
-</div>
-</body>
-</html>
+</ul>
+<ol type="1">
+    <li>Du kannst neue Attacken erlernen, wenn sie verfügbar sind</li>
+    <li>
+        Deine maximalen Trefferpunkte erhöhen sich um deinen
+        Lebenspunktestand. Diese Erhöhung ist nicht rückwirkend, d.h. sie gilt
+        nicht, wenn deine Lebenspunkte durch Statuserhöhungen oder Evolution
+        erhöht werden.
+    </li>
+    <li>
+        Attacken-Upgrades sind Verbesserungen bestimmter Moves, die sie
+        vielseitiger oder spezialisierter machen. Sie sind optional und der
+        Dungeon Master (DM) kann sich dafür entscheiden, sie nicht einzubauen.
+        Jede Attacke kann nur ein Attacken-Upgrade haben.
+    </li>
+</ol>

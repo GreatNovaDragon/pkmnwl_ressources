@@ -4,6 +4,11 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>aspnet-pkmnWildLife-CBD4640E-3E0B-4B37-AE24-ECDCA05792BF</UserSecretsId>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DebugSymbols>false</DebugSymbols>
+        <DebugType>full</DebugType>
     </PropertyGroup>
     <ItemGroup>
         <None Include="wwwroot\css\47211.ttf"/>
@@ -364,11 +369,16 @@
         <Content Update="wwwroot\icons\moveclass\home\physical.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
+        <None Remove="app.db" />
+        <Content Include="app.db">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="AspNet.Security.OAuth.Lichess" Version="7.0.4"/>
         <PackageReference Include="CsvHelper" Version="30.0.1"/>
         <PackageReference Include="Discord.OAuth2.AspNetCore" Version="3.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0"/>
         <PackageReference Include="PokeApiNet" Version="4.0.0"/>
         <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.12.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0"/>

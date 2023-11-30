@@ -1,10 +1,9 @@
 @page
-@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model DetailsModel
 
 @{
     ViewData["Title"] = "";
-    string? title = Model.Pokemon.Name_DE;
+    var title = Model.Pokemon.Name_DE;
 
     if (title == null)
     {
@@ -15,6 +14,7 @@
     {
         title += $" ({Model.Pokemon.Form})";
     }
+
 
     ViewData["Title"] = title;
 
@@ -36,10 +36,10 @@
 
 
 <div class="w3-cell-row">
-    <div class="w3-container w3-third w3-cell">
+    <div class="w3-container w3-quarter w3-cell">
         <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image"/>
     </div>
-    <div class="w3-container w3-third w3-cell">
+    <div class="w3-container w3-quarter w3-cell">
         <h2>Fähigkeiten</h2>
         @foreach (var a in Model.Pokemon.Abilities)
         {
@@ -48,7 +48,7 @@
         }
     </div>
 
-    <div class="w3-container w3-third w3-cell">
+    <div class="w3-container w3-quarter w3-cell">
         <canvas id="myChart"></canvas>
 
 
@@ -89,6 +89,61 @@
              }
            });
          </script>
+
+    </div>
+
+    <div class="w3-container w3-quarter">
+        @if (Model.DamageMultiplier.Where(v => v.Item2 == 0).Count() != 0)
+        {
+            <div>
+                <p>Erhält Null Schaden von</p>
+                @foreach (var v in Model.DamageMultiplier.Where(v => v.Item2 == 0))
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{v.Item1.ID}.png")"/>
+                }
+            </div>
+        }
+        @if (Model.DamageMultiplier.Where(v => v.Item2 == 25).Count() != 0)
+        {
+            <div>
+                <p>Erhält 0.25x Schaden von</p>
+                @foreach (var v in Model.DamageMultiplier.Where(v => v.Item2 == 25))
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{v.Item1.ID}.png")"/>
+                }
+            </div>
+        }
+        @if (Model.DamageMultiplier.Where(v => v.Item2 == 50).Count() != 0)
+        {
+            <div>
+                <p>Erhält 0.5x Schaden von</p>
+                @foreach (var v in Model.DamageMultiplier.Where(v => v.Item2 == 50))
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{v.Item1.ID}.png")"/>
+                }
+            </div>
+        }
+        @if (Model.DamageMultiplier.Where(v => v.Item2 == 200).Count() != 0)
+        {
+            <div>
+                <p>Erhält 2x Schaden von</p>
+                @foreach (var v in Model.DamageMultiplier.Where(v => v.Item2 == 200))
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{v.Item1.ID}.png")"/>
+                }
+            </div>
+        }
+        @if (Model.DamageMultiplier.Where(v => v.Item2 == 400).Count() != 0)
+        {
+            <div>
+                <p>Erhält 4x Schaden von</p>
+                @foreach (var v in Model.DamageMultiplier.Where(v => v.Item2 == 400))
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{v.Item1.ID}.png")"/>
+                }
+            </div>
+        }
+
     </div>
 
 

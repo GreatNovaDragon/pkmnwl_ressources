@@ -1,8 +1,4 @@
-﻿@using Azure
-@using Microsoft.AspNetCore.Components.Web
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -34,6 +30,10 @@
 
     <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/Index">Hauptregeln</a>
     <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/rules/charactercreation">Character-Erstellung</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/rules/levelup">Levelaufstieg</a>
+    <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/rules/destinies">Schicksale</a>
+
+    <hr/>
 
     <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/pokemon/Index">Pokédex</a>
     <a class="w3-bar-item w3-button w3-mobile" asp-area="" asp-page="/moves/Index">AngriffsDex</a>
@@ -69,10 +69,8 @@
 <script>
 function w3_toggle() {
     if (document.getElementById("mySidebar").style.display === 'block'){
-        document.getElementById("main").style.marginLeft = "0%";
           document.getElementById("mySidebar").style.display = "none";
-    }else{  document.getElementById("main").style.marginLeft = "25%";
-            document.getElementById("mySidebar").style.width = "25%";
+    }else{  
             document.getElementById("mySidebar").style.display = "block";
 
 }
