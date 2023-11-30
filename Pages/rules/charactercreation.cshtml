@@ -1,0 +1,150 @@
+﻿@page
+
+<div>
+    <h1>Charakter-Erstellung</h1>
+    <p>
+        <a href="PokemonSwShCharSheetsGer.pdf" download> Lade den Charaktersheet mit einen Klick hier runter</a>
+    </p>
+
+    <p>
+        Dies ist ein Rollen- und Strategiespiel, deswegen brauchen Spieler einen Charakter, mit dessen sie die Welt den der Gildenmeister - der Geschichtsschreiber und Erzähler - erschaffen hat.
+    </p>
+    <div class="w3-container">
+        <h2> Species und Level</h2>
+        <p>
+            Zuerst, wähle ein Pokemon. Nimm ein Quiz, wähle deinen Favoriten, oder Fragen den Gildenleiter. <br/>
+            Schreib dir die Typen und die Fähigkeiten auf deinen Charakterbogen - für die Fähigkeit wähle eine der Fähigkeiten die dein Pokemon regulär hätte.
+            <br/>
+            Die meisten Abenteuer starten auf Level 1, jedoch kann der Gildenmeister auch das Abenteuer auf einem Höheren Beginnen. Damit beginnst du mit einigen Levelaufstiegspunkten, und auch zugriff auf weiteren Angriffen und Traits.
+            Wieviele Levelaufstiegspunkte du erhältst und wie du diese Ausgibts, erfährst du in <a asp-area="" asp-page="./levelup">Charakteraufstieg</a>.
+        </p>
+    </div>
+    <div class="w3-container">
+        <h2>Werte</h2>
+        <p>
+            Auf deinem Charakterbogen sind diverse Charakterwerte. Diese sind von den Grundwerten abgeleitet.<br/>
+            Kopiere zunächst die Grundwerte deines Pokemon. Die maximalen Kraftpunkte (KP) auf Level 1 sind deine Gesundheit + 20.
+        </p>
+        <p>Zusätzlich auf deine (Spezial-)Angriffs- und (Spezial-)Verteidungswerte erhaltet ihr ein Bonusarray, dessen Werte ihr auf diese addieren könnt.</p>
+        <p>
+            Wählt eins aus diesen Bonusarrays:
+
+
+
+        </p>
+        <ul>
+            <li><strong>Generalist</strong>: +1, +1, +0, +0</li>
+            <li><strong>Spezialist</strong>: +2, +0, +0, +0</li>
+            <li><strong>Experte</strong>: +3, +0, +0, -1</li>
+            <li><strong>Schwachstelle</strong>: +1, +1, +1, -1</li>
+            <li><strong>Schieflage</strong>: +2, +1, -0, -1</li>
+        </ul>
+    </div>
+    <div class="w3-container">
+        <h2>
+            Skills
+        </h2>
+        <p>
+            Skills sind Werte zwischen 15 und 100, die die Erfolgswarscheinlichkeiter bei der Durchführung einer Aktion angibt. Würfle mit deinem d100 und versuche, unter deine Punktzahl zu kommen.
+            <br/>Zur Berechnung würfelst du (3d6) x 5 und ordnest das Ergebnis einem Skill deiner Wahl zu. Mach dies sechsmal und fülle die restlichen Skills mit 15 aus.
+        </p>
+
+        <ul>
+            <li>Athletik</li>
+            <li>Ausdauerkraft</li>
+            <li>Fingerfertigkeit</li>
+            <li>Medizin</li>
+            <li>Wahrnehmung</li>
+            <li>Auftreten</li>
+            <li>Überzeugen</li>
+            <li>Heimlichkeit</li>
+            <li>Überleben</li>
+            <li>Spezial-wissen</li>
+            <li>Handwerk</li>
+        </ul>
+        <p>
+            Für Handwerk und Spezialwissen müssen Sie Ihr Spezialgebiet angeben. Zum Beispiel Kochen oder Weben für das Handwerk, oder Geologie oder Geschichter für Spezialwissen.
+        </p>
+    </div>
+    <div class="w3-container">
+        <h2>
+            Angriffe
+        </h2>
+        <p>
+            Im aktiven Kampfgeschehen hast du 1 bis 4 Angriffe zur Auswahl. Starte mit bis zu 4 Angriffen die bei deinem Level verfügbar sind. Zusätzlich kannst du ein Ei-Angriff auswählen. Wenn deine Attackenauswahl sehr eingeschränkt scheint, kann der Gildenmeister dir eine TM- oder einen Tutor-Angriff erlauben.
+        </p>
+    </div>
+    <div class="w3-container">
+        <h2>Grade und Trait</h2>
+        <p>
+            Grade zeichnen ein Pokemon aus wie Erfahren es ist. je höher dein Grad, desto höhere Traits kannst du auswählen, und spezifische Zustände wie Vergiftung verursachen mehr Schaden. Auf Level 5, 10, 15 und 20, oder wenn du es dir erkaufsts, erhöht sich dein Grad um 1.
+            Nimm einen Trait ersten Grades, und den kostenlosen Grades deines Hintergrundes. Zu Hintergrunden kommen wir später. Traits werden als Zusätzliche Fähigkeiten eingetragen. Du kannst dir nur Traits nehmen die deinem Grad oder niedriger entsprechen.
+
+            Die Traits sind in <a asp-area="" asp-page="/traits/Index">Traits</a> aufgelistet.
+        </p>
+    </div>
+    <div class="w3-container">
+        <h2>
+            Charakter-Hintergrund
+        </h2>
+        <p>
+            Wähle einen Hintergrund der am besten für euren Charakter passt. Auf Level 5 von wird sich euer Hintergrund in eines von drei Schicksalen auf auftrennen. Jedes Schickschal hat ihre Einzigartigen Vorteile. Mehr zu den Schicksalen wird in <a asp-area="" asp-page="./levelup"> Schicksale </a> aufgelistet.
+        </p>
+
+
+        <div>
+            <div class="w3-container w3-content w3-col w3-mobile" style="width: 20%">
+                <h3> Abenteurer</h3>
+                <p>
+                    Du dringst ohne Furcht in Verliese ein
+                    und hilfst anderen dabei. <br/>
+                    Nimm den Trait Item-Fänger. Beginne mit 15 S,
+                    einem Wochenvorrat, einer Sinelbeere, einem Betäubungssamen und einer
+                    Annulier-Orb. <br/>
+                    Auf Level 5 kannst du zum <em>Söldner</em>,
+                    <em>Retter</em> oder <em>Volkshelden</em> aufsteigen.
+                </p>
+            </div>
+            <div class="w3-container w3-content w3-col w3-mobile" style="width: 20%">
+                <h3>Entdecker</h3>
+                <p>
+                    Du eroberst die ungezähmte Wildnis und erkundest wunderbare Orte. <br/>
+                    Nimm den Trait Anker. Beginne mit 10 S,
+                    Rationen für zwei Wochen, drei Sinelbeeren und drei Flieh-Orbs. <br/>
+                    Auf Level 5 kannst du zum <em>Retter</em>, <em>Detektiv </em>oder
+                    <em>Dungeonist</em> aufsteigen.
+                </p>
+            </div>
+            <div class="w3-container w3-content w3-col w3-mobile" style="width: 20%">
+                <h3>Forscher</h3>
+                <p>
+                    Die Zeit kann keine Geheimnisse vor dir oder deinem Wissensdurst verbergen. <br/>
+                    Nimm den Trait Auswerter an. Beginne mit 10S, Rationen for eine Woche, zwei Sinelbeeren, zwei Heilsamen und einem Scanner-Orb.<br/>
+                    Auf Level 5 kannst du zum <em>Detektiv</em>, <em>Mythosgebundenen</em> oder
+                    <em>Archäologen</em> aufsteigen.
+                </p>
+            </div>
+            <div class="w3-container w3-content w3-col w3-mobile" style="width: 20%">
+                <h3>Wunderkind</h3>
+                <p>
+                    Du bist mit einzigartigen und großartigen Talenten begabt worden.
+                    <br/> Nimm den Trait Typen-Myster an. Beginne mit 5 S, Rationen für eine Woche, einer Sinelbeere, einem Taubsamen und einem Belebersamen.
+                    <br/>
+                    Auf Level 5 kannst du zum <em>Mythosgebundenen</em>, <em>Dieb </em>oder
+                    <em>Performer</em> aufsteigen.
+                </p>
+            </div>
+            <div class="w3-container w3-content w3-col w3-mobile" style="width: 20%">
+                <h3>Geächteter</h3>
+                <p>
+                    Du flüchtest vor deiner Vergangenheit, jedoch weist das du dich dir dieser eines Tages stellen musst. <br/>
+                    Nimm den Trait Schauspieler an. Beginne mit 5S, Rationen für 3 Tage. zwei Sinelbeeren, einem Sog-Orb und einem Flieh-Orb.
+                    <br/>
+                    Auf Level 5 kannst du zu <em>Dieb</em>, <em>Söldner</em>
+                    oder <em>Schattenklinge</em> aufsteigen.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
