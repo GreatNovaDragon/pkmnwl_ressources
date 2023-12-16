@@ -166,61 +166,13 @@
     <a href="javascript:void(0)" onclick="openCity(event, 'Egg');">
         <div class="w3-col tablink w3-bottombar w3-hover-light-grey" style="width:20%">Ei</div>
     </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'Unknown');">
-        <div class="w3-col tablink w3-bottombar w3-hover-light-grey" style="width:20%">Unbekannt</div>
-    </a>
 </div>
 
 
 <div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
-    @foreach (var move in Model.Learnsets.Where(e => e.level != int.MaxValue).OrderBy(e => e.level))
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.level))
     {
-        <div class="w3-container w3-cell w3-row-padding w3-margin-top w3-third">
-            <div class="w3-card">
-                <header class="w3-container @move.move.type.ID">
-                    <h3>
-                        @move.move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{move.move.type.ID}.png")"class="w3-right"/>
-                    </h3>
-
-                </header>
-
-                <div class="w3-row">
-                    <div class="w3-third w3-container">
-                        <h4>Kategorie</h4>
-
-                        <img src="/icons/moveclass/bdsp/@Html.Raw($"{move.move.MoveClass.ID}.png")"/>
-                        @Html.Raw(move.move.MoveClass.Name_DE)
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>DMG</h4>
-
-                        @if (move.move.DamageDice.IsNullOrEmpty())
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            <p>@move.move.DamageDice</p>
-                        }
-
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>Level</h4>
-                        @if (move.level == int.MaxValue)
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            @move.level
-                        }
-                    </div>
-                </div>
-                <div class="w3-container">
-                    @Html.Raw(Markdown.Parse(move.move.Effect))
-                </div>
-            </div>
-        </div>
+        @Html.Partial("moves/move", move)
     }
 </div>
 
@@ -228,208 +180,21 @@
 <div id="TM" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
     @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
     {
-        <div class="w3-container w3-cell w3-row-padding w3-margin-top w3-third">
-            <div class="w3-card">
-                <header class="w3-container @move.move.type.ID">
-                    <h3>
-                        @move.move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{move.move.type.ID}.png")"class="w3-right"/>
-                    </h3>
-
-                </header>
-
-                <div class="w3-row">
-                    <div class="w3-third w3-container">
-                        <h4>Kategorie</h4>
-
-                        <img src="/icons/moveclass/bdsp/@Html.Raw($"{move.move.MoveClass.ID}.png")"/>
-                        @Html.Raw(move.move.MoveClass.Name_DE)
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>DMG</h4>
-
-                        @if (move.move.DamageDice.IsNullOrEmpty())
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            <p>@move.move.DamageDice</p>
-                        }
-
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>Level</h4>
-                        @if (move.level == int.MaxValue)
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            @move.level
-                        }
-                    </div>
-                </div>
-                <div class="w3-container">
-                    @Html.Raw(Markdown.Parse(move.move.Effect))
-                </div>
-            </div>
-        </div>
+        @Html.Partial("moves/move", move)
     }
 </div>
 <div id="Tutor" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
     @foreach (var move in Model.Learnsets.Where(e => e.how == "tutor").OrderBy(m => m.move.Name_DE))
     {
-        <div class="w3-container w3-cell w3-row-padding w3-margin-top w3-third">
-            <div class="w3-card">
-                <header class="w3-container @move.move.type.ID">
-                    <h3>
-                        @move.move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{move.move.type.ID}.png")"class="w3-right"/>
-                    </h3>
-
-                </header>
-
-                <div class="w3-row">
-                    <div class="w3-third w3-container">
-                        <h4>Kategorie</h4>
-
-                        <img src="/icons/moveclass/bdsp/@Html.Raw($"{move.move.MoveClass.ID}.png")"/>
-                        @Html.Raw(move.move.MoveClass.Name_DE)
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>DMG</h4>
-
-                        @if (move.move.DamageDice.IsNullOrEmpty())
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            <p>@move.move.DamageDice</p>
-                        }
-
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>Level</h4>
-                        @if (move.level == int.MaxValue)
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            @move.level
-                        }
-                    </div>
-                </div>
-                <div class="w3-container">
-                    @Html.Raw(Markdown.Parse(move.move.Effect))
-                </div>
-            </div>
-        </div>
+        @Html.Partial("moves/move", move)
     }
 </div>
 <div id="Egg" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
     @foreach (var move in Model.Learnsets.Where(e => e.how == "egg").OrderBy(m => m.move.Name_DE))
     {
-        <div class="w3-container w3-cell w3-row-padding w3-margin-top w3-third">
-            <div class="w3-card">
-                <header class="w3-container @move.move.type.ID">
-                    <h3>
-                        @move.move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{move.move.type.ID}.png")"class="w3-right"/>
-                    </h3>
-
-                </header>
-
-                <div class="w3-row">
-                    <div class="w3-third w3-container">
-                        <h4>Kategorie</h4>
-
-                        <img src="/icons/moveclass/bdsp/@Html.Raw($"{move.move.MoveClass.ID}.png")"/>
-                        @Html.Raw(move.move.MoveClass.Name_DE)
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>DMG</h4>
-
-                        @if (move.move.DamageDice.IsNullOrEmpty())
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            <p>@move.move.DamageDice</p>
-                        }
-
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>Level</h4>
-                        @if (move.level == int.MaxValue)
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            @move.level
-                        }
-                    </div>
-                </div>
-                <div class="w3-container">
-                    @Html.Raw(Markdown.Parse(move.move.Effect))
-                </div>
-            </div>
-        </div>
-    }
-</div>
-<div id="Unknown" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
-
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "Unknown").OrderBy(m => m.move.Name_DE))
-    {
-        <div class="w3-container w3-cell w3-row-padding w3-margin-top w3-third">
-            <div class="w3-card">
-                <header class="w3-container @move.move.type.ID">
-                    <h3>
-                        @move.move.Name_DE <img src="/icons/type/normal/DE/SV/@Html.Raw($"{move.move.type.ID}.png")"class="w3-right"/>
-                    </h3>
-
-                </header>
-
-                <div class="w3-row">
-                    <div class="w3-third w3-container">
-                        <h4>Kategorie</h4>
-
-                        <img src="/icons/moveclass/bdsp/@Html.Raw($"{move.move.MoveClass.ID}.png")"/>
-                        @Html.Raw(move.move.MoveClass.Name_DE)
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>DMG</h4>
-
-                        @if (move.move.DamageDice.IsNullOrEmpty())
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            <p>@move.move.DamageDice</p>
-                        }
-
-                    </div>
-                    <div class="w3-third w3-container">
-                        <h4>Level</h4>
-                        @if (move.level == int.MaxValue)
-                        {
-                            <p> - </p>
-                        }
-                        else
-                        {
-                            @move.level
-                        }
-                    </div>
-                </div>
-                <div class="w3-container">
-                    @Html.Raw(Markdown.Parse(move.move.Effect))
-                </div>
-            </div>
-        </div>
+        @Html.Partial("moves/move", move)
     }
 </div>
 

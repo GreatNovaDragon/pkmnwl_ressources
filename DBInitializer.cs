@@ -437,50 +437,7 @@ public class DBInitializer
             var m_it = 0;
             foreach (var m in moves)
             {
-                var vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-crown-tundra");
-                var basedon = "The Crown Tundra";
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-isle-of-armor");
-                    basedon = "The Isle of Armor";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "sword-shield");
-                    basedon = "SwiSh";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-indigo-disk");
-                    basedon = "The Indigo Disk";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "the-teal-mask");
-                    basedon = "The Teal Mask";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "scarlet-violet");
-                    basedon = "ScarVio";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m =>
-                        m.VersionGroup.Name == "brilliant-diamond-and-shining-pearl");
-                    basedon = "BDSP";
-                }
-
-                if (vergd.IsNullOrEmpty())
-                {
-                    vergd = m.VersionGroupDetails.Where(m => m.VersionGroup.Name == "ultra-sun-ultra-moon");
-                    basedon = "USUM";
-                }
+                var vergd = m.VersionGroupDetails;
 
                 var move = moves_local.FirstOrDefault(mv => mv.ID == m.Move.Name);
                 var meth_it = 0;
@@ -504,6 +461,19 @@ public class DBInitializer
                         level = level,
                         mon = poke
                     };
+
+                    var checker = learnset.FirstOrDefault(l => l.move == move && l.how == how);
+                    if (checker != null)
+                    {
+                        if (checker.level > level)
+                        {
+                            learnset.Remove(checker);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     learnset.Add(l);
                     meth_it++;
