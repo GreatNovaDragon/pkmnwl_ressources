@@ -44,7 +44,7 @@
         @foreach (var a in Model.Pokemon.Abilities)
         {
             <h3>@Html.Raw($"{a.Name_DE}")</h3>
-            @Html.Raw(Markdown.Parse(a.Effect))
+            @Html.Raw(Markdown.Parse(a.ShortEffect))
         }
     </div>
 
@@ -155,22 +155,22 @@
 
 <div class="w3-row-padding">
     <a href="javascript:void(0)" onclick="openCity(event, 'LevelUp');">
-        <div class="w3-col tablink w3-bottombar w3-hover-light-grey   w3-border-red" style="width:20%">Level Up</div>
+        <div class="w3-col tablink w3-bottombar w3-hover-light-grey w3-quarter  w3-border-red">Level Up</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'TM');">
-        <div class=" w3-col tablink w3-bottombar w3-hover-light-grey " style="width:20%">TM</div>
+        <div class=" w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey ">TM</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'Tutor');">
-        <div class="w3-col tablink w3-bottombar w3-hover-light-grey " style="width:20%">Tutor</div>
+        <div class="w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey ">Tutor</div>
     </a>
     <a href="javascript:void(0)" onclick="openCity(event, 'Egg');">
-        <div class="w3-col tablink w3-bottombar w3-hover-light-grey" style="width:20%">Ei</div>
+        <div class="w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey">Ei</div>
     </a>
 </div>
 
 
 <div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.level))
+    @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.move.Name_DE).OrderBy(m => m.level))
     {
         @Html.Partial("moves/move", move)
     }

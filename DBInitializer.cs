@@ -200,6 +200,14 @@ public class DBInitializer
                 : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                     : "No Entry";
+            
+            var ShortEffect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect.Replace("one stage", "2")
+                    .Replace("two stages", "4").Replace("three stages", "6")
+                : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
+                    : "No Entry";
+
 
             // var moves_old = Helpers.csv2ab("abilities_old.csv");
 
@@ -216,6 +224,7 @@ public class DBInitializer
                 Name = Name,
                 Name_DE = Name_DE,
                 Effect = Effect,
+                ShortEffect = ShortEffect,
                 IsTrait = false
             });
             it++;
@@ -283,6 +292,17 @@ public class DBInitializer
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
+            
+            var ShortEffect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
+                : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
+                        .Replace("Has a $effect_chance% chance", $"Roll a {20 - m.EffectChance / 5} or higher on a d20")
+                        .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
+                    : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
+                        : "No Data";
+
 
             Effect = accuracy_string(m.Accuracy) + Effect;
             Effect = Effect.Replace("Inflicts regular damage.", "");
@@ -302,6 +322,7 @@ public class DBInitializer
                 Name = Name,
                 Name_DE = Name_DE,
                 Effect = Effect,
+                ShortEffect = ShortEffect,
                 type = MType,
                 Target = Target,
                 DamageDice = DamageDice,

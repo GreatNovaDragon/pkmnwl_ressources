@@ -30,7 +30,7 @@
             DMG
         </th>
         <th>
-            Effekt
+            Kurz-Effekt
         </th>
     </tr>
     </thead>
@@ -67,7 +67,7 @@
                 @Html.DisplayFor(modelItem => item.DamageDice)
             </td>
             <td>
-                @Html.Raw(Markdown.Parse(item.Effect))
+                @Html.Raw(Markdown.Parse(item.ShortEffect))
             </td>
         </tr>
     }
