@@ -200,7 +200,7 @@ public class DBInitializer
                 : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                     : "No Entry";
-            
+
             var ShortEffect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                 ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect.Replace("one stage", "2")
                     .Replace("two stages", "4").Replace("three stages", "6")
@@ -287,24 +287,24 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                        .Replace("Has a $effect_chance% chance", $"Roll a {20 - m.EffectChance / 5} or higher on a d20")
+                        .Replace("$effect_chance", $"{m.EffectChance}")
                         .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
-            
+
             var ShortEffect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
-                        .Replace("Has a $effect_chance% chance", $"Roll a {20 - m.EffectChance / 5} or higher on a d20")
+                        .Replace("$effect_chance", $"{m.EffectChance}")
                         .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
 
 
-            Effect = accuracy_string(m.Accuracy) + Effect;
+            Effect = accuracy_string_en(m.Accuracy) + Effect;
             Effect = Effect.Replace("Inflicts regular damage.", "");
 
             var Target = m.Target.Name;
@@ -467,12 +467,7 @@ public class DBInitializer
                     var how = vers.MoveLearnMethod.Name;
                     var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
 
-                    if (how != "level-up")
-                    {
-                        level = 0;
-                        if (how != "egg")
-                            level = int.MaxValue;
-                    }
+                    if (how != "level-up") level = int.MaxValue;
 
                     var l = new Learnset
                     {
@@ -487,13 +482,9 @@ public class DBInitializer
                     if (checker != null)
                     {
                         if (checker.level > level)
-                        {
                             learnset.Remove(checker);
-                        }
                         else
-                        {
                             continue;
-                        }
                     }
 
                     learnset.Add(l);
@@ -513,34 +504,6 @@ public class DBInitializer
 
             await context.SaveChangesAsync();
         }
-
-        var lese = context.Learnsets;
-        var unknown_Adds = new List<Learnset>();
-
-        foreach (var move in moves_local)
-        {
-            var apimove = apiclient.GetResourceAsync<Move>(move.ID).Result.LearnedByPokemon;
-            foreach (var po in apimove)
-            {
-                var query = from ls in lese where ls.mon.ID == po.Name && ls.move == move select ls;
-                if (query.Any()) continue;
-                var mon = context.Pokedex.FirstOrDefault(pman => pman.ID == po.Name);
-                if (mon == null) continue;
-                var set = new Learnset
-                {
-                    ID = Guid.NewGuid().ToString(),
-                    move = move,
-                    how = "Unknown",
-                    level = int.MaxValue,
-                    mon = mon
-                };
-
-                unknown_Adds.Add(set);
-            }
-        }
-
-        context.AddRange(unknown_Adds);
-        await context.SaveChangesAsync();
     }
 
     public static int StatToInt(int stat, double? nerf = null)
@@ -635,13 +598,13 @@ public class DBInitializer
         }
     }
 
-    public static string accuracy_string(int? accuracy)
+    public static string accuracy_string_en(int? accuracy)
     {
         if (accuracy.HasValue)
         {
             if (accuracy == 100)
                 return "";
-            return $"Roll an {accuracy / 5} or lower on a d20 for this move to succeed. ";
+            return $"This move has an {accuracy}% chance to succeed. ";
         }
 
         return "";

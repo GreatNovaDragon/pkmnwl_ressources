@@ -1,0 +1,25 @@
+﻿.container {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.progress-segment {
+    display: flex;
+}
+
+.item {
+    width: 100%;
+    background-color: lightgray;
+    margin-right: 2px;
+    transform: skew(-35deg);
+}
+
+.item:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.item:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}

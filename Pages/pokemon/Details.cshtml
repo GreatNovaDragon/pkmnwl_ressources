@@ -49,46 +49,69 @@
     </div>
 
     <div class="w3-container w3-quarter w3-cell">
-        <canvas id="myChart"></canvas>
+        @{
+            var originalColorlist = new List<(int r, int g, int b, int pos)>();
+            originalColorlist.Add((158, 194, 50, 0));
+            originalColorlist.Add((192, 198, 37, 21));
+            originalColorlist.Add((234, 203, 22, 41));
+            originalColorlist.Add((255, 205, 15, 54));
+            originalColorlist.Add((235, 167, 92, 60));
+            originalColorlist.Add((228, 89, 15, 65));
+            originalColorlist.Add((209, 19, 42, 72));
+            originalColorlist.Add((121, 6, 5, 91));
+            originalColorlist.Add((0, 0, 0, 100));
+
+            var gradient = new List<(int r, int g, int b)>();
+            for (var i = 0; i < originalColorlist.Count - 1; i++)
+            {
+                var rMax = originalColorlist[i + 1].r;
+                var rMin = originalColorlist[i].r;
+
+                var gMin = originalColorlist[i].g;
+                var gMax = originalColorlist[i + 1].g;
+
+                var bMin = originalColorlist[i].b;
+                var bMax = originalColorlist[i + 1].b;
+
+                var size = originalColorlist[i + 1].pos - originalColorlist[i].pos;
+                for (var y = 0; y < size; y++)
+                {
+                    var rAverage = rMin + (rMax - rMin) * y / size;
+                    var gAverage = gMin + (gMax - gMin) * y / size;
+                    var bAverage = bMin + (bMax - bMin) * y / size;
+                    gradient.Add((rAverage, gAverage, bAverage));
+                }
+            }
 
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            (string Stat, int y, string bg)[] stats =
+            [
+                ("Gesundheit", Model.Pokemon.HEALTH, "rgb(253,0,0)"),
+                ("Angriff", Model.Pokemon.ATK, "rgb(238,127,48)"),
+                ("Verteidigung", Model.Pokemon.DEF, "rgb(246,207,48)"),
+                ("Spezial-Angriff", Model.Pokemon.SP_ATK, "rgb(104,143,238)"),
+                ("Spezial-Verteidigung", Model.Pokemon.SP_DEF, "rgb(119,199,80)"),
+                ("Initiative", Model.Pokemon.SPEED, "rgb(246,88,135)")
+            ];
+            foreach (var s in stats)
+            {
+                var res = 25;
+                if (s.Stat == "Gesundheit") res = 50;
 
-        <script>
-           const ctx = document.getElementById('myChart');
-         
-           new Chart(ctx, {
-             type: 'bar',
-             data: {
-               labels: ['Gesundheit @Html.Raw(Model.Pokemon.HEALTH)/50', 'Angriff @Html.Raw(Model.Pokemon.ATK)/25', 'Verteidigung @Html.Raw(Model.Pokemon.DEF)/25', 'Spezial-Angriff @Html.Raw(Model.Pokemon.SP_ATK)/25' , 'Spezial-Verteidigung @Html.Raw(Model.Pokemon.SP_DEF)/25', 'Initiative @Html.Raw(Model.Pokemon.SPEED)/25'],
-               datasets: [{
-                 data: [@Html.Raw(Model.Pokemon.HEALTH / 2), @Html.Raw(Model.Pokemon.ATK), @Html.Raw(Model.Pokemon.DEF), @Html.Raw(Model.Pokemon.SP_ATK), @Html.Raw(Model.Pokemon.SP_DEF), @Html.Raw(Model.Pokemon.SPEED)],
-                 borderWidth: 1,
-                 backgroundColor: [
-                        'rgb(253,0,0)',
-                        'rgb(238,127,48)',
-                        'rgb(246,207,48)',
-                        'rgb(104,143,238)',
-                        'rgb(119,199,80)',
-                        'rgb(246,88,135)',
-                 ],
-               }]
-             },
-             options: {
-                 indexAxis: 'y', 
-                 plugins: { legend: {display: false}},
-               scales: {
-                 x: {
-                   min: 0,
-                   max: 25,
-                   pointLabels: {
-                       font: {size: 15}
-                   }
-                 }
-               }
-             }
-           });
-         </script>
+
+                <div> @Html.Raw($"{s.Stat}: {s.y}")</div>
+
+                <div class="progress-segment">
+                    @for (var i = 1; i < res; i++)
+                    {
+                        var style = i > s.y ? "" : $"style=\"background-color: rgb({gradient[i * 100 / res + 1].r} , {gradient[i * 100 / res + 1].g},{gradient[i * 100 / res + 1].b});\" ";
+                        @Html.Raw($"<div class=\"item\" {style}>&nbsp;</div>")
+                    }
+
+
+                </div>
+            }
+        }
 
     </div>
 
@@ -185,7 +208,7 @@
 </div>
 <div id="Tutor" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "tutor").OrderBy(m => m.move.Name_DE))
+    @foreach (var move in Model.Learnsets.Where(e => !new string[3] { "level-up", "machine", "egg" }.Contains(e.how)).OrderBy(m => m.move.Name_DE).OrderBy(m => m.how))
     {
         @Html.Partial("moves/move", move)
     }

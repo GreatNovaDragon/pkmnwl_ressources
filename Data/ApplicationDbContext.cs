@@ -52,7 +52,7 @@ public class Ability
     public string? Name_DE { get; set; }
     public string Name { get; set; }
     public string? Effect { get; set; }
-    
+
     public string? ShortEffect { get; set; }
 
     public bool IsTrait { get; set; }
@@ -70,9 +70,8 @@ public class Move
     public virtual MoveClass MoveClass { get; set; }
     public string Target { get; set; }
     public string? Effect { get; set; }
-    
-    public string? ShortEffect { get; set; }
 
+    public string? ShortEffect { get; set; }
 }
 
 public class Type
