@@ -369,9 +369,12 @@
         <Content Update="wwwroot\icons\moveclass\home\physical.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
-        <None Update="app.db">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+        <Content Update="wwwroot\css\progressbar.css">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="wwwroot\css\w3.css">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="CsvHelper" Version="30.0.1"/>

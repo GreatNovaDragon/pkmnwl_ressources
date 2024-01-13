@@ -309,7 +309,7 @@ public class DBInitializer
 
             var Target = m.Target.Name;
 
-            var DamageDice = StrengthToDice(m.Power, 0.75);
+            var DamageDice = StrengthToDice(m.Power, 0.8);
             var MType = types.FirstOrDefault(e =>
                 e.ID == m.Type.Name);
             var DamageClass =
@@ -404,11 +404,16 @@ public class DBInitializer
                 : null;
 
             var HEALTH = StatToInt(poke.Stats[0].BaseStat, 2);
-            var ATK = StatToInt(poke.Stats[1].BaseStat);
-            var DEF = StatToInt(poke.Stats[2].BaseStat);
-            var SP_ATK = StatToInt(poke.Stats[3].BaseStat);
+
+
+            bool isFOCKINGSPECIALMATE = species.IsLegendary || species.IsMythical;
+            var DEF_NERF =  isFOCKINGSPECIALMATE ? 0.9 : 1;
+            var ATK_BUFF = isFOCKINGSPECIALMATE ? 1 : 1.1;
+            var ATK = StatToInt(poke.Stats[1].BaseStat, ATK_BUFF);
+            var DEF = StatToInt(poke.Stats[2].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3:6 );
+            var SP_ATK = StatToInt(poke.Stats[3].BaseStat, ATK_BUFF);
             ;
-            var SP_DEF = StatToInt(poke.Stats[4].BaseStat);
+            var SP_DEF = StatToInt(poke.Stats[4].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3:6 );
             var SPEED = StatToInt(poke.Stats[5].BaseStat);
             ;
 
