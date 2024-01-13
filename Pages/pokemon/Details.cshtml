@@ -84,14 +84,14 @@
             }
 
 
-            (string Stat, int y, string bg)[] stats =
+            (string Stat, int y)[] stats =
             [
-                ("Gesundheit", Model.Pokemon.HEALTH, "rgb(253,0,0)"),
-                ("Angriff", Model.Pokemon.ATK, "rgb(238,127,48)"),
-                ("Verteidigung", Model.Pokemon.DEF, "rgb(246,207,48)"),
-                ("Spezial-Angriff", Model.Pokemon.SP_ATK, "rgb(104,143,238)"),
-                ("Spezial-Verteidigung", Model.Pokemon.SP_DEF, "rgb(119,199,80)"),
-                ("Initiative", Model.Pokemon.SPEED, "rgb(246,88,135)")
+                ("Gesundheit", Model.Pokemon.HEALTH),
+                ("Angriff", Model.Pokemon.ATK),
+                ("Verteidigung", Model.Pokemon.DEF),
+                ("Spezial-Angriff", Model.Pokemon.SP_ATK),
+                ("Spezial-Verteidigung", Model.Pokemon.SP_DEF),
+                ("Initiative", Model.Pokemon.SPEED)
             ];
             foreach (var s in stats)
             {
@@ -102,7 +102,7 @@
                 <div> @Html.Raw($"{s.Stat}: {s.y}")</div>
 
                 <div class="progress-segment">
-                    @for (var i = 1; i < res; i++)
+                    @for (var i = 1; i <= res; i++)
                     {
                         var style = i > s.y ? "" : $"style=\"background-color: rgb({gradient[i * 100 / res + 1].r} , {gradient[i * 100 / res + 1].g},{gradient[i * 100 / res + 1].b});\" ";
                         @Html.Raw($"<div class=\"item\" {style}>&nbsp;</div>")
