@@ -29,7 +29,7 @@
         <tr>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID">
-                    @if (item.Name_DE.IsNullOrEmpty())
+                    @if (String.IsNullOrEmpty(item.Name_DE))
                     {
                         @Html.DisplayFor(modelItem => item.Name)
                     }

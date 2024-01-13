@@ -1,6 +1,5 @@
 ﻿#region
 
-using Microsoft.IdentityModel.Tokens;
 using pkmnWildLife.Data;
 using PokeApiNet;
 using Ability = PokeApiNet.Ability;
@@ -360,8 +359,8 @@ public class DBInitializer
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
 
             var image = poke.Sprites.Other.DreamWorld.FrontDefault;
-            if (image.IsNullOrEmpty()) image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
-            if (image.IsNullOrEmpty()) image = poke.Sprites.FrontDefault;
+            if (String.IsNullOrEmpty(image)) image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+            if (String.IsNullOrEmpty(image)) image = poke.Sprites.FrontDefault;
 
             var Name_DE = species.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
@@ -374,10 +373,10 @@ public class DBInitializer
             if (form.Contains("Gmax") || form == "Totem" || form == "Battle Bond" ||
                 form.Contains("Power Construct")) continue;
 
-            if ((Name == "Pikachu") & (!form.IsNullOrEmpty() || form == "Starter")) continue;
+            if ((Name == "Pikachu") & (!String.IsNullOrEmpty(form) || form == "Starter")) continue;
 
             if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") &
-                !form.IsNullOrEmpty()) continue;
+                !String.IsNullOrEmpty(form)) continue;
 
             if ((Name == "Minior") & form.Contains("Blue"))
                 form = form.Replace("Blue", "");

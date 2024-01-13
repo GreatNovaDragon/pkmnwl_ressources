@@ -378,14 +378,11 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="CsvHelper" Version="30.0.1"/>
-        <PackageReference Include="Discord.OAuth2.AspNetCore" Version="3.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0"/>
         <PackageReference Include="PokeApiNet" Version="4.0.0"/>
         <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.12.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0"/>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0"/>
     </ItemGroup>
     <ItemGroup>

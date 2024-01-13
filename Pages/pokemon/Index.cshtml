@@ -45,11 +45,11 @@
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID">
                     @Html.Raw($" {item.Name_DE}")
-                    @if (item.Name_DE.IsNullOrEmpty())
+                    @if (String.IsNullOrEmpty(item.Name_DE))
                     {
                         @Html.DisplayFor(modelItem => item.Name)
                     }
-                    @if (!item.Form.IsNullOrEmpty())
+                    @if (!String.IsNullOrEmpty(item.Form))
                     {
                         @Html.Raw($" ({item.Form})")
                     }

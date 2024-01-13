@@ -4,7 +4,7 @@
         <header class="w3-container @Model.move.type.ID">
             <a asp-page="/moves/Details" asp-route-id="@Model.move.ID">
                 <h3>
-                    @if (Model.move.Name_DE.IsNullOrEmpty())
+                    @if (String.IsNullOrEmpty(Model.move.Name_DE))
                     {
                         @Model.move.Name
                     }
@@ -28,7 +28,7 @@
             <div class="w3-third w3-container">
                 <h4>DMG</h4>
 
-                @if (Model.move.DamageDice.IsNullOrEmpty())
+                @if (String.IsNullOrEmpty(Model.move.DamageDice))
                 {
                     <p> - </p>
                 }
