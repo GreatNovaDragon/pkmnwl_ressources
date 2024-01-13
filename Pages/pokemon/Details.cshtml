@@ -195,7 +195,7 @@
 <div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
     @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.move.Name_DE).OrderBy(m => m.level))
     {
-        @Html.PartialAsync("moves/move", move)
+        @Html.Partial("moves/move", move)
     }
 </div>
 
@@ -203,21 +203,21 @@
 <div id="TM" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
     @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
     {
-        @Html.PartialAsync("moves/move", move)
+        @Html.Partial("moves/move", move)
     }
 </div>
 <div id="Tutor" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
     @foreach (var move in Model.Learnsets.Where(e => !new string[3] { "level-up", "machine", "egg" }.Contains(e.how)).OrderBy(m => m.move.Name_DE).OrderBy(m => m.how))
     {
-        @Html.PartialAsync("moves/move", move)
+        @Html.Partial("moves/move", move)
     }
 </div>
 <div id="Egg" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
 
     @foreach (var move in Model.Learnsets.Where(e => e.how == "egg").OrderBy(m => m.move.Name_DE))
     {
-        @Html.PartialAsync("moves/move", move)
+        @Html.Partial("moves/move", move)
     }
 </div>
 
