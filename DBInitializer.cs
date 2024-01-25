@@ -244,6 +244,8 @@ public class DBInitializer
 
         var traits = Helpers.Csv2Trait("traits.csv");
         var trs = new List<Data.Ability>();
+
+
         foreach (var tr in traits)
             trs.Add(new Data.Ability
             {
@@ -251,7 +253,8 @@ public class DBInitializer
                 Effect = tr.effect,
                 Name = tr.Name,
                 Requirement = tr.Requirement,
-                IsTrait = true
+                IsTrait = true,
+                Order = tr.Requirement.Contains("Grade") ? int.Parse(tr.Requirement.Replace("Grade ", "")) : 999
             });
         context.AddRange(trs);
         await context.SaveChangesAsync();
@@ -286,18 +289,26 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                        .Replace("$effect_chance", $"{m.EffectChance}")
-                        .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
+                        .Replace("$effect_chance", $"{m.EffectChance}").Replace("1/16", "gradD4")
+                        .Replace("1/8", "(2*Grad)D4")
+                        .Replace("user's max HP", "").Replace("max HP", "")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
+
+
+            if (ID == "ingrain")
+                Effect +=
+                    " \n während verwurzler aktiv ist, kannst du statt anzugreifen, dich deine normale bewegungsreichweite" +
+                    " bewegen ohne das verwurzler aufgehoben wird, rennen ist nicht möglich.";
 
             var ShortEffect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
-                        .Replace("$effect_chance", $"{m.EffectChance}")
-                        .Replace("one stage", "2").Replace("two stages", "4").Replace("three stages", "6")
+                        .Replace("$effect_chance", $"{m.EffectChance}").Replace("1/16", "gradD4")
+                        .Replace("1/8", "(2*Grad)D4")
+                        .Replace("user's max HP", "").Replace("max HP", "")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
@@ -348,39 +359,45 @@ public class DBInitializer
         var types = context.Types.ToArray();
         var pokes = new List<Data.Pokemon>();
         var i = 0;
+
         await foreach (var p in apiclient.GetAllNamedResourcesAsync<Pokemon>())
         {
             var poke = await apiclient.GetResourceAsync(p);
             var species = apiclient.GetResourceAsync(poke.Species).Result;
 
             var ID = poke.Name;
-            var Order = species.Order;
+            var Order = poke.Order;
+            var Dex = species.Order;
             var Name = species.Names
                 .FirstOrDefault(n => n.Language.Name == "en").Name;
 
-            var image = poke.Sprites.Other.DreamWorld.FrontDefault;
-            if (String.IsNullOrEmpty(image)) image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
-            if (String.IsNullOrEmpty(image)) image = poke.Sprites.FrontDefault;
+            var image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
+            if (string.IsNullOrEmpty(image)) image = poke.Sprites.Other.Home.FrontDefault;
+
+            if (string.IsNullOrEmpty(image)) image = poke.Sprites.FrontDefault;
 
             var Name_DE = species.Names
                 .FirstOrDefault(n => n.Language.Name == "de")?.Name;
 
-            var form = "";
-            if (!Name.ToLower().Equals(ID.Replace("-", " ")))
-                form = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(ID.Replace($"{Name.ToLower()}-", "")
-                    .Replace("-", " "));
+            var form = apiclient.GetResourceAsync(poke.Forms[0]).Result.Names
+                .FirstOrDefault(n => n.Language.Name == "en")?.Name;
+            var form_de = apiclient.GetResourceAsync(poke.Forms[0]).Result.Names
+                .FirstOrDefault(n => n.Language.Name == "de")?.Name;
 
-            if (form.Contains("Gmax") || form == "Totem" || form == "Battle Bond" ||
-                form.Contains("Power Construct")) continue;
 
-            if ((Name == "Pikachu") & (!String.IsNullOrEmpty(form) || form == "Starter")) continue;
+            if (form_de != null && (form_de.Contains("Gigadynamax") || form_de.Contains("Totem") ||
+                                    ID.Contains("mimigma-busted") || ID.Contains("cramorant-") ||
+                                    ID.Contains("koraidon-") || ID.Contains("miraidon-"))) continue;
 
-            if ((Name == "Tatsugiri" || Name == "Squawkabilly" || Name == "Miraidon" || Name == "Koraidon") &
-                !String.IsNullOrEmpty(form)) continue;
-
-            if ((Name == "Minior") & form.Contains("Blue"))
-                form = form.Replace("Blue", "");
-            else if ((Name == "Minior") & !form.Contains("Blue")) continue;
+            if ((Name == "Pikachu") & !string.IsNullOrEmpty(form)) continue;
+            if (form_de != null && (Name_DE == "Kikugi" || form_de.Contains("Westliches") ||
+                                    form_de.Contains("Frühling") ||
+                                    ID == "flabebe" || ID == "floette" || ID == "florges" || Name_DE == "Xerneas" ||
+                                    ID == "sinistea" || ID == "poltageist" || ID == "alcremie"))
+            {
+                form = "";
+                form_de = "";
+            }
 
             if (Name_DE == Name) Name_DE = null;
 
@@ -394,6 +411,35 @@ public class DBInitializer
                 Abilities.Add(ab);
             }
 
+            if (Name_DE == "Quajutsu") Abilities.Add(abilities.FirstOrDefault(w => w.Name == "Battle Bond"));
+
+            if (ID.Contains("power-construct"))
+                continue;
+            if (ID.Contains("zygarde")) Abilities.Add(abilities.FirstOrDefault(w => w.ID == "power-construct"));
+
+            if (ID.Contains("own-tempo"))
+                continue;
+
+            if (ID == "rockruff") Abilities.Add(abilities.FirstOrDefault(w => w.ID == "own-tempo"));
+
+
+            if (ID == "minior-blue")
+            {
+                ID = "minior";
+                form_de = "";
+                form = "";
+            }
+
+            if (ID == "minior-blue-meteor")
+            {
+                ID = "minior-meteor";
+                form_de = "Meteno (Meteor)";
+                form = "Minior (Meteor)";
+            }
+
+            if (ID.Contains("minior-") & (ID != "minior-meteor"))
+                continue;
+
 
             var Type1 = types.FirstOrDefault(w =>
                 w.ID == poke.Types[0].Type.Name);
@@ -405,25 +451,26 @@ public class DBInitializer
             var HEALTH = StatToInt(poke.Stats[0].BaseStat, 2);
 
 
-            bool isFOCKINGSPECIALMATE = species.IsLegendary || species.IsMythical;
-            var DEF_NERF =  isFOCKINGSPECIALMATE ? 0.9 : 1;
+            var isFOCKINGSPECIALMATE = species.IsLegendary || species.IsMythical;
+            var DEF_NERF = isFOCKINGSPECIALMATE ? 0.9 : 1;
             var ATK_BUFF = isFOCKINGSPECIALMATE ? 1 : 1.1;
             var ATK = StatToInt(poke.Stats[1].BaseStat, ATK_BUFF);
-            var DEF = StatToInt(poke.Stats[2].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3:6 );
+            var DEF = StatToInt(poke.Stats[2].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3 : 6);
             var SP_ATK = StatToInt(poke.Stats[3].BaseStat, ATK_BUFF);
             ;
-            var SP_DEF = StatToInt(poke.Stats[4].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3:6 );
+            var SP_DEF = StatToInt(poke.Stats[4].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3 : 6);
             var SPEED = StatToInt(poke.Stats[5].BaseStat);
             ;
 
             pokes.Add(new Data.Pokemon
             {
                 ID = ID,
-                Order = Order,
+                Dex = Dex,
                 Name = Name,
                 Name_DE = Name_DE,
                 ImageLink = image,
                 Form = form,
+                Form_DE = form_de,
                 Abilities = Abilities,
                 Type1 = Type1,
                 Type2 = Type2,
@@ -457,7 +504,13 @@ public class DBInitializer
         var p = 0;
         foreach (var poke in pokemon)
         {
-            var moves = apiclient.GetResourceAsync<Pokemon>(poke.ID).Result.Moves;
+            var id = poke.ID;
+            if (id == "minior")
+                id = "minior-blue";
+
+            if (id == "minior-meteor")
+                id = "minior-blue-meteor";
+            var moves = apiclient.GetResourceAsync<Pokemon>(id).Result.Moves;
             var learnset = new List<Learnset>();
             var m_it = 0;
             foreach (var m in moves)
@@ -495,16 +548,16 @@ public class DBInitializer
                     meth_it++;
 
                     Console.WriteLine(
-                        $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length})");
+                        $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length}  {poke.Name})");
                 }
 
                 m_it++;
-                Console.WriteLine($"LP ({m_it}/{moves.Count})/({p}/{pokemon.Length})");
+                Console.WriteLine($"LP ({m_it}/{moves.Count})/({p}/{pokemon.Length} {poke.Name})");
             }
 
             context.AddRange(learnset);
             p++;
-            Console.WriteLine($"P ({p}/{pokemon.Length})");
+            Console.WriteLine($"P ({p}/{pokemon.Length} {poke.Name})");
 
             await context.SaveChangesAsync();
         }

@@ -20,7 +20,7 @@
                 <div class="w3-half w3-container">
                     <h4>DMG</h4>
 
-                    @if (String.IsNullOrEmpty(Model.Move.DamageDice))
+                    @if (string.IsNullOrEmpty(Model.Move.DamageDice))
                     {
                         <p> - </p>
                     }
@@ -66,9 +66,6 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.mon.Order)
-                            </td>
-                            <td>
                                 <img src="@item.mon.ImageLink" height="40px"/>
 
                             </td>
@@ -76,11 +73,11 @@
                             <td>
                                 <a asp-page="/pokemon/Details" asp-route-id="@item.mon.ID">
                                     @Html.Raw($" {item.mon.Name_DE}")
-                                    @if (String.IsNullOrEmpty(item.mon.Name_DE))
+                                    @if (string.IsNullOrEmpty(item.mon.Name_DE))
                                     {
                                         @Html.DisplayFor(modelItem => item.mon.Name)
                                     }
-                                    @if (!String.IsNullOrEmpty(item.mon.Form))
+                                    @if (!string.IsNullOrEmpty(item.mon.Form))
                                     {
                                         @Html.Raw($" ({item.mon.Form})")
                                     }

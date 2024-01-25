@@ -46,7 +46,7 @@
     <div style="color: #fff; background: @ViewData["HeaderColor"] ">
         <div class="w3-container">
             <h1>
-                <button id="openNav" onclick="w3_toggle()" style="background: inherit; border: none">&#9776;</button> @ViewData["Title"]
+                <button id="openNav" onclick="w3_toggle()" style="background: inherit; border: none; font-size: 75%">&#9776; Menu</button> @ViewData["Title"]
                 @if (ViewData["Type2"] != null)
                 {
                     <img src="/icons/type/normal/DE/SV/@Html.Raw($"{ViewData["Type2"]}.png")" class="w3-right"/>

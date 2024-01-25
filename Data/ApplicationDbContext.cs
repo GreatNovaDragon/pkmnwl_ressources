@@ -57,6 +57,8 @@ public class Ability
 
     public bool IsTrait { get; set; }
     public string? Requirement { get; set; }
+
+    public int? Order { get; set; }
 }
 
 public class Move
@@ -114,14 +116,15 @@ public class Pokemon
 {
     [Column(Order = 2)] public string ID { get; set; }
 
-    [Column(Order = 0)] public int Order { get; set; }
-
+    [Column(Order = 1)] public int Dex { get; set; }
     public string? ImageLink { get; set; }
 
     public string Name { get; set; }
     public string? Name_DE { get; set; }
 
     public string? Form { get; set; }
+    public string? Form_DE { get; set; }
+
     public virtual List<Ability> Abilities { get; set; }
     public virtual Type Type1 { get; set; }
     public virtual Type? Type2 { get; set; }

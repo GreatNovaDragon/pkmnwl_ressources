@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Homepage";
+    ViewData["Title"] = "";
     ViewData["HeaderColor"] = "#f00";
 }
 
@@ -29,33 +29,9 @@
     waren.
 </p>
 <p>
-    Jedes Pokémon hat in einem Zug drei Aktionen zur Verfügung, aber nur
-    eine dieser Aktionen kann auf Kosten der anderen wiederholt werden.
+    Jedes Pokémon hat in einem Zug eine Aktionen zur Verfügung. Jedoch lässt sich diese Aktion einmalig wiederherstellen, indem man eine Super-Effective Attacke einsettzt, oder die Aktion es selber angibt. Aktionen mit Priorität stellen auch eine Aktion wieder.
 </p>
-<ul>
-    <li>
-        <strong>Kampf-Aktionen:</strong> Ein Pokémon darf nur eine
-        Kampfaktion pro Zug ausführen, sofern es nicht anders angewiesen wird.
-        Um eine Kampfaktion auszuführen, gibst du die physische oder spezielle
-        Bewegung an, die du verwenden willst, wirfst 2D6 und addierst den
-        entsprechenden Angriffswert. Ein erfolgreicher Angriff wird ermittelt,
-        indem man den entsprechenden Verteidigungswert
-        übertrifft.
-    </li>
-    <li>
-        <strong>Hilfsmittel-Aktionen:</strong> Pro Zug ist eine
-        Hilfsmittel-Aktionen erlaubt, sofern nicht anders angegeben. Um eine
-        Hilfsmittel-Aktionen zu starten, deklariert man die Statusbewegung, die
-        man verwenden möchte. Die meisten Statusaktionen werden wirksam, ohne
-        dass ein Beschluss gefasst werden muss.
-    </li>
-    <li>
-        <strong>Bewegungs-Aktionen:</strong> Pokémon können bis zu 3
-        Bewegungsaktionen pro Zug ausführen. Jede weitere Bewegungsaktion über
-        die erste hinaus hindert das Pokémon jedoch daran, eine Kampf- oder
-        Hilfsmittel-Aktion auszuführen. Die Bewegung erfolgt in Feldern.
-    </li>
-</ul>
+
 <h3 id="kampftaktik-und-umwelt">
     <span id="anchor-5"></span>Kampftaktik
     und Umwelt
@@ -81,7 +57,7 @@
         <strong>Ein ungesehenes Ziel angreifen:</strong> Wenn du ein
         ungesehenes Ziel angreifst, musst du raten, wo es sich befindet. Wenn
         deine Vermutung falsch ist, geht auch ein erfolgreicher Angriffswurf
-        daneben. Alternativ kann dein Pokémon eine Hilfsaktion einsetzen, um den
+        daneben. Alternativ kann dein Pokémon eine Aktion einsetzen, um den
         versteckten Gegner zu suchen. Dies beinhaltet normalerweise eine
         Wahrnehmungsprobe gegen die Heimlichkeitsprobe des Gegners, mit einem
         +2-Bonus, wenn dein Pokémon über Spezialfähigkeiten wie Scharfblick oder
@@ -100,7 +76,7 @@
         unverändert.
     </li>
     <li>
-        <strong>K.o. und Tod:</strong> Ein Pokémon gilt als ausgeknockt,
+        <strong>K.o. und Tod:</strong> Ein Pokémon gilt als KO,
         wenn seine Lebenspunkte Null erreichen. Ein Pokémon stirbt, wenn seine
         Lebenspunkte einen negativen Wert seiner maximalen Trefferpunktezahl
         erreichen.
@@ -112,7 +88,7 @@
 </h3>
 <ul>
     <li>
-        <strong>Helfen:</strong> Ein Pokémon kann eine Kampfaktion
+        <strong>Helfen:</strong> Ein Pokémon kann eine Aktion
         einsetzen, um einem anderen Pokémon in Not zu helfen. Zum Beispiel kann
         es einem schlafenden Pokémon helfen, indem es es wach stößt. Für viele
         dieser Aufgaben ist in der Regel kein Wurf erforderlich; wenn die Hilfe
@@ -180,9 +156,7 @@
         wird das Ziel ein Feld vom Anwender weggeschoben.
     </li>
     <li>
-        <strong>Ein Item benutzen:</strong> Ein Pokémon kann einen
-        Gegenstand (z. B. das Essen einer Heilbeere) als Hilfsaktion
-        verwenden.
+        <strong>Ein Item benutzen:</strong>
     </li>
 </ul>
 <h3 id="willenskraft"><span id="anchor-9"></span>Willenskraft</h3>
@@ -222,6 +196,7 @@
     geruht habt, und ist somit eine Ressource, die ihr strategisch einsetzen
     könnt, um das Blatt in Kämpfen und Herausforderungen zu euren Gunsten zu
     wenden.
+    Einen Willenspunkt auszugeben gilt nicht als Aktion.
 </p>
 <h3 id="grad-stab-vorteil-resistenz-muskelkraft-und-talent">
     <span
@@ -257,10 +232,10 @@
         <strong>Brand:</strong> Der Angriff ist halbiert und du erleidest
         1*Grad Schaden pro Runde
     </li>
-    <li><strong>Vergiftung</strong>: Du erleidest 2*Grad pro runde</li>
+    <li><strong>Vergiftung</strong>: Du erleidest Grad D 4 Schaden. Die Verteidigung und Spezialverteidigung des Gegners ist Halbiert</li>
     <li>
-        <strong>Schwere Vergiftung</strong>. Du erleidest (1+Runden die du
-        schwer vergiftet bist) x Grad Schaden
+        <strong>Schwere Vergiftung</strong>. Du erleidest (Grad*Runden die du
+        schwer vergiftet bist)D4 Schaden
     </li>
     <li>
         <strong>Frostbrand</strong>: Der Spezialangriff ist halbiert und
@@ -272,12 +247,11 @@
         erholt hat oder nach 4 Runden.
     </li>
     <li>
-        <strong>Verwirrung:</strong> Das Ziel kann nur bei Trigger 3
-        erfolgreich angreifen, andernfalls kann es einem zufälligen Verbündeten
+        <strong>Verwirrung:</strong> Das Ziel kann nur in 50% der Fällen angreifen, andernfalls kann es einem zufälligen Verbündeten
         oder sich selbst Schaden zufügen.
     </li>
     <li>
-        <strong>Fluch:</strong> Das Ziel erleidet zu Beginn jeder Runde 8
+        <strong>Fluch:</strong> Das Ziel erleidet zu Beginn jeder Runde 2*Eigener Grad Schaden.
         Punkte Schaden.
     </li>
     <li>
@@ -286,7 +260,7 @@
         ausführen und seine Geschwindigkeit wird halbiert.
     </li>
     <li>
-        <strong>Lähmung:</strong> Lähmung ist ein schwerer Zustand, der dem
+        <strong>Paralyse:</strong> Lähmung ist ein schwerer Zustand, der dem
         der Benommenheit ähnelt, aber noch schwächer ist. Er hält mehrere Runden
         lang an und macht den Anwender unfähig, Kampfhandlungen auszuführen, und
         seine Geschwindigkeit ist reduziert.
@@ -373,16 +347,10 @@
     </li>
     <li>
         <strong>Taumelnd:</strong> Wenn das Ziel durch die Schadensart
-        dieser Bewegung sehr effektiv getroffend wird, werden seine Attacken
-        keine Angriffsboni erhalten noch wird das Ziel irgendwelche
-        Angriffswertsboni erhalten.
+        dieser Bewegung sehr effektiv getroffend wird, wird für seine Nächste Runde sein Angriff und Spezialberechnung während der Schadensberechnung 0.
     </li>
     <li>
-        <strong>Swift:</strong> Gib einen Willenspunkt aus: Eine
-        Angriffsattacke mit Swift kann als Hilfsmittel-Aktionen verwendet
-        werden, und eine Hilfsmittel-Attacke mit Schnelligkeit kann als
-        Bewegungsaktion verwendet werden. Diese Attacke kann nicht zweimal in
-        einer einzigen Runde verwendet werden.
+        <strong>Swift:</strong> Gib einen Willenspunkt aus: Stelle diese Aktion wieder Her
     </li>
     <li>
         <strong>Unnachgiebig:</strong> Wenn diese Bewegung eingesetzt wird,

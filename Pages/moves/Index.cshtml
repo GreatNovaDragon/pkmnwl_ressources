@@ -44,7 +44,7 @@
             </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID">
-                    @if (!String.IsNullOrEmpty(item.Name_DE))
+                    @if (!string.IsNullOrEmpty(item.Name_DE))
                     {
                         @Html.Raw(item.Name_DE)
                     }

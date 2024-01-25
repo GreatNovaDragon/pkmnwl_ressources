@@ -10,9 +10,13 @@
         title += Model.Pokemon.Name;
     }
 
-    if (!String.IsNullOrEmpty(Model.Pokemon.Form))
+    if (!string.IsNullOrEmpty(Model.Pokemon.Form_DE))
     {
-        title += $" ({Model.Pokemon.Form})";
+        title += $" ({Model.Pokemon.Form_DE})";
+    }
+    else if (!string.IsNullOrEmpty(Model.Pokemon.Form))
+    {
+        title += $" ({Model.Pokemon.Form_DE})";
     }
 
 

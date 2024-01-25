@@ -14,6 +14,7 @@
 <table id="abilities" class="display">
     <thead>
     <tr>
+        <th style="display: none"> Order</th>
         <th>
             Name
         </th>
@@ -26,9 +27,12 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Ability)
+    @foreach (var item in Model.Ability.OrderBy(item => item.Order))
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID"> @Html.Raw($"{item.Name}")</a>
             </td>

@@ -31,11 +31,11 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Pokemon.OrderBy(c => c.Order))
+    @foreach (var item in Model.Pokemon.OrderBy(c => c.Dex))
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Order)
+                @Html.DisplayFor(modelItem => item.Dex)
             </td>
             <td>
                 <img src="@item.ImageLink" height="40px" alt=""/>
@@ -44,15 +44,24 @@
             <td style="display:none;">@Html.DisplayFor(modelItem => item.Name) </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.ID">
-                    @Html.Raw($" {item.Name_DE}")
-                    @if (String.IsNullOrEmpty(item.Name_DE))
+                    @if (!string.IsNullOrEmpty(item.Form_DE))
+                    {
+                        @Html.Raw($"{item.Form_DE}")
+                    }
+                    else if (!string.IsNullOrEmpty(item.Form))
+                    {
+                        @Html.Raw($"{item.Form}")
+                    }
+                    else if (!string.IsNullOrEmpty(item.Name_DE))
+                    {
+                        @Html.Raw(item.Name_DE)
+                    }
+                    else
                     {
                         @Html.DisplayFor(modelItem => item.Name)
                     }
-                    @if (!String.IsNullOrEmpty(item.Form))
-                    {
-                        @Html.Raw($" ({item.Form})")
-                    }
+
+
                 </a>
             </td>
 
