@@ -1,0 +1,87 @@
+@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["HeaderColor"] = "#f00";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="pokedex" class="display">
+    <thead>
+    <tr>
+        <th style="display:none;"> Name en</th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Pokemon[0].Name)
+        </th>
+        <th>HP</th>
+        <th>ATK</th>
+        <th>DEF</th>
+        <th>SpATK</th>
+        <th>SpDEF</th>
+        <th>Speed</th>
+
+
+        <th>
+            Typen
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Pokemon.OrderBy(c => c.Dex))
+    {
+        <tr>
+            <td style="display:none;">@Html.DisplayFor(modelItem => item.Name) </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">
+                    @if (!string.IsNullOrEmpty(item.Form_DE))
+                    {
+                        @Html.Raw($"{item.Form_DE}")
+                    }
+                    else if (!string.IsNullOrEmpty(item.Form))
+                    {
+                        @Html.Raw($"{item.Form}")
+                    }
+                    else if (!string.IsNullOrEmpty(item.Name_DE))
+                    {
+                        @Html.Raw(item.Name_DE)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Name)
+                    }
+
+
+                </a>
+            </td>
+
+            <td>@item.HEALTH</td>
+            <td>@item.ATK</td>
+            <td>@item.DEF</td>
+            <td>@item.SP_ATK</td>
+            <td>@item.SP_DEF</td>
+            <td>@item.SPEED</td>
+            
+
+            <td style="display:none;">
+                @Html.Raw($"{item.Type1.Name}")
+                @if (item.Type2 != null)
+                {
+                    @Html.Raw($"{item.Type2.Name}")
+                }
+                @Html.Raw($"{item.Type1.Name_DE}")
+                @if (item.Type2 != null)
+                {
+                    @Html.Raw($"{item.Type2.Name_DE}")
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

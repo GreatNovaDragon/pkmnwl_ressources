@@ -180,36 +180,11 @@ textarea {
 /* End extract */
 html, body {
     font-family: Verdana, sans-serif;
-    font-size: 15px;
     line-height: 1.5
 }
 
 html {
     overflow-x: hidden
-}
-
-h1 {
-    font-size: 36px
-}
-
-h2 {
-    font-size: 30px
-}
-
-h3 {
-    font-size: 24px
-}
-
-h4 {
-    font-size: 20px
-}
-
-h5 {
-    font-size: 18px
-}
-
-h6 {
-    font-size: 16px
 }
 
 .w3-serif {
@@ -992,7 +967,6 @@ a {
 
 .w3-code, .w3-codespan {
     font-family: Consolas, "courier new";
-    font-size: 16px
 }
 
 .w3-code {
@@ -1195,41 +1169,7 @@ a {
     filter: sepia(50%)
 }
 
-.w3-verytiny {
-    font-size: 8px !important
-}
 
-.w3-tiny {
-    font-size: 9px !important
-}
-
-.w3-small {
-    font-size: 12px !important
-}
-
-.w3-medium {
-    font-size: 15px !important
-}
-
-.w3-large {
-    font-size: 18px !important
-}
-
-.w3-xlarge {
-    font-size: 24px !important
-}
-
-.w3-xxlarge {
-    font-size: 36px !important
-}
-
-.w3-xxxlarge {
-    font-size: 48px !important
-}
-
-.w3-jumbo {
-    font-size: 64px !important
-}
 
 .w3-left-align {
     text-align: left !important

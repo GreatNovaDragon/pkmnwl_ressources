@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.Ability[0].Effect)
         </th>
         <th>
-            @Html.DisplayFor(model => model.Ability[0].Requirement)
+            @Html.DisplayNameFor(model => model.Ability[0].Requirement)
         </th>
     </tr>
     </thead>
@@ -30,7 +30,7 @@
     @foreach (var item in Model.Ability.OrderBy(item => item.Order))
     {
         <tr>
-            <td>
+            <td style="display: none">
                 @Html.DisplayFor(modelItem => item.Order)
             </td>
             <td>

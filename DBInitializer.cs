@@ -194,15 +194,13 @@ public class DBInitializer
                 : Item.Name;
             var Name_DE = Item.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
             var Effect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect.Replace("one stage", "2")
-                    .Replace("two stages", "4").Replace("three stages", "6")
+                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
                 : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                     : "No Entry";
 
             var ShortEffect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect.Replace("one stage", "2")
-                    .Replace("two stages", "4").Replace("three stages", "6")
+                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
                 : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                     : "No Entry";
@@ -289,9 +287,8 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                        .Replace("$effect_chance", $"{m.EffectChance}").Replace("1/16", "gradD4")
+                       .Replace("1/16", "gradD4")
                         .Replace("1/8", "(2*Grad)D4")
-                        .Replace("user's max HP", "").Replace("max HP", "")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
@@ -306,9 +303,8 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
-                        .Replace("$effect_chance", $"{m.EffectChance}").Replace("1/16", "gradD4")
+                        .Replace("1/16", "gradD4")
                         .Replace("1/8", "(2*Grad)D4")
-                        .Replace("user's max HP", "").Replace("max HP", "")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";

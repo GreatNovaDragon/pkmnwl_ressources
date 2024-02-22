@@ -1,0 +1,47 @@
+@page
+@model pkmnWildLife.Pages.LearnSet.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Who</th>
+        <th>What</th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Learnset[0].how)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Learnset[0].level)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Learnset) {
+    <tr>
+        <td>@item.mon.Name</td>
+        <td>@item.move.Name</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.how)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.level)
+        </td>
+        <td>
+            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
