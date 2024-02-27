@@ -287,7 +287,7 @@ public class DBInitializer
                 ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
                 : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                     ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                       .Replace("1/16", "gradD4")
+                        .Replace("1/16", "gradD4")
                         .Replace("1/8", "(2*Grad)D4")
                     : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
@@ -309,6 +309,12 @@ public class DBInitializer
                         ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
                         : "No Data";
 
+            if (!m.Priority.Equals(0))
+            {
+                var prio = $"\n\n Has a priority of {m.Priority}.";
+                ShortEffect += prio;
+                Effect += prio;
+            }
 
             Effect = accuracy_string_en(m.Accuracy) + Effect;
             Effect = Effect.Replace("Inflicts regular damage.", "");
