@@ -15,6 +15,9 @@ public class IndexModel(ApplicationDbContext context) : PageModel
     public async Task OnGetAsync()
     {
         if (context.Pokedex != null)
-            Pokemon = await context.Pokedex.Include(c => c.Type1).Include(c => c.Type2).ToListAsync();
+            Pokemon = await context
+                .Pokedex.Include(c => c.Type1)
+                .Include(c => c.Type2)
+                .ToListAsync();
     }
 }

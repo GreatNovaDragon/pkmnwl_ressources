@@ -22,6 +22,9 @@ public class IndexModel : PageModel
     public async Task OnGetAsync()
     {
         if (_context.MoveDex != null)
-            Move = await _context.MoveDex.Include(m => m.type).Include(m => m.MoveClass).ToListAsync();
+            Move = await _context
+                .MoveDex.Include(m => m.type)
+                .Include(m => m.MoveClass)
+                .ToListAsync();
     }
 }

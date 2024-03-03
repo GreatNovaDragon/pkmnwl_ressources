@@ -10,9 +10,7 @@ namespace pkmnWildLife.Data;
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-    {
-    }
+        : base(options) { }
 
     public DbSet<Ability> AbilityDex { get; set; }
     public DbSet<Move> MoveDex { get; set; }
@@ -114,9 +112,11 @@ public class Item
 
 public class Pokemon
 {
-    [Column(Order = 2)] public string ID { get; set; }
+    [Column(Order = 2)]
+    public string ID { get; set; }
 
-    [Column(Order = 1)] public int Dex { get; set; }
+    [Column(Order = 1)]
+    public int Dex { get; set; }
     public string? ImageLink { get; set; }
 
     public string Name { get; set; }

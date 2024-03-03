@@ -39,17 +39,18 @@ public class DBInitializer
         await foreach (var TypeR in apiclient.GetAllNamedResourcesAsync<Type>())
         {
             var Type = await apiclient.GetResourceAsync(TypeR);
-            tps.Add(new Data.Type
-            {
-                ID = Type.Name,
-                Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
-                Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
-            });
+            tps.Add(
+                new Data.Type
+                {
+                    ID = Type.Name,
+                    Name = Type.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
+                    Name_DE = Type.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
+                }
+            );
         }
 
         context.AddRange(tps);
         await context.SaveChangesAsync();
-
 
         var relations = new List<DamageRelations>();
         foreach (var t in context.Types)
@@ -82,25 +83,30 @@ public class DBInitializer
 
             var dr = new DamageRelations();
 
-            relations.Add(new DamageRelations
-            {
-                ID = $"relations_{t.ID}",
-                Type = t,
+            relations.Add(
+                new DamageRelations
+                {
+                    ID = $"relations_{t.ID}",
+                    Type = t,
 
-                doubleDamageFrom = doublefrom,
-                doubleDamageTo = doubleto,
-                halfDamageFrom = halffrom,
-                halfDamageTo = halfto,
-                noDamageFrom = nofrom,
-                noDamageTo = noto
-            });
+                    doubleDamageFrom = doublefrom,
+                    doubleDamageTo = doubleto,
+                    halfDamageFrom = halffrom,
+                    halfDamageTo = halfto,
+                    noDamageFrom = nofrom,
+                    noDamageTo = noto
+                }
+            );
         }
 
         context.AddRange(relations);
         await context.SaveChangesAsync();
     }
 
-    private static async Task TransferMoveClasses(ApplicationDbContext context, PokeApiClient apiclient)
+    private static async Task TransferMoveClasses(
+        ApplicationDbContext context,
+        PokeApiClient apiclient
+    )
     {
         if (context.MoveClasses.Any())
         {
@@ -113,12 +119,14 @@ public class DBInitializer
         await foreach (var mc in apiclient.GetAllNamedResourcesAsync<MoveDamageClass>())
         {
             var m = await apiclient.GetResourceAsync(mc);
-            movecls.Add(new MoveClass
-            {
-                ID = m.Name,
-                Name = m.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
-                Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
-            });
+            movecls.Add(
+                new MoveClass
+                {
+                    ID = m.Name,
+                    Name = m.Names.FirstOrDefault(n => n.Language.Name == "en").Name,
+                    Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name
+                }
+            );
 
             Console.WriteLine(m.Name);
         }
@@ -142,8 +150,14 @@ public class DBInitializer
 
             string[] undesirables =
             {
-                "dynamax-crystals", "sandwhich-ingredients", "tm-materials", "picnic", "species-candies",
-                "all-machines", "all-mail", "plot-advancement"
+                "dynamax-crystals",
+                "sandwhich-ingredients",
+                "tm-materials",
+                "picnic",
+                "species-candies",
+                "all-machines",
+                "all-mail",
+                "plot-advancement"
             };
 
             if (undesirables.Contains(Item.Category.Name))
@@ -151,29 +165,36 @@ public class DBInitializer
 
             var ID = $"{Item.Name}_{Item.Id}";
 
-            var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
-                : Item.Name;
+            var Name =
+                Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
+                    : Item.Name;
             var Name_DE = Item.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
-            var Effect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
-                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
-                : Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                    : "No Data";
-            itms.Add(new Data.Item
-            {
-                ID = ID,
-                Name = Name,
-                Name_DE = Name_DE,
-                Effect = Effect
-            });
+            var Effect =
+                Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
+                    : Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                        : "No Data";
+            itms.Add(
+                new Data.Item
+                {
+                    ID = ID,
+                    Name = Name,
+                    Name_DE = Name_DE,
+                    Effect = Effect
+                }
+            );
         }
 
         context.AddRange(itms);
         await context.SaveChangesAsync();
     }
 
-    private static async Task TransferAbilities(ApplicationDbContext context, PokeApiClient apiclient)
+    private static async Task TransferAbilities(
+        ApplicationDbContext context,
+        PokeApiClient apiclient
+    )
     {
         if (context.AbilityDex.Where(m => !m.IsTrait).Any())
         {
@@ -189,22 +210,28 @@ public class DBInitializer
         {
             var Item = await apiclient.GetResourceAsync(i);
             var ID = Item.Name;
-            var Name = Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
-                : Item.Name;
+            var Name =
+                Item.Names.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.Names.FirstOrDefault(n => n.Language.Name == "en").Name
+                    : Item.Name;
             var Name_DE = Item.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
-            var Effect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                    : "No Entry";
+            var Effect =
+                Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
+                    : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? Item
+                            .FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en")
+                            .FlavorText
+                        : "No Entry";
 
-            var ShortEffect = Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
-                : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                    : "No Entry";
-
+            var ShortEffect =
+                Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? Item.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
+                    : Item.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? Item
+                            .FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en")
+                            .FlavorText
+                        : "No Entry";
 
             // var moves_old = Helpers.csv2ab("abilities_old.csv");
 
@@ -215,15 +242,17 @@ public class DBInitializer
              }
  */
 
-            abs.Add(new Data.Ability
-            {
-                ID = ID,
-                Name = Name,
-                Name_DE = Name_DE,
-                Effect = Effect,
-                ShortEffect = ShortEffect,
-                IsTrait = false
-            });
+            abs.Add(
+                new Data.Ability
+                {
+                    ID = ID,
+                    Name = Name,
+                    Name_DE = Name_DE,
+                    Effect = Effect,
+                    ShortEffect = ShortEffect,
+                    IsTrait = false
+                }
+            );
             it++;
             Console.WriteLine($"Ability {it}");
         }
@@ -243,17 +272,20 @@ public class DBInitializer
         var traits = Helpers.Csv2Trait("traits.csv");
         var trs = new List<Data.Ability>();
 
-
         foreach (var tr in traits)
-            trs.Add(new Data.Ability
-            {
-                ID = tr.Name.ToLower().Normalize() + "_trait",
-                Effect = tr.effect,
-                Name = tr.Name,
-                Requirement = tr.Requirement,
-                IsTrait = true,
-                Order = tr.Requirement.Contains("Grade") ? int.Parse(tr.Requirement.Replace("Grade ", "")) : 999
-            });
+            trs.Add(
+                new Data.Ability
+                {
+                    ID = tr.Name.ToLower().Normalize() + "_trait",
+                    Effect = tr.effect,
+                    Name = tr.Name,
+                    Requirement = tr.Requirement,
+                    IsTrait = true,
+                    Order = tr.Requirement.Contains("Grade")
+                        ? int.Parse(tr.Requirement.Replace("Grade ", ""))
+                        : 999
+                }
+            );
         context.AddRange(trs);
         await context.SaveChangesAsync();
     }
@@ -277,37 +309,45 @@ public class DBInitializer
             var m = await apiclient.GetResourceAsync(i);
 
             var ID = m.Name;
-            var Name = m.Names.FirstOrDefault(n => n.Language.Name == "en") != null
-                ? m.Names.FirstOrDefault(n => n.Language.Name == "en").Name
-                : m.Name;
+            var Name =
+                m.Names.FirstOrDefault(n => n.Language.Name == "en") != null
+                    ? m.Names.FirstOrDefault(n => n.Language.Name == "en").Name
+                    : m.Name;
 
             var Name_DE = m.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
 
-            var Effect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
-                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
-                : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").Effect
-                        .Replace("1/16", "gradD4")
-                        .Replace("1/8", "(2*Grad)D4")
-                    : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                        ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                        : "No Data";
-
+            var Effect =
+                m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").Effect
+                    : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? m
+                            .EffectEntries.FirstOrDefault(n => n.Language.Name == "en")
+                            .Effect.Replace("1/16", "gradD4")
+                            .Replace("1/8", "(2*Grad)D4")
+                        : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                            ? m
+                                .FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en")
+                                .FlavorText
+                            : "No Data";
 
             if (ID == "ingrain")
                 Effect +=
-                    " \n während verwurzler aktiv ist, kannst du statt anzugreifen, dich deine normale bewegungsreichweite" +
-                    " bewegen ohne das verwurzler aufgehoben wird, rennen ist nicht möglich.";
+                    " \n während verwurzler aktiv ist, kannst du statt anzugreifen, dich deine normale bewegungsreichweite"
+                    + " bewegen ohne das verwurzler aufgehoben wird, rennen ist nicht möglich.";
 
-            var ShortEffect = m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
-                ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
-                : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en").ShortEffect
-                        .Replace("1/16", "gradD4")
-                        .Replace("1/8", "(2*Grad)D4")
-                    : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
-                        ? m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en").FlavorText
-                        : "No Data";
+            var ShortEffect =
+                m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de") != null
+                    ? m.EffectEntries.FirstOrDefault(n => n.Language.Name == "de").ShortEffect
+                    : m.EffectEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                        ? m
+                            .EffectEntries.FirstOrDefault(n => n.Language.Name == "en")
+                            .ShortEffect.Replace("1/16", "gradD4")
+                            .Replace("1/8", "(2*Grad)D4")
+                        : m.FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en") != null
+                            ? m
+                                .FlavorTextEntries.FirstOrDefault(n => n.Language.Name == "en")
+                                .FlavorText
+                            : "No Data";
 
             if (!m.Priority.Equals(0))
             {
@@ -322,24 +362,23 @@ public class DBInitializer
             var Target = m.Target.Name;
 
             var DamageDice = StrengthToDice(m.Power, 0.8);
-            var MType = types.FirstOrDefault(e =>
-                e.ID == m.Type.Name);
-            var DamageClass =
-                dclass.FirstOrDefault(e =>
-                    e.ID == m.DamageClass.Name);
+            var MType = types.FirstOrDefault(e => e.ID == m.Type.Name);
+            var DamageClass = dclass.FirstOrDefault(e => e.ID == m.DamageClass.Name);
 
-            mvs.Add(new Data.Move
-            {
-                ID = ID,
-                Name = Name,
-                Name_DE = Name_DE,
-                Effect = Effect,
-                ShortEffect = ShortEffect,
-                type = MType,
-                Target = Target,
-                DamageDice = DamageDice,
-                MoveClass = DamageClass
-            });
+            mvs.Add(
+                new Data.Move
+                {
+                    ID = ID,
+                    Name = Name,
+                    Name_DE = Name_DE,
+                    Effect = Effect,
+                    ShortEffect = ShortEffect,
+                    type = MType,
+                    Target = Target,
+                    DamageDice = DamageDice,
+                    MoveClass = DamageClass
+                }
+            );
 
             it++;
             Console.WriteLine($"Move {it}");
@@ -370,60 +409,86 @@ public class DBInitializer
             var ID = poke.Name;
             var Order = poke.Order;
             var Dex = species.Order;
-            var Name = species.Names
-                .FirstOrDefault(n => n.Language.Name == "en").Name;
+            var Name = species.Names.FirstOrDefault(n => n.Language.Name == "en").Name;
 
             var image = poke.Sprites.Other.OfficialArtwork.FrontDefault;
-            if (string.IsNullOrEmpty(image)) image = poke.Sprites.Other.Home.FrontDefault;
+            if (string.IsNullOrEmpty(image))
+                image = poke.Sprites.Other.Home.FrontDefault;
 
-            if (string.IsNullOrEmpty(image)) image = poke.Sprites.FrontDefault;
+            if (string.IsNullOrEmpty(image))
+                image = poke.Sprites.FrontDefault;
 
-            var Name_DE = species.Names
-                .FirstOrDefault(n => n.Language.Name == "de")?.Name;
+            var Name_DE = species.Names.FirstOrDefault(n => n.Language.Name == "de")?.Name;
 
-            var form = apiclient.GetResourceAsync(poke.Forms[0]).Result.Names
-                .FirstOrDefault(n => n.Language.Name == "en")?.Name;
-            var form_de = apiclient.GetResourceAsync(poke.Forms[0]).Result.Names
-                .FirstOrDefault(n => n.Language.Name == "de")?.Name;
+            var form = apiclient
+                .GetResourceAsync(poke.Forms[0])
+                .Result.Names.FirstOrDefault(n => n.Language.Name == "en")
+                ?.Name;
+            var form_de = apiclient
+                .GetResourceAsync(poke.Forms[0])
+                .Result.Names.FirstOrDefault(n => n.Language.Name == "de")
+                ?.Name;
 
+            if (
+                form_de != null
+                && (
+                    form_de.Contains("Gigadynamax")
+                    || form_de.Contains("Totem")
+                    || ID.Contains("mimigma-busted")
+                    || ID.Contains("cramorant-")
+                    || ID.Contains("koraidon-")
+                    || ID.Contains("miraidon-")
+                )
+            )
+                continue;
 
-            if (form_de != null && (form_de.Contains("Gigadynamax") || form_de.Contains("Totem") ||
-                                    ID.Contains("mimigma-busted") || ID.Contains("cramorant-") ||
-                                    ID.Contains("koraidon-") || ID.Contains("miraidon-"))) continue;
-
-            if ((Name == "Pikachu") & !string.IsNullOrEmpty(form)) continue;
-            if (form_de != null && (Name_DE == "Kikugi" || form_de.Contains("Westliches") ||
-                                    form_de.Contains("Frühling") ||
-                                    ID == "flabebe" || ID == "floette" || ID == "florges" || Name_DE == "Xerneas" ||
-                                    ID == "sinistea" || ID == "poltageist" || ID == "alcremie"))
+            if ((Name == "Pikachu") & !string.IsNullOrEmpty(form))
+                continue;
+            if (
+                form_de != null
+                && (
+                    Name_DE == "Kikugi"
+                    || form_de.Contains("Westliches")
+                    || form_de.Contains("Frühling")
+                    || ID == "flabebe"
+                    || ID == "floette"
+                    || ID == "florges"
+                    || Name_DE == "Xerneas"
+                    || ID == "sinistea"
+                    || ID == "poltageist"
+                    || ID == "alcremie"
+                )
+            )
             {
                 form = "";
                 form_de = "";
             }
 
-            if (Name_DE == Name) Name_DE = null;
+            if (Name_DE == Name)
+                Name_DE = null;
 
             var Abilities = new List<Data.Ability>();
 
             foreach (var a in poke.Abilities)
             {
-                var ab = abilities.FirstOrDefault(w =>
-                    w.ID == a.Ability.Name);
+                var ab = abilities.FirstOrDefault(w => w.ID == a.Ability.Name);
 
                 Abilities.Add(ab);
             }
 
-            if (Name_DE == "Quajutsu") Abilities.Add(abilities.FirstOrDefault(w => w.Name == "Battle Bond"));
+            if (Name_DE == "Quajutsu")
+                Abilities.Add(abilities.FirstOrDefault(w => w.Name == "Battle Bond"));
 
             if (ID.Contains("power-construct"))
                 continue;
-            if (ID.Contains("zygarde")) Abilities.Add(abilities.FirstOrDefault(w => w.ID == "power-construct"));
+            if (ID.Contains("zygarde"))
+                Abilities.Add(abilities.FirstOrDefault(w => w.ID == "power-construct"));
 
             if (ID.Contains("own-tempo"))
                 continue;
 
-            if (ID == "rockruff") Abilities.Add(abilities.FirstOrDefault(w => w.ID == "own-tempo"));
-
+            if (ID == "rockruff")
+                Abilities.Add(abilities.FirstOrDefault(w => w.ID == "own-tempo"));
 
             if (ID == "minior-blue")
             {
@@ -442,16 +507,13 @@ public class DBInitializer
             if (ID.Contains("minior-") & (ID != "minior-meteor"))
                 continue;
 
-
-            var Type1 = types.FirstOrDefault(w =>
-                w.ID == poke.Types[0].Type.Name);
-            var Type2 = poke.Types.Count == 2
-                ? types.FirstOrDefault(w =>
-                    w.ID == poke.Types[1].Type.Name)
-                : null;
+            var Type1 = types.FirstOrDefault(w => w.ID == poke.Types[0].Type.Name);
+            var Type2 =
+                poke.Types.Count == 2
+                    ? types.FirstOrDefault(w => w.ID == poke.Types[1].Type.Name)
+                    : null;
 
             var HEALTH = StatToInt(poke.Stats[0].BaseStat, 2);
-
 
             var isFOCKINGSPECIALMATE = species.IsLegendary || species.IsMythical;
             var DEF_NERF = isFOCKINGSPECIALMATE ? 0.9 : 1;
@@ -460,32 +522,34 @@ public class DBInitializer
             var DEF = StatToInt(poke.Stats[2].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3 : 6);
             var SP_ATK = StatToInt(poke.Stats[3].BaseStat, ATK_BUFF);
             ;
-            var SP_DEF = StatToInt(poke.Stats[4].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3 : 6);
+            var SP_DEF =
+                StatToInt(poke.Stats[4].BaseStat, DEF_NERF) + (isFOCKINGSPECIALMATE ? 3 : 6);
             var SPEED = StatToInt(poke.Stats[5].BaseStat);
             ;
 
-            pokes.Add(new Data.Pokemon
-            {
-                ID = ID,
-                Dex = Dex,
-                Name = Name,
-                Name_DE = Name_DE,
-                ImageLink = image,
-                Form = form,
-                Form_DE = form_de,
-                Abilities = Abilities,
-                Type1 = Type1,
-                Type2 = Type2,
-                HEALTH = HEALTH,
-                ATK = ATK,
-                DEF = DEF,
-                SP_DEF = SP_DEF,
-                SP_ATK = SP_ATK,
-                SPEED = SPEED
-            });
+            pokes.Add(
+                new Data.Pokemon
+                {
+                    ID = ID,
+                    Dex = Dex,
+                    Name = Name,
+                    Name_DE = Name_DE,
+                    ImageLink = image,
+                    Form = form,
+                    Form_DE = form_de,
+                    Abilities = Abilities,
+                    Type1 = Type1,
+                    Type2 = Type2,
+                    HEALTH = HEALTH,
+                    ATK = ATK,
+                    DEF = DEF,
+                    SP_DEF = SP_DEF,
+                    SP_ATK = SP_ATK,
+                    SPEED = SPEED
+                }
+            );
             i++;
-            Console.WriteLine(
-                $"pokemon {i}");
+            Console.WriteLine($"pokemon {i}");
         }
 
         context.AddRange(pokes);
@@ -493,7 +557,10 @@ public class DBInitializer
         await context.SaveChangesAsync();
     }
 
-    public static async Task TransferLearnsets(ApplicationDbContext context, PokeApiClient apiclient)
+    public static async Task TransferLearnsets(
+        ApplicationDbContext context,
+        PokeApiClient apiclient
+    )
     {
         if (context.Learnsets.Any())
         {
@@ -526,7 +593,8 @@ public class DBInitializer
                     var how = vers.MoveLearnMethod.Name;
                     var level = int.Parse(Math.Ceiling((double)vers.LevelLearnedAt / 5).ToString());
 
-                    if (how != "level-up") level = int.MaxValue;
+                    if (how != "level-up")
+                        level = int.MaxValue;
 
                     var l = new Learnset
                     {
@@ -550,7 +618,8 @@ public class DBInitializer
                     meth_it++;
 
                     Console.WriteLine(
-                        $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length}  {poke.Name})");
+                        $"MLP ({meth_it}/{vergd.Count()})/({m_it}/{moves.Count})/({p}/{pokemon.Length}  {poke.Name})"
+                    );
                 }
 
                 m_it++;
@@ -575,7 +644,8 @@ public class DBInitializer
 
     public static string? StrengthToDice(int? strength, double? nerf = null)
     {
-        if (!strength.HasValue) return null;
+        if (!strength.HasValue)
+            return null;
 
         var calc = strength.Value / 10;
         if (nerf.HasValue)
