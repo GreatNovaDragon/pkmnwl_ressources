@@ -3,12 +3,7 @@
 
 @{
     ViewData["Title"] = "";
-    var title = Model.Pokemon.Name_DE;
-
-    if (title == null)
-    {
-        title += Model.Pokemon.Name;
-    }
+    var title = Model.Pokemon.Name_DE ?? Model.Pokemon.Name;
 
     if (!string.IsNullOrEmpty(Model.Pokemon.Form_DE))
     {
@@ -22,15 +17,7 @@
 
     ViewData["Title"] = title;
 
-    string headercolor;
-    if (Model.Pokemon.Type2 != null)
-    {
-        headercolor = $"linear-gradient(135deg, {Helpers.TypeToColor(Model.Pokemon.Type1)} 0%, {Helpers.TypeToColor(Model.Pokemon.Type2)} 100%); ";
-    }
-    else
-    {
-        headercolor = Helpers.TypeToColor(Model.Pokemon.Type1);
-    }
+    var headercolor = Model.Pokemon.Type2 != null ? $"linear-gradient(135deg, {Helpers.TypeToColor(Model.Pokemon.Type1)} 0%, {Helpers.TypeToColor(Model.Pokemon.Type2)} 100%); " : Helpers.TypeToColor(Model.Pokemon.Type1);
 
     ViewData["Type1"] = Model.Pokemon.Type1.ID;
     ViewData["Type2"] = Model.Pokemon.Type2?.ID;
@@ -38,32 +25,47 @@
     ViewData["HeaderColor"] = headercolor;
 }
 
-
-<div class="w3-cell-row">
-    <div class="w3-container w3-quarter w3-cell">
-        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="w3-image"/>
+<div class="d-inline-flex">
+    <div>
+        <img src="@Html.Raw(Model.Pokemon.ImageLink)" class="img-fluid rounded-start" alt="...">
+        <div class="d-inline-flex">
+            <div class="w-50">
+                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type1.ID}.png")"/>
+            </div>
+            <div class="w-50">
+                @if (Model.Pokemon.Type2 != null)
+                {
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.Pokemon.Type2.ID}.png")"/>
+                }
+            </div>
+        </div>
     </div>
-    <div class="w3-container w3-quarter w3-cell">
-        <h2>Fähigkeiten</h2>
+    <div class="container">
+        <h3>Fähigkeiten</h3>
         @foreach (var a in Model.Pokemon.Abilities)
         {
-            <h3>@Html.Raw($"{a.Name_DE}")</h3>
+            <h4>@Html.Raw($"{a.Name_DE}")</h4>
             @Html.Raw(Markdown.Parse(a.ShortEffect))
         }
     </div>
 
-    <div class="w3-container w3-quarter w3-cell">
+</div>
+
+<div class="d-inline-flex">
+    <div>
         @{
-            var originalColorlist = new List<(int r, int g, int b, int pos)>();
-            originalColorlist.Add((158, 194, 50, 0));
-            originalColorlist.Add((192, 198, 37, 21));
-            originalColorlist.Add((234, 203, 22, 41));
-            originalColorlist.Add((255, 205, 15, 54));
-            originalColorlist.Add((235, 167, 92, 60));
-            originalColorlist.Add((228, 89, 15, 65));
-            originalColorlist.Add((209, 19, 42, 72));
-            originalColorlist.Add((121, 6, 5, 91));
-            originalColorlist.Add((0, 0, 0, 100));
+            var originalColorlist = new List<(int r, int g, int b, int pos)>
+            {
+                (158, 194, 50, 0),
+                (192, 198, 37, 21),
+                (234, 203, 22, 41),
+                (255, 205, 15, 54),
+                (235, 167, 92, 60),
+                (228, 89, 15, 65),
+                (209, 19, 42, 72),
+                (121, 6, 5, 91),
+                (0, 0, 0, 100)
+            };
 
             var gradient = new List<(int r, int g, int b)>();
             for (var i = 0; i < originalColorlist.Count - 1; i++)
@@ -119,8 +121,8 @@
 
     </div>
 
-    <div class="w3-container w3-quarter">
-        @if (Model.DamageMultiplier.Where(v => v.Item2 == 0).Count() != 0)
+    <div class="container w-50">
+        @if (Model.DamageMultiplier.Count(v => v.Item2 == 0) != 0)
         {
             <div>
                 <p>Erhält Null Schaden von</p>
@@ -130,7 +132,7 @@
                 }
             </div>
         }
-        @if (Model.DamageMultiplier.Where(v => v.Item2 == 25).Count() != 0)
+        @if (Model.DamageMultiplier.Count(v => v.Item2 == 25) != 0)
         {
             <div>
                 <p>Erhält 0.25x Schaden von</p>
@@ -140,7 +142,7 @@
                 }
             </div>
         }
-        @if (Model.DamageMultiplier.Where(v => v.Item2 == 50).Count() != 0)
+        @if (Model.DamageMultiplier.Count(v => v.Item2 == 50) != 0)
         {
             <div>
                 <p>Erhält 0.5x Schaden von</p>
@@ -150,7 +152,7 @@
                 }
             </div>
         }
-        @if (Model.DamageMultiplier.Where(v => v.Item2 == 200).Count() != 0)
+        @if (Model.DamageMultiplier.Count(v => v.Item2 == 200) != 0)
         {
             <div>
                 <p>Erhält 2x Schaden von</p>
@@ -160,7 +162,7 @@
                 }
             </div>
         }
-        @if (Model.DamageMultiplier.Where(v => v.Item2 == 400).Count() != 0)
+        @if (Model.DamageMultiplier.Count(v => v.Item2 == 400) != 0)
         {
             <div>
                 <p>Erhält 4x Schaden von</p>
@@ -172,74 +174,57 @@
         }
 
     </div>
-
-
 </div>
 
+<h3>Erlernbare Angriffe</h3>
 
-<h2>Erlernbare Angriffe</h2>
 
+<div>
+    <nav>
+        <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-level-tab" data-bs-toggle="tab" data-bs-target="#nav-level" type="button" role="tab" aria-controls="nav-level" aria-selected="true">Level</button>
+            <button class="nav-link" id="nav-tm-tab" data-bs-toggle="tab" data-bs-target="#nav-tm" type="button" role="tab" aria-controls="nav-tm" aria-selected="false">TM</button>
+            <button class="nav-link" id="nav-tutor-tab" data-bs-toggle="tab" data-bs-target="#nav-tutor" type="button" role="tab" aria-controls="nav-tutor" aria-selected="false">Tutor</button>
+            <button class="nav-link" id="nav-egg-tab" data-bs-toggle="tab" data-bs-target="#nav-egg" type="button" role="tab" aria-controls="nav-egg" aria-selected="false">Ei</button>
 
-<div class="w3-row-padding">
-    <a href="javascript:void(0)" onclick="openCity(event, 'LevelUp');">
-        <div class="w3-col tablink w3-bottombar w3-hover-light-grey w3-quarter  w3-border-red">Level Up</div>
-    </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'TM');">
-        <div class=" w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey ">TM</div>
-    </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'Tutor');">
-        <div class="w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey ">Tutor</div>
-    </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'Egg');">
-        <div class="w3-col tablink w3-bottombar w3-quarter w3-hover-light-grey">Ei</div>
-    </a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade active show" id="nav-level" role="tabpanel" aria-labelledby="nav-level-tab">
+
+            <div class="d-inline-flex flex-wrap justify-content-around">
+                @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.move.Name_DE).ThenBy(m => m.level))
+                {
+                    @Html.Partial("moves/move", move)
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-tm" role="tabpanel" aria-labelledby="nav-tm-tab">
+            <div class="d-inline-flex flex-wrap">
+
+                @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
+                {
+                    @Html.Partial("moves/move", move)
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-tutor" role="tabpanel" aria-labelledby="nav-tutor-tab">
+            <div class="d-inline-flex flex-wrap">
+
+                @foreach (var move in Model.Learnsets.Where(e => !new[] { "level-up", "machine", "egg" }.Contains(e.how)).OrderBy(m => m.move.Name_DE).ThenBy(m => m.how))
+                {
+                    @Html.Partial("moves/move", move)
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-egg" role="tabpanel" aria-labelledby="nav-egg-tab">
+            <div class="d-inline-flex flex-wrap">
+
+                @foreach (var move in Model.Learnsets.Where(e => e.how == "egg").OrderBy(m => m.move.Name_DE))
+                {
+                    @Html.Partial("moves/move", move)
+                }
+            </div>
+        </div>
+    </div>
 </div>
-
-
-<div id="LevelUp" class="w3-container city" style=" display: flex; flex-wrap: wrap ;  justify-content: space-evenly">
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "level-up").OrderBy(e => e.move.Name_DE).OrderBy(m => m.level))
-    {
-        @Html.Partial("moves/move", move)
-    }
-</div>
-
-
-<div id="TM" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "machine"))
-    {
-        @Html.Partial("moves/move", move)
-    }
-</div>
-<div id="Tutor" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
-
-    @foreach (var move in Model.Learnsets.Where(e => !new string[3] { "level-up", "machine", "egg" }.Contains(e.how)).OrderBy(m => m.move.Name_DE).OrderBy(m => m.how))
-    {
-        @Html.Partial("moves/move", move)
-    }
-</div>
-<div id="Egg" class="w3-container city" style="display:none; flex-wrap: wrap ; flex:  1 1 0px; justify-content: space-around">
-
-    @foreach (var move in Model.Learnsets.Where(e => e.how == "egg").OrderBy(m => m.move.Name_DE))
-    {
-        @Html.Partial("moves/move", move)
-    }
-</div>
-
-<script>
-function openCity(evt, cityName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
-  }
-  document.getElementById(cityName).style.display = "flex";
-  evt.currentTarget.firstElementChild.className += " w3-border-red";
-}
-</script>
-
-<a asp-page="./Edit" asp-route-id="@Model.Pokemon?.ID">Edit</a> |
-<a asp - page="./Index"> Back to List</a >

@@ -372,9 +372,6 @@
         <Content Update="wwwroot\css\progressbar.css">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Update="wwwroot\css\w3.css">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
         <None Include="wwwroot\PokemonSwShCharSheetsGerNoColour.pdf"/>
         <None Update="app.db">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>

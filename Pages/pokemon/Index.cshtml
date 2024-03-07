@@ -2,7 +2,7 @@
 @model IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pokédex";
     ViewData["HeaderColor"] = "#f00";
 }
 
@@ -11,7 +11,7 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table id="pokedex" class="display">
+<table id="pokedex" class="display" style="width:100%">
     <thead>
     <tr>
         <th>
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Pokemon[0].Name)
         </th>
 
-        <th style="width: 500px">
+        <th>
             Typen
         </th>
         <th style="display: none"> Typen</th>
@@ -66,10 +66,10 @@
             </td>
 
             <td>
-                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type1.ID}.png")"/>
+                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type1.ID}.png")" class="img-fluid float-end"/>
                 @if (item.Type2 != null)
-                {
-                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type2.ID}.png")"/>
+                { 
+                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{item.Type2.ID}.png")" class="img-fluid float-end"/>
                 }
             </td>
 

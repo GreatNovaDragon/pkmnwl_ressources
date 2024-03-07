@@ -1,0 +1,374 @@
+@page
+@{
+    ViewData["Title"] = "Hauptregeln";
+    ViewData["HeaderColor"] = "#f00";
+}
+
+<a asp-area="" asp-page="/rules/charactercreation">
+    Infos zur Charakter-Erstellung
+</a>
+
+
+<h1 id="das-spiel-spielen">
+    <span id="anchor-2"></span>Das Spiel
+    spielen
+</h1>
+<h2 id="kämpfen-in-pokémon-wild-life">
+    <span id="anchor-3"></span>Kämpfen
+    in Pokémon Wild Life
+</h2>
+<p>
+    Um Pokémon Wild Life zu spielen, benötigen Sie eine Vielzahl von
+    Würfeln. Am häufigsten werden zwei 6-seitige Würfel (im Folgenden als
+    2D6 bezeichnet) zum Lösen von Konflikten und Prüfungen verwendet.
+</p>
+<p>
+    In Pokémon Wild Life ist der Kampf in Runden und Züge unterteilt.
+    Eine Runde ist beendet, wenn alle teilnehmenden Pokémon an der Reihe
+    waren.
+</p>
+<p>
+    Jedes Pokémon hat in einem Zug eine Aktionen zur Verfügung. Jedoch lässt sich diese Aktion einmalig wiederherstellen, indem man eine Super-Effective Attacke einsettzt, oder die Aktion es selber angibt. Aktionen mit Priorität stellen auch eine Aktion wieder.
+</p>
+
+<h3 id="kampftaktik-und-umwelt">
+    <span id="anchor-5"></span>Kampftaktik
+    und Umwelt
+</h3>
+<ul>
+    <li>
+        <strong>Bedrohter Bereich und Gelegenheitsangriffe:</strong> Ein
+        Ein-Feld-Radius um ein Pokémon ist die Bedrohte Zone dieses Pokémon.
+        Befindet sich ein Pokémon innerhalb der Bedrohten Zone eines anderen
+        Pokémon und versucht, diese zu verlassen, kann der Gegner einen
+        Gelegenheitsangriff ausführen.
+    </li>
+    <li>
+        <strong>Deckung:</strong> Deckung wird durch feste Objekte geboten,
+        die sich zwischen Ihnen und Ihrem Ziel befinden. Bäume, Mauern und
+        Felsbrocken sind gängige Beispiele für Deckung. Eine Kreatur muss sich
+        hinter einem solchen Hindernis befinden, so dass mindestens die Hälfte
+        ihres Körpers geschützt ist, um den Vorteil der Deckung in Anspruch
+        nehmen zu können. Solange ein Pokémon Deckung hat, erhält es einen Bonus
+        von +1 auf beide Verteidigungswerte.
+    </li>
+    <li>
+        <strong>Ein ungesehenes Ziel angreifen:</strong> Wenn du ein
+        ungesehenes Ziel angreifst, musst du raten, wo es sich befindet. Wenn
+        deine Vermutung falsch ist, geht auch ein erfolgreicher Angriffswurf
+        daneben. Alternativ kann dein Pokémon eine Aktion einsetzen, um den
+        versteckten Gegner zu suchen. Dies beinhaltet normalerweise eine
+        Wahrnehmungsprobe gegen die Heimlichkeitsprobe des Gegners, mit einem
+        +2-Bonus, wenn dein Pokémon über Spezialfähigkeiten wie Scharfblick oder
+        Schnüffler verfügt. Wenn deine Probe höher ausfällt, kannst du ohne
+        Abzüge angreifen.
+    </li>
+</ul>
+<h3 id="kampftechniken"><span id="anchor-6"></span>Kampftechniken</h3>
+<ul>
+    <li>
+        <strong>Kritische Treffer:</strong> Ein kritischer Treffer liegt
+        vor, wenn dein Angriffswurf eine 11 (vor Boni) für den Angriff oder
+        Spezialangriff ergibt. In diesem Fall würfelst du erneut für diesen
+        Angriff und addierst das neue Ergebnis zum Gesamtschaden. Nur die
+        Schadenswürfel werden verdoppelt; jeglicher Bonusschaden bleibt
+        unverändert.
+    </li>
+    <li>
+        <strong>K.o. und Tod:</strong> Ein Pokémon gilt als KO,
+        wenn seine Lebenspunkte Null erreichen. Ein Pokémon stirbt, wenn seine
+        Lebenspunkte einen negativen Wert seiner maximalen Trefferpunktezahl
+        erreichen.
+    </li>
+</ul>
+<h3 id="andere-kampfhandlungen">
+    <span id="anchor-7"></span>Andere
+    Kampfhandlungen
+</h3>
+<ul>
+    <li>
+        <strong>Helfen:</strong> Ein Pokémon kann eine Aktion
+        einsetzen, um einem anderen Pokémon in Not zu helfen. Zum Beispiel kann
+        es einem schlafenden Pokémon helfen, indem es es wach stößt. Für viele
+        dieser Aufgaben ist in der Regel kein Wurf erforderlich; wenn die Hilfe
+        jedoch komplex oder riskant ist, kann der DM entscheiden, ob ein Check
+        erforderlich ist. Normalerweise muss sich ein Pokémon in der Nähe eines
+        anderen Pokémon befinden, um ihm zu helfen.
+    </li>
+    <li>
+        <strong>Verteidigen:</strong> Ein Pokémon kann sich dafür
+        entscheiden, sich zu verteidigen, anstatt anzugreifen, und erhält
+        dadurch bis zum Beginn seines nächsten Zuges +2 auf beide
+        Verteidigungswerte. Es verliert diesen Bonus, wenn es sich nicht bewegen
+        kann, seine Geschwindigkeit 0 ist oder es nicht in der Lage ist,
+        Aktionen zu nutzen.
+    </li>
+    <li>
+        <strong>Greifen:</strong> Ein Pokémon kann mit einer freien Hand
+        oder einem Anhängsel versuchen, ein anderes Pokémon zu greifen, das
+        nicht mehr als eine Größenklasse höher ist als es selbst. Das Ergebnis
+        kann zu Aktionen wie Bewegen eines gegriffenen Pokémon oder Festhalten
+        eines gegriffenen Pokémon führen.
+    </li>
+</ul>
+<h3 id="wechselwirkungen-mit-der-umwelt-und-besondere-maßnahmen">
+    <span
+        id="anchor-8">
+    </span>Wechselwirkungen mit der Umwelt und besondere
+    Maßnahmen
+</h3>
+<ul>
+    <li>
+        <strong>Verstecken:</strong> Um sich zu verstecken, muss sich ein
+        Pokémon in einem Bereich befinden, der seine Anwesenheit verdeckt oder
+        verbirgt, z. B. hinter hohen Bäumen oder in einer dunklen Gasse. Die
+        Kreatur führt eine umstrittene Prüfung durch, die durch die
+        Wahrnehmungsprüfung des Gegners umstritten ist, wenn optionale
+        Fähigkeiten verwendet werden.
+    </li>
+    <li>
+        <strong>Mit der Umgebung interagieren</strong>: Die Interaktion mit
+        Umgebungsobjekten, wie z.B. das Durchschneiden eines Seils oder das
+        Ziehen eines praktischen Hebels, kann nur eine Hilfsaktion erfordern.
+        Der DM entscheidet, wie lange es dauert, mit einem Umweltobjekt in
+        Aktionen zu interagieren. Wenn es sich um eine zu komplexe Aktion
+        handelt, kann der DM entscheiden, dass sie mehr als eine Runde in
+        Anspruch nehmen würde.
+    </li>
+    <li>
+        <strong>Niederschlagen:</strong> Ein Gegner, der nicht größer als
+        eine Größenklasse über deinem Pokémon ist, kann umgeworfen werden. Dazu
+        ist eine Kampfprüfung erforderlich. Wenn du sie bestehst, wird das Ziel
+        am Boden liegend niedergeschlagen, kann die nächste Runde nicht
+        Angreifen und
+    </li>
+    <li>
+        <strong>Neutraler Angriff:</strong> Ein grundlegender, typloser
+        physischer Angriff. Er verwendet den Angriffswert für die Genauigkeit,
+        verursacht 1d4 Punkte Schaden plus den Angriff des Anwenders und kann
+        nicht durch einen Techniker verstärkt werden.
+    </li>
+    <li>
+        <strong>Schubsen:</strong> Ein Pokémon kann versuchen, ein anderes
+        wegzustoßen, wenn das Ziel nicht mehr als eine Größenklasse größer ist
+        als es selbst. Dies erfordert eine umkämpfte Prüfung, und bei Erfolg
+        wird das Ziel ein Feld vom Anwender weggeschoben.
+    </li>
+    <li>
+        <strong>Ein Item benutzen:</strong>
+    </li>
+</ul>
+<h3 id="willenskraft"><span id="anchor-9"></span>Willenskraft</h3>
+<p>
+    Willenspunkte sind eine wertvolle Ressource, die du einsetzen kannst,
+    um dir in verschiedenen Situationen einen Vorteil zu verschaffen. Wenn
+    du Willenspunkte als Hilfs einsetzt, kannst du aus den folgenden
+    Kampfaktionen wählen:
+</p>
+<ul>
+    <li>
+        <strong>Trefferpunkte wiederherstellen:</strong> Du kannst dich um
+        einen Betrag heilen, der deinem Grad multipliziert mit deiner Gesundheit
+        entspricht.
+    </li>
+    <li>
+        <strong>Aufprall abwehren:</strong> Mit dieser Aktion kannst du
+        feindliche Angriffe abwehren und den erlittenen Schaden um einen Betrag
+        reduzieren, der dem 5-fachen deines Grades entspricht und nach der
+        Schadensberechnung angewendet wird.
+    </li>
+    <li>
+        <strong>Verstärkt einen Angriffswurf oder -check:</strong> Diese
+        Fähigkeit kann sowohl im als auch außerhalb des Kampfes eingesetzt
+        werden. Wenn du deinen Angriffswurf verstärkst, wirfst du statt 2 x 6
+        Würfel 2 achtseitige Würfel, um die Genauigkeit zu erhöhen. Wenn du
+        einen Check mit optionalen Fertigkeiten verstärkst, wirfst du einen
+        zusätzlichen Würfel entsprechend deiner Fertigkeitsstufe.
+    </li>
+    <li>
+        <strong>Schaden verstärken:</strong> Wenn du Schaden verursachst,
+        würfelst du für jeden Grad, den du besitzt, einen zusätzlichen d6.
+    </li>
+</ul>
+<p>
+    Willenskraft erholt sich auf natürliche Weise, nachdem ihr 8 Stunden
+    geruht habt, und ist somit eine Ressource, die ihr strategisch einsetzen
+    könnt, um das Blatt in Kämpfen und Herausforderungen zu euren Gunsten zu
+    wenden.
+    Einen Willenspunkt auszugeben gilt nicht als Aktion.
+</p>
+<h3 id="grad-stab-vorteil-resistenz-muskelkraft-und-talent">
+    <span
+        id="anchor-9">
+    </span>Grad, STAB, Vorteil, Resistenz, Muskelkraft und
+    Talent
+</h3>
+<p>Der Grad bezieht sich auf STAB, Typ-Vorteil und Typ-Resistenz.</p>
+<ul>
+    <li>
+        <strong>STAB:</strong> Wenn dein Pokémon denselben Typ hat wie die
+        Attacke, die es einsetzt, macht die Attacke 1.5x Schaden
+    </li>
+    <li>
+        <strong>Vorteil: </strong>Wenn das Pokémon, das du angreifst,
+        schwach gegen die von dir eingesetzte Attacke ist, multiplizierst du den
+        Schaden mit 2 zu, oder 4, wenn es 4-fachen Schaden erleidet.
+    </li>
+    <li>
+        <strong>Resistenz:</strong> Wenn das Pokémon, das dich angreift,
+        eine Bewegung einsetzt, deren Typ du widerstehst, halbierst du den
+        Schaden, der dir zugefügt wird, oder viertelst ihn, wenn du es Vierfach
+        widerstehst.
+    </li>
+</ul>
+<h3 id="statusbedingungen">
+    <span
+        id="anchor-10">
+    </span>Statusbedingungen
+</h3>
+<ul>
+    <li>
+        <strong>Brand:</strong> Der Angriff ist halbiert und du erleidest
+        1*Grad Schaden pro Runde
+    </li>
+    <li><strong>Vergiftung</strong>: Du erleidest Grad D 4 Schaden. Die Verteidigung und Spezialverteidigung des Gegners ist Halbiert</li>
+    <li>
+        <strong>Schwere Vergiftung</strong>. Du erleidest (Grad*Runden die du
+        schwer vergiftet bist)D4 Schaden
+    </li>
+    <li>
+        <strong>Frostbrand</strong>: Der Spezialangriff ist halbiert und
+        erleidest 1*Grad Schaden pro Runde
+    </li>
+    <li>
+        <strong>Bindung:</strong> Das Ziel erleidet zu Beginn jeder Runde
+        Schaden in Höhe von 2*Grad und kann sich nicht bewegen, bis es sich
+        erholt hat oder nach 4 Runden.
+    </li>
+    <li>
+        <strong>Verwirrung:</strong> Das Ziel kann nur in 50% der Fällen angreifen, andernfalls kann es einem zufälligen Verbündeten
+        oder sich selbst Schaden zufügen.
+    </li>
+    <li>
+        <strong>Fluch:</strong> Das Ziel erleidet zu Beginn jeder Runde 2*Eigener Grad Schaden.
+        Punkte Schaden.
+    </li>
+    <li>
+        <strong>Benommenheit:</strong> Die Benommenheit hält eine Runde lang
+        an, nachdem sie zugefügt wurde. Der Anwender kann keine Kampfaktionen
+        ausführen und seine Geschwindigkeit wird halbiert.
+    </li>
+    <li>
+        <strong>Paralyse:</strong> Lähmung ist ein schwerer Zustand, der dem
+        der Benommenheit ähnelt, aber noch schwächer ist. Er hält mehrere Runden
+        lang an und macht den Anwender unfähig, Kampfhandlungen auszuführen, und
+        seine Geschwindigkeit ist reduziert.
+    </li>
+    <li>
+        <strong>Embargo:</strong> Der Benutzer kann die Effekte des von ihm
+        gehaltenen Gegenstandes nicht aktivieren.
+    </li>
+    <li>
+        <strong>Zugabe:</strong>Der Anwender kann nur seine zuletzt benutzte
+        Bewegung oder seine neutrale Attacke einsetzen.
+    </li>
+    <li>
+        <strong>Heilungsblock:</strong>Der Anwender kann keine
+        Heilungsaktionen ausführen oder Grit zur Heilung einsetzen. Go For Broke
+        wendet diese Einschränkung auf Spieler an, mit der Ausnahme, dass man
+        sich nicht davor retten kann.
+    </li>
+    <li>
+        <strong>Verliebtheit:</strong> Das Ziel kann nur bei Auslöser 3
+        einen Angriff einsetzen. Der Anwender kann immer noch Utility-Aktionen
+        (es sei denn, es handelt sich um einen Angriff mit dem Swift-Upgrade)
+        oder Bewegungsaktionen verwenden.
+    </li>
+</ul>
+<h2 id="angriffs-upgrades">
+    <span
+        id="anchor-12">
+    </span>Angriffs-Upgrades:
+</h2>
+<ul>
+    <li>
+        <strong>Nachwirkungen:</strong> Wenn es dem Feind gelingt, den durch
+        diese Attacke ausgelösten Effekt zu beenden, erleidet er Schaden in Höhe
+        deines Grades * 3.
+    </li>
+    <li>
+        <strong>Kettenreaktion:</strong> Wenn diese Bewegung einen
+        kritischen Treffer erzielt, wird der Trigger, die zum Auslösen des
+        Effekts der Technik erforderlich sind, um 1 reduziert.
+    </li>
+    <li>
+        <strong>Trotzig:</strong> Wenn du umzingelt bist, wird der
+        Angriffswurf dieser Attacke verstärkt, ohne dass du Grit ausgeben
+        musst.
+    </li>
+    <li>
+        <strong>Erfüllend:</strong> Wenn diese Attack eingesetzt wird,
+        erhältst du entweder Trefferpunkte in Höhe ihres Grades zurück oder
+        einen Bonus von +1 auf Würfe zum Beenden von Effekten in dieser
+        Runde.
+    </li>
+    <li>
+        <strong>Erdung:</strong> Erlaubt es Boden-Attacken Flug Pokemon zu
+        trefen.
+    </li>
+    <li>
+        <strong>Intensiv:</strong> Diese Attacke fügt zusätzlich +2 Schaden
+        zu, wenn dein Pokémon Grad 3 oder niedriger ist; wenn es Grad 4 oder
+        höher ist, fügt es +3 Schaden zu.
+    </li>
+    <li>
+        <strong>Belebend:</strong> Einmal pro Runde, wenn diese Attacke
+        Schaden verursacht, erhält der Anwender Trefferpunkte in Höhe seines
+        Grades * 3 zurück.
+    </li>
+    <li>
+        <strong>Gemeistert:</strong> Wenn ein Schadenswurf mit dieser
+        Attacke den Mindestschaden ergeben würde, wiederhole den Wurf und nimm
+        das höhere Ergebnis.
+    </li>
+    <li>
+        <strong>Präzise:</strong> Ziele dieser Attacke erhalten keinen Bonus
+        durch Deckung oder durch die Aktion “Verteidigen”.
+    </li>
+    <li>
+        <strong>Bestrafend:</strong> Wenn der Schadenswurf dieser Attacke
+        verstärkt wird, verursacht sie zusätzlich +1d6 Schaden.
+    </li>
+    <li>
+        <strong>Unheimlich:</strong> Ziele, die einem Effekt dieser Attacke
+        ausgesetzt sind, erleiden einen Malus von -1 auf Checks, um den Effekt
+        zu beenden.
+    </li>
+    <li>
+        <strong>Taumelnd:</strong> Wenn das Ziel durch die Schadensart
+        dieser Bewegung sehr effektiv getroffend wird, wird für seine Nächste Runde sein Angriff und Spezialberechnung während der Schadensberechnung 0.
+    </li>
+    <li>
+        <strong>Swift:</strong> Gib einen Willenspunkt aus: Stelle diese Aktion wieder Her
+    </li>
+    <li>
+        <strong>Unnachgiebig:</strong> Wenn diese Bewegung eingesetzt wird,
+        kann der Anwender bis zu seinem nächsten Zug nicht von seiner Position
+        wegbewegt werden, es sei denn, er entscheidet sich dafür.
+    </li>
+</ul>
+<h2 id="saatgut"><span id="anchor-13"></span>Saatgut</h2>
+<p>
+    Aufgrund der Funktionsweise des Systems funktionieren diese Samen
+    anders als ihre Mystery Dungeon-Gegenstücke.
+</p>
+<ul>
+    <li>
+        <strong>Freude-Samen:</strong> Gibt einen kostenlosen
+        Levelaufstiegspunkt.
+    </li>
+    <li>
+        <strong>Goldene Saat:</strong> Erhöht den Grad eines Pokémon
+        dauerhaft um 1. Dadurch kann ein Pokémon einen höheren Grad als
+    </li>
+</ul>

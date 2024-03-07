@@ -1,57 +1,55 @@
 @model Learnset
-<div class="w3-container w3-cell w3-row-padding w3-margin-top w3-quarter">
-    <div class="w3-card">
-        <header class="w3-container @Model.move.type.ID">
-            <a asp-page="/moves/Details" asp-route-id="@Model.move.ID">
-                <h3>
-                    @if (string.IsNullOrEmpty(Model.move.Name_DE))
-                    {
-                        @Model.move.Name
-                    }
-                    else
-                    {
-                        @Model.move.Name_DE
-                    }
-                    <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.move.type.ID}.png")"class="w3-right"/>
-                </h3>
-            </a>
-
-        </header>
-
-        <div class="w3-row">
-            <div class="w3-third w3-container">
-                <h4>Kategorie</h4>
-
-                <img src="/icons/moveclass/bdsp/@Html.Raw($"{Model.move.MoveClass.ID}.png")"/>
-                @Html.Raw(Model.move.MoveClass.Name_DE)
-            </div>
-            <div class="w3-third w3-container">
-                <h4>DMG</h4>
-
-                @if (string.IsNullOrEmpty(Model.move.DamageDice))
+<div class="card w-50">
+    <div class="card-header @Model.move.type.ID">
+        <a asp-page="/moves/Details" asp-route-id="@Model.move.ID" >
+            <h3>
+                @if (string.IsNullOrEmpty(Model.move.Name_DE))
                 {
-                    <p> - </p>
+                    @Model.move.Name
                 }
                 else
                 {
-                    <p>@Model.move.DamageDice</p>
+                    @Model.move.Name_DE
                 }
+                <img src="/icons/type/normal/DE/SV/@Html.Raw($"{Model.move.type.ID}.png")" class="float-end"/>
+            </h3>
+        </a>
 
-            </div>
-            <div class="w3-third w3-container">
-                <h4>Level</h4>
-                @if (Model.level == int.MaxValue)
-                {
-                    <p> - </p>
-                }
-                else
-                {
-                    @Model.level
-                }
-            </div>
+    </div>
+
+    <div class="card-body">
+        <div class="w3-third container">
+            <h4>Kategorie</h4>
+
+            <img src="/icons/moveclass/bdsp/@Html.Raw($"{Model.move.MoveClass.ID}.png")"/>
+            @Html.Raw(Model.move.MoveClass.Name_DE)
         </div>
-        <div class="w3-container">
-            @Html.Raw(Markdown.Parse(Model.move.ShortEffect))
+        <div class="w3-third container">
+            <h4>DMG</h4>
+
+            @if (string.IsNullOrEmpty(Model.move.DamageDice))
+            {
+                <p> - </p>
+            }
+            else
+            {
+                <p>@Model.move.DamageDice</p>
+            }
+
         </div>
+        <div class="w3-third container">
+            <h4>Level</h4>
+            @if (Model.level == int.MaxValue)
+            {
+                <p> - </p>
+            }
+            else
+            {
+                @Model.level
+            }
+        </div>
+    </div>
+    <div class="container">
+        @Html.Raw(Markdown.Parse(Model.move.ShortEffect))
     </div>
 </div>
