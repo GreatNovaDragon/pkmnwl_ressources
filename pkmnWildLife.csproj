@@ -376,6 +376,9 @@
         <None Update="app.db">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <Content Update="wwwroot\icons\ninatrans.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="CsvHelper" Version="30.0.1"/>
