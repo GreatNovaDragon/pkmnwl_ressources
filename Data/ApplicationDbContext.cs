@@ -10,10 +10,13 @@ namespace pkmnWildLife.Data;
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options) { }
+        : base(options)
+    {
+    }
 
     public DbSet<Ability> AbilityDex { get; set; }
     public DbSet<Move> MoveDex { get; set; }
+
     public DbSet<Item> Items { get; set; }
     public DbSet<Type> Types { get; set; }
     public DbSet<MoveClass> MoveClasses { get; set; }
@@ -43,6 +46,29 @@ public class ApplicationDbContext : DbContext
     }
 }
 
+public class Localized_Text
+{
+    public string ID { get; set; }
+    public Language lang { get; set; }
+    public string text { get; set; }
+}
+
+public class Language
+{
+    public string ID { get; set; }
+    public string localized_Name { get; set; }
+}
+
+public class Move_Effect
+{
+    public string ID { get; set; }
+
+    public Localized_Text[] Effect { get; set; }
+
+    public Localized_Text[]
+        Short_Effect { get; set; }
+}
+
 public class Ability
 {
     public string ID { get; set; }
@@ -68,10 +94,9 @@ public class Move
     public virtual Type type { get; set; }
     public string? DamageDice { get; set; }
     public virtual MoveClass MoveClass { get; set; }
+    public int Accuracy { get; set; }
     public string Target { get; set; }
-    public string? Effect { get; set; }
-
-    public string? ShortEffect { get; set; }
+    public Move_Effect? Effect { get; set; }
 }
 
 public class Type
@@ -112,11 +137,9 @@ public class Item
 
 public class Pokemon
 {
-    [Column(Order = 2)]
-    public string ID { get; set; }
+    [Column(Order = 2)] public string ID { get; set; }
 
-    [Column(Order = 1)]
-    public int Dex { get; set; }
+    [Column(Order = 1)] public int Dex { get; set; }
     public string? ImageLink { get; set; }
 
     public string Name { get; set; }
