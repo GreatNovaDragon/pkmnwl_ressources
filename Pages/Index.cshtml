@@ -1,6 +1,22 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Hauptregeln";
+    ViewData["Title"] = "Wild Life Beyond";
     ViewData["HeaderColor"] = "#f00";
 }
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/icons/ninatrans.png" alt="A picture of a grey Ninetales with glassess holding a tablet" height="100">
+    <h1 class="display-5 fw-bold text-body-emphasis">Ein Rollenspielsystem für Pokemon Mystery Dungeon</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Ein System basierend auf den Hauptspielen und weiteren Inspirationsquellen um PMD im Tabletop-Rollenspiel zu spielen</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a asp-area="" asp-page="/rules/charactercreation">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Character-Erstellung</button>
+            </a>
+            <a  href="/PokemonSwShCharSheetsGer.pdf" download>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Charakter-Bogen</button>
+            </a>
+        </div>
+    </div>
+</div>
