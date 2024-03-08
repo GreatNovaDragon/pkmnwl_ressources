@@ -357,7 +357,7 @@ public class DBInitializer
             }
 
             Effect = accuracy_string_en(m.Accuracy) + Effect;
-            Effect = Effect.Replace("Inflicts regular damage.", "");
+            ShortEffect = accuracy_string_en(m.Accuracy) + Effect;            
 
             var Target = m.Target.Name;
 

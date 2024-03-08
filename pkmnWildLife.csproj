@@ -373,9 +373,6 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <None Include="wwwroot\PokemonSwShCharSheetsGerNoColour.pdf"/>
-        <None Update="app.db">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
         <Content Update="wwwroot\icons\ninatrans.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
